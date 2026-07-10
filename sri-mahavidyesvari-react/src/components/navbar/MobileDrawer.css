@@ -1,0 +1,271 @@
+/* ═══════════════════════════════════════════════════════════════════════
+   MOBILE DRAWER — Sacred Temple Side Panel
+   Full-height glass panel · Gold accents · Smooth expand/collapse
+═══════════════════════════════════════════════════════════════════════ */
+
+/* ── BACKDROP ── */
+.drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(45, 10, 20, 0.58);
+  backdrop-filter: blur(6px) saturate(0.8);
+  -webkit-backdrop-filter: blur(6px) saturate(0.8);
+  z-index: 1100;
+}
+
+/* ── DRAWER PANEL ── */
+.drawer {
+  position: fixed;
+  top: 0; right: 0; bottom: 0;
+  width: min(340px, 90vw);
+  z-index: 1200;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  /* Sacred ivory surface */
+  background: linear-gradient(
+    160deg,
+    #FFFDF8 0%,
+    #FFF8EF 40%,
+    #FFFDF8 100%
+  );
+
+  border-left: 1px solid rgba(212, 175, 55, 0.24);
+  box-shadow:
+    -16px 0 64px rgba(90, 18, 40, 0.22),
+    -4px  0 20px rgba(90, 18, 40, 0.10),
+    -1px  0  0   rgba(212, 175, 55, 0.18);
+}
+
+/* Subtle gold shimmer on left edge */
+.drawer::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; bottom: 0;
+  width: 2px;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(212, 175, 55, 0.55) 20%,
+    rgba(232, 199, 106, 0.80) 50%,
+    rgba(212, 175, 55, 0.55) 80%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   HEADER
+───────────────────────────────────────────────────────────────── */
+.drawer__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 24px;
+  flex-shrink: 0;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.14);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 245, 238, 0.85) 0%,
+    rgba(255, 253, 248, 0.55) 100%
+  );
+}
+
+.drawer__logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.drawer__logo-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-full);
+  background: var(--grad-maroon);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 1.5px solid rgba(212, 175, 55, 0.42);
+  box-shadow:
+    0 4px 16px rgba(90, 18, 40, 0.32),
+    0 0 0 2px rgba(212, 175, 55, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+
+.drawer__logo-icon span {
+  font-size: 19px;
+  color: var(--gold-light);
+  filter: drop-shadow(0 0 5px rgba(212, 175, 55, 0.55));
+}
+
+.drawer__logo-name {
+  font-family: var(--font-heading);
+  font-size: 14px;
+  font-weight: var(--weight-bold);
+  color: var(--maroon);
+  line-height: var(--leading-tight);
+}
+
+.drawer__logo-sub {
+  font-family: var(--font-body);
+  font-size: 9.5px;
+  color: var(--text-muted);
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+.drawer__close {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  background: rgba(212, 175, 55, 0.08);
+  border: 1px solid rgba(212, 175, 55, 0.22);
+  cursor: pointer;
+  transition: var(--transition-base);
+  flex-shrink: 0;
+}
+
+.drawer__close:hover {
+  background: rgba(212, 175, 55, 0.16);
+  border-color: rgba(212, 175, 55, 0.44);
+  color: var(--maroon);
+  box-shadow: 0 0 14px rgba(212, 175, 55, 0.22);
+  transform: rotate(90deg);
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   GOLD DIVIDER
+───────────────────────────────────────────────────────────────── */
+.drawer__divider {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(212, 175, 55, 0.32) 30%,
+    rgba(232, 199, 106, 0.50) 50%,
+    rgba(212, 175, 55, 0.32) 70%,
+    transparent 100%
+  );
+  margin: 0 20px;
+  flex-shrink: 0;
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   NAV BODY
+───────────────────────────────────────────────────────────────── */
+.drawer__nav {
+  flex: 1;
+  padding: 12px 14px;
+  overflow-y: auto;
+}
+
+.drawer__section {
+  margin-bottom: 2px;
+}
+
+/* Top-level row */
+.drawer__row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: var(--weight-semibold);
+  color: var(--text-body);
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  letter-spacing: 0.4px;
+  transition:
+    background    var(--duration-base) var(--ease),
+    color         var(--duration-base) var(--ease),
+    padding-left  var(--duration-base) var(--ease);
+}
+
+.drawer__row:hover {
+  background: rgba(212, 175, 55, 0.09);
+  color: var(--maroon);
+  padding-left: 18px;
+}
+
+/* Expandable parent row — chevron color */
+.drawer__row--expandable {
+  color: var(--text-heading);
+}
+
+/* ── SUB-ITEMS ── */
+.drawer__sub {
+  padding-left: 10px;
+}
+
+.drawer__sub-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 14px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--text-muted);
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition:
+    background    var(--duration-base) var(--ease),
+    color         var(--duration-base) var(--ease),
+    padding-left  var(--duration-base) var(--ease);
+}
+
+.drawer__sub-item:hover {
+  background: rgba(212, 175, 55, 0.07);
+  color: var(--maroon);
+  padding-left: 18px;
+}
+
+.drawer__sub-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: var(--radius-full);
+  background: var(--grad-gold);
+  flex-shrink: 0;
+  opacity: 0.55;
+  transition:
+    opacity   var(--duration-base) var(--ease),
+    transform var(--duration-base) var(--ease);
+}
+
+.drawer__sub-item:hover .drawer__sub-dot {
+  opacity: 1;
+  transform: scale(1.4);
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   FOOTER — CTA buttons
+───────────────────────────────────────────────────────────────── */
+.drawer__footer {
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex-shrink: 0;
+  border-top: 1px solid rgba(212, 175, 55, 0.14);
+  background: linear-gradient(
+    0deg,
+    rgba(255, 245, 238, 0.65) 0%,
+    transparent 100%
+  );
+}

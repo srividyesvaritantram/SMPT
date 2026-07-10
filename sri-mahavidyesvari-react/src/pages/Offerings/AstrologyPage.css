@@ -1,0 +1,861 @@
+/* ═══════════════════════════════════════════════════════════════════
+   OFFERINGS PAGE — Hero · Astrology · Temple Śilpa · Cards Grid
+═══════════════════════════════════════════════════════════════════ */
+
+/* ── page shell ── */
+.aop-page {
+  min-height: 100vh;
+  background: var(--bg);
+  overflow-x: hidden;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   SECTION 1 — HERO  (50% text | 50% deity — DO NOT MODIFY)
+═══════════════════════════════════════════════════════════════════ */
+.aop-hero {
+  position: relative;
+  width: 100%;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: linear-gradient(135deg, #0d0208 0%, #1c0610 35%, #2e0d1c 65%, #1c0610 100%);
+}
+
+/* LEFT 50% */
+.aop-hero__left {
+  position: relative;
+  z-index: 3;
+  width: 50%;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 24px;
+  padding: 120px 56px 80px 72px;
+  background: linear-gradient(
+    105deg,
+    rgba(13, 2, 8, 0.96) 0%,
+    rgba(13, 2, 8, 0.90) 60%,
+    rgba(13, 2, 8, 0.50) 85%,
+    transparent 100%
+  );
+}
+
+.aop-hero__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  padding: 8px 20px;
+  border-radius: 999px;
+  border: 1px solid rgba(212, 175, 55, 0.40);
+  background: rgba(212, 175, 55, 0.10);
+  backdrop-filter: blur(10px);
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold-light);
+}
+
+.aop-hero__h1 {
+  font-size: clamp(32px, 3.8vw, 58px);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+  color: #fff8f0;
+  margin: 0;
+}
+
+.aop-hero__h1-gold {
+  display: block;
+  background: linear-gradient(135deg, #b8860b 0%, #d4af37 35%, #e8c76a 60%, #f3d777 80%, #d4af37 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.aop-hero__desc {
+  font-size: clamp(14px, 1.4vw, 17px);
+  line-height: 1.80;
+  color: rgba(232, 221, 208, 0.82);
+  max-width: 420px;
+  margin: 0;
+}
+
+.aop-hero__divider {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 4px 0;
+}
+
+.aop-hero__divider-line {
+  flex: 1;
+  max-width: 80px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.55));
+}
+
+.aop-hero__divider-om {
+  font-size: 20px;
+  color: var(--gold-light);
+  opacity: 0.75;
+  filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.55));
+}
+
+.aop-hero__btns {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* RIGHT 50% */
+.aop-hero__right {
+  width: 50%;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 56px 60px 24px;
+  position: relative;
+}
+
+.aop-hero__deity-halo {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 70% 70% at 50% 50%,
+    rgba(212, 175, 55, 0.11) 0%,
+    rgba(184, 134, 11, 0.05) 50%,
+    transparent 75%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.aop-hero__deity {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  object-position: center center;
+  filter: drop-shadow(0 8px 48px rgba(212, 175, 55, 0.20))
+          drop-shadow(0 0 60px rgba(90, 18, 40, 0.25));
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   SHARED UTILITIES
+═══════════════════════════════════════════════════════════════════ */
+
+.aop-section-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  padding: 7px 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  background: rgba(212, 175, 55, 0.08);
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+}
+
+.aop-body {
+  font-size: 16px;
+  line-height: 1.84;
+  color: var(--text-body);
+  margin: 0;
+}
+
+/* ── shared image column ── */
+.aop-feat-img-col {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.aop-feat-img-glow {
+  position: absolute;
+  inset: -32px;
+  background: radial-gradient(ellipse at center, rgba(212, 175, 55, 0.13) 0%, transparent 68%);
+  border-radius: var(--radius-xl);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.aop-feat-img-card {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  border-radius: 24px;
+  border: 1.5px solid rgba(212, 175, 55, 0.40);
+  box-shadow:
+    0 28px 72px rgba(90, 18, 40, 0.14),
+    0 0 0 1px rgba(212, 175, 55, 0.10),
+    0 0 48px rgba(212, 175, 55, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.60);
+  overflow: hidden;
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  cursor: pointer;
+  transition: border-color 0.35s var(--ease);
+}
+
+.aop-feat-img-card:hover {
+  border-color: rgba(212, 175, 55, 0.65);
+}
+
+.aop-feat-img {
+  width: 100%;
+  height: auto;
+  max-height: 600px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.55s var(--ease);
+}
+
+.aop-feat-img-card:hover .aop-feat-img {
+  transform: scale(1.04);
+}
+
+.aop-feat-img-shine {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.07) 0%, transparent 50%, rgba(212,175,55,0.04) 100%);
+  pointer-events: none;
+}
+
+.aop-feat-corner {
+  position: absolute;
+  font-size: 20px;
+  color: var(--gold);
+  opacity: 0.60;
+  z-index: 2;
+  line-height: 1;
+  filter: drop-shadow(0 0 6px rgba(212, 175, 55, 0.55));
+}
+.aop-feat-corner--tl { top: -11px; left: -11px; }
+.aop-feat-corner--br { bottom: -11px; right: -11px; }
+
+/* ── shared content column ── */
+.aop-feat-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.aop-feat-h2 {
+  font-size: clamp(24px, 2.6vw, 38px);
+  font-weight: 700;
+  line-height: 1.18;
+  color: var(--text-heading);
+  margin: 0;
+}
+
+.aop-feat-cta {
+  margin-top: 8px;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   SECTION 2 — ASTROLOGY
+═══════════════════════════════════════════════════════════════════ */
+.aop-astro {
+  position: relative;
+  background: linear-gradient(180deg, var(--bg) 0%, var(--bg-section) 50%, var(--bg) 100%);
+  padding: 110px var(--section-px) 120px;
+  overflow: hidden;
+}
+
+/* faint Sanskrit watermark */
+.aop-astro::before {
+  content: 'ज्योतिष';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-devanagari);
+  font-size: clamp(100px, 16vw, 220px);
+  font-weight: 700;
+  color: rgba(212, 175, 55, 0.04);
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+  z-index: 0;
+}
+
+.aop-astro__inner {
+  position: relative;
+  z-index: 1;
+  max-width: var(--container-max);
+  margin: 0 auto;
+}
+
+.aop-astro__grid {
+  display: grid;
+  grid-template-columns: 45% 55%;
+  gap: 80px;
+  align-items: center;
+}
+
+/* ── checklist ── */
+.aop-checklist-block {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin: 4px 0;
+}
+
+.aop-checklist-label {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+  margin: 0;
+}
+
+.aop-checklist {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 24px;
+}
+
+.aop-checklist__item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.aop-checklist__tick {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(184,134,11,0.18), rgba(212,175,55,0.10));
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  color: var(--gold-deep);
+  font-weight: 700;
+}
+
+.aop-checklist__text {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text-body);
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   SECTION 3 — TEMPLE ŚILPA ŚĀSTRA
+═══════════════════════════════════════════════════════════════════ */
+.aop-featured {
+  position: relative;
+  background: var(--bg-section);
+  padding: 110px var(--section-px) 120px;
+  overflow: hidden;
+}
+
+/* faint Sanskrit watermark */
+.aop-featured::before {
+  content: 'शिल्प';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-devanagari);
+  font-size: clamp(140px, 20vw, 280px);
+  font-weight: 700;
+  color: rgba(212, 175, 55, 0.04);
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+  z-index: 0;
+}
+
+.aop-featured__inner {
+  position: relative;
+  z-index: 1;
+  max-width: var(--container-max);
+  margin: 0 auto;
+}
+
+/* two-column grid */
+.aop-featured__grid {
+  display: grid;
+  grid-template-columns: 45% 55%;
+  gap: 80px;
+  align-items: center;
+}
+
+/* highlight tags */
+.aop-feat-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 4px 0;
+}
+
+.aop-feat-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(184,134,11,0.10), rgba(212,175,55,0.06));
+  border: 1px solid rgba(212, 175, 55, 0.30);
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--gold-deep);
+  letter-spacing: 0.3px;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   SECTION 4 — RITUAL OFFERINGS (4-card grid)
+═══════════════════════════════════════════════════════════════════ */
+.aop-rituals {
+  background: linear-gradient(180deg, var(--bg-section) 0%, var(--bg) 100%);
+  padding: 100px var(--section-px) 120px;
+  position: relative;
+  overflow: hidden;
+}
+
+.aop-rituals::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 10%; right: 10%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(212,175,55,0.25), transparent);
+}
+
+.aop-rituals__inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+}
+
+.aop-rituals__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+  margin-bottom: 72px;
+}
+
+.aop-rituals__title {
+  font-size: clamp(28px, 3.2vw, 44px);
+  font-weight: 700;
+  color: var(--text-heading);
+  margin: 0;
+  line-height: 1.15;
+}
+
+.aop-rituals__subtitle {
+  font-size: clamp(15px, 1.5vw, 18px);
+  line-height: 1.75;
+  color: var(--text-muted);
+  max-width: 680px;
+  margin: 0;
+}
+
+/* 4-column ritual card grid */
+.aop-rcards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  align-items: stretch;
+}
+
+/* desc variant — show full text (no clamp) */
+.aop-ocard__desc--full {
+  -webkit-line-clamp: unset;
+  overflow: visible;
+  display: block;
+}
+
+/* ── individual offering card ── */
+.aop-ocard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  border: 1.5px solid rgba(212, 175, 55, 0.28);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow:
+    0 8px 32px rgba(90, 18, 40, 0.08),
+    0 0 0 1px rgba(212, 175, 55, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.70);
+  transition:
+    border-color 0.35s var(--ease),
+    box-shadow 0.35s var(--ease);
+  cursor: pointer;
+  height: 100%;
+}
+
+.aop-ocard:hover {
+  border-color: rgba(212, 175, 55, 0.58);
+  box-shadow:
+    0 24px 64px rgba(90, 18, 40, 0.14),
+    0 0 0 1.5px rgba(212, 175, 55, 0.40),
+    0 0 48px rgba(212, 175, 55, 0.10),
+    inset 0 1px 0 rgba(255, 255, 255, 0.80);
+}
+
+/* gold top accent bar */
+.aop-ocard__topbar {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2.5px;
+  background: linear-gradient(90deg, transparent, #d4af37, #e8c76a, #d4af37, transparent);
+  opacity: 0;
+  transition: opacity 0.35s var(--ease);
+}
+
+.aop-ocard:hover .aop-ocard__topbar {
+  opacity: 1;
+}
+
+/* image area — all 4 cards identical */
+.aop-ocard__img-wrap {
+  position: relative;
+  width: 100%;
+  height: 260px;
+  overflow: hidden;
+  flex-shrink: 0;
+  border-radius: 20px 20px 0 0;
+  background: #0d0208;
+}
+
+.aop-ocard__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+  image-rendering: -webkit-optimize-contrast;
+  transition: transform 0.4s var(--ease);
+}
+
+/* Abhishekam — portrait source, crop to center subject */
+.aop-ocard__img--abhishekam {
+  object-fit: cover;
+  object-position: center 20%;
+}
+
+.aop-ocard:hover .aop-ocard__img {
+  transform: scale(1.06);
+}
+
+.aop-ocard__img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(13, 2, 8, 0.10) 0%,
+    rgba(13, 2, 8, 0.45) 100%
+  );
+  pointer-events: none;
+}
+
+.aop-ocard__icon {
+  position: absolute;
+  bottom: 14px;
+  left: 18px;
+  font-size: 28px;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.5));
+  z-index: 1;
+}
+
+/* card body */
+.aop-ocard__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 24px 24px 28px;
+  gap: 12px;
+}
+
+.aop-ocard__title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-heading);
+  line-height: 1.25;
+  margin: 0;
+}
+
+.aop-ocard__desc {
+  font-size: 14px;
+  line-height: 1.72;
+  color: var(--text-body);
+  margin: 0;
+  flex: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.aop-ocard__footer {
+  margin-top: auto;
+  padding-top: 8px;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   SECTION 5 — NEED GUIDANCE? (CTA)
+═══════════════════════════════════════════════════════════════════ */
+.aop-cta {
+  position: relative;
+  background: linear-gradient(135deg, #0d0208 0%, #1c0610 35%, #2e0d1c 65%, #1c0610 100%);
+  padding: 120px var(--section-px) 128px;
+  overflow: hidden;
+  text-align: center;
+}
+
+/* faint ॐ watermark */
+.aop-cta__om {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: clamp(200px, 30vw, 420px);
+  color: rgba(212, 175, 55, 0.04);
+  pointer-events: none;
+  user-select: none;
+  line-height: 1;
+  z-index: 0;
+}
+
+.aop-cta__inner {
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+}
+
+.aop-cta__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 20px;
+  border-radius: 999px;
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  background: rgba(212, 175, 55, 0.08);
+  backdrop-filter: blur(10px);
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--gold-light);
+}
+
+.aop-cta__heading {
+  font-size: clamp(32px, 4vw, 56px);
+  font-weight: 700;
+  line-height: 1.15;
+  color: #fff8f0;
+  margin: 0;
+}
+
+.aop-cta__heading-gold {
+  display: block;
+  background: linear-gradient(135deg, #b8860b 0%, #d4af37 35%, #e8c76a 60%, #f3d777 80%, #d4af37 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.aop-cta__body {
+  font-size: clamp(15px, 1.5vw, 18px);
+  line-height: 1.82;
+  color: rgba(232, 221, 208, 0.78);
+  max-width: 600px;
+  margin: 0;
+}
+
+.aop-cta__divider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  max-width: 320px;
+}
+
+.aop-cta__divider-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.40), transparent);
+}
+
+.aop-cta__divider-diamond {
+  font-size: 14px;
+  color: var(--gold);
+  opacity: 0.70;
+  filter: drop-shadow(0 0 6px rgba(212, 175, 55, 0.55));
+}
+
+.aop-cta__btns {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 1100px) {
+  .aop-hero__left {
+    padding: 100px 40px 72px 52px;
+    gap: 20px;
+  }
+
+  .aop-astro__grid,
+  .aop-featured__grid {
+    gap: 56px;
+  }
+
+  .aop-rcards-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+  }
+}
+
+@media (max-width: 900px) {
+  /* hero stacks */
+  .aop-hero {
+    flex-direction: column;
+    min-height: 100svh;
+  }
+
+  .aop-hero__left {
+    width: 100%;
+    padding: 110px 36px 40px;
+    background: linear-gradient(to bottom, rgba(13,2,8,0.97) 0%, rgba(13,2,8,0.90) 100%);
+    gap: 18px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .aop-hero__eyebrow,
+  .aop-hero__btns {
+    align-self: center;
+  }
+
+  .aop-hero__desc {
+    max-width: 520px;
+  }
+
+  .aop-hero__divider-line {
+    max-width: 60px;
+  }
+
+  .aop-hero__right {
+    width: 100%;
+    flex: none;
+    padding: 24px 40px 48px;
+    min-height: 300px;
+  }
+
+  .aop-hero__deity {
+    max-height: 50vw;
+    min-height: 240px;
+  }
+
+  /* astrology & featured stack */
+  .aop-astro__grid,
+  .aop-featured__grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .aop-feat-img-col {
+    max-width: 560px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  /* checklist: single column on tablet */
+  .aop-checklist {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* ritual cards: 2 per row on tablet */
+  .aop-rcards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .aop-hero__left {
+    padding: 96px 22px 36px;
+    gap: 16px;
+  }
+
+  .aop-hero__right {
+    padding: 16px 20px 40px;
+  }
+
+  .aop-hero__deity {
+    max-height: 56vw;
+  }
+
+  .aop-astro,
+  .aop-featured,
+  .aop-rituals,
+  .aop-cta {
+    padding: 72px 18px 80px;
+  }
+
+  .aop-rituals__header {
+    margin-bottom: 48px;
+  }
+
+  /* checklist: single column on mobile */
+  .aop-checklist {
+    grid-template-columns: 1fr;
+  }
+
+  /* ritual cards: 1 per row on mobile */
+  .aop-rcards-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .aop-ocard__img-wrap {
+    height: 220px;
+  }
+}
+
+@media (max-width: 400px) {
+  .aop-hero__h1 {
+    font-size: 28px;
+  }
+
+  .aop-hero__deity {
+    max-height: 64vw;
+  }
+}
