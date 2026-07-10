@@ -1,20 +1,20 @@
 import mahavidyeswariImg from '../assets/mahavidyeswari.png';
+import sriVidyaImg    from '../assets/sri_vidya1.png';
 import chandiImg      from '../assets/chandi.png';
-import ganapatiImg   from '../assets/ganapathi.png';
-import vaishnavamImg from '../assets/vaishnavam.png';
-import skaandamImg   from '../assets/skaandam.png';
-import astanghaImg   from '../assets/astangha.png';
-import nithyaImg     from '../assets/nithya_kriya.png';
+import shaivamImg     from '../assets/shaivam.png';
+import vaishnavamImg  from '../assets/vaishnavam_course.png';
+import ganapathyamImg from '../assets/ganapathyam.png';
+import skaandamImg    from '../assets/skaandam_course.png';
 
 const img = mahavidyeswariImg;
 
 export const courses = [
-  { id: '1', title: 'Chandi Vidya',    instructor: 'Swami Anandananda',  thumbnail: chandiImg,      category: 'Tantra',    rating: 4.8, students: '2.4k', duration: '12h 30m', language: 'English',  isFree: true,  isNew: true },
-  { id: '2', title: 'Ganapati Tantra', instructor: 'Acharya Ramananda',  thumbnail: ganapatiImg,    category: 'Tantra',    rating: 4.9, students: '1.8k', duration: '28h 45m', language: 'Tamil',    isBestseller: true, price: 1999, originalPrice: 4999, discountPercent: 60 },
-  { id: '3', title: 'Vaishnavam',      instructor: 'Pandit Krishnamurti', thumbnail: vaishnavamImg, category: 'Bhakti',    rating: 4.7, students: '3.1k', duration: '18h 20m', language: 'Sanskrit', price: 999,  originalPrice: 2499, discountPercent: 60 },
-  { id: '4', title: 'Skaandam',        instructor: 'Yogini Saraswati',   thumbnail: skaandamImg,    category: 'Tantra',    rating: 4.6, students: '1.2k', duration: '10h 15m', language: 'English',  isFree: true },
-  { id: '5', title: 'Ashtanga Yoga',   instructor: 'Swami Chinmayananda', thumbnail: astanghaImg,   category: 'Yoga',      rating: 5.0, students: '4.5k', duration: '35h 00m', language: 'English',  isBestseller: true, price: 2499, originalPrice: 5999, discountPercent: 58 },
-  { id: '6', title: 'Nitya Kriya',     instructor: 'Pandit Subramaniam', thumbnail: nithyaImg,      category: 'Sadhana',   rating: 4.8, students: '2.9k', duration: '22h 30m', language: 'Tamil',    price: 1499, originalPrice: 3499, discountPercent: 57 },
+  { id: 'sri-vidya',     title: 'Sri Vidyā',      img: sriVidyaImg,    path: '/courses/sri-vidya',     desc: 'The supreme path of the Divine Mother through Sri Chakra, mantra, and tantra — a complete system of worship, meditation, and liberation rooted in authentic Guru Parampara.' },
+  { id: 'chandi-vidya',  title: 'Chandi Vidyā',   img: chandiImg,      path: '/courses/chandi-vidya',  desc: 'Chandi Vidya is the fierce, compassionate Shakti-path where Devi as Chandika destroys inner darkness and awakens courage, purity, protection, and spiritual transformation.' },
+  { id: 'shaivam',       title: 'Shaivam',         img: shaivamImg,     path: '/courses/shaivam',       desc: 'Study the sacred traditions of Lord Shiva, including mantra, Agama, temple worship, meditation, and the deeper philosophy of Shaivism according to authentic Guru Parampara.' },
+  { id: 'vaishnavam',    title: 'Vaishnavam',      img: vaishnavamImg,  path: '/courses/vaishnavam',    desc: 'Vaishnavam is the devotion-centered path of surrender to Lord Vishnu and His divine incarnations, cultivating dharma, devotion, compassion, and inner peace.' },
+  { id: 'ganapathyam',   title: 'Gāṇapatyam',     img: ganapathyamImg, path: '/courses/ganapathyam',   desc: 'Ganapati Tantram is the practical path of invoking Lord Ganesha to remove obstacles, sharpen intellect, and establish success through sacred mantra and disciplined worship.' },
+  { id: 'skaandam',      title: 'Skaandam',        img: skaandamImg,    path: '/courses/skaandam',      desc: 'Skaandam is the heroic path of Lord Skanda that awakens courage, discipline, wisdom, and victory over inner and outer obstacles.' },
 ];
 
 export const workshops = [

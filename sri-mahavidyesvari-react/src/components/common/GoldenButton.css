@@ -36,7 +36,7 @@
 ───────────────────────────────────────────────────────────────── */
 .pb--sm { padding: 10px 22px; font-size: 9px;  letter-spacing: 1.4px; min-height: 40px; }
 .pb--md { padding: 13px 28px; font-size: 10px; letter-spacing: 1.8px; min-height: 48px; }
-.pb--lg { padding: 15px 36px; font-size: 11px; letter-spacing: 2px;   min-height: 52px; }
+.pb--lg { padding: 16px 38px; font-size: 11px; letter-spacing: 2px;   min-height: 54px; }
 
 /* ─────────────────────────────────────────────────────────────────
    FILLED — Deep Maroon + Gold Border + Gold Gradient Overlay
@@ -87,17 +87,17 @@
 }
 
 /* ─────────────────────────────────────────────────────────────────
-   OUTLINED — Transparent + Gold Border + Maroon text
+   OUTLINED — Gold border + Gold text (visible on dark backgrounds)
 ───────────────────────────────────────────────────────────────── */
 .pb--outlined {
   background: rgba(255, 253, 248, 0.06);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  color: var(--maroon-deep);
+  color: #E8C76A;
   border: 1.5px solid rgba(184, 134, 11, 0.60);
   box-shadow:
     0 2px 16px rgba(212, 175, 55, 0.12),
-    inset 0 1px 0 rgba(255, 255, 255, 0.55);
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
 .pb--outlined:hover {
@@ -110,7 +110,7 @@
     ),
     linear-gradient(135deg, #4A0E22 0%, #6B1830 40%, #5A1228 70%, #3D0A1C 100%);
   border-color: rgba(212, 175, 55, 0.90);
-  color: #F3D777;
+  color: #FFF7D6;
   box-shadow:
     0 0 0 3px rgba(212, 175, 55, 0.16),
     0 12px 36px rgba(90, 18, 40, 0.40),
@@ -122,6 +122,30 @@
   box-shadow:
     0 2px 12px rgba(212, 175, 55, 0.16),
     inset 0 1px 0 rgba(255, 255, 255, 0.10);
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   ON LIGHT BACKGROUNDS — outlined variant override
+   Use on cream/white sections where gold text won't contrast well
+───────────────────────────────────────────────────────────────── */
+.on-light .pb--outlined,
+.pb--outlined.pb--on-light {
+  background: #4A0F22;
+  color: #FFF8EE;
+  border-color: #4A0F22;
+  box-shadow:
+    0 4px 20px rgba(74, 15, 34, 0.25),
+    0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.on-light .pb--outlined:hover,
+.pb--outlined.pb--on-light:hover {
+  background: #5A1830;
+  color: #FFF8EE;
+  border-color: #5A1830;
+  box-shadow:
+    0 8px 32px rgba(74, 15, 34, 0.35),
+    0 0 0 2px rgba(212, 175, 55, 0.20);
 }
 
 /* ─────────────────────────────────────────────────────────────────

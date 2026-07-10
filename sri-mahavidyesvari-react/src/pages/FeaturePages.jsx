@@ -20,12 +20,60 @@ import kshipraGanapatiImg from '../assets/kshipra_ganapati.png';
 import fundamentalsTantraImg from '../assets/fundamentals_of_tantra.png';
 import completeChakraImg from '../assets/complete_chakra_course.png';
 import ayyappaVidyaImg from '../assets/ayyappa_vidya.png';
+import whatsappQrImg from '../assets/whatsapp_qr.jpeg';
 import { FooterSection } from './Home/HomeSections.jsx';
 import './FeaturePages.css';
 
 const WA_URL = 'https://wa.me/91YOURNUMBER?text=Namaste%20%F0%9F%99%8F%20I%20would%20like%20to%20book%20a%20Workshop%20seat.';
 const WA_NARAYANI = 'https://wa.me/91YOURNUMBER?text=Namaste%20%F0%9F%99%8F%0AI%20would%20like%20to%20register%20for%20the%20N%C4%81r%C4%81ya%E1%B9%87%C4%AB%20Vidy%C4%81%20Workshop.';
 const WA_DHANVANTARI = 'https://wa.me/91YOURNUMBER?text=Namaste%20%F0%9F%99%8F%0AI%20would%20like%20to%20register%20for%20the%20Dhanvantari%20Vidy%C4%81%20Workshop.';
+
+function WpLotusDivider({ id = 'wp-lotus', variant = 'cream' }) {
+  return (
+    <div className={`wp-divider wp-divider--${variant}`} aria-hidden="true">
+      <span className="wp-divider__line" />
+      <span className="wp-divider__lotus">
+        <svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="65" cy="65" r="62" stroke={`url(#${id}g)`} strokeWidth="1.3" opacity="0.45" />
+          <circle cx="65" cy="65" r="52" stroke={`url(#${id}g)`} strokeWidth="0.9" opacity="0.30" />
+          <ellipse cx="65" cy="35" rx="7.5" ry="20" fill={`url(#${id}pf)`} opacity="0.95" transform="rotate(0 65 65)" />
+          <ellipse cx="65" cy="35" rx="7.5" ry="20" fill={`url(#${id}pf)`} opacity="0.85" transform="rotate(45 65 65)" />
+          <ellipse cx="65" cy="35" rx="7.5" ry="20" fill={`url(#${id}pf)`} opacity="0.85" transform="rotate(90 65 65)" />
+          <ellipse cx="65" cy="35" rx="7.5" ry="20" fill={`url(#${id}pf)`} opacity="0.85" transform="rotate(135 65 65)" />
+          <ellipse cx="65" cy="35" rx="7.5" ry="20" fill={`url(#${id}pf)`} opacity="0.85" transform="rotate(180 65 65)" />
+          <ellipse cx="65" cy="35" rx="7.5" ry="20" fill={`url(#${id}pf)`} opacity="0.85" transform="rotate(225 65 65)" />
+          <ellipse cx="65" cy="35" rx="7.5" ry="20" fill={`url(#${id}pf)`} opacity="0.85" transform="rotate(270 65 65)" />
+          <ellipse cx="65" cy="35" rx="7.5" ry="20" fill={`url(#${id}pf)`} opacity="0.85" transform="rotate(315 65 65)" />
+          <circle cx="65" cy="65" r="18" fill={`url(#${id}cg)`} />
+          <circle cx="65" cy="65" r="18" stroke={`url(#${id}g)`} strokeWidth="1.3" opacity="0.7" />
+          <circle cx="65" cy="65" r="10" fill={`url(#${id}ci)`} />
+          <circle cx="65" cy="65" r="4" fill="#FFF7D6" opacity="0.95" />
+          <defs>
+            <linearGradient id={`${id}g`} x1="0" y1="0" x2="130" y2="130" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stopColor="#B8860B" />
+              <stop offset="50%" stopColor="#E8C76A" />
+              <stop offset="100%" stopColor="#B8860B" />
+            </linearGradient>
+            <linearGradient id={`${id}pf`} x1="65" y1="15" x2="65" y2="65" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stopColor="#FFFFFF" stopOpacity="0.95" />
+              <stop offset="100%" stopColor="#D4AF37" stopOpacity="0.55" />
+            </linearGradient>
+            <radialGradient id={`${id}cg`} cx="50%" cy="40%" r="60%">
+              <stop offset="0%" stopColor="#E8C76A" />
+              <stop offset="60%" stopColor="#D4AF37" />
+              <stop offset="100%" stopColor="#B8860B" />
+            </radialGradient>
+            <radialGradient id={`${id}ci`} cx="40%" cy="35%" r="65%">
+              <stop offset="0%" stopColor="#FFF7D6" />
+              <stop offset="100%" stopColor="#D4AF37" />
+            </radialGradient>
+          </defs>
+        </svg>
+      </span>
+      <span className="wp-divider__line" />
+    </div>
+  );
+}
 
 const OTHER_WORKSHOPS = [
   {
@@ -229,6 +277,152 @@ export function BlogPage() {
         ))}
       </div>
 
+      {/* ══ SECTION 1 — Scriptural Sources (Cream) ══ */}
+      <section className="blog-scripture on-light">
+        <div className="blog-scripture__texture" aria-hidden="true" />
+        <div className="blog-scripture__inner">
+          <ScrollReveal direction="up" duration={0.8}>
+            <h2 className="blog-scripture__heading font-cinzel">Scriptural Sources for Sri Vidya</h2>
+          </ScrollReveal>
+          <ScrollReveal direction="up" delay={0.1} duration={0.8}>
+            <div className="blog-scripture__body font-serif">
+              <p>
+                The tradition of Sri Vidya is not merely a study of texts, but a lived transmission received through an unbroken Guru Parampara. This lineage ensures that the esoteric meanings of the Vidya are preserved and passed down through Diksha (initiation) and oral instruction. In our tradition, the authority of the Shastras is inseparable from the grace of the Preceptor; without the guidance of the lineage, these complex metaphysical structures remain dormant. This “ear-to-ear” transmission transforms theoretical knowledge into a functional spiritual technology, grounding the practitioner in a lineage that stretches back to the primordial sources of wisdom.
+              </p>
+              <p>
+                Our curriculum is anchored in a specific corpus of canonical texts that define the philosophy and ritual precision of the path. We rely on the Brahmanda Purana, specifically the Lalithopakyanam and Lalitha Sahasranama, for the foundational theology and the thousand names of the Divine Mother. The practical application of these teachings is governed by the Parashurama Kalpasutra and its indispensable manual, the Nityotsava. For deep philosophical exposition, we look to the Yogini Hridaya, the Tantra Raja Tantra, and the exhaustive ritual compendium of the Sri Vidyarnava. These works provide the structural framework for understanding the Sri Chakra and the internal alchemy of the soul.
+              </p>
+              <p>
+                Beyond these primary scriptures, our specific Parampara is enriched by a massive scholarly and experiential legacy consisting of approximately 250 reference guides. This extensive library includes specialized commentaries such as Bhaskararaya's Saubhagya Bhaskaram and the Varivasya Rahasya, which decode the subtlest layers of Mantra and Tantra. These hundreds of guides serve as a roadmap for the practitioner, offering the granular detail required for Prakriya (methodology) and ensuring that every aspect of the worship is aligned with traditional mandates. By synthesizing these diverse sources, we offer a path that is both scripturally rigorous and deeply rooted in ancestral practice.
+              </p>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      <WpLotusDivider id="blog-lotus-1" variant="cream" />
+
+      {/* ══ SECTION 2 — Course Structure (Deep Maroon) ══ */}
+      <section className="blog-course-structure">
+        <div className="blog-course-structure__texture" aria-hidden="true" />
+        <div className="blog-course-structure__inner">
+          <ScrollReveal direction="up" duration={0.8}>
+            <h2 className="blog-course-structure__heading font-cinzel">Course Structure & Enrollment</h2>
+          </ScrollReveal>
+          <ScrollReveal direction="up" delay={0.1} duration={0.8}>
+            <div className="blog-course-structure__body font-serif">
+              <p>
+                The structural integrity of our curriculum is built upon the principle of Krama-Siddhanta—a disciplined, linear progression that mirrors the soul’s ascent through the Sri Chakra. Unlike academic learning, this path is strictly experiential; advancement to subsequent levels is predicated not merely on the completion of time, but on the attainment of specific Siddhis and internal markers of proficiency. Each stage serves as a mandatory foundation, ensuring that the aspirant’s subtle body is sufficiently purified and stabilized to handle the higher energetic frequencies of the next transmission. By maintaining these rigorous standards of Adhikara (eligibility), we preserve the efficacy of the Vidya and protect the seeker from the imbalances of premature practice.
+              </p>
+              <p>
+                To accommodate the complexities of modern life, the primary instruction is delivered through a robust online framework, meticulously designed to distill the profound complexities of Sri Vidya into digestible, actionable steps. However, certain advanced levels may necessitate a physical presence for in-person intensives lasting three to five days. These residential modules, currently being finalized, are essential for the transmission of specific Nyasa and ritual nuances that require direct oversight. Our goal is to bridge the gap between ancient asceticism and the contemporary professional world, creating a “Sadhana for the Householder” that is both spiritually uncompromising and practically sustainable within a hectic daily schedule.
+              </p>
+              <p>
+                Beyond the core Sri Vidya path, the curriculum integrates a vast array of Anga-Vidyas and auxiliary sciences essential for a well-rounded practitioner. These supplementary teachings provide the necessary tools—ranging from Mantra Shastra to internal alchemy—that support and nourish the central practice. As we prepare for the upcoming enrollment cycle, all administrative updates will be channeled exclusively through our WhatsApp community.
+              </p>
+              <p>
+                We invite serious aspirants to join this digital Sangha via the link below to remain aligned with our activities and receive timely insights into the unfolding of these sacred teachings.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          {/* WhatsApp CTA Card */}
+          <ScrollReveal direction="up" delay={0.2} duration={0.75}>
+            <div className="blog-wa-cta">
+              <h3 className="blog-wa-cta__heading font-cinzel">Join Our WhatsApp Community</h3>
+              <p className="blog-wa-cta__desc font-serif">
+                Stay connected with Sri Mahavidyesvari Tantra Peetham and receive updates about courses, workshops, events, enrollments, and spiritual teachings directly through our official WhatsApp community.
+              </p>
+              <GoldenButton
+                label="Join WhatsApp Community"
+                size="lg"
+                onClick={() => window.open('https://chat.whatsapp.com/KOxlAGgqOzJDz8JbW6LUKy', '_blank')}
+              />
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* ══ CTA — Begin Your Spiritual Journey (Deep Maroon) ══ */}
+      <section className="blog-cta">
+        <div className="blog-cta__texture" aria-hidden="true" />
+        <ScrollReveal direction="up" duration={0.8}>
+          <div className="blog-cta__inner">
+            <h2 className="blog-cta__heading font-cinzel">
+              Begin Your Spiritual<br />
+              <span className="blog-cta__heading-gold">Journey Today</span>
+            </h2>
+            <p className="blog-cta__body font-serif">
+              Join the living Guru Parampara of Sri Mahavidyesvari Tantra Peetham. Learn authentic Sri Vidya through traditional teachings, participate in sacred workshops, receive timely updates, and become part of a growing spiritual community dedicated to preserving the timeless wisdom of Tantra.
+            </p>
+            <div className="blog-cta__btns">
+              <GoldenButton
+                label="Explore Courses"
+                size="lg"
+                onClick={() => window.location.href = '/courses'}
+              />
+              <GoldenButton
+                label="Join WhatsApp Community"
+                size="lg"
+                onClick={() => window.open('https://chat.whatsapp.com/KOxlAGgqOzJDz8JbW6LUKy', '_blank')}
+              />
+            </div>
+          </div>
+        </ScrollReveal>
+      </section>
+
+      {/* ══ WhatsApp Community Section (Cream) ══ */}
+      <section className="blog-wa-section on-light">
+        <div className="blog-wa-section__texture" aria-hidden="true" />
+        <div className="blog-wa-section__inner">
+          {/* LEFT — WhatsApp Icon */}
+          <ScrollReveal direction="right" duration={0.85}>
+            <motion.a
+              href="https://chat.whatsapp.com/KOxlAGgqOzJDz8JbW6LUKy"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="blog-wa-section__icon-link"
+              animate={{ y: [0, -10, 0] }}
+              transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+            >
+              <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="blog-wa-section__icon">
+                <circle cx="60" cy="60" r="60" fill="url(#waGrad)" />
+                <path d="M60 25C40.67 25 25 40.67 25 60c0 6.59 1.73 12.78 4.75 18.13L25 95l17.38-4.68A34.88 34.88 0 0060 95c19.33 0 35-15.67 35-35S79.33 25 60 25zm17.25 47.75c-.73 2.04-4.25 3.9-5.83 4.15-1.58.25-3.53.35-5.68-.35-1.3-.43-2.98-1-5.1-1.95-8.98-3.88-14.83-12.93-15.28-13.53-.45-.6-3.65-4.85-3.65-9.25 0-4.4 2.3-6.58 3.13-7.48.83-.9 1.8-1.13 2.4-1.13.6 0 1.2.01 1.73.03.55.03 1.3-.21 2.03 1.55.75 1.8 2.55 6.2 2.78 6.65.23.45.38.98.08 1.58-.3.6-.45.98-.9 1.5-.45.53-.95 1.18-1.35 1.58-.45.45-.93.93-.4 1.83.53.9 2.35 3.88 5.05 6.28 3.48 3.1 6.4 4.05 7.3 4.5.9.45 1.43.38 1.95-.23.53-.6 2.25-2.63 2.85-3.53.6-.9 1.2-.75 2.03-.45.83.3 5.25 2.48 6.15 2.93.9.45 1.5.68 1.73 1.05.23.38.23 2.18-.5 4.22z" fill="#fff" />
+                <defs>
+                  <linearGradient id="waGrad" x1="0" y1="0" x2="120" y2="120" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stopColor="#25D366" />
+                    <stop offset="100%" stopColor="#128C7E" />
+                  </linearGradient>
+                </defs>
+              </svg>
+            </motion.a>
+          </ScrollReveal>
+
+          {/* RIGHT — Content + QR */}
+          <ScrollReveal direction="left" duration={0.85}>
+            <div className="blog-wa-section__content">
+              <h2 className="blog-wa-section__heading font-cinzel">Join Our WhatsApp Community</h2>
+              <p className="blog-wa-section__desc font-serif">
+                Stay connected with Sri Mahavidyesvari Tantra Peetham for updates on Courses, Workshops, Events, Blogs, Spiritual Teachings, and Enrollment announcements.
+              </p>
+              <div className="blog-wa-section__qr-wrap">
+                <img
+                  src={whatsappQrImg}
+                  alt="WhatsApp Community QR Code — Sri MahaVidyesvari Tantra Peetham"
+                  className="blog-wa-section__qr"
+                  loading="lazy"
+                />
+              </div>
+              <GoldenButton
+                label="Join Community"
+                size="lg"
+                onClick={() => window.open('https://chat.whatsapp.com/KOxlAGgqOzJDz8JbW6LUKy', '_blank')}
+              />
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
       <FooterSection />
     </div>
   );
@@ -341,7 +535,7 @@ export function WorkshopsPage() {
       {/* ══════════════════════════════════════════════════════
           NĀRĀYAṆĪ VIDYĀ — Featured Workshop Section
       ══════════════════════════════════════════════════════ */}
-      <section className="wp-narayani wp-narayani--light">
+      <section className="wp-narayani wp-narayani--light on-light">
         {/* faint Sanskrit watermark */}
         <div className="wp-narayani__watermark" aria-hidden="true" />
 
@@ -443,6 +637,8 @@ export function WorkshopsPage() {
         </div>
       </section>
 
+
+      <WpLotusDivider id={'wp-lotus-1'} variant={'cream'} />
       {/* ══════════════════════════════════════════════════════
           DHANVANTARI VIDYĀ — Featured Workshop Section
       ══════════════════════════════════════════════════════ */}
@@ -550,10 +746,12 @@ export function WorkshopsPage() {
         </div>
       </section>
 
+      <WpLotusDivider id={'wp-lotus-2'} variant={'maroon'} />
+
       {/* ══════════════════════════════════════════════════════
           OTHER SACRED WORKSHOPS — Premium card grid
       ══════════════════════════════════════════════════════ */}
-      <section className="wp-other-workshops wp-other-workshops--light">
+      <section className="wp-other-workshops wp-other-workshops--light on-light">
         <div className="wp-other-workshops__inner">
 
           <ScrollReveal direction="up" duration={0.7}>
@@ -721,11 +919,12 @@ export function OfferingsPage() {
 }
 
 // ─── Events Page ──────────────────────────────────────────────────────────────
-const eventFilters = ['All', 'Live', 'Workshop', 'Puja', 'Discourse'];
+const eventFilters = ['Live', 'Workshop', 'Puja', 'Discourse'];
 
 export function EventsPage() {
   const [filter, setFilter] = useState(0);
   const [tab, setTab] = useState(0);
+  const navigate = useNavigate();
 
   return (
     <div className="feature-page">
@@ -918,37 +1117,7 @@ export function EventsPage() {
           </div>
         </section>
 
-        {/* Featured Banner */}
-        <div className="events-featured">
-          <div className="events-featured__content">
-            <span className="events-featured__badge">FEATURED EVENT</span>
-            <h2 style={{ color: '#FFF7D6', fontSize: 28, fontWeight: 600, marginTop: 16, lineHeight: 1.3 }}>Sri Vidya Maha Diksha<br />Ceremony 2025</h2>
-            <p style={{ color: '#B8A882', fontSize: 14, lineHeight: 1.6, marginTop: 12, maxWidth: 400 }}>A rare and sacred initiation into the supreme Sri Vidya tradition. Limited seats. Register now.</p>
-            <div style={{ display: 'flex', gap: 12, marginTop: 24 }}>
-              <GoldenButton label="REGISTER NOW" />
-              <GoldenButton label="LEARN MORE" outlined />
-            </div>
-          </div>
-          <div className="events-countdown">
-            <p style={{ fontSize: 11, color: '#E8C76A', letterSpacing: 3, marginBottom: 16 }}>STARTS IN</p>
-            <div className="events-countdown__units">
-              {[['03', 'DAYS'], ['14', 'HRS'], ['22', 'MIN'], ['45', 'SEC']].map(([v, l]) => (
-                <div key={l} className="events-countdown__unit">
-                  <span className="golden-text font-cinzel" style={{ fontSize: 28, fontWeight: 700 }}>{v}</span>
-                  <span style={{ fontSize: 9, color: '#B8A882', letterSpacing: 1.5 }}>{l}</span>
-                </div>
-              ))}
-            </div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginTop: 20 }}>
-              <FiCalendar size={13} color="#E8C76A" />
-              <span style={{ fontSize: 13, color: '#E8C76A' }}>Jan 15, 2025</span>
-            </div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginTop: 6 }}>
-              <FiMapPin size={13} color="#B8A882" />
-              <span style={{ fontSize: 13, color: '#B8A882' }}>Online + Chennai</span>
-            </div>
-          </div>
-        </div>
+
 
         {/* Filters */}
         <div className="events-filters">
@@ -997,6 +1166,44 @@ export function EventsPage() {
           ))}
         </div>
       </div>{/* end events-content */}
+
+      {/* ══ CTA — Join Our Upcoming Spiritual Events ══ */}
+      <section className="events-cta">
+        <div className="events-cta__texture" aria-hidden="true" />
+        <ScrollReveal direction="up" duration={0.8}>
+          <div className="events-cta__inner">
+            <span className="wp-section-badge">🪔 Sacred Gatherings</span>
+            <h2 className="events-cta__heading font-cinzel">
+              Join Our Upcoming<br />
+              <span className="events-cta__heading-gold">Spiritual Events</span>
+            </h2>
+            <p className="events-cta__body font-serif">
+              Experience authentic Vedic rituals, sacred homas, devotional celebrations,
+              spiritual discourses, and Guru-guided programs at Sri Mahavidyesvari Tantra
+              Peetham. Reserve your place and become part of a living spiritual tradition.
+            </p>
+            <div className="events-cta__divider">
+              <span className="events-cta__divider-line" />
+              <span className="events-cta__divider-diamond">✦</span>
+              <span className="events-cta__divider-line" />
+            </div>
+            <div className="events-cta__btns">
+              <GoldenButton
+                label="Reserve Your Seat"
+                size="lg"
+                onClick={() => window.open('https://wa.me/919390886029', '_blank')}
+              />
+              <GoldenButton
+                label="Contact Us"
+                size="lg"
+                outlined
+                onClick={() => navigate('/contact')}
+              />
+            </div>
+          </div>
+        </ScrollReveal>
+      </section>
+
       <FooterSection />
     </div>
   );

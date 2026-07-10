@@ -2,7 +2,6 @@ import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiSearch, FiMenu, FiChevronDown } from 'react-icons/fi';
-import GoldenButton from '../common/GoldenButton.jsx';
 import Dropdown from './Dropdown.jsx';
 import MobileDrawer from './MobileDrawer.jsx';
 import './Navbar.css';
@@ -125,8 +124,6 @@ export default function Navbar() {
               <button className="navbar__icon-btn" aria-label="Search">
                 <FiSearch size={18} />
               </button>
-              <GoldenButton label="Login" outlined size="sm" noOrnaments onClick={() => navigate('/login')} />
-              <GoldenButton label="Join Free" size="sm" noOrnaments onClick={() => navigate('/register')} />
               <button
                 className="navbar__mobile-toggle"
                 onClick={() => setMobileOpen(true)}

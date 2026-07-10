@@ -285,6 +285,7 @@
   .navbar__mobile-toggle          { display: flex; }
   .navbar__actions .premium-btn   { display: none; }
   .navbar__icon-btn               { display: none; }
+  .navbar__inner                  { justify-content: space-between; }
 }
 
 @media (max-width: 480px) {

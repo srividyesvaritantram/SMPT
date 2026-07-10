@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiX, FiChevronDown } from 'react-icons/fi';
-import GoldenButton from '../common/GoldenButton.jsx';
 import { NAV_CONFIG } from './Navbar.jsx';
 import './MobileDrawer.css';
 
@@ -110,8 +109,7 @@ export default function MobileDrawer({ open, onClose }) {
             <div className="drawer__divider" />
 
             <div className="drawer__footer">
-              <GoldenButton label="Login" outlined width="100%" onClick={() => handleLink('/login')} />
-              <GoldenButton label="Join Free" width="100%" onClick={() => handleLink('/register')} />
+              <p className="drawer__footer-text">Sri MahaVidyesvari Tantra Peetham</p>
             </div>
           </motion.div>
         </>

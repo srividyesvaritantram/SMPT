@@ -137,9 +137,9 @@
   padding: 120px 56px 80px 72px;
   background: linear-gradient(
     105deg,
-    rgba(13, 2, 8, 0.97) 0%,
-    rgba(13, 2, 8, 0.92) 60%,
-    rgba(13, 2, 8, 0.55) 85%,
+    rgba(13, 2, 8, 0.98) 0%,
+    rgba(13, 2, 8, 0.95) 55%,
+    rgba(13, 2, 8, 0.72) 80%,
     transparent 100%
   );
 }
@@ -164,11 +164,12 @@
 
 .wp-hero__h1 {
   font-size: clamp(28px, 3.4vw, 52px);
-  font-weight: 700;
+  font-weight: 800;
   line-height: 1.14;
   letter-spacing: -0.01em;
   color: #fff8f0;
   margin: 0;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.60);
 }
 
 .wp-hero__h1-gold {
@@ -201,11 +202,12 @@
 }
 
 .wp-hero__desc {
-  font-size: clamp(14px, 1.35vw, 17px);
-  line-height: 1.82;
-  color: rgba(232, 221, 208, 0.82);
-  max-width: 420px;
+  font-size: clamp(15px, 1.4vw, 18px);
+  line-height: 1.88;
+  color: rgba(248, 241, 231, 0.92);
+  max-width: 440px;
   margin: 0;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.45);
 }
 
 .wp-hero__btns {
@@ -344,6 +346,76 @@
   overflow: hidden;
 }
 
+/* Cream variant for Narayani */
+.wp-narayani--light {
+  background: #FFF8EE;
+}
+
+.wp-narayani--light .wp-narayani__watermark {
+  color: rgba(74, 15, 34, 0.04);
+}
+
+.wp-narayani--light .wp-feat-h2 {
+  color: #4A0F22;
+  font-weight: 800;
+  font-size: clamp(28px, 3vw, 46px);
+}
+
+.wp-narayani--light .wp-feat-body p {
+  color: #5E2032;
+  font-weight: 500;
+  line-height: 1.9;
+}
+
+.wp-narayani--light .wp-section-badge {
+  border-color: rgba(74, 15, 34, 0.30);
+  background: rgba(74, 15, 34, 0.08);
+  color: #4A0F22;
+}
+
+.wp-narayani--light .wp-section-badge--pink {
+  border-color: rgba(219, 112, 147, 0.40);
+  background: rgba(219, 112, 147, 0.10);
+  color: #9B3A5A;
+}
+
+.wp-narayani--light .wp-highlights {
+  background: rgba(74, 15, 34, 0.05);
+  border-color: rgba(74, 15, 34, 0.20);
+}
+
+.wp-narayani--light .wp-highlights__title {
+  color: #4A0F22;
+}
+
+.wp-narayani--light .wp-highlights__text {
+  color: #5E2032;
+  font-weight: 500;
+}
+
+.wp-narayani--light .wp-highlights__tick {
+  background: linear-gradient(135deg, rgba(74, 15, 34, 0.15), rgba(74, 15, 34, 0.08));
+  border-color: rgba(74, 15, 34, 0.30);
+  color: #4A0F22;
+}
+
+.wp-narayani--light .wp-feat-img-card {
+  border-color: rgba(74, 15, 34, 0.25);
+  background: #fff;
+  box-shadow:
+    0 28px 72px rgba(74, 15, 34, 0.10),
+    0 0 48px rgba(212, 175, 55, 0.06);
+}
+
+.wp-narayani--light .wp-feat-img-glow {
+  background: radial-gradient(ellipse at center, rgba(212, 175, 55, 0.08) 0%, transparent 68%);
+}
+
+.wp-narayani--light .wp-feat-corner {
+  color: #4A0F22;
+  opacity: 0.50;
+}
+
 .wp-narayani__watermark {
   position: absolute;
   top: 50%;
@@ -415,9 +487,9 @@
 .wp-feat-img {
   width: 100%;
   height: auto;
-  max-height: 600px;
-  object-fit: cover;
-  object-position: center;
+  max-height: 620px;
+  object-fit: contain;
+  object-position: center center;
   display: block;
   transition: transform 0.55s ease;
   image-rendering: -webkit-optimize-contrast;
@@ -427,8 +499,7 @@
 .wp-feat-img--contain {
   object-fit: contain;
   object-position: center;
-  background: rgba(13, 2, 8, 0.55);
-  padding: 8px;
+  background: transparent;
 }
 
 .wp-feat-img-card:hover .wp-feat-img {
@@ -491,7 +562,7 @@
 
 .wp-feat-h2 {
   font-size: clamp(26px, 2.8vw, 42px);
-  font-weight: 700;
+  font-weight: 800;
   line-height: 1.18;
   color: #fff8f0;
   margin: 0;
@@ -505,9 +576,10 @@
 
 .wp-feat-body p {
   font-size: 16px;
-  line-height: 1.84;
+  line-height: 1.9;
   color: rgba(232, 221, 208, 0.82);
   margin: 0;
+  font-weight: 400;
 }
 
 /* Workshop Highlights card */
@@ -576,8 +648,8 @@
    OTHER SACRED WORKSHOPS — 3-column premium card grid
 ═══════════════════════════════════════════════════════════════════ */
 .wp-other-workshops {
-  background: linear-gradient(180deg, #0d0208 0%, #1a0810 50%, #0d0208 100%);
-  padding: 100px 80px 120px;
+  background: #FFF8EE;
+  padding: 90px 80px 100px;
   position: relative;
   overflow: hidden;
 }
@@ -585,9 +657,11 @@
 .wp-other-workshops::before {
   content: '';
   position: absolute;
-  top: 0; left: 10%; right: 10%;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(212,175,55,0.25), transparent);
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle at 15% 30%, rgba(212, 175, 55, 0.04) 0%, transparent 40%),
+    radial-gradient(circle at 85% 70%, rgba(74, 15, 34, 0.03) 0%, transparent 40%);
 }
 
 .wp-other-workshops__inner {
@@ -605,17 +679,18 @@
 }
 
 .wp-other-workshops__title {
-  font-size: clamp(28px, 3.2vw, 44px);
-  font-weight: 700;
-  color: #fff8f0;
+  font-size: clamp(30px, 3.4vw, 48px);
+  font-weight: 800;
+  color: #4A0F22;
   margin: 0;
   line-height: 1.15;
 }
 
 .wp-other-workshops__subtitle {
-  font-size: clamp(15px, 1.5vw, 18px);
-  line-height: 1.75;
-  color: rgba(232, 221, 208, 0.72);
+  font-size: clamp(16px, 1.5vw, 19px);
+  line-height: 1.9;
+  color: #5E2032;
+  font-weight: 500;
   max-width: 720px;
   margin: 0;
 }
@@ -664,8 +739,8 @@
 ═══════════════════════════════════════════════════════════════════ */
 .wp-cta {
   position: relative;
-  background: linear-gradient(135deg, #0d0208 0%, #1c0610 35%, #2e0d1c 65%, #1c0610 100%);
-  padding: 120px 80px 128px;
+  background: #4A0F22;
+  padding: 90px 80px 100px;
   overflow: hidden;
   text-align: center;
 }
@@ -696,10 +771,11 @@
 
 .wp-cta__heading {
   font-size: clamp(32px, 4vw, 56px);
-  font-weight: 700;
+  font-weight: 800;
   line-height: 1.15;
-  color: #fff8f0;
+  color: #FFF8EE;
   margin: 0;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.30);
 }
 
 .wp-cta__heading-gold {
@@ -711,9 +787,10 @@
 }
 
 .wp-cta__body {
-  font-size: clamp(15px, 1.5vw, 18px);
-  line-height: 1.82;
-  color: rgba(232, 221, 208, 0.78);
+  font-size: clamp(16px, 1.5vw, 19px);
+  line-height: 1.9;
+  color: #F8F1E7;
+  font-weight: 500;
   max-width: 620px;
   margin: 0;
 }
@@ -753,7 +830,48 @@
 
 /* Dhanvantari section — slightly lighter bg to alternate visually */
 .wp-dhanvantari {
-  background: linear-gradient(180deg, #1a0810 0%, #0d0208 50%, #1a0810 100%);
+  background: #4A0F22;
+  padding: 110px 80px 120px;
+}
+
+.wp-dhanvantari .wp-feat-h2 {
+  color: #FFF8EE;
+  font-weight: 800;
+  font-size: clamp(28px, 3vw, 46px);
+}
+
+.wp-dhanvantari .wp-feat-body p {
+  color: #F8F1E7;
+  font-weight: 500;
+  line-height: 1.9;
+}
+
+.wp-dhanvantari .wp-highlights {
+  background: rgba(212, 175, 55, 0.06);
+  border-color: rgba(212, 175, 55, 0.25);
+}
+
+.wp-dhanvantari .wp-highlights__title {
+  color: #E8C76A;
+}
+
+.wp-dhanvantari .wp-highlights__text {
+  color: #F8F1E7;
+  font-weight: 500;
+}
+
+.wp-dhanvantari .wp-section-badge {
+  border-color: rgba(212, 175, 55, 0.40);
+  background: rgba(212, 175, 55, 0.10);
+}
+
+.wp-dhanvantari .wp-feat-img-card {
+  background: rgba(255, 248, 238, 0.05);
+  border-color: rgba(212, 175, 55, 0.40);
+}
+
+.wp-dhanvantari .wp-feat-img-glow {
+  background: radial-gradient(ellipse at center, rgba(212, 175, 55, 0.12) 0%, transparent 68%);
 }
 
 .wp-dhanvantari__watermark::before {
@@ -762,6 +880,7 @@
 
 @media (max-width: 900px) {
   .wp-narayani { padding: 80px 36px 90px; }
+  .wp-dhanvantari { padding: 80px 36px 90px; }
   .wp-narayani__grid { grid-template-columns: 1fr; gap: 48px; }
   .wp-feat-img-col { max-width: 560px; margin: 0 auto; width: 100%; }
   .wp-highlights__grid { grid-template-columns: 1fr 1fr; }
@@ -773,6 +892,7 @@
 
 @media (max-width: 600px) {
   .wp-narayani { padding: 64px 18px 72px; }
+  .wp-dhanvantari { padding: 64px 18px 72px; }
   .wp-highlights__grid { grid-template-columns: 1fr; }
   /* 1-col on mobile */
   .wp-other-workshops { padding: 64px 18px 72px; }
@@ -1346,3 +1466,468 @@
   .varahi-event__btn { width: 100%; text-align: center; }
 }
 
+
+
+/* ═══════════════════════════════════════════════════════════════════
+   WORKSHOP LOTUS DIVIDER
+═══════════════════════════════════════════════════════════════════ */
+.wp-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px 40px;
+}
+
+.wp-divider--cream {
+  background: #FFF8EE;
+}
+
+.wp-divider--maroon {
+  background: linear-gradient(150deg, #2A0915 0%, #4A0F22 40%, #5A1830 100%);
+}
+
+.wp-divider__line {
+  width: 100%;
+  max-width: 220px;
+  height: 1px;
+}
+
+.wp-divider--cream .wp-divider__line {
+  background: linear-gradient(90deg, transparent, rgba(74, 15, 34, 0.30), transparent);
+}
+
+.wp-divider--maroon .wp-divider__line {
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.45), transparent);
+}
+
+.wp-divider__lotus {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
+  filter: drop-shadow(0 0 12px rgba(212, 175, 55, 0.40));
+}
+
+.wp-divider__lotus svg {
+  width: 48px;
+  height: 48px;
+  display: block;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   EVENTS CTA SECTION
+═══════════════════════════════════════════════════════════════════ */
+.events-cta {
+  position: relative;
+  background: #4A0F22;
+  padding: 100px 80px 110px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.events-cta__texture {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(212, 175, 55, 0.05) 0%, transparent 42%),
+    radial-gradient(circle at 80% 70%, rgba(255, 248, 238, 0.03) 0%, transparent 42%),
+    radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.03) 0%, transparent 55%);
+  z-index: 0;
+}
+
+.events-cta__inner {
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+}
+
+.events-cta__heading {
+  font-size: clamp(32px, 4vw, 56px);
+  font-weight: 800;
+  line-height: 1.15;
+  color: #FFF8EE;
+  margin: 0;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.30);
+}
+
+.events-cta__heading-gold {
+  display: block;
+  background: linear-gradient(135deg, #b8860b 0%, #d4af37 35%, #e8c76a 60%, #f3d777 80%, #d4af37 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.events-cta__body {
+  font-size: clamp(16px, 1.5vw, 19px);
+  line-height: 1.9;
+  color: #F8F1E7;
+  font-weight: 500;
+  max-width: 620px;
+  margin: 0;
+}
+
+.events-cta__divider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  max-width: 320px;
+}
+
+.events-cta__divider-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.40), transparent);
+}
+
+.events-cta__divider-diamond {
+  font-size: 14px;
+  color: #d4af37;
+  opacity: 0.70;
+  filter: drop-shadow(0 0 6px rgba(212, 175, 55, 0.55));
+}
+
+.events-cta__btns {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@media (max-width: 600px) {
+  .events-cta { padding: 80px 18px 88px; }
+  .events-cta__btns { flex-direction: column; align-items: center; }
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   BLOG — SCRIPTURAL SOURCES (CREAM)
+═══════════════════════════════════════════════════════════════════ */
+.blog-scripture {
+  position: relative;
+  background: #FFF8EE;
+  padding: 100px 80px 110px;
+  overflow: hidden;
+}
+
+.blog-scripture__texture {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle at 15% 30%, rgba(212, 175, 55, 0.04) 0%, transparent 40%),
+    radial-gradient(circle at 85% 70%, rgba(74, 15, 34, 0.03) 0%, transparent 40%),
+    radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.025) 0%, transparent 55%);
+  z-index: 0;
+}
+
+.blog-scripture__inner {
+  position: relative;
+  z-index: 1;
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.blog-scripture__heading {
+  font-size: clamp(28px, 3.2vw, 46px);
+  font-weight: 800;
+  color: #4A0F22;
+  text-align: center;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.blog-scripture__body p {
+  font-size: clamp(16px, 1.4vw, 19px);
+  line-height: 1.9;
+  color: #5E2032;
+  font-weight: 500;
+  text-align: justify;
+  margin: 0 0 24px;
+}
+
+.blog-scripture__body p:last-child {
+  margin-bottom: 0;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   BLOG — COURSE STRUCTURE (DEEP MAROON)
+═══════════════════════════════════════════════════════════════════ */
+.blog-course-structure {
+  position: relative;
+  background: #4A0F22;
+  padding: 100px 80px 110px;
+  overflow: hidden;
+}
+
+.blog-course-structure__texture {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle at 20% 25%, rgba(212, 175, 55, 0.05) 0%, transparent 42%),
+    radial-gradient(circle at 80% 75%, rgba(255, 248, 238, 0.03) 0%, transparent 42%),
+    radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.03) 0%, transparent 55%);
+  z-index: 0;
+}
+
+.blog-course-structure__inner {
+  position: relative;
+  z-index: 1;
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.blog-course-structure__heading {
+  font-size: clamp(28px, 3.2vw, 46px);
+  font-weight: 800;
+  color: #FFF8EE;
+  text-align: center;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.blog-course-structure__body p {
+  font-size: clamp(16px, 1.4vw, 19px);
+  line-height: 1.9;
+  color: #F8F1E7;
+  font-weight: 500;
+  text-align: justify;
+  margin: 0 0 24px;
+}
+
+.blog-course-structure__body p:last-child {
+  margin-bottom: 0;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   WHATSAPP COMMUNITY CTA CARD
+═══════════════════════════════════════════════════════════════════ */
+.blog-wa-cta {
+  background: #FFF8EE;
+  border-radius: 24px;
+  padding: 48px 56px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  box-shadow:
+    0 16px 48px rgba(0, 0, 0, 0.12),
+    0 0 0 1px rgba(212, 175, 55, 0.15);
+  margin-top: 20px;
+}
+
+.blog-wa-cta__heading {
+  font-size: clamp(22px, 2.4vw, 32px);
+  font-weight: 800;
+  color: #4A0F22;
+  margin: 0;
+}
+
+.blog-wa-cta__desc {
+  font-size: clamp(15px, 1.3vw, 17px);
+  line-height: 1.8;
+  color: #5E2032;
+  font-weight: 500;
+  max-width: 580px;
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .blog-scripture,
+  .blog-course-structure { padding: 80px 36px 90px; }
+}
+
+@media (max-width: 600px) {
+  .blog-scripture,
+  .blog-course-structure { padding: 64px 18px 72px; }
+  .blog-wa-cta { padding: 36px 22px; }
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   BLOG CTA — Begin Your Spiritual Journey (Deep Maroon)
+═══════════════════════════════════════════════════════════════════ */
+.blog-cta {
+  position: relative;
+  background: #4A0F22;
+  padding: 100px 80px 110px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.blog-cta__texture {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(212, 175, 55, 0.05) 0%, transparent 42%),
+    radial-gradient(circle at 80% 70%, rgba(255, 248, 238, 0.03) 0%, transparent 42%);
+  z-index: 0;
+}
+
+.blog-cta__inner {
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+}
+
+.blog-cta__heading {
+  font-size: clamp(30px, 3.8vw, 52px);
+  font-weight: 800;
+  line-height: 1.15;
+  color: #FFF8EE;
+  margin: 0;
+}
+
+.blog-cta__heading-gold {
+  display: block;
+  background: linear-gradient(135deg, #b8860b 0%, #d4af37 35%, #e8c76a 60%, #f3d777 80%, #d4af37 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.blog-cta__body {
+  font-size: clamp(16px, 1.5vw, 19px);
+  line-height: 1.9;
+  color: #F8F1E7;
+  font-weight: 500;
+  max-width: 640px;
+  margin: 0;
+}
+
+.blog-cta__btns {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   BLOG WHATSAPP COMMUNITY SECTION (Cream, 2-col)
+═══════════════════════════════════════════════════════════════════ */
+.blog-wa-section {
+  position: relative;
+  background: #FFF8EE;
+  padding: 100px 80px 110px;
+  overflow: hidden;
+}
+
+.blog-wa-section__texture {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle at 15% 30%, rgba(212, 175, 55, 0.04) 0%, transparent 40%),
+    radial-gradient(circle at 85% 70%, rgba(74, 15, 34, 0.03) 0%, transparent 40%);
+  z-index: 0;
+}
+
+.blog-wa-section__inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 72px;
+  align-items: center;
+}
+
+.blog-wa-section__icon-link {
+  display: block;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.blog-wa-section__icon {
+  width: 140px;
+  height: 140px;
+  display: block;
+  filter: drop-shadow(0 12px 36px rgba(37, 211, 102, 0.30));
+  transition: filter 0.3s ease;
+}
+
+.blog-wa-section__icon-link:hover .blog-wa-section__icon {
+  filter: drop-shadow(0 16px 48px rgba(37, 211, 102, 0.45));
+}
+
+.blog-wa-section__content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.blog-wa-section__heading {
+  font-size: clamp(24px, 2.8vw, 38px);
+  font-weight: 800;
+  color: #4A0F22;
+  margin: 0;
+}
+
+.blog-wa-section__desc {
+  font-size: clamp(16px, 1.4vw, 18px);
+  line-height: 1.85;
+  color: #5E2032;
+  font-weight: 500;
+  margin: 0;
+  max-width: 560px;
+}
+
+.blog-wa-section__qr-wrap {
+  width: 240px;
+  background: #fff;
+  border-radius: 16px;
+  padding: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(74, 15, 34, 0.08);
+}
+
+.blog-wa-section__qr {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  object-fit: contain;
+}
+
+@media (max-width: 900px) {
+  .blog-cta { padding: 80px 36px 90px; }
+  .blog-wa-section { padding: 80px 36px 90px; }
+  .blog-wa-section__inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+  .blog-wa-section__icon-link { justify-self: center; }
+  .blog-wa-section__content { align-items: center; }
+  .blog-wa-section__qr-wrap { margin: 0 auto; }
+}
+
+@media (max-width: 600px) {
+  .blog-cta { padding: 64px 18px 72px; }
+  .blog-cta__btns { flex-direction: column; align-items: center; }
+  .blog-wa-section { padding: 64px 18px 72px; }
+  .blog-wa-section__icon { width: 100px; height: 100px; }
+  .blog-wa-section__qr-wrap { width: 200px; }
+}

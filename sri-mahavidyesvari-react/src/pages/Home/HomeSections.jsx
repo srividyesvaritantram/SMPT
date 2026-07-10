@@ -1,10 +1,9 @@
-﻿import { useState } from 'react';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import ScrollReveal from '../../components/common/ScrollReveal.jsx';
 import GlassCard from '../../components/common/GlassCard.jsx';
 import GoldenButton from '../../components/common/GoldenButton.jsx';
-import CourseCard from '../../components/common/CourseCard.jsx';
 import { courses, workshops, testimonials, offerings, events, blogPosts } from '../../utils/mockData.js';
 import { FiStar, FiCheck, FiChevronRight, FiMail, FiPhone, FiMapPin, FiClock, FiYoutube, FiInstagram, FiFacebook, FiMessageCircle } from 'react-icons/fi';
 import { FaStar, FaStarHalfAlt } from 'react-icons/fa';
@@ -15,7 +14,12 @@ import mahavidyeswariImg from '../../assets/mahavidyeswari.png';
 import homamImg       from '../../assets/homam_offerings.png';
 import tarpanaImg     from '../../assets/tarpana_offerings.png';
 import yantraImg      from '../../assets/yantra_puja_offerings.png';
+import narayaniImg from '../../assets/narayani_vidya.png';
+import dhanvantariImg from '../../assets/dhanvantari.png';
+import ashtaLakshmiImg from '../../assets/ashta_lakshmi_vidya.png';
+import dasaMahavidyasImg from '../../assets/dasa_maha_vidyas.png';
 import './HomeSections.css';
+import '../Courses/CoursesPage.css';
 
 // ─── Shared Lotus Connector ─────────────────────────────────────────────────
 function LotusSVGInner({ id }) {
@@ -484,10 +488,7 @@ export function LearnSriVidyaSection() {
 }
 
 // ─── Featured Courses ─────────────────────────────────────────────────────────
-const courseTabs = ['All', 'Free', 'Premium', 'Beginner', 'Advanced'];
-
 export function FeaturedCoursesSection() {
-  const [activeTab, setActiveTab] = useState(0);
   const navigate = useNavigate();
   return (
     <section className="featured section-padding featured--cream">
@@ -498,18 +499,43 @@ export function FeaturedCoursesSection() {
           <p className="section-subtitle">Explore our curated collection of spiritual courses designed to guide you on your path to enlightenment.</p>
         </ScrollReveal>
         <ScrollReveal delay={0.2}>
-          <div className="featured__tabs">
-            {courseTabs.map((t, i) => (
-              <motion.button key={t} className={`featured__tab ${activeTab === i ? 'featured__tab--active' : ''}`} onClick={() => setActiveTab(i)} whileTap={{ scale: 0.95 }}>{t}</motion.button>
+          <div className="featured__grid">
+            {courses.map((c, i) => (
+              <motion.div
+                key={c.id}
+                className="cp-card"
+                whileHover={{ y: -8, boxShadow: '0 28px 64px rgba(123,30,58,0.13), 0 0 36px rgba(184,134,11,0.18)' }}
+                transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
+              >
+                <div className="cp-card__accent" />
+                <div className="cp-card__thumb">
+                  <motion.img
+                    src={c.img}
+                    alt={c.title}
+                    loading="lazy"
+                    className="cp-card__img"
+                    transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
+                  />
+                </div>
+                <div className="cp-card__body">
+                  <h3 className="cp-card__title font-cinzel">{c.title}</h3>
+                  <div className="cp-card__rule">
+                    <span className="cp-card__rule-line" />
+                    <span className="cp-card__rule-dot" />
+                    <span className="cp-card__rule-line" />
+                  </div>
+                  <p className="cp-card__desc font-serif">{c.desc}</p>
+                  <GoldenButton
+                    label="Know More"
+                    size="md"
+                    onClick={() => navigate(c.path)}
+                  />
+                </div>
+              </motion.div>
             ))}
           </div>
         </ScrollReveal>
-        <ScrollReveal delay={0.4}>
-          <div className="featured__grid">
-            {courses.slice(0, 3).map((c) => <CourseCard key={c.id} data={c} />)}
-          </div>
-        </ScrollReveal>
-        <ScrollReveal delay={0.6} className="text-center" style={{ marginTop: 48 }}>
+        <ScrollReveal delay={0.4} className="text-center" style={{ marginTop: 48 }}>
           <GoldenButton label="VIEW ALL COURSES" outlined onClick={() => navigate('/courses')} />
         </ScrollReveal>
       </div>
@@ -601,47 +627,95 @@ export function BlogPreviewSection() {
     </>
   );
 }
-// ─── Workshops Showcase ───────────────────────────────────────────────────────
+// --- Workshops Showcase ---
+const HOME_WORKSHOPS = [
+  {
+    id: 'narayani-vidya',
+    title: 'N\u0101r\u0101ya\u1E47\u012B Vidy\u0101',
+    desc: 'N\u0101r\u0101ya\u1E47\u012B Vidy\u0101 is the sacred wisdom of the Divine Mother as N\u0101r\u0101ya\u1E47\u012B, the Supreme \u015Aakti who sustains, protects, and governs the universe with boundless compassion and strength.',
+    image: narayaniImg,
+    path: '/workshops',
+  },
+  {
+    id: 'dhanvantari-vidya',
+    title: 'Dhanvantari Vidy\u0101',
+    desc: 'Dhanvantari Vidy\u0101 is the sacred wisdom of Bhagavan Dhanvantari, the Divine Physician and the eternal source of Ayurveda, offering timeless principles of holistic health and spiritual healing.',
+    image: dhanvantariImg,
+    path: '/workshops',
+  },
+  {
+    id: 'ashta-lakshmi-vidya',
+    title: 'A\u1E63\u1E6Da Lak\u1E63m\u012B Vidy\u0101',
+    desc: 'A\u1E63\u1E6Da Lak\u1E63m\u012B Vidy\u0101 approaches Goddess Lakshmi not as a single blessing, but as eight living streams of abundance that nourish every dimension of life.',
+    image: ashtaLakshmiImg,
+    path: '/workshops/ashta-lakshmi-vidya',
+  },
+  {
+    id: 'dasa-maha-vidyas',
+    title: 'Da\u015Ba Mah\u0101vidy\u0101s',
+    desc: 'Step into the profound world of the Da\u015Ba Mah\u0101vidy\u0101s, the Ten Wisdom Goddesses who govern every aspect of cosmic reality through their symbolism and mantra traditions.',
+    image: dasaMahavidyasImg,
+    path: '/workshops/dasa-maha-vidyas',
+  },
+];
+
 export function WorkshopsShowcaseSection() {
   const navigate = useNavigate();
   return (
-    <section className="workshops-showcase section-padding" style={{ background: 'linear-gradient(180deg, var(--dark-bg), var(--dark-surface), var(--dark-bg))' }}>
-      <div className="container">
+    <section className="hp-workshops">
+      <div className="hp-workshops__texture" aria-hidden="true" />
+      <div className="hp-workshops__inner">
         <ScrollReveal>
-          <div className="workshops-showcase__header">
-            <div>
-              <p className="section-eyebrow">LIVE WORKSHOPS</p>
-              <h2 className="section-title font-cinzel golden-text">Immersive Experiences</h2>
-            </div>
-            <GoldenButton label="ALL WORKSHOPS" outlined onClick={() => navigate('/workshops')} />
+          <div className="hp-workshops__header">
+            <p className="hp-workshops__eyebrow">{'\u2728'} Live Workshops</p>
+            <h2 className="hp-workshops__title font-cinzel">Immersive Experiences</h2>
+            <p className="hp-workshops__subtitle font-serif">
+              Explore authentic spiritual workshops rooted in Guru Parampara and traditional \u015A\u0101stric wisdom.
+            </p>
           </div>
         </ScrollReveal>
-        <ScrollReveal delay={0.2}>
-          <div className="workshops-showcase__scroll">
-            {workshops.slice(0, 4).map((w) => (
-              <motion.div key={w.id} className="ws-card" whileHover={{ y: -6, boxShadow: '0 0 30px rgba(184,134,11,0.3)' }}>
-                <div className="ws-card__image">
-                  <img src={w.image} alt={w.title} />
-                  <span className={`ws-card__type ${w.type === 'LIVE' ? 'ws-card__type--live' : ''}`}>
-                    {w.type === 'LIVE' && <span className="ws-card__live-dot" />}{w.type}
-                  </span>
-                  <span className="ws-card__price">{w.price}</span>
+
+        <ScrollReveal delay={0.15}>
+          <div className="hp-workshops__grid">
+            {HOME_WORKSHOPS.map((w, i) => (
+              <motion.div
+                key={w.id}
+                className="hp-ws-card"
+                whileHover={{ y: -8, boxShadow: '0 28px 64px rgba(0,0,0,0.35), 0 0 36px rgba(212,175,55,0.18)' }}
+                transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
+                onClick={() => navigate(w.path)}
+                style={{ cursor: 'pointer' }}
+              >
+                <div className="hp-ws-card__img-wrap">
+                  <img src={w.image} alt={w.title} className="hp-ws-card__img" loading="lazy" />
+                  <div className="hp-ws-card__img-overlay" />
                 </div>
-                <div className="ws-card__body">
-                  <h4 className="ws-card__title">{w.title}</h4>
-                  <p className="ws-card__subtitle">{w.subtitle}</p>
-                  <p className="ws-card__date">📅 {w.date}</p>
-                  <p className="ws-card__meta">⏱ {w.duration} &nbsp;·&nbsp; 👥 {w.seats}</p>
-                  <GoldenButton label="REGISTER NOW" width="100%" style={{ marginTop: 16 }} />
+                <div className="hp-ws-card__body">
+                  <h3 className="hp-ws-card__title font-cinzel">{w.title}</h3>
+                  <p className="hp-ws-card__desc font-serif">{w.desc}</p>
+                  <div className="hp-ws-card__footer">
+                    <GoldenButton
+                      label="Register Now"
+                      onClick={(e) => { e.stopPropagation(); navigate(w.path); }}
+                    />
+                  </div>
                 </div>
+                <div className="hp-ws-card__topbar" />
               </motion.div>
             ))}
           </div>
+        </ScrollReveal>
+
+        <ScrollReveal delay={0.3} className="hp-workshops__cta-row">
+          <GoldenButton label="ALL WORKSHOPS" outlined onClick={() => navigate('/workshops')} />
         </ScrollReveal>
       </div>
     </section>
   );
 }
+
+
+
 
 // ─── Offerings Showcase ───────────────────────────────────────────────────────
 const OFFERING_CARDS = [
@@ -743,7 +817,7 @@ const features = [
 export function WhyChooseUsSection() {
   return (
     <>
-    <section className="why-us section-padding" style={{ background: 'linear-gradient(135deg, #340413 0%, #561a34 100%)' }}>
+    <section className="why-us section-padding" style={{ background: 'linear-gradient(135deg, #2B0615 0%, #4A0F22 100%)' }}>
       <div className="container">
         <ScrollReveal className="text-center mb-60">
           <p className="section-eyebrow">WHY CHOOSE US</p>
@@ -773,28 +847,28 @@ export function WhyChooseUsSection() {
 export function TestimonialsSection() {
   return (
     <>
-    <section className="testimonials section-padding">
-      <div className="container">
-        <ScrollReveal className="text-center mb-60">
-          <p className="section-eyebrow">TESTIMONIALS</p>
-          <h2 className="section-title font-cinzel golden-text">What Our Students Say</h2>
+    <section className="testimonials-section">
+      <div className="testimonials-section__container">
+        <ScrollReveal className="testimonials-section__header">
+          <p className="testimonials-section__eyebrow">TESTIMONIALS</p>
+          <h2 className="testimonials-section__title font-cinzel">What Our Students Say</h2>
         </ScrollReveal>
-        <div className="testimonials__grid">
+        <div className="testimonials-section__grid">
           {testimonials.map((t, i) => (
             <ScrollReveal key={t.name} delay={i * 0.15}>
-              <GlassCard className="testimonial-card">
-                <div className="testimonial-card__stars">
-                  {[1,2,3,4,5].map((s) => s <= Math.floor(t.rating) ? <FaStar key={s} size={16} color="#E8C76A" /> : <FaStarHalfAlt key={s} size={16} color="#E8C76A" />)}
+              <motion.div className="testimonial-card-new" whileHover={{ y: -6 }}>
+                <div className="testimonial-card-new__stars">
+                  {[1,2,3,4,5].map((s) => s <= Math.floor(t.rating) ? <FaStar key={s} size={16} color="#D4AF37" /> : <FaStarHalfAlt key={s} size={16} color="#D4AF37" />)}
                 </div>
-                <p className="testimonial-card__text">"{t.text}"</p>
-                <div className="testimonial-card__author">
-                  <div className="testimonial-card__avatar">{t.name[0]}</div>
+                <p className="testimonial-card-new__text">&quot;{t.text}&quot;</p>
+                <div className="testimonial-card-new__author">
+                  <div className="testimonial-card-new__avatar">{t.name[0]}</div>
                   <div>
-                    <p className="testimonial-card__name">{t.name}</p>
-                    <p className="testimonial-card__location">{t.location}</p>
+                    <p className="testimonial-card-new__name">{t.name}</p>
+                    <p className="testimonial-card-new__location">{t.location}</p>
                   </div>
                 </div>
-              </GlassCard>
+              </motion.div>
             </ScrollReveal>
           ))}
         </div>
@@ -918,7 +992,7 @@ export function ContactSection() {
 
   return (
     <>
-    <section className="contact section-padding" style={{ background: 'linear-gradient(180deg, var(--dark-surface), var(--dark-bg))' }}>
+    <section className="contact-section">
       <div className="container">
         <ScrollReveal className="text-center mb-64">
           <p className="section-eyebrow">GET IN TOUCH</p>
@@ -1054,24 +1128,25 @@ export function ContactSection() {
         </div>
       </div>
     </section>
-    <LotusConnector id="cntFaq" bg="maroon" />
+    <LotusConnector id="cntCta" bg="cream" />
     </>
   );
 }
 
 // ─── Newsletter ───────────────────────────────────────────────────────────────
 export function NewsletterSection() {
+  const navigate = useNavigate();
   return (
-    <section className="newsletter">
-      <div className="container">
+    <section className="final-cta">
+      <div className="final-cta__container">
         <ScrollReveal>
-          <div className="newsletter__box">
-            <h2 className="newsletter__title font-cinzel golden-text">Begin Your Spiritual Journey Today</h2>
-            <p className="newsletter__subtitle">Join 10,000+ seekers. Get free access to our introductory course.</p>
-            <div className="newsletter__form">
-              <input type="email" placeholder="Enter your email address" className="newsletter__input" />
-              <GoldenButton label="JOIN FREE" />
-            </div>
+          <h2 className="final-cta__title font-cinzel">Begin Your Spiritual Journey Today</h2>
+          <p className="final-cta__desc font-serif">
+            Join thousands of sincere seekers and begin your authentic journey into Sri Vidya through Guru-guided teachings, sacred courses, workshops, and traditional spiritual practices at Sri Mahavidyesvari Tantra Peetham.
+          </p>
+          <div className="final-cta__btns">
+            <GoldenButton label="Explore Sri Vidya" size="lg" onClick={() => navigate('/courses')} />
+            <GoldenButton label="Contact Us" size="lg" outlined onClick={() => navigate('/contact')} />
           </div>
         </ScrollReveal>
       </div>
@@ -1093,32 +1168,32 @@ export function FAQSection() {
   const [open, setOpen] = useState(null);
   return (
     <>
-    <section className="faq section-padding" style={{ background: 'linear-gradient(180deg, var(--dark-surface), var(--dark-bg))' }}>
-      <div className="container">
-        <ScrollReveal className="text-center mb-60">
-          <p className="section-eyebrow">HAVE QUESTIONS?</p>
-          <h2 className="section-title font-cinzel golden-text">Frequently Asked Questions</h2>
-          <p className="section-subtitle">Everything you need to know before beginning your sacred journey.</p>
+    <section className="faq-section">
+      <div className="faq-section__container">
+        <ScrollReveal className="faq-section__header">
+          <p className="faq-section__eyebrow">HAVE QUESTIONS?</p>
+          <h2 className="faq-section__title font-cinzel">Frequently Asked Questions</h2>
+          <p className="faq-section__subtitle">Everything you need to know before beginning your sacred journey.</p>
         </ScrollReveal>
-        <div className="faq__list">
+        <div className="faq-section__list">
           {faqs.map((f, i) => (
             <ScrollReveal key={f.q} delay={i * 0.07}>
               <motion.div
-                className={`faq__item ${open === i ? 'faq__item--open' : ''}`}
+                className={`faq-item ${open === i ? 'faq-item--open' : ''}`}
                 onClick={() => setOpen(open === i ? null : i)}
-                whileHover={{ borderColor: 'rgba(184,134,11,0.4)' }}
+                whileHover={{ borderColor: 'rgba(212,175,55,0.55)' }}
               >
-                <div className="faq__question">
+                <div className="faq-item__question">
                   <span>{f.q}</span>
                   <motion.span
-                    className="faq__icon golden-text"
+                    className="faq-item__icon"
                     animate={{ rotate: open === i ? 45 : 0 }}
                     transition={{ duration: 0.2 }}
                   >+</motion.span>
                 </div>
                 {open === i && (
                   <motion.p
-                    className="faq__answer"
+                    className="faq-item__answer"
                     initial={{ opacity: 0, y: -8 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.25 }}
@@ -1144,6 +1219,7 @@ const footerLinks = [
       { label: 'Chandi Vidya', href: '/courses/chandi-vidya' },
       { label: 'Shaivam',      href: '/courses/shaivam' },
       { label: 'Vaishnavam',   href: '/courses/vaishnavam' },
+      { label: 'Gāṇapatyam',   href: '/courses/ganapathyam' },
       { label: 'Skaandam',     href: '/courses/skaandam' },
     ],
   },

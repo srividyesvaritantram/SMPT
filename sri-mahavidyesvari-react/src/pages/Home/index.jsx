@@ -5,6 +5,7 @@ import AboutSection from './AboutSection.jsx';
 import GuruParamparaSection from './GuruParamparaSection.jsx';
 import { CoursesCarousel, WorkshopsCarousel } from './ShowcaseCarousel.jsx';
 import {
+  LotusConnector,
   WhyTantraSection,
   LearnSriVidyaInviteSection,
   FeaturedCoursesSection,
@@ -31,7 +32,9 @@ export default function HomePage() {
       <WhyTantraSection />
       <LearnSriVidyaInviteSection />
       <FeaturedCoursesSection />
+      <LotusConnector id="crsWks" bg="cream" />
       <WorkshopsShowcaseSection />
+      <LotusConnector id="wksOff" bg="maroon" />
       <OfferingsShowcaseSection />
       <EventsPreviewSection />
       <BlogPreviewSection />

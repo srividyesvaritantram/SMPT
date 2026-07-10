@@ -75,7 +75,7 @@ export default function HeroSection() {
         {/* Buttons */}
         <motion.div className="hero__btns" {...fadeUp(0.64)}>
           <GoldenButton
-            label="Explore Courses"
+            label="Explore Sri Vidya"
             size="lg"
             icon={FiPlay}
             onClick={() => navigate('/courses')}

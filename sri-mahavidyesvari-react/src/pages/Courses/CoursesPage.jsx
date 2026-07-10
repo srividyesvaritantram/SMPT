@@ -10,15 +10,57 @@ import chandImg           from '../../assets/chandi.png';
 import shaivamImg         from '../../assets/shaivam.png';
 import vaishImg           from '../../assets/vaishnavam_course.png';
 import skaanImg           from '../../assets/skaandam_course.png';
-import sauramImg          from '../../assets/sauram.png';
 import ganapathyamImg     from '../../assets/ganapathyam.png';
-import dasaMahavidyasImg  from '../../assets/dasa_maha_vidyas.png';
-import dhanvantariImg     from '../../assets/dhanvantari.png';
-import narayaniImg        from '../../assets/narayani_vidya.png';
-import govindaImg         from '../../assets/govinda.png';
 import './CoursesPage.css';
 
 const WA_URL = 'https://wa.me/91YOURNUMBER?text=Namaste%20%F0%9F%99%8F%0A%0AI%20would%20like%20to%20enroll%20in%20a%20course%20at%20Sri%20MahaVidyesvari%20Tantra%20Peetham.';
+
+function CpLotusDivider({ id = 'cp-lotus', variant = 'cream' }) {
+  return (
+    <div className={`cp-divider cp-divider--${variant}`} aria-hidden="true">
+      <span className="cp-divider__line" />
+      <span className="cp-divider__lotus">
+        <svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="65" cy="65" r="62" stroke={`url(#${id}g)`} strokeWidth="1.3" opacity="0.45" />
+          <circle cx="65" cy="65" r="52" stroke={`url(#${id}g)`} strokeWidth="0.9" opacity="0.30" />
+          <ellipse cx="65" cy="35" rx="7.5" ry="20" fill={`url(#${id}pf)`} opacity="0.95" transform="rotate(0 65 65)" />
+          <ellipse cx="65" cy="35" rx="7.5" ry="20" fill={`url(#${id}pf)`} opacity="0.85" transform="rotate(45 65 65)" />
+          <ellipse cx="65" cy="35" rx="7.5" ry="20" fill={`url(#${id}pf)`} opacity="0.85" transform="rotate(90 65 65)" />
+          <ellipse cx="65" cy="35" rx="7.5" ry="20" fill={`url(#${id}pf)`} opacity="0.85" transform="rotate(135 65 65)" />
+          <ellipse cx="65" cy="35" rx="7.5" ry="20" fill={`url(#${id}pf)`} opacity="0.85" transform="rotate(180 65 65)" />
+          <ellipse cx="65" cy="35" rx="7.5" ry="20" fill={`url(#${id}pf)`} opacity="0.85" transform="rotate(225 65 65)" />
+          <ellipse cx="65" cy="35" rx="7.5" ry="20" fill={`url(#${id}pf)`} opacity="0.85" transform="rotate(270 65 65)" />
+          <ellipse cx="65" cy="35" rx="7.5" ry="20" fill={`url(#${id}pf)`} opacity="0.85" transform="rotate(315 65 65)" />
+          <circle cx="65" cy="65" r="18" fill={`url(#${id}cg)`} />
+          <circle cx="65" cy="65" r="18" stroke={`url(#${id}g)`} strokeWidth="1.3" opacity="0.7" />
+          <circle cx="65" cy="65" r="10" fill={`url(#${id}ci)`} />
+          <circle cx="65" cy="65" r="4" fill="#FFF7D6" opacity="0.95" />
+          <defs>
+            <linearGradient id={`${id}g`} x1="0" y1="0" x2="130" y2="130" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stopColor="#B8860B" />
+              <stop offset="50%" stopColor="#E8C76A" />
+              <stop offset="100%" stopColor="#B8860B" />
+            </linearGradient>
+            <linearGradient id={`${id}pf`} x1="65" y1="15" x2="65" y2="65" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stopColor="#FFFFFF" stopOpacity="0.95" />
+              <stop offset="100%" stopColor="#D4AF37" stopOpacity="0.55" />
+            </linearGradient>
+            <radialGradient id={`${id}cg`} cx="50%" cy="40%" r="60%">
+              <stop offset="0%" stopColor="#E8C76A" />
+              <stop offset="60%" stopColor="#D4AF37" />
+              <stop offset="100%" stopColor="#B8860B" />
+            </radialGradient>
+            <radialGradient id={`${id}ci`} cx="40%" cy="35%" r="65%">
+              <stop offset="0%" stopColor="#FFF7D6" />
+              <stop offset="100%" stopColor="#D4AF37" />
+            </radialGradient>
+          </defs>
+        </svg>
+      </span>
+      <span className="cp-divider__line" />
+    </div>
+  );
+}
 
 const ALL_COURSES = [
   {
@@ -43,13 +85,6 @@ const ALL_COURSES = [
     path: '/courses/vaishnavam',
   },
   {
-    id: 'skaandam',
-    title: 'Skaandam',
-    desc: 'Skaandam is the heroic path of Lord Skanda that awakens courage, discipline, wisdom, and victory over inner and outer obstacles.',
-    img: skaanImg,
-    path: '/courses/skaandam',
-  },
-  {
     id: 'ganapathyam',
     title: 'Gāṇapatyam',
     desc: 'Ganapati Tantram is the practical path of invoking Lord Ganesha to remove obstacles, sharpen intellect, and establish success through sacred mantra and disciplined worship.',
@@ -57,39 +92,11 @@ const ALL_COURSES = [
     path: '/courses/ganapathyam',
   },
   {
-    id: 'sauram',
-    title: 'Sauram',
-    desc: 'Sauram is the Sun-centered path where Lord Sūrya is worshipped as the living source of prāṇa, vitality, health, wisdom, discipline, and inner illumination.',
-    img: sauramImg,
-    path: '/courses/sauram',
-  },
-  {
-    id: 'dasa-maha-vidyas',
-    title: 'Daśa Mahāvidyās',
-    desc: 'The Ten Wisdom Goddesses who govern every aspect of cosmic reality — explore their symbolism, mantra traditions, and the deeper framework behind these powerful divine manifestations.',
-    img: dasaMahavidyasImg,
-    path: '/courses/dasa-maha-vidyas',
-  },
-  {
-    id: 'dhanvantari',
-    title: 'Dhanvantari Vidyā',
-    desc: 'Dhanvantari Vidyā invokes Bhagavan Dhanvantari, the divine physician, to restore balance, strengthen prāṇa, and promote healing of body, mind, and spirit through sacred practice.',
-    img: dhanvantariImg,
-    path: '/courses/dhanvantari',
-  },
-  {
-    id: 'narayani-vidya',
-    title: 'Nārāyaṇī Vidyā',
-    desc: 'Nārāyaṇī Vidyā is the Shakti-knowledge of the Supreme Mother as Nārāyaṇī — the feminine sovereignty that holds, moves, and completes the universe with divine compassion and strength.',
-    img: narayaniImg,
-    path: '/courses/narayani-vidya',
-  },
-  {
-    id: 'vaishnavam-advanced',
-    title: 'Govinda Upāsanā',
-    desc: 'A deeper exploration of Lord Govinda through traditional worship, sacred mantras, devotional discipline, and the spiritual significance of Vishnu\'s divine incarnations.',
-    img: govindaImg,
-    path: '/courses/govinda',
+    id: 'skaandam',
+    title: 'Skaandam',
+    desc: 'Skaandam is the heroic path of Lord Skanda that awakens courage, discipline, wisdom, and victory over inner and outer obstacles.',
+    img: skaanImg,
+    path: '/courses/skaandam',
   },
 ];
 
@@ -201,7 +208,7 @@ export default function CoursesPage() {
       {/* ══════════════════════════════════════════════════════
           SRI VIDYĀ — Featured Course Section
       ══════════════════════════════════════════════════════ */}
-      <section id="courses-section" className="cp-featured">
+      <section id="courses-section" className="cp-featured on-light">
         <div className="cp-featured__inner">
           <div className="cp-featured__grid">
 
@@ -282,6 +289,8 @@ export default function CoursesPage() {
         </div>
       </section>
 
+      <CpLotusDivider id="cp-lotus-1" variant="cream" />
+
       {/* ══════════════════════════════════════════════════════
           ALL SACRED COURSES — Uniform premium card grid
       ══════════════════════════════════════════════════════ */}
@@ -339,6 +348,8 @@ export default function CoursesPage() {
 
         </div>
       </section>
+
+      <CpLotusDivider id="cp-lotus-2" variant="maroon" />
 
       {/* ══════════════════════════════════════════════════════
           CTA — Begin Your Journey into Sacred Knowledge

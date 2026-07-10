@@ -301,7 +301,7 @@ export default function AboutPage() {
 
             <ScrollReveal delay={0.14}>
               <h2 className="ap-about__heading font-cinzel">
-                Sri Mahavidyeswari<br />
+                Sri MahaVidyesvari<br />
                 <span className="ap-about__heading-gold">Tantra Peetham</span>
               </h2>
             </ScrollReveal>
@@ -316,22 +316,12 @@ export default function AboutPage() {
 
             <ScrollReveal delay={0.30}>
               <p className="ap-about__text font-cormorant">
-                Sri Mahavidyeswari Tantra Peetham is a sacred institution dedicated to preserving
-                and transmitting the timeless wisdom of Sri Vidya, Tantra, Mantra, and the authentic
-                Vedic tradition. Founded on the unshakeable foundation of Guru Parampara, the Peetham
-                serves as a living bridge between the ancient and the modern.
-              </p>
-              <p className="ap-about__text font-cormorant">
-                Rooted in the Datta Sampradaya and guided by the grace of Adi Guru Dattatreya, every
-                teaching offered here flows through an unbroken lineage of realized masters. The Peetham
-                upholds the highest standards of authenticity, ensuring that sacred knowledge is transmitted
-                with purity, reverence, and disciplined practice.
-              </p>
-              <p className="ap-about__text font-cormorant">
-                Whether you are a sincere seeker taking your first steps on the spiritual path or an
-                advanced practitioner deepening your sadhana, Sri Mahavidyeswari Tantra Peetham offers
-                a complete system of learning — from foundational Vedic principles to the most profound
-                secrets of Sri Vidya Upasana.
+                Sri MahaVidyesvari Tantra Peetham (SMTP) stands as a seat of living Tantra, rooted in
+                authentic śāstric tradition and guided by the Guru-Śiṣya paramparā. The Peetham is
+                dedicated to preserving, practicing, and transmitting the profound wisdom of Sri Vidya,
+                where mantra, yantra, and upāsanā are not treated as abstractions but as living sciences
+                of inner transformation. Here, Tantra is approached with discipline, clarity, and reverence,
+                free from distortion while preserving the authentic Guru-Śiṣya tradition.
               </p>
             </ScrollReveal>
 
@@ -382,26 +372,7 @@ export default function AboutPage() {
         <div className="ap-gp__intro">
           <div className="ap-gp__intro-container">
 
-            {/* LEFT: Dattatreya image */}
-            <ScrollReveal direction="right" duration={0.9} className="ap-gp__img-col">
-              <motion.div
-                className="ap-gp__img-wrap"
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
-              >
-                <motion.img
-                  src={dattatreyaImg}
-                  alt="Lord Dattatreya — Adi Guru"
-                  className="ap-gp__img"
-                  loading="lazy"
-                  whileHover={{ scale: 1.02 }}
-                  transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
-                />
-                <div className="ap-gp__img-glow" />
-              </motion.div>
-            </ScrollReveal>
-
-            {/* RIGHT: Content */}
+            {/* LEFT: Content */}
             <div className="ap-gp__content-col">
 
               <ScrollReveal delay={0.05}>
@@ -459,6 +430,26 @@ export default function AboutPage() {
               </ScrollReveal>
 
             </div>
+
+            {/* RIGHT: Dattatreya image */}
+            <ScrollReveal direction="left" duration={0.9} className="ap-gp__img-col">
+              <motion.div
+                className="ap-gp__img-wrap"
+                animate={{ y: [0, -10, 0] }}
+                transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
+              >
+                <motion.img
+                  src={dattatreyaImg}
+                  alt="Lord Dattatreya — Adi Guru"
+                  className="ap-gp__img"
+                  loading="lazy"
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
+                />
+                <div className="ap-gp__img-glow" />
+              </motion.div>
+            </ScrollReveal>
+
           </div>
         </div>
 

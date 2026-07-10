@@ -166,7 +166,7 @@ export default function AstrologyPage() {
       {/* ═══════════════════════════════════════════════════════
           SECTION 2 — ASTROLOGY
       ═══════════════════════════════════════════════════════ */}
-      <section id="astrology-section" className="aop-astro">
+      <section id="astrology-section" className="aop-astro on-light">
         <div className="aop-astro__inner">
           <div className="aop-astro__grid">
 
@@ -362,7 +362,7 @@ export default function AstrologyPage() {
           SECTION 4 — OTHER SACRED OFFERINGS (4-card grid)
       ═══════════════════════════════════════════════════════ */}
 
-      <section id="offerings-section" className="aop-rituals">
+      <section id="offerings-section" className="aop-rituals on-light">
         <div className="aop-rituals__inner">
 
           <ScrollReveal direction="up" duration={0.7}>

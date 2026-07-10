@@ -1,1 +1,34 @@
-/* App-level styles — global overrides handled in index.css */
+/* App-level styles — global overflow prevention */
+
+#root {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+  min-height: 100vh;
+}
+
+/* Prevent any section or full-width element from causing overflow */
+section,
+footer,
+header,
+main,
+nav {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+/* Ensure all images stay within bounds */
+img,
+video,
+canvas,
+svg {
+  max-width: 100%;
+}
+
+/* Fix for elements with negative margins or absolute positioning causing overflow */
+[class*="__pattern"],
+[class*="__geo"],
+[class*="__glow"] {
+  pointer-events: none;
+  overflow: hidden;
+}

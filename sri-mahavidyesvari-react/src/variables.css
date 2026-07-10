@@ -345,6 +345,13 @@
 @media (max-width: 480px) {
   :root {
     --section-py:  52px;
-    --section-px:  18px;
+    --section-px:  16px;
+  }
+}
+
+@media (max-width: 360px) {
+  :root {
+    --section-py:  44px;
+    --section-px:  14px;
   }
 }
