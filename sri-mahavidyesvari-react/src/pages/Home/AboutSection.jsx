@@ -4,6 +4,7 @@ import ScrollReveal from '../../components/common/ScrollReveal.jsx';
 import GoldenButton from '../../components/common/GoldenButton.jsx';
 import { FiEye, FiCompass } from 'react-icons/fi';
 import sriMahadeviImg from '../../assets/sri_mahadevi.png';
+import logoImg from '../../assets/logo.png';
 import './AboutSection.css';
 
 export default function AboutSection() {
@@ -42,7 +43,7 @@ export default function AboutSection() {
               </div>
 
               <div className="about__image-badge">
-                <span className="about__badge-om font-devanagari">ॐ</span>
+                <img src={logoImg} alt="" className="about__badge-om-img" />
                 <span className="about__badge-text">Est. Ancient Tradition</span>
               </div>
 

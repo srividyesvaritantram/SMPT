@@ -4,6 +4,7 @@ import { FiGrid, FiPlay, FiAward, FiBookmark, FiDownload, FiCreditCard, FiSettin
 import Navbar from '../../components/navbar/Navbar.jsx';
 import GlassCard from '../../components/common/GlassCard.jsx';
 import GoldenButton from '../../components/common/GoldenButton.jsx';
+import logoImg from '../../assets/logo.png';
 import './DashboardPage.css';
 
 const sidebarItems = [
@@ -159,7 +160,7 @@ function CertificatesTab() {
       <div className="dashboard__certs-grid">
         {certificates.map((c) => (
           <div key={c} className="dashboard__cert-card">
-            <span className="golden-text font-devanagari" style={{ fontSize: 40 }}>ॐ</span>
+            <img src={logoImg} alt="" style={{ width: 40, height: 40, objectFit: "contain" }} />
             <p style={{ fontSize: 11, color: '#E8C76A', letterSpacing: 2, marginTop: 12 }}>CERTIFICATE OF COMPLETION</p>
             <h4 style={{ color: '#FFF7D6', fontSize: 16, fontWeight: 600, marginTop: 8, textAlign: 'center' }}>{c}</h4>
             <p style={{ color: '#B8A882', fontSize: 13, marginTop: 8 }}>Awarded to Ananya Iyer</p>

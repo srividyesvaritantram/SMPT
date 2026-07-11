@@ -14,6 +14,7 @@ import guruAgasthyaImg  from '../../assets/guru_agasthya.png';
 import guruSkandhaImg   from '../../assets/guru_skandha.png';
 import guruAnangaImg    from '../../assets/guru_ananga.png';
 import guruLopamudraImg from '../../assets/guru_lopamudra.png';
+import logoImg from '../../assets/logo.png';
 import './GuruParamparaSection.css';
 
 const GURUS_12 = [
@@ -247,7 +248,7 @@ export default function GuruParamparaSection() {
                         className={guru.cls}
                       />
                       <div className="gp__portrait-overlay">
-                        <span className="font-devanagari gp__portrait-om">ॐ</span>
+                        <img src={logoImg} alt="" className="gp__portrait-om-img" />
                       </div>
                     </div>
                     <div className="gp__num-badge">{i + 1}</div>

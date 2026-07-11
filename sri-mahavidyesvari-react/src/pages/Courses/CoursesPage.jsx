@@ -11,6 +11,7 @@ import shaivamImg         from '../../assets/shaivam.png';
 import vaishImg           from '../../assets/vaishnavam_course.png';
 import skaanImg           from '../../assets/skaandam_course.png';
 import ganapathyamImg     from '../../assets/ganapathyam.png';
+import logoImg from '../../assets/logo.png';
 import './CoursesPage.css';
 
 const WA_URL = 'https://wa.me/91YOURNUMBER?text=Namaste%20%F0%9F%99%8F%0A%0AI%20would%20like%20to%20enroll%20in%20a%20course%20at%20Sri%20MahaVidyesvari%20Tantra%20Peetham.';
@@ -145,7 +146,7 @@ export default function CoursesPage() {
             transition={{ duration: 0.6, delay: 0.44 }}
           >
             <span className="cp-hero__divider-line" />
-            <span className="cp-hero__divider-om font-devanagari">ॐ</span>
+            <img src={logoImg} alt="" className="cp-hero__divider-om-img" />
             <span className="cp-hero__divider-line" />
           </motion.div>
 

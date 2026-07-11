@@ -109,8 +109,9 @@
 .drawer__logo-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   border-radius: var(--radius-full);
+  image-rendering: -webkit-optimize-contrast;
 }
 
 .drawer__logo-name {

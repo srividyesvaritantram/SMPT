@@ -22,6 +22,7 @@ import completeChakraImg from '../assets/complete_chakra_course.png';
 import ayyappaVidyaImg from '../assets/ayyappa_vidya.png';
 import whatsappQrImg from '../assets/whatsapp_qr.jpeg';
 import { FooterSection } from './Home/HomeSections.jsx';
+import logoImg from '../assets/logo.png';
 import './FeaturePages.css';
 
 const WA_URL = 'https://wa.me/91YOURNUMBER?text=Namaste%20%F0%9F%99%8F%20I%20would%20like%20to%20book%20a%20Workshop%20seat.';
@@ -203,7 +204,7 @@ export function BlogPage() {
             transition={{ duration: 0.6, delay: 0.44 }}
           >
             <span className="fp-hero__divider-line" />
-            <span className="fp-hero__divider-om font-devanagari">ॐ</span>
+            <img src={logoImg} alt="" className="fp-hero__divider-om-img" />
             <span className="fp-hero__divider-line" />
           </motion.div>
 
@@ -473,7 +474,7 @@ export function WorkshopsPage() {
             transition={{ duration: 0.6, delay: 0.44 }}
           >
             <span className="wp-hero__divider-line" />
-            <span className="wp-hero__divider-om font-devanagari">ॐ</span>
+            <img src={logoImg} alt="" className="wp-hero__divider-om-img" />
             <span className="wp-hero__divider-line" />
           </motion.div>
 
@@ -812,7 +813,7 @@ export function WorkshopsPage() {
           CTA — Begin Your Spiritual Journey
       ══════════════════════════════════════════════════════ */}
       <section className="wp-cta">
-        <div className="wp-cta__om font-devanagari" aria-hidden="true">ॐ</div>
+        <div className="wp-cta__om" aria-hidden="true"><img src={logoImg} alt="" className="wp-cta__om-img" /></div>
         <ScrollReveal direction="up" duration={0.8}>
           <div className="wp-cta__inner">
             <span className="wp-section-badge">✨ Begin Your Spiritual Journey</span>
@@ -966,7 +967,7 @@ export function EventsPage() {
             transition={{ duration: 0.6, delay: 0.44 }}
           >
             <span className="fp-hero__divider-line" />
-            <span className="fp-hero__divider-om font-devanagari">ॐ</span>
+            <img src={logoImg} alt="" className="fp-hero__divider-om-img" />
             <span className="fp-hero__divider-line" />
           </motion.div>
 

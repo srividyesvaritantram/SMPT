@@ -7,6 +7,7 @@ import GoldenButton from '../components/common/GoldenButton.jsx';
 import aboutHeroImg from '../assets/about_hero.png';
 import aboutPageImg  from '../assets/about_page.png';
 import dattatreyaImg from '../assets/dathathreya.png';
+import ourGuruImg from '../assets/our_guru.png';
 import ardhanariswariImg from '../assets/ardhanariswari.png';
 import whyTantraImg from '../assets/why_tantra.png';
 import guruSuryaImg     from '../assets/guru_surya.png';
@@ -22,6 +23,7 @@ import guruSkandhaImg   from '../assets/guru_skandha.png';
 import guruAnangaImg    from '../assets/guru_ananga.png';
 import guruLopamudraImg from '../assets/guru_lopamudra.png';
 import { FooterSection } from './Home/HomeSections.jsx';
+import logoImg from '../assets/logo.png';
 import './AboutPage.css';
 
 function LotusDividerIcon({ id = 'ap-divider-icon' }) {
@@ -183,9 +185,9 @@ export default function AboutPage() {
 
           {/* Om badge */}
           <motion.div className="ap-hero__badge" {...fadeUp(0.10)}>
-            <span className="ap-hero__badge-om font-devanagari">ॐ</span>
+            <img src={logoImg} alt="" className="ap-hero__badge-om-img-img" />
             <span className="ap-hero__badge-text">Sri Mahavidyeswari Tantra Peetham</span>
-            <span className="ap-hero__badge-om font-devanagari">ॐ</span>
+            <img src={logoImg} alt="" className="ap-hero__badge-om-img-img" />
           </motion.div>
 
           {/* Eyebrow */}
@@ -282,7 +284,7 @@ export default function AboutPage() {
               </div>
               {/* Floating badge */}
               <div className="ap-about__img-badge">
-                <span className="ap-about__badge-om font-devanagari">ॐ</span>
+                <img src={logoImg} alt="" className="ap-about__badge-om-img-img" />
                 <span className="ap-about__badge-text">Est. Ancient Tradition</span>
               </div>
             </div>
@@ -497,7 +499,7 @@ export default function AboutPage() {
                           style={{ objectPosition: guru.pos }}
                         />
                         <div className="ap-gp__portrait-overlay">
-                          <span className="font-devanagari ap-gp__portrait-om">ॐ</span>
+                          <img src={logoImg} alt="" className="ap-gp__portrait-om-img-img" />
                         </div>
                       </div>
                       <div className="ap-gp__num-badge font-cinzel">{i + 1}</div>
@@ -660,7 +662,7 @@ export default function AboutPage() {
               <div className="ap-tv__img-glow" />
               {/* Floating label */}
               <div className="ap-tv__img-badge">
-                <span className="ap-tv__badge-om font-devanagari">ॐ</span>
+                <img src={logoImg} alt="" className="ap-tv__badge-om-img-img" />
                 <span className="ap-tv__badge-text">Ardhanarishwara</span>
               </div>
             </motion.div>
@@ -687,7 +689,7 @@ export default function AboutPage() {
             <div className="ap-og__img-wrap">
               <div className="ap-og__img-glow" />
               <motion.img
-                src={dattatreyaImg}
+                src={ourGuruImg}
                 alt="Our Revered Guru"
                 className="ap-og__img"
                 loading="lazy"
@@ -696,7 +698,7 @@ export default function AboutPage() {
               />
               {/* Floating name badge */}
               <div className="ap-og__name-badge">
-                <span className="ap-og__name-badge-om font-devanagari">ॐ</span>
+                <img src={logoImg} alt="" className="ap-og__name-badge-om-img-img" />
                 <div>
                   <p className="ap-og__name-badge-title font-cinzel">Our Revered Guru</p>
                   <p className="ap-og__name-badge-sub">Sri Mahavidyeswari Peetham</p>
@@ -1035,9 +1037,9 @@ export default function AboutPage() {
           {/* Om badge */}
           <ScrollReveal delay={0.05}>
             <div className="ap-cta__badge">
-              <span className="ap-cta__badge-om font-devanagari">ॐ</span>
+              <img src={logoImg} alt="" className="ap-cta__badge-om-img-img" />
               <span className="ap-cta__badge-text">Sri Mahavidyeswari Tantra Peetham</span>
-              <span className="ap-cta__badge-om font-devanagari">ॐ</span>
+              <img src={logoImg} alt="" className="ap-cta__badge-om-img-img" />
             </div>
           </ScrollReveal>
 

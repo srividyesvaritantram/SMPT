@@ -6,6 +6,7 @@ import { FooterSection } from './Home/HomeSections.jsx';
 import { FiMapPin, FiMail, FiInstagram, FiMessageCircle } from 'react-icons/fi';
 import contactHeroImg from '../assets/contact.png';
 import whatsappQrImg from '../assets/whatsapp_qr.jpeg';
+import logoImg from '../assets/logo.png';
 import './ContactPage.css';
 
 export default function ContactPage() {
@@ -491,9 +492,9 @@ export default function ContactPage() {
 
             <ScrollReveal delay={0.05}>
               <div className="cp-cta__badge">
-                <span className="cp-cta__badge-om font-devanagari">ॐ</span>
+                <img src={logoImg} alt="" className="cp-cta__badge-om-img" />
                 <span className="cp-cta__badge-text">Sri MahaVidyesvari Tantra Peetham</span>
-                <span className="cp-cta__badge-om font-devanagari">ॐ</span>
+                <img src={logoImg} alt="" className="cp-cta__badge-om-img" />
               </div>
             </ScrollReveal>
 

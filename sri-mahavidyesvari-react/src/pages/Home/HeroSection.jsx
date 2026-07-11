@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { FiPlay, FiArrowDown } from 'react-icons/fi';
 import GoldenButton from '../../components/common/GoldenButton.jsx';
 import heroImg from '../../assets/home-hero.png';
+import logoImg from '../../assets/logo.png';
 import './HeroSection.css';
 
 const stats = [
@@ -42,9 +43,9 @@ export default function HeroSection() {
 
         {/* Om badge */}
         <motion.div className="hero__om-badge" {...fadeUp(0.1)}>
-          <span className="hero__om font-devanagari">ॐ</span>
+          <img src={logoImg} alt="" className="hero__om-img" />
           <span className="hero__om-text">Sri Mahavidyesvari Tantra Peetham</span>
-          <span className="hero__om font-devanagari">ॐ</span>
+          <img src={logoImg} alt="" className="hero__om-img" />
         </motion.div>
 
         {/* Eyebrow */}

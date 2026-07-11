@@ -11,6 +11,7 @@ import abhishekamImg from '../../assets/abhishekam.png';
 import yantraImg     from '../../assets/yantra_puja_offerings.png';
 import archanaImg    from '../../assets/archana.png';
 import templesImg    from '../../assets/temples.png';
+import logoImg from '../../assets/logo.png';
 import './AstrologyPage.css';
 
 const WA_URL =
@@ -113,7 +114,7 @@ export default function AstrologyPage() {
 
           <div className="aop-hero__divider">
             <span className="aop-hero__divider-line" />
-            <span className="aop-hero__divider-om font-devanagari">ॐ</span>
+            <img src={logoImg} alt="" className="aop-hero__divider-om-img" />
             <span className="aop-hero__divider-line" />
           </div>
 
@@ -421,7 +422,7 @@ export default function AstrologyPage() {
           SECTION 5 — NEED GUIDANCE? (CTA)
       ═══════════════════════════════════════════════════════ */}
       <section className="aop-cta">
-        <div className="aop-cta__om font-devanagari" aria-hidden="true">ॐ</div>
+        <div className="aop-cta__om" aria-hidden="true"><img src={logoImg} alt="" className="aop-cta__om-img" /></div>
         <ScrollReveal direction="up" duration={0.8}>
           <div className="aop-cta__inner">
             <span className="aop-cta__badge">🙏 We Are Here to Help</span>
