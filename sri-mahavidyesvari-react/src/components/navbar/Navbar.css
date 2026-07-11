@@ -66,8 +66,8 @@
 }
 
 .navbar__logo-icon {
-  width: 50px;
-  height: 50px;
+  width: 54px;
+  height: 54px;
   border-radius: var(--radius-full);
   background: var(--grad-maroon);
   display: flex;
@@ -83,7 +83,7 @@
     box-shadow var(--duration-base) var(--ease),
     transform  var(--duration-base) var(--ease);
   overflow: hidden;
-  padding: 4px;
+  padding: 6px;
 }
 
 .navbar__logo:hover .navbar__logo-icon {
@@ -107,8 +107,6 @@
   height: 100%;
   object-fit: contain;
   border-radius: 50%;
-  image-rendering: -webkit-optimize-contrast;
-  image-rendering: crisp-edges;
   display: block;
 }
 

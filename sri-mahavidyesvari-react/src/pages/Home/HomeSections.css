@@ -2879,16 +2879,16 @@
 
 /* Logo image replacements */
 .footer__brand-om-img {
-  width: 26px;
-  height: 26px;
+  width: 30px;
+  height: 30px;
   object-fit: contain;
   border-radius: 50%;
   filter: drop-shadow(0 0 6px rgba(212,175,55,0.40));
 }
 
 .footer__divider-om-img {
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
   object-fit: contain;
   border-radius: 50%;
   flex-shrink: 0;

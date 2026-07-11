@@ -42,12 +42,7 @@
 
 /* Bottom page transition */
 .cp-hero__bottom-fade {
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  height: 60px;
-  background: linear-gradient(to top, #FDF4F8 0%, transparent 100%);
-  z-index: 3;
-  pointer-events: none;
+  display: none;
 }
 
 /* ── LEFT CONTENT — 45% ── */
@@ -331,7 +326,7 @@
 ═══════════════════════════════════════════════════════════════ */
 .cp-comm {
   position: relative;
-  background: #FDF4F8;
+  background: linear-gradient(135deg, #2B0615 0%, #4A0F22 100%);
   overflow: hidden;
   padding: 80px 0;
 }
@@ -343,7 +338,7 @@
   background-image:
     radial-gradient(circle at 8%  20%, rgba(212,175,55,0.06) 0%, transparent 44%),
     radial-gradient(circle at 92% 80%, rgba(37,211,102,0.05) 0%, transparent 44%),
-    radial-gradient(circle at 50% 50%, rgba(212,175,55,0.03) 0%, transparent 58%);
+    radial-gradient(circle at 50% 50%, rgba(212,175,55,0.04) 0%, transparent 58%);
 }
 
 .cp-comm__container {
@@ -373,7 +368,7 @@
   font-weight: 700;
   letter-spacing: 3.5px;
   text-transform: uppercase;
-  color: #B8860B;
+  color: rgba(212,175,55,0.85);
   margin-bottom: 20px;
 }
 .cp-comm__eyebrow-line {
@@ -388,7 +383,7 @@
 .cp-comm__heading {
   font-size: clamp(28px, 3.2vw, 46px);
   font-weight: 700;
-  color: #2D2D2D;
+  color: #FFF8EE;
   line-height: 1.14;
   margin-bottom: 0;
   letter-spacing: 0.02em;
@@ -428,7 +423,7 @@
 .cp-comm__text {
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(16px, 1.5vw, 18.5px);
-  color: #4A4A4A;
+  color: #F7EFE4;
   line-height: 1.92;
   margin-bottom: 16px;
 }
@@ -450,7 +445,7 @@
   font-family: 'Inter', sans-serif;
   font-size: 14px;
   font-weight: 500;
-  color: #3A3A3A;
+  color: #F8F1E7;
 }
 .cp-comm__feature-check {
   display: inline-flex;
@@ -513,14 +508,14 @@
 .cp-btn--primary:hover::after { left: 150%; }
 .cp-btn--secondary {
   background: transparent;
-  color: #7B1E3A;
-  border: 1.5px solid rgba(123,30,58,0.45);
-  box-shadow: 0 2px 10px rgba(123,30,58,0.08);
+  color: #FFF8EE;
+  border: 1.5px solid rgba(255,248,238,0.45);
+  box-shadow: 0 2px 10px rgba(255,248,238,0.08);
 }
 .cp-btn--secondary:hover {
-  background: rgba(123,30,58,0.06);
-  border-color: #7B1E3A;
-  box-shadow: 0 6px 20px rgba(123,30,58,0.14);
+  background: rgba(255,248,238,0.08);
+  border-color: #FFF8EE;
+  box-shadow: 0 6px 20px rgba(255,248,238,0.14);
 }
 
 /* ── RIGHT VISUAL ── */
@@ -667,7 +662,7 @@
   font-family: 'Cinzel', serif;
   font-size: 13px;
   font-weight: 700;
-  color: #2D2D2D;
+  color: #FFF8EE;
   letter-spacing: 0.5px;
   text-align: center;
   position: relative;
@@ -676,7 +671,7 @@
 .cp-comm__visual-sub {
   font-family: 'Inter', sans-serif;
   font-size: 11px;
-  color: #7A7A7A;
+  color: rgba(255,255,255,0.65);
   letter-spacing: 0.3px;
   text-align: center;
   position: relative;

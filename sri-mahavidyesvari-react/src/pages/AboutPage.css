@@ -12,6 +12,7 @@
   overflow: hidden;
   background: linear-gradient(135deg, #0d0208 0%, #1c0610 35%, #2e0d1c 65%, #1c0610 100%);
   margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 /* Dark background base */
@@ -40,14 +41,7 @@
 
 /* Bottom page transition */
 .ap-hero__bottom-fade {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 40px;
-  background: linear-gradient(to top, #FFF8EE 0%, transparent 100%);
-  z-index: 3;
-  pointer-events: none;
+  display: none;
 }
 
 /* ── LEFT CONTENT COLUMN — 45% ── */
@@ -409,7 +403,7 @@
   position: relative;
   background: #FFF8EE;
   overflow: hidden;
-  padding: 48px 0 60px;
+  padding: 0 0 60px;
 }
 
 /* Subtle sacred pattern at low opacity */
