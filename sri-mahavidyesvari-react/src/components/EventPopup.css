@@ -215,9 +215,10 @@
 @media (max-width: 900px) and (min-width: 481px) {
   .en-card {
     top: 80px;
-    right: 50%;
-    transform: translateX(50%);
-    width: min(380px, 90vw);
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    width: min(380px, calc(100vw - 32px));
   }
 }
 
@@ -225,10 +226,11 @@
 @media (max-width: 480px) {
   .en-card {
     top: 70px;
-    right: 50%;
-    transform: translateX(50%);
-    width: calc(100vw - 32px);
-    max-width: 360px;
+    left: 16px;
+    right: 16px;
+    transform: none;
+    width: auto;
+    max-width: calc(100vw - 32px);
     padding: 22px 18px 18px;
     border-radius: 18px;
     gap: 10px;
@@ -264,7 +266,10 @@
 
 @media (max-width: 360px) {
   .en-card {
-    width: calc(100vw - 24px);
+    left: 12px;
+    right: 12px;
+    width: auto;
+    max-width: calc(100vw - 24px);
     padding: 20px 14px 16px;
   }
 

@@ -844,11 +844,12 @@
 
   .aop-hero__left {
     width: 100%;
-    padding: 110px 36px 40px;
+    padding: 24px 36px 40px;
     background: linear-gradient(to bottom, rgba(13,2,8,0.97) 0%, rgba(13,2,8,0.90) 100%);
     gap: 18px;
     align-items: center;
     text-align: center;
+    order: 2;
   }
 
   .aop-hero__eyebrow,
@@ -867,8 +868,9 @@
   .aop-hero__right {
     width: 100%;
     flex: none;
-    padding: 24px 40px 48px;
+    padding: 90px 40px 16px;
     min-height: 300px;
+    order: 1;
   }
 
   .aop-hero__deity {
@@ -903,12 +905,12 @@
 
 @media (max-width: 600px) {
   .aop-hero__left {
-    padding: 96px 22px 36px;
+    padding: 20px 22px 36px;
     gap: 16px;
   }
 
   .aop-hero__right {
-    padding: 16px 20px 40px;
+    padding: 80px 20px 12px;
   }
 
   .aop-hero__deity {

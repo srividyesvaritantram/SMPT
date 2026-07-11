@@ -478,7 +478,7 @@
 }
 
 @media (max-width: 768px) {
-  .hero { align-items: flex-end; min-height: 100vh; }
+  .hero { align-items: flex-end; min-height: 100svh; }
   .hero__bg-img { object-position: 65% top; }
   .hero__left-veil {
     background: linear-gradient(

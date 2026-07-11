@@ -355,17 +355,17 @@
     flex: none;
     width: 100%;
     max-width: 100%;
-    padding: 110px 36px 32px;
+    padding: 24px 36px 48px;
     align-items: center;
     text-align: center;
-    order: 1;
+    order: 2;
   }
   .ap-hero__img-panel {
     flex: none;
     width: 95%;
     height: auto;
-    padding: 0 0 56px;
-    order: 2;
+    padding: 90px 0 24px;
+    order: 1;
     justify-content: center;
   }
   .ap-hero__deity-img {
@@ -391,8 +391,8 @@
 }
 
 @media (max-width: 480px) {
-  .ap-hero__content { padding: 96px 22px 28px; }
-  .ap-hero__img-panel { width: 95%; padding-bottom: 44px; }
+  .ap-hero__content { padding: 20px 22px 40px; }
+  .ap-hero__img-panel { width: 95%; padding-top: 80px; padding-bottom: 16px; }
   .ap-hero__deity-img { max-height: 64vw; }
   .ap-hero__badge   { display: none; }
   .ap-hero__heading { font-size: 28px; margin-bottom: 20px; }
