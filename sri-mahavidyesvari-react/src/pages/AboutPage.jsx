@@ -498,9 +498,6 @@ export default function AboutPage() {
                           loading="lazy"
                           style={{ objectPosition: guru.pos }}
                         />
-                        <div className="ap-gp__portrait-overlay">
-                          <img src={logoImg} alt="" className="ap-gp__portrait-om-img-img" />
-                        </div>
                       </div>
                       <div className="ap-gp__num-badge font-cinzel">{i + 1}</div>
                     </div>

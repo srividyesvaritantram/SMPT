@@ -95,4 +95,5 @@
   object-fit: contain;
   border-radius: 50%;
   image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
 }

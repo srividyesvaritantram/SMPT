@@ -753,6 +753,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: clamp(200px, 30vw, 420px);
+  display: none;
   color: rgba(212, 175, 55, 0.04);
   pointer-events: none;
   user-select: none;
