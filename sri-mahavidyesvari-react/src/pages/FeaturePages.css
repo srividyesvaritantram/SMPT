@@ -933,8 +933,8 @@
 .events-tab--active { background: linear-gradient(135deg, #B8860B, #E8C76A); color: #0D0208; }
 .events-filter-chips { display: flex; gap: 10px; flex-wrap: wrap; }
 
-.events-grid { display: flex; flex-wrap: wrap; gap: 24px; padding: 32px 48px 80px; }
-.event-card { width: 420px; background: var(--card-bg); border-radius: 24px; border: 1px solid var(--border); overflow: hidden; cursor: pointer; transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s; box-shadow: 0 2px 12px rgba(0,0,0,0.15); }
+.events-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(320px, 100%), 1fr)); gap: 24px; padding: 32px 48px 80px; }
+.event-card { width: 100%; background: var(--card-bg); border-radius: 24px; border: 1px solid var(--border); overflow: hidden; cursor: pointer; transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s; box-shadow: 0 2px 12px rgba(0,0,0,0.15); }
 .event-card:hover { border-color: rgba(184,134,11,0.5); box-shadow: 0 0 28px rgba(184,134,11,0.18); transform: translateY(-2px); }
 .event-card__thumb { height: 160px; display: flex; align-items: center; justify-content: center; position: relative; background: var(--card-elevated); }
 .event-card__type-badge { position: absolute; top: 14px; left: 14px; padding: 4px 10px; border-radius: 20px; font-size: 11px; font-weight: 700; color: #fff; display: flex; align-items: center; gap: 5px; }
@@ -976,6 +976,7 @@
 @media (max-width: 768px) {
   .feature-page__header { padding: 24px 16px 0; }
   .blog-grid, .workshops-grid, .offerings-grid, .events-grid { padding: 24px 16px; }
+  .events-grid { grid-template-columns: 1fr; }
   .events-featured { flex-direction: column; margin: 24px 16px 0; padding: 24px; }
   .events-filters { padding: 24px 16px 0; }
   .video-page { flex-direction: column; }

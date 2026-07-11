@@ -11,6 +11,7 @@
   backdrop-filter: blur(6px) saturate(0.8);
   -webkit-backdrop-filter: blur(6px) saturate(0.8);
   z-index: 1100;
+  will-change: opacity;
 }
 
 /* ── DRAWER PANEL ── */
@@ -23,6 +24,10 @@
   flex-direction: column;
   overflow-y: auto;
   overflow-x: hidden;
+  will-change: transform;
+  -webkit-overflow-scrolling: touch;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 
   /* Sacred ivory surface */
   background: linear-gradient(

@@ -34,7 +34,7 @@ export default function MobileDrawer({ open, onClose }) {
             initial={{ x: '100%' }}
             animate={{ x: 0 }}
             exit={{ x: '100%' }}
-            transition={{ type: 'tween', duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
+            transition={{ type: 'tween', duration: 0.32, ease: [0.32, 0.72, 0, 1] }}
           >
             {/* Header */}
             <div className="drawer__header">
