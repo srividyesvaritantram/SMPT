@@ -8,6 +8,7 @@ import { courses, workshops, testimonials, offerings, events, blogPosts } from '
 import { FiStar, FiCheck, FiChevronRight, FiMail, FiPhone, FiMapPin, FiClock, FiYoutube, FiInstagram, FiFacebook, FiMessageCircle } from 'react-icons/fi';
 import { FaStar, FaStarHalfAlt } from 'react-icons/fa';
 import ardhanariswariImg from '../../assets/ardhanariswari.png';
+import logoImg from '../../assets/logo.png';
 import whyTantraImg from '../../assets/why_tantra.png';
 import learnSriVidyaImg from '../../assets/learn_sri_vidya.png';
 import mahavidyeswariImg from '../../assets/mahavidyeswari.png';
@@ -1276,7 +1277,7 @@ export function FooterSection() {
           {/* Brand column */}
           <div className="footer__brand">
             <div className="footer__brand-logo">
-              <span className="footer__brand-om font-devanagari">ॐ</span>
+              <img src={logoImg} alt="Sri Mahavidyesvari" className="footer__brand-om-img" />
               <h3 className="footer__brand-name font-cinzel">Sri Mahavidyesvari</h3>
             </div>
             <p className="footer__brand-tagline font-cinzel">Tantra Peetham</p>
@@ -1356,7 +1357,7 @@ export function FooterSection() {
         {/* ── DIVIDER ── */}
         <div className="footer__divider">
           <span className="footer__divider-line" />
-          <span className="footer__divider-om font-devanagari">ॐ</span>
+          <img src={logoImg} alt="" className="footer__divider-om-img" />
           <span className="footer__divider-line" />
         </div>
 

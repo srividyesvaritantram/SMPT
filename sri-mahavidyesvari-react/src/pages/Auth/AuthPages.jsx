@@ -5,6 +5,7 @@ import { FiEye, FiEyeOff, FiMail, FiLock, FiUser } from 'react-icons/fi';
 import GlassCard from '../../components/common/GlassCard.jsx';
 import GoldenButton from '../../components/common/GoldenButton.jsx';
 import GoldenParticleBackground from '../../components/common/GoldenParticleBackground.jsx';
+import logoImg from '../../assets/logo.png';
 import './AuthPages.css';
 
 export function LoginPage() {
@@ -24,7 +25,7 @@ export function LoginPage() {
       <GoldenParticleBackground count={80} />
       <div className="auth-glow" />
       <div className="auth-content">
-        <motion.div className="auth-logo" initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6 }}>ॐ</motion.div>
+        <motion.div className="auth-logo" initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6 }}><img src={logoImg} alt="Sri Mahavidyesvari" className="auth-logo-img" /></motion.div>
         <motion.h1 className="auth-title font-cinzel golden-text" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }}>Welcome Back</motion.h1>
         <motion.p className="auth-subtitle" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }}>Continue your spiritual journey</motion.p>
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }}>
@@ -73,7 +74,7 @@ export function RegisterPage() {
       <GoldenParticleBackground count={80} />
       <div className="auth-glow" />
       <div className="auth-content">
-        <motion.div className="auth-logo" initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6 }}>ॐ</motion.div>
+        <motion.div className="auth-logo" initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6 }}><img src={logoImg} alt="Sri Mahavidyesvari" className="auth-logo-img" /></motion.div>
         <motion.h1 className="auth-title font-cinzel golden-text" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }}>Create Account</motion.h1>
         <motion.p className="auth-subtitle" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }}>Start your free spiritual journey</motion.p>
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }}>

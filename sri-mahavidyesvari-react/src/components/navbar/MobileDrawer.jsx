@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiX, FiChevronDown } from 'react-icons/fi';
 import { NAV_CONFIG } from './Navbar.jsx';
+import logoImg from '../../assets/logo.png';
 import './MobileDrawer.css';
 
 export default function MobileDrawer({ open, onClose }) {
@@ -40,7 +41,7 @@ export default function MobileDrawer({ open, onClose }) {
             <div className="drawer__header">
               <div className="drawer__logo">
                 <div className="drawer__logo-icon">
-                  <span className="font-devanagari">ॐ</span>
+                  <img src={logoImg} alt="Sri Mahavidyesvari" className="drawer__logo-img" />
                 </div>
                 <div>
                   <p className="drawer__logo-name font-cinzel">Sri Mahavidyesvari</p>

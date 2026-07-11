@@ -1886,28 +1886,28 @@
 }
 
 .events-section__grid {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
-  flex-wrap: wrap;
   justify-content: center;
 }
 
 .event-card {
-  width: 340px;
-  background: rgba(255,255,255,0.06);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  width: 100%;
+  background: #FFF8F1;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
   border: 1px solid rgba(212,175,55,0.30);
   border-radius: 24px;
   overflow: hidden;
   cursor: pointer;
   transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.30);
+  box-shadow: 0 4px 20px rgba(90,18,40,0.10), 0 1px 4px rgba(0,0,0,0.06);
 }
 
 .event-card:hover {
-  border-color: rgba(212,175,55,0.60);
-  box-shadow: 0 0 32px rgba(212,175,55,0.22);
+  border-color: rgba(212,175,55,0.55);
+  box-shadow: 0 16px 48px rgba(90,18,40,0.14), 0 0 24px rgba(212,175,55,0.10);
   transform: translateY(-6px);
 }
 
@@ -1927,20 +1927,20 @@
   font-family: 'Cinzel', serif;
   font-size: 15px;
   font-weight: 600;
-  color: #E8C76A;
+  color: #4A0F22;
   margin-bottom: 8px;
 }
 
 .event-card__meta {
   font-size: 13px;
-  color: rgba(255,255,255,0.70);
+  color: #7A6A5A;
   margin-bottom: 4px;
 }
 
 .event-card__desc {
   font-family: 'Cormorant Garamond', serif;
   font-size: 14px;
-  color: rgba(255,255,255,0.75);
+  color: #5E3A42;
   margin-top: 4px;
   line-height: 1.6;
 }
@@ -2603,7 +2603,7 @@
   .off-card__desc { font-size: 14px; }
 
   /* Events */
-  .events-section__grid { grid-template-columns: 1fr; gap: 16px; }
+  .events-section__grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
   .event-card__title { font-size: 15px; }
   .event-card__body { padding: 14px; }
 
@@ -2875,4 +2875,30 @@
 
 @media (max-width: 400px) {
   .hp-ws-card__img-wrap { height: 220px; }
+}
+
+/* Logo image replacements */
+.footer__brand-om-img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  border-radius: 50%;
+  filter: drop-shadow(0 0 6px rgba(212,175,55,0.40));
+}
+
+.footer__divider-om-img {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  border-radius: 50%;
+  flex-shrink: 0;
+  opacity: 0.6;
+}
+
+/* Events section responsive grid */
+@media (max-width: 900px) {
+  .events-section__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .events-section__grid { grid-template-columns: 1fr; }
 }

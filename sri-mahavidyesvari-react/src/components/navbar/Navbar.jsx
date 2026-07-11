@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { FiSearch, FiMenu, FiChevronDown } from 'react-icons/fi';
 import Dropdown from './Dropdown.jsx';
 import MobileDrawer from './MobileDrawer.jsx';
+import logoImg from '../../assets/logo.png';
 import './Navbar.css';
 
 export const NAV_CONFIG = [
@@ -66,7 +67,7 @@ export default function Navbar() {
             {/* Logo */}
             <Link to="/" className="navbar__logo">
               <div className="navbar__logo-icon">
-                <span className="font-devanagari">ॐ</span>
+                <img src={logoImg} alt="Sri Mahavidyesvari" className="navbar__logo-img" />
               </div>
               <div className="navbar__logo-text">
                 <span className="navbar__logo-name font-cinzel">Sri Mahavidyesvari</span>
