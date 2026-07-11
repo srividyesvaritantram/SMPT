@@ -1774,7 +1774,7 @@
 .ap-og__img-wrap {
   position: relative;
   width: 100%;
-  max-width: 460px;
+  max-width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1805,7 +1805,7 @@
   z-index: 1;
   width: 100%;
   height: auto;
-  max-height: 580px;
+  max-height: 620px;
   object-fit: contain;
   object-position: center top;
   display: block;
@@ -2160,7 +2160,7 @@
     padding: 0 28px;
   }
   .ap-og__img-col      { order: -1; }
-  .ap-og__img-wrap     { max-width: 380px; margin: 0 auto; }
+  .ap-og__img-wrap     { max-width: 440px; margin: 0 auto; }
   .ap-og__content-col  { text-align: center; }
   .ap-og__eyebrow      { justify-content: center; }
   .ap-og__rule         { margin-left: auto; margin-right: auto; }

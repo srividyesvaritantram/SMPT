@@ -544,7 +544,6 @@ input::placeholder, textarea::placeholder {
   height: 1.2em;
   object-fit: contain;
   vertical-align: middle;
-  border-radius: 50%;
 }
 
 .hero__om-img {
@@ -562,5 +561,4 @@ input::placeholder, textarea::placeholder {
 .footer__brand-om-img,
 .footer__divider-om-img {
   object-fit: contain;
-  border-radius: 50%;
 }
