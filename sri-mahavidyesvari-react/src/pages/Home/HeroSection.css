@@ -77,7 +77,7 @@
   object-position: center top;
   display: block;
   z-index: 0;
-  filter: brightness(1.05) contrast(1.05) saturate(1.08);
+  filter: brightness(0.7) contrast(1.08) saturate(1.05);
 }
 
 /* ─────────────────────────────────────────────────────────────────

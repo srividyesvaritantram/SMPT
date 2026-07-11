@@ -1,4 +1,4 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/navbar/Navbar.jsx';
@@ -266,19 +266,17 @@ export function BlogPage() {
       <div className="blog-grid" id="blog-grid">
         {blogPosts.map((post, i) => (
           <ScrollReveal key={post.id} delay={i * 0.08}>
-            <motion.div className="blog-card" whileHover={{ y: -6, boxShadow: '0 0 24px rgba(184,134,11,0.3)' }}>
+            <motion.div className="blog-card blog-card--coming-soon" whileHover={{ y: -6, boxShadow: '0 0 24px rgba(184,134,11,0.3)' }}>
               <div className="blog-card__thumb"><img src={post.thumbnail} alt={post.title} loading="lazy" /></div>
               <div className="blog-card__body">
                 <span className="blog-card__category">{post.category}</span>
                 <h3 className="blog-card__title">{post.title}</h3>
-                <div className="blog-card__meta"><span>{post.date}</span><span>·</span><span>{post.readTime}</span></div>
+                <span className="blog-card__coming-soon">Coming Soon</span>
               </div>
             </motion.div>
           </ScrollReveal>
         ))}
       </div>
-
-      {/* ══ SECTION 1 — Scriptural Sources (Cream) ══ */}
       <section className="blog-scripture on-light">
         <div className="blog-scripture__texture" aria-hidden="true" />
         <div className="blog-scripture__inner">

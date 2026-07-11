@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import Navbar from '../components/navbar/Navbar.jsx';
 import ScrollReveal from '../components/common/ScrollReveal.jsx';
-import GoldenButton from '../components/common/GoldenButton.jsx';
 import { FooterSection } from './Home/HomeSections.jsx';
 import { FiMapPin, FiMail, FiInstagram, FiMessageCircle } from 'react-icons/fi';
 import contactHeroImg from '../assets/contact.png';
@@ -396,80 +395,6 @@ export default function ContactPage() {
         </section>
 
         {/* ══════════════════════════════════════════════════════
-            SECTION 3 — WHATSAPP COMMUNITY (CREAM)
-        ══════════════════════════════════════════════════════ */}
-        <section className="cp-wa-community">
-          <div className="cp-wa-community__texture" aria-hidden="true" />
-          <div className="cp-wa-community__inner">
-
-            {/* LEFT — Large WhatsApp Icon */}
-            <ScrollReveal direction="right" duration={0.85}>
-              <motion.a
-                href="https://chat.whatsapp.com/KOxlAGgqOzJDz8JbW6LUKy"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="cp-wa-community__icon-link"
-                animate={{ y: [0, -12, 0] }}
-                transition={{ duration: 4.5, repeat: Infinity, ease: 'easeInOut' }}
-              >
-                <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="cp-wa-community__icon">
-                  <circle cx="60" cy="60" r="60" fill="url(#cpWaGrad)" />
-                  <path d="M60 25C40.67 25 25 40.67 25 60c0 6.59 1.73 12.78 4.75 18.13L25 95l17.38-4.68A34.88 34.88 0 0060 95c19.33 0 35-15.67 35-35S79.33 25 60 25zm17.25 47.75c-.73 2.04-4.25 3.9-5.83 4.15-1.58.25-3.53.35-5.68-.35-1.3-.43-2.98-1-5.1-1.95-8.98-3.88-14.83-12.93-15.28-13.53-.45-.6-3.65-4.85-3.65-9.25 0-4.4 2.3-6.58 3.13-7.48.83-.9 1.8-1.13 2.4-1.13.6 0 1.2.01 1.73.03.55.03 1.3-.21 2.03 1.55.75 1.8 2.55 6.2 2.78 6.65.23.45.38.98.08 1.58-.3.6-.45.98-.9 1.5-.45.53-.95 1.18-1.35 1.58-.45.45-.93.93-.4 1.83.53.9 2.35 3.88 5.05 6.28 3.48 3.1 6.4 4.05 7.3 4.5.9.45 1.43.38 1.95-.23.53-.6 2.25-2.63 2.85-3.53.6-.9 1.2-.75 2.03-.45.83.3 5.25 2.48 6.15 2.93.9.45 1.5.68 1.73 1.05.23.38.23 2.18-.5 4.22z" fill="#fff" />
-                  <defs>
-                    <linearGradient id="cpWaGrad" x1="0" y1="0" x2="120" y2="120" gradientUnits="userSpaceOnUse">
-                      <stop offset="0%" stopColor="#25D366" />
-                      <stop offset="100%" stopColor="#128C7E" />
-                    </linearGradient>
-                  </defs>
-                </svg>
-              </motion.a>
-            </ScrollReveal>
-
-            {/* RIGHT — Content + QR + Buttons */}
-            <ScrollReveal direction="left" duration={0.85}>
-              <div className="cp-wa-community__content">
-                <h2 className="cp-wa-community__heading font-cinzel">Join Our Official WhatsApp Community</h2>
-                <p className="cp-wa-community__desc font-serif">
-                  Become a part of the Sri Mahavidyesvari Tantra Peetham community to receive instant updates about:
-                </p>
-                <ul className="cp-wa-community__list font-serif">
-                  <li>Sri Vidya Courses</li>
-                  <li>Workshops</li>
-                  <li>Spiritual Events</li>
-                  <li>Temple Activities</li>
-                  <li>Announcements</li>
-                  <li>New Blog Articles</li>
-                  <li>Enrollment Notifications</li>
-                  <li>Daily Spiritual Updates</li>
-                </ul>
-                <div className="cp-wa-community__qr-wrap">
-                  <img
-                    src={whatsappQrImg}
-                    alt="WhatsApp Community QR Code — Sri MahaVidyesvari Tantra Peetham"
-                    className="cp-wa-community__qr"
-                    loading="lazy"
-                  />
-                </div>
-                <div className="cp-wa-community__btns">
-                  <GoldenButton
-                    label="Join WhatsApp Community"
-                    size="lg"
-                    onClick={() => window.open('https://chat.whatsapp.com/KOxlAGgqOzJDz8JbW6LUKy', '_blank')}
-                  />
-                  <GoldenButton
-                    label="Contact Us"
-                    size="lg"
-                    outlined
-                    onClick={() => document.getElementById('cp-info-section')?.scrollIntoView({ behavior: 'smooth' })}
-                  />
-                </div>
-              </div>
-            </ScrollReveal>
-
-          </div>
-        </section>
-
-        {/* ══════════════════════════════════════════════════════
             SECTION 4 — CALL TO ACTION
         ══════════════════════════════════════════════════════ */}
         <section className="cp-cta">
@@ -563,12 +488,33 @@ export default function ContactPage() {
             </ScrollReveal>
 
             <ScrollReveal delay={0.48}>
-              <div style={{ marginTop: 40, background: '#fff', borderRadius: 18, padding: 14, display: 'inline-block', boxShadow: '0 8px 36px rgba(0,0,0,0.15)', border: '1px solid rgba(212,175,55,0.20)' }}>
-                <img src={whatsappQrImg} alt="WhatsApp Community QR Code" style={{ width: 240, height: 'auto', display: 'block', borderRadius: 12 }} />
+              <div className="cp-cta__qr-box">
+                <div className="cp-cta__qr-left">
+                  <img src={whatsappQrImg} alt="WhatsApp Community QR Code" className="cp-cta__qr-img" />
+                </div>
+                <div className="cp-cta__qr-right">
+                  <h3 className="cp-cta__qr-heading font-cinzel">Join Our Official WhatsApp Community</h3>
+                  <p className="cp-cta__qr-desc">Stay connected with Sri Mahavidyesvari Tantra Peetham.</p>
+                  <ul className="cp-cta__qr-list">
+                    <li>Receive event updates</li>
+                    <li>Workshop announcements</li>
+                    <li>Course notifications</li>
+                    <li>Spiritual guidance</li>
+                    <li>Community discussions</li>
+                  </ul>
+                  <motion.a
+                    href="https://chat.whatsapp.com/KOxlAGgqOzJDz8JbW6LUKy"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="cp-cta__qr-btn"
+                    whileHover={{ y: -3, boxShadow: '0 12px 36px rgba(184,134,11,0.50)' }}
+                    whileTap={{ scale: 0.97 }}
+                    transition={{ duration: 0.22 }}
+                  >
+                    Join WhatsApp Community
+                  </motion.a>
+                </div>
               </div>
-              <p style={{ marginTop: 14, fontFamily: "'Inter', sans-serif", fontSize: 12, color: 'rgba(255,255,255,0.60)', letterSpacing: '0.5px' }}>
-                Scan with WhatsApp camera to join
-              </p>
             </ScrollReveal>
 
             <ScrollReveal delay={0.54}>

@@ -270,12 +270,11 @@
   height: auto;
   min-height: 520px;
   max-height: 620px;
-  object-fit: contain;
-  object-position: center center;
+  object-fit: cover;
+  object-position: center 20%;
   display: block;
   background: transparent;
   transition: transform 0.55s ease;
-  image-rendering: -webkit-optimize-contrast;
 }
 
 .cp-feat-img-card:hover .cp-feat-img--sri-vidya {
@@ -639,7 +638,7 @@
   .cp-hero__btns { flex-direction: column; align-items: center; }
 
   .cp-featured { padding: 64px 18px 72px; }
-  .cp-feat-img--sri-vidya { min-height: 320px; max-height: 420px; padding: 10px; }
+  .cp-feat-img--sri-vidya { min-height: 320px; max-height: 420px; }
   .cp-catalogue { padding: 64px 18px 72px; }
   .cp-catalogue__grid { grid-template-columns: 1fr; gap: 24px; }
   .cp-card__thumb { height: 260px; }

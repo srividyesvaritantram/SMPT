@@ -16,6 +16,11 @@
 .blog-card__title { font-size: 16px; font-weight: 600; color: var(--heading); line-height: 1.4; margin-bottom: 12px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 .blog-card__meta { display: flex; gap: 12px; font-size: 12px; color: var(--muted); }
 
+
+/* Blog Coming Soon state */
+.blog-card--coming-soon { position: relative; }
+.blog-card--coming-soon .blog-card__thumb { opacity: 0.6; }
+.blog-card__coming-soon { display: inline-block; padding: 6px 16px; background: linear-gradient(135deg, rgba(184,134,11,0.18), rgba(212,175,55,0.10)); border: 1px solid rgba(212,175,55,0.35); border-radius: 20px; font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #E8C76A; margin-top: 4px; }
 /* Workshops */
 .workshops-grid { display: flex; flex-wrap: wrap; gap: 24px; padding: 48px; justify-content: flex-start; }
 .workshop-card { width: 380px; padding: 24px; background: var(--card-bg); border-radius: 18px; border: 1px solid var(--border); cursor: pointer; transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s; display: flex; flex-direction: column; gap: 12px; min-height: 240px; box-shadow: 0 2px 12px rgba(0,0,0,0.15); }
@@ -458,7 +463,7 @@
 .wp-feat-img-glow {
   position: absolute;
   inset: -32px;
-  background: radial-gradient(ellipse at center, rgba(212, 175, 55, 0.13) 0%, transparent 68%);
+  background: none;
   border-radius: 24px;
   pointer-events: none;
   z-index: 0;
@@ -468,16 +473,13 @@
   position: relative;
   z-index: 1;
   width: 100%;
-  border-radius: 24px;
-  border: 1.5px solid rgba(212, 175, 55, 0.40);
+  border-radius: 22px;
+  border: 1.5px solid rgba(184, 134, 11, 0.42);
   box-shadow:
-    0 28px 72px rgba(90, 18, 40, 0.14),
-    0 0 0 1px rgba(212, 175, 55, 0.10),
-    0 0 48px rgba(212, 175, 55, 0.08),
-    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    0 28px 72px rgba(90, 16, 37, 0.14),
+    0 8px 32px rgba(184, 134, 11, 0.10);
   overflow: hidden;
-  background: rgba(13, 2, 8, 0.6);
-  backdrop-filter: blur(12px);
+  background: transparent;
   cursor: pointer;
   transition: border-color 0.35s ease;
 }
@@ -490,11 +492,10 @@
   width: 100%;
   height: auto;
   max-height: 620px;
-  object-fit: contain;
-  object-position: center center;
+  object-fit: cover;
+  object-position: center 20%;
   display: block;
   transition: transform 0.55s ease;
-  image-rendering: -webkit-optimize-contrast;
 }
 
 /* Dhanvantari — portrait deity, show complete, no crop */

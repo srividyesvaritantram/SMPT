@@ -2064,6 +2064,11 @@
   margin-bottom: 16px;
 }
 
+
+/* Blog Coming Soon state */
+.blog-card--coming-soon { position: relative; }
+.blog-card--coming-soon .blog-card__thumb { opacity: 0.6; }
+.blog-card__coming-soon { display: inline-block; padding: 6px 16px; background: linear-gradient(135deg, rgba(184,134,11,0.18), rgba(212,175,55,0.10)); border: 1px solid rgba(212,175,55,0.35); border-radius: 20px; font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #E8C76A; margin-top: 4px; }
 @media (max-width: 860px) {
   .blog-section { padding: 65px 28px 56px; }
   .blog-section__header { flex-direction: column; gap: 16px; align-items: flex-start; }

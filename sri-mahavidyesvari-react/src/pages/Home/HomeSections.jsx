@@ -1,4 +1,4 @@
-﻿import { useState } from 'react';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import ScrollReveal from '../../components/common/ScrollReveal.jsx';
@@ -607,17 +607,14 @@ export function BlogPreviewSection() {
         <ScrollReveal delay={0.2}>
           <div className="blog-section__grid">
             {blogPosts.slice(0, 3).map((post, i) => (
-              <motion.div key={post.id} className="blog-card" whileHover={{ y: -6, boxShadow: '0 16px 48px rgba(90,16,37,0.12), 0 0 28px rgba(184,134,11,0.16)' }}>
+              <motion.div key={post.id} className="blog-card blog-card--coming-soon" whileHover={{ y: -6, boxShadow: '0 16px 48px rgba(90,16,37,0.12), 0 0 28px rgba(184,134,11,0.16)' }}>
                 <div className="blog-card__thumb">
                   <img src={post.thumbnail} alt={post.title} loading="lazy" />
                   <span className="blog-card__cat">{post.category}</span>
                 </div>
                 <div className="blog-card__body">
                   <h4 className="blog-card__title">{post.title}</h4>
-                  <div className="blog-card__meta">
-                    <span>{post.date}</span><span>\u00b7</span><span>{post.readTime}</span>
-                  </div>
-                  <GoldenButton label="READ MORE" outlined width="100%" style={{ marginTop: 16 }} />
+                  <span className="blog-card__coming-soon">Coming Soon</span>
                 </div>
               </motion.div>
             ))}
