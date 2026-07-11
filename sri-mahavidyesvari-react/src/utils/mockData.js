@@ -5,6 +5,7 @@ import shaivamImg     from '../assets/shaivam.png';
 import vaishnavamImg  from '../assets/vaishnavam_course.png';
 import ganapathyamImg from '../assets/ganapathyam.png';
 import skaandamImg    from '../assets/skaandam_course.png';
+import blogHeroImg    from '../assets/blog_hero.png';
 
 const img = mahavidyeswariImg;
 
@@ -36,15 +37,15 @@ export const events = [
 ];
 
 export const blogPosts = [
-  { id: '1', title: 'The Sacred Science of Sri Chakra Meditation', category: 'Meditation', date: 'June 1, 2025', readTime: '5 min read', thumbnail: img },
-  { id: '2', title: 'Understanding Navaratri: Nine Nights of Divine Power', category: 'Festivals', date: 'June 2, 2025', readTime: '6 min read', thumbnail: img },
-  { id: '3', title: 'Kundalini Awakening: Signs and Stages', category: 'Tantra', date: 'June 3, 2025', readTime: '7 min read', thumbnail: img },
-  { id: '4', title: 'The Significance of Diya in Hindu Worship', category: 'Rituals', date: 'June 4, 2025', readTime: '8 min read', thumbnail: img },
-  { id: '5', title: 'Vedanta Philosophy: The Path of Self-Knowledge', category: 'Philosophy', date: 'June 5, 2025', readTime: '9 min read', thumbnail: img },
-  { id: '6', title: 'Mantra Chanting: Science and Spirituality', category: 'Mantras', date: 'June 6, 2025', readTime: '10 min read', thumbnail: img },
-  { id: '7', title: 'Sri Yantra: The Geometry of the Cosmos', category: 'Tantra', date: 'June 7, 2025', readTime: '6 min read', thumbnail: img },
-  { id: '8', title: 'Guru Parampara: The Living Tradition', category: 'Philosophy', date: 'June 8, 2025', readTime: '5 min read', thumbnail: img },
-  { id: '9', title: 'Panchadashi Mantra: The Fifteen Syllables', category: 'Mantras', date: 'June 9, 2025', readTime: '7 min read', thumbnail: img },
+  { id: '1', title: 'The Sacred Science of Sri Chakra Meditation', category: 'Meditation', date: 'June 1, 2025', readTime: '5 min read', thumbnail: blogHeroImg },
+  { id: '2', title: 'Understanding Navaratri: Nine Nights of Divine Power', category: 'Festivals', date: 'June 2, 2025', readTime: '6 min read', thumbnail: blogHeroImg },
+  { id: '3', title: 'Kundalini Awakening: Signs and Stages', category: 'Tantra', date: 'June 3, 2025', readTime: '7 min read', thumbnail: blogHeroImg },
+  { id: '4', title: 'The Significance of Diya in Hindu Worship', category: 'Rituals', date: 'June 4, 2025', readTime: '8 min read', thumbnail: blogHeroImg },
+  { id: '5', title: 'Vedanta Philosophy: The Path of Self-Knowledge', category: 'Philosophy', date: 'June 5, 2025', readTime: '9 min read', thumbnail: blogHeroImg },
+  { id: '6', title: 'Mantra Chanting: Science and Spirituality', category: 'Mantras', date: 'June 6, 2025', readTime: '10 min read', thumbnail: blogHeroImg },
+  { id: '7', title: 'Sri Yantra: The Geometry of the Cosmos', category: 'Tantra', date: 'June 7, 2025', readTime: '6 min read', thumbnail: blogHeroImg },
+  { id: '8', title: 'Guru Parampara: The Living Tradition', category: 'Philosophy', date: 'June 8, 2025', readTime: '5 min read', thumbnail: blogHeroImg },
+  { id: '9', title: 'Panchadashi Mantra: The Fifteen Syllables', category: 'Mantras', date: 'June 9, 2025', readTime: '7 min read', thumbnail: blogHeroImg },
 ];
 
 export const offerings = [
