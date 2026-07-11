@@ -10,14 +10,7 @@ import './Navbar.css';
 export const NAV_CONFIG = [
   { label: 'Home', path: '/' },
   { label: 'About', path: '/about' },
-  {
-    label: 'Courses',
-    path: '/courses',
-    items: [
-      { label: 'All Courses', path: '/courses' },
-      { label: 'Free Courses', path: '/courses/free' },
-    ],
-  },
+  { label: 'Courses', path: '/courses' },
   { label: 'Workshops', path: '/workshops' },
   { label: 'Offerings', path: '/offerings' },
   { label: 'Events', path: '/events' },

@@ -16,7 +16,7 @@
 }
 
 .course-card__thumb { position: relative; height: 180px; overflow: hidden; }
-.course-card__thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease; }
+.course-card__thumb img { width: 100%; height: 100%; object-fit: cover; object-position: center 20%; transition: transform 0.3s ease; }
 .course-card__thumb img[data-course-id="4"] { object-position: center top; }
 .course-card:hover .course-card__thumb img { transform: scale(1.05); }
 

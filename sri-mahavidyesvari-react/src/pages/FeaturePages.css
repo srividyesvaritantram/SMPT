@@ -1902,7 +1902,7 @@
 }
 
 .blog-wa-section__qr-wrap {
-  width: 240px;
+  width: 180px;
   background: #fff;
   border-radius: 16px;
   padding: 12px;
@@ -1935,5 +1935,5 @@
   .blog-cta__btns { flex-direction: column; align-items: center; }
   .blog-wa-section { padding: 64px 18px 72px; }
   .blog-wa-section__icon { width: 100px; height: 100px; }
-  .blog-wa-section__qr-wrap { width: 200px; }
+  .blog-wa-section__qr-wrap { width: 160px; }
 }
