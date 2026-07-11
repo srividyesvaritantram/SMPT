@@ -31,10 +31,10 @@
 .auth-logo {
   width: 72px; height: 72px;
   border-radius: 50%;
-  background: var(--grad-maroon);
+  background: rgba(255, 253, 248, 0.95);
   display: flex; align-items: center; justify-content: center;
   padding: 4px;
-  box-shadow: 0 0 24px rgba(184,134,11,0.5);
+  box-shadow: 0 0 24px rgba(184,134,11,0.25);
   border: 1.5px solid rgba(212, 175, 55, 0.42);
   overflow: hidden;
   margin-bottom: 24px;

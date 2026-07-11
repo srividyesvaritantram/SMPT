@@ -1,4 +1,4 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import ScrollReveal from '../../components/common/ScrollReveal.jsx';
@@ -7,6 +7,7 @@ import GoldenButton from '../../components/common/GoldenButton.jsx';
 import { courses, workshops, testimonials, offerings, events, blogPosts } from '../../utils/mockData.js';
 import { FiStar, FiCheck, FiChevronRight, FiMail, FiPhone, FiMapPin, FiClock, FiYoutube, FiInstagram, FiFacebook, FiMessageCircle } from 'react-icons/fi';
 import { FaStar, FaStarHalfAlt } from 'react-icons/fa';
+import { Flower2, MonitorPlay, GraduationCap, Globe, Award, HeadphonesIcon } from 'lucide-react';
 import ardhanariswariImg from '../../assets/ardhanariswari.png';
 import logoImg from '../../assets/logo.png';
 import whyTantraImg from '../../assets/why_tantra.png';
@@ -807,12 +808,12 @@ export function OfferingsShowcaseSection() {
 
 // ─── Why Choose Us ────────────────────────────────────────────────────────────
 const features = [
-  { icon: '✨', title: 'Ancient Wisdom', desc: 'Teachings rooted in authentic Vedic traditions passed down through generations.' },
-  { icon: '🎥', title: 'HD Video Quality', desc: 'Crystal-clear video lessons with adaptive streaming for any connection.' },
-  { icon: '🏆', title: 'Expert Instructors', desc: 'Learn from realized masters and experienced spiritual teachers.' },
-  { icon: '📱', title: 'Learn Anywhere', desc: 'Access your courses on any device, anytime, anywhere in the world.' },
-  { icon: '🎓', title: 'Certificates', desc: 'Earn recognized certificates upon completing your spiritual courses.' },
-  { icon: '💬', title: '24/7 Support', desc: 'Dedicated spiritual guidance and technical support always available.' },
+  { icon: <Flower2 size={24} />, title: 'Ancient Wisdom', desc: 'Teachings rooted in authentic Vedic traditions passed down through generations.' },
+  { icon: <MonitorPlay size={24} />, title: 'HD Video Quality', desc: 'Crystal-clear video lessons with adaptive streaming for any connection.' },
+  { icon: <GraduationCap size={24} />, title: 'Expert Instructors', desc: 'Learn from realized masters and experienced spiritual teachers.' },
+  { icon: <Globe size={24} />, title: 'Learn Anywhere', desc: 'Access your courses on any device, anytime, anywhere in the world.' },
+  { icon: <Award size={24} />, title: 'Certificates', desc: 'Earn recognized certificates upon completing your spiritual courses.' },
+  { icon: <HeadphonesIcon size={24} />, title: '24/7 Support', desc: 'Dedicated spiritual guidance and technical support always available.' },
 ];
 
 export function WhyChooseUsSection() {
@@ -829,7 +830,7 @@ export function WhyChooseUsSection() {
             <ScrollReveal key={f.title} delay={i * 0.1}>
               <motion.div className="why-us__card" whileHover={{ y: -8, borderColor: 'rgba(184,134,11,0.5)', boxShadow: '0 0 30px rgba(184,134,11,0.2)' }}>
                 <motion.div className="why-us__icon" whileHover={{ background: 'linear-gradient(135deg, #B8860B, #E8C76A)' }}>
-                  <span style={{ fontSize: 24 }}>{f.icon}</span>
+                  {f.icon}
                 </motion.div>
                 <h4 className="why-us__title">{f.title}</h4>
                 <p className="why-us__desc">{f.desc}</p>
