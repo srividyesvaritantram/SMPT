@@ -1260,7 +1260,7 @@ const socialLinks = [
   { icon: <FiYoutube size={18} />,       label: 'YouTube',   href: 'https://youtube.com',                             cls: 'footer__social--yt' },
   { icon: <FiInstagram size={18} />,     label: 'Instagram', href: 'https://instagram.com/sri_mahavidyesvari_tantra', cls: 'footer__social--ig' },
   { icon: <FiFacebook size={18} />,      label: 'Facebook',  href: 'https://facebook.com',                            cls: 'footer__social--fb' },
-  { icon: <FiMessageCircle size={18} />, label: 'WhatsApp',  href: 'https://wa.me/919390886029',                      cls: 'footer__social--wa' },
+  { icon: <FiMessageCircle size={18} />, label: 'WhatsApp',  href: 'https://chat.whatsapp.com/KOxlAGgqOzJDz8JbW6LUKy', cls: 'footer__social--wa' },
 ];
 
 export function FooterSection() {
