@@ -519,6 +519,13 @@
 
 .cp-card:hover .cp-card__img { transform: scale(1.05); }
 
+/* Ganapathyam - show full image */
+.cp-card__img--contain {
+  object-fit: contain !important;
+  object-position: center center !important;
+  padding: 10px;
+}
+
 /* Body */
 .cp-card__body {
   padding: 28px 28px 26px;

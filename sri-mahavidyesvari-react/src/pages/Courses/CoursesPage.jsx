@@ -324,7 +324,7 @@ export default function CoursesPage() {
                       src={card.img}
                       alt={card.title}
                       loading="lazy"
-                      className="cp-card__img"
+                      className={`cp-card__img${card.id === 'ganapathyam' ? ' cp-card__img--contain' : ''}`}
                       transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
                     />
                   </div>
