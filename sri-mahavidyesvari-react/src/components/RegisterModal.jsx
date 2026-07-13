@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import './RegisterModal.css';
 
 const WA_MSG = encodeURIComponent(
-  '🙏 Namaste.\n\nI would like to register my interest for the Sri Varahi Devi Puja on July 15, 2026.\n\nKindly share the event details and registration process.\n\nThank you.'
+  '🙏 Namaste.\n\nI would like to register my interest for the Navaratri Sadhana & Aradhana (July 15 – July 23, 2026).\n\nKindly share the event details and registration process.\n\nThank you.'
 );
 const WA_URL = `https://wa.me/919390886029?text=${WA_MSG}`;
 
@@ -56,7 +56,7 @@ export default function RegisterModal({ open, onClose }) {
                 <h2 className="reg-modal__heading font-cinzel">Register Your Interest</h2>
 
                 <p className="reg-modal__text">
-                  Thank you for your interest in participating in the sacred Sri Varahi Devi Puja.
+                  Thank you for your interest in participating in the sacred Navaratri Sadhana & Aradhana.
                 </p>
                 <p className="reg-modal__text">
                   Our team will connect with you through WhatsApp to provide event details, venue information, and further guidance.
@@ -64,7 +64,7 @@ export default function RegisterModal({ open, onClose }) {
 
                 <div className="reg-modal__info">
                   <div className="reg-modal__info-row">
-                    <span>📅</span><span>July 15, 2026</span>
+                    <span>📅</span><span>July 15 – July 23, 2026</span>
                   </div>
                   <div className="reg-modal__info-row">
                     <span>📍</span><span>Sri MahaVidyesvari Tantra Peetham</span>

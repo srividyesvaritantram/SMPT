@@ -1034,7 +1034,7 @@ export function EventsPage() {
             <ScrollReveal direction="up" duration={0.85}>
               <div className="varahi-event__header">
                 <span className="varahi-event__eyebrow">🪔 Upcoming Sacred Event</span>
-                <h2 className="varahi-event__title font-cinzel">Sri Varahi Devi Puja</h2>
+                <h2 className="varahi-event__title font-cinzel">Navaratri Sadhana & Aradhana</h2>
                 <div className="varahi-event__rule">
                   <span className="varahi-event__rule-line" />
                   <span className="varahi-event__rule-dot" />
@@ -1049,20 +1049,20 @@ export function EventsPage() {
                 <div className="varahi-event__img-col">
                   <div className="varahi-event__img-placeholder">
                     <span className="varahi-event__img-icon">🪔</span>
-                    <p className="varahi-event__img-label font-cinzel">Sri Varahi Devi</p>
+                    <p className="varahi-event__img-label font-cinzel">Navaratri Sadhana</p>
                   </div>
                   <span className="varahi-event__status-badge">Upcoming</span>
                 </div>
 
                 {/* Right — content */}
                 <div className="varahi-event__content">
-                  <h3 className="varahi-event__card-title font-cinzel">Sri Varahi Devi Puja</h3>
+                  <h3 className="varahi-event__card-title font-cinzel">Navaratri Sadhana & Aradhana</h3>
 
                   <p className="varahi-event__desc">
-                    Join us for the sacred worship of Sri Varahi Devi, one of the powerful
-                    manifestations of the Divine Mother. Participate in traditional rituals,
+                    Join us for nine sacred nights of Navaratri Sadhana & Aradhana, a powerful
+                    period of intense spiritual practice. Participate in traditional rituals,
                     mantra chanting, and receive divine blessings for protection, courage,
-                    prosperity, and spiritual growth.
+                    prosperity, and spiritual transformation.
                   </p>
 
                   <div className="varahi-event__details">
@@ -1080,14 +1080,14 @@ export function EventsPage() {
                       <span className="varahi-event__detail-icon">📅</span>
                       <div>
                         <p className="varahi-event__detail-label">Date</p>
-                        <p className="varahi-event__detail-value">July 15, 2026</p>
+                        <p className="varahi-event__detail-value">July 15 – July 23, 2026</p>
                       </div>
                     </div>
                     <div className="varahi-event__detail-row">
                       <span className="varahi-event__detail-icon">⏰</span>
                       <div>
                         <p className="varahi-event__detail-label">Time</p>
-                        <p className="varahi-event__detail-value">8:00 AM onwards</p>
+                        <p className="varahi-event__detail-value">8:00 AM onwards (9 days)</p>
                       </div>
                     </div>
                   </div>

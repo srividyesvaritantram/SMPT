@@ -7,13 +7,13 @@ import './EventPopup.css';
 // EVENT CONFIG — update only these fields for future events
 // ─────────────────────────────────────────────────────────────────────────────
 const EVENT = {
-  title:       'Varahi Devi Pooja',
-  description: '📢 Upcoming Event: Varahi Devi Pooja – July 15, 2026. Join us for this sacred divine worship.',
+  title:       'Navaratri Sadhana & Aradhana',
+  description: '📢 Upcoming Event: Navaratri Sadhana & Aradhana – July 15 – July 23, 2026. Join us for nine sacred nights of divine worship.',
   location:    'Sri MahaVidyesvari Tantra Peetham',
-  date:        '15 July 2026',
+  date:        '15 – 23 July 2026',
   time:        '8:00 AM',
   // ISO-style expiry — card auto-hides after this moment (local time)
-  expiresAt:   new Date('2026-07-15T23:59:00'),
+  expiresAt:   new Date('2026-07-23T23:59:00'),
   link:        '/events',
 };
 // ─────────────────────────────────────────────────────────────────────────────
@@ -69,7 +69,7 @@ export default function EventPopup() {
           </motion.button>
 
           {/* Badge */}
-          <span className="en-card__badge">📅 July 15, 2026</span>
+          <span className="en-card__badge">📅 July 15 – July 23, 2026</span>
 
           {/* Divider */}
           <div className="en-card__rule">
