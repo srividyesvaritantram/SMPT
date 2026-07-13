@@ -655,16 +655,7 @@
 ═══════════════════════════════════════════════════════════════════ */
 .cp-cta {
   position: relative;
-  background: linear-gradient(
-    150deg,
-    #0d0208 0%,
-    #1c0610 20%,
-    #3b0f1a 45%,
-    #5a1828 60%,
-    #3b1200 78%,
-    #1c0a00 90%,
-    #0d0208 100%
-  );
+  background: linear-gradient(135deg, #2A0B18 0%, #4A1730 50%, #5A1C38 100%);
   padding: 80px 80px 90px;
   overflow: hidden;
   display: flex;
@@ -711,12 +702,12 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 700px;
-  height: 500px;
+  width: 500px;
+  height: 350px;
   background: radial-gradient(
     ellipse at center,
-    rgba(212, 175, 55, 0.12) 0%,
-    rgba(184, 134, 11, 0.06) 40%,
+    rgba(212, 175, 55, 0.08) 0%,
+    rgba(184, 134, 11, 0.04) 40%,
     transparent 70%
   );
   pointer-events: none;
@@ -736,21 +727,14 @@
   gap: 20px;
   text-align: center;
   padding: 48px 64px 56px;
-  background: linear-gradient(
-    145deg,
-    rgba(30, 8, 18, 0.92) 0%,
-    rgba(45, 12, 25, 0.90) 50%,
-    rgba(30, 8, 18, 0.92) 100%
-  );
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  border: 1.5px solid rgba(212, 175, 55, 0.32);
+  background: linear-gradient(145deg, #3D1225 0%, #4E1A30 50%, #3D1225 100%);
+  border: 1.5px solid rgba(212, 175, 55, 0.40);
   border-radius: 32px;
   box-shadow:
-    0 40px 100px rgba(90, 18, 40, 0.22),
-    0 0 0 1px rgba(212, 175, 55, 0.08),
-    0 0 80px rgba(212, 175, 55, 0.07),
-    inset 0 1px 0 rgba(255, 255, 255, 0.07);
+    0 25px 60px rgba(0, 0, 0, 0.18),
+    0 0 0 1px rgba(212, 175, 55, 0.15),
+    0 0 40px rgba(212, 175, 55, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
 /* Corner ornaments */
@@ -791,9 +775,9 @@
   font-size: clamp(30px, 3.8vw, 52px);
   font-weight: 700;
   line-height: 1.16;
-  color: #ffffff;
+  color: #FDF8F2;
   margin: 0;
-  text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+  text-shadow: 0 2px 8px rgba(0,0,0,0.25);
 }
 
 .cp-cta__heading-gold {
@@ -830,7 +814,7 @@
 .cp-cta__body {
   font-size: clamp(16px, 1.6vw, 19px);
   line-height: 1.78;
-  color: rgba(255, 252, 245, 0.95);
+  color: #F6F1EA;
   max-width: 620px;
   margin: 0;
 }
