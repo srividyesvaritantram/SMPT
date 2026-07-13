@@ -126,9 +126,9 @@ export function WhyTantraSection() {
 
             <ScrollReveal delay={0.08}>
               <h2 className="wt__heading font-cinzel">
-                The Most{' '}
-                <span className="wt__gold">Misunderstood</span>
-                <br />Tradition
+                Tantra –{' '}
+                <span className="wt__gold">The Sacred Science</span>
+                <br />of Divine Transformation
               </h2>
             </ScrollReveal>
 
@@ -185,7 +185,7 @@ export function WhyTantraSection() {
             >
               <motion.img
                 src={whyTantraImg}
-                alt="The Most Misunderstood Tradition — Tantra"
+                alt="Tantra – The Sacred Science of Divine Transformation"
                 className="wt__img"
                 loading="lazy"
                 whileHover={{ scale: 1.02 }}
