@@ -775,9 +775,16 @@
   font-size: clamp(30px, 3.8vw, 52px);
   font-weight: 700;
   line-height: 1.16;
-  color: #FFFFFF;
+  color: #FDF8F2 !important;
+  -webkit-text-fill-color: #FDF8F2 !important;
+  background: none !important;
+  -webkit-background-clip: initial !important;
+  background-clip: initial !important;
+  opacity: 1 !important;
+  filter: none !important;
+  mix-blend-mode: normal !important;
+  text-shadow: none !important;
   margin: 0;
-  text-shadow: none;
 }
 
 .cp-cta__heading-gold {
