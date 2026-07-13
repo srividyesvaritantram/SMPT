@@ -569,13 +569,13 @@ export function EventsPreviewSection() {
                 <div className="event-card__thumb" style={{ background: `linear-gradient(135deg, ${event.gradientColors[0]}, ${event.gradientColors[1]})` }}>
                   <span style={{ fontSize: 48 }}>{event.emoji}</span>
                   {event.isLive && <span className="preview-event-card__live">\ud83d\udd34 LIVE</span>}
-                  {event.isFree && <span className="preview-event-card__free">FREE</span>}
+                  
                 </div>
                 <div className="event-card__body">
                   <h4 className="event-card__title">{event.title}</h4>
-                  <p className="event-card__meta">\ud83d\udcc5 {event.date} \u00b7 {event.time}</p>
+                  <p className="event-card__meta" style={{ color: '#E8C76A', fontWeight: 600 }}>Coming Soon</p>
                   <p className="event-card__desc">{event.description.slice(0, 80)}...</p>
-                  <GoldenButton label={event.isFree ? 'JOIN FREE' : 'REGISTER'} outlined width="100%" style={{ marginTop: 16 }} />
+                  <GoldenButton label="Coming Soon" outlined width="100%" style={{ marginTop: 16, opacity: 0.55, pointerEvents: 'none' }} />
                 </div>
               </motion.div>
             ))}

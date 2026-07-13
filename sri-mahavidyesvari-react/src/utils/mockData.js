@@ -28,12 +28,12 @@ export const workshops = [
 ];
 
 export const events = [
-  { id: '1', emoji: '🌸', title: 'Sri Vidya Maha Diksha Ceremony', description: 'Sacred initiation into the supreme Sri Vidya tradition by Guruji.', date: 'Jan 15, 2025', time: '6:00 AM IST', type: 'CEREMONY', price: '₹5,100', seats: 12, isLive: false, isFree: false, gradientColors: ['#2D0A3E', '#1A0520'] },
-  { id: '2', emoji: '🔥', title: 'Chandi Homa — Navaratri Special', description: 'Nine-day sacred fire ritual invoking Goddess Chandi for protection.', date: 'Oct 2, 2025', time: '5:30 AM IST', type: 'HOMAM', price: '₹2,100', seats: 50, isLive: true, isFree: false, gradientColors: ['#3D1500', '#1A0800'] },
-  { id: '3', emoji: '🧘', title: 'Ashtanga Yoga Intensive', description: 'Three-day immersive yoga workshop covering all eight limbs of yoga.', date: 'Feb 8, 2025', time: '7:00 AM IST', type: 'WORKSHOP', price: '₹1,500', seats: 30, isLive: false, isFree: false, gradientColors: ['#0A2D1A', '#051A0D'] },
-  { id: '4', emoji: '📿', title: 'Maha Mrityunjaya Japa Yagna', description: 'Community japa of 1,25,000 Maha Mrityunjaya mantras for healing.', date: 'Jan 26, 2025', time: '8:00 AM IST', type: 'JAPA', price: '', seats: 200, isLive: false, isFree: true, gradientColors: ['#1A1A00', '#0D0D00'] },
-  { id: '5', emoji: '🌅', title: 'Sandhya Vandana Live Session', description: 'Learn the complete Sandhya Vandana ritual with step-by-step guidance.', date: 'Every Sunday', time: '6:00 AM IST', type: 'WORKSHOP', price: '', seats: 100, isLive: true, isFree: true, gradientColors: ['#1A0D00', '#0D0800'] },
-  { id: '6', emoji: '🪔', title: 'Diwali Lakshmi Puja Ceremony', description: 'Grand Lakshmi puja on Diwali night for prosperity and abundance.', date: 'Oct 20, 2025', time: '7:30 PM IST', type: 'PUJA', price: '₹501', seats: 75, isLive: false, isFree: false, gradientColors: ['#2D1A00', '#1A0D00'] },
+  { id: '1', emoji: '🌸', title: 'Sri Vidya Maha Diksha Ceremony', description: 'Sacred initiation into the supreme Sri Vidya tradition by Guruji.', date: '', time: '', type: 'CEREMONY', price: '₹5,100', seats: 12, isLive: false, isFree: false, gradientColors: ['#2D0A3E', '#1A0520'] },
+  { id: '2', emoji: '🔥', title: 'Chandi Homa — Navaratri Special', description: 'Nine-day sacred fire ritual invoking Goddess Chandi for protection.', date: '', time: '', type: 'HOMAM', price: '₹2,100', seats: 50, isLive: false, isFree: false, gradientColors: ['#3D1500', '#1A0800'] },
+  { id: '3', emoji: '🧘', title: 'Ashtanga Yoga Intensive', description: 'Three-day immersive yoga workshop covering all eight limbs of yoga.', date: '', time: '', type: 'WORKSHOP', price: '₹1,500', seats: 30, isLive: false, isFree: false, gradientColors: ['#0A2D1A', '#051A0D'] },
+  { id: '4', emoji: '📿', title: 'Maha Mrityunjaya Japa Yagna', description: 'Community japa of 1,25,000 Maha Mrityunjaya mantras for healing.', date: '', time: '', type: 'JAPA', price: '', seats: 200, isLive: false, isFree: true, gradientColors: ['#1A1A00', '#0D0D00'] },
+  { id: '5', emoji: '🌅', title: 'Sandhya Vandana Live Session', description: 'Learn the complete Sandhya Vandana ritual with step-by-step guidance.', date: '', time: '', type: 'WORKSHOP', price: '', seats: 100, isLive: false, isFree: true, gradientColors: ['#1A0D00', '#0D0800'] },
+  { id: '6', emoji: '🪔', title: 'Diwali Lakshmi Puja Ceremony', description: 'Grand Lakshmi puja on Diwali night for prosperity and abundance.', date: '', time: '', type: 'PUJA', price: '₹501', seats: 75, isLive: false, isFree: false, gradientColors: ['#2D1A00', '#1A0D00'] },
 ];
 
 export const blogPosts = [

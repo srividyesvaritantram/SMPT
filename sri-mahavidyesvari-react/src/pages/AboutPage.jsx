@@ -10,18 +10,18 @@ import dattatreyaImg from '../assets/dathathreya.png';
 import ourGuruImg from '../assets/our_guru.png';
 import ardhanariswariImg from '../assets/ardhanariswari.png';
 import whyTantraImg from '../assets/why_tantra.png';
-import guruSuryaImg     from '../assets/guru_surya.png';
-import guruChandraImg   from '../assets/guru_chandra.png';
-import guruAgniImg      from '../assets/guru_agni.png';
-import guruKuberaImg    from '../assets/guru_kubera.png';
-import guruIndraImg     from '../assets/guru_indra.png';
-import guruBrahmaImg    from '../assets/guru_brahma.png';
 import guruMaheshaImg   from '../assets/guru_mahesha.png';
 import guruMurariImg    from '../assets/guru_murari.png';
-import guruAgasthyaImg  from '../assets/guru_agasthya.png';
-import guruSkandhaImg   from '../assets/guru_skandha.png';
+import guruBrahmaImg    from '../assets/guru_brahma.png';
 import guruAnangaImg    from '../assets/guru_ananga.png';
-import guruLopamudraImg from '../assets/guru_lopamudra.png';
+import guruSkandhaImg   from '../assets/guru_skandha.png';
+import guruNandhiImg    from '../assets/guru_nandhi.png';
+import guruIndraImg     from '../assets/guru_indra.png';
+import guruManuImg      from '../assets/guru_manu.png';
+import guruChandraImg   from '../assets/guru_chandra.png';
+import guruKuberaImg    from '../assets/guru_kubera.png';
+import guruAgasthyaImg  from '../assets/guru_agasthya.png';
+import guruDurvasaImg   from '../assets/guru_durvasa.png';
 import { FooterSection } from './Home/HomeSections.jsx';
 import logoImg from '../assets/logo.png';
 import './AboutPage.css';
@@ -128,18 +128,18 @@ const faqs = [
 ];
 
 const GURUS_12 = [
-  { name: 'Surya',      img: guruSuryaImg,     pos: 'center 18%' },
-  { name: 'Chandra',    img: guruChandraImg,   pos: 'center 15%' },
-  { name: 'Agni',       img: guruAgniImg,      pos: 'center 12%' },
-  { name: 'Kubera',     img: guruKuberaImg,    pos: 'center 22%' },
-  { name: 'Indra',      img: guruIndraImg,     pos: 'center 14%' },
-  { name: 'Brahma',     img: guruBrahmaImg,    pos: 'center 10%' },
-  { name: 'Mahesha',    img: guruMaheshaImg,   pos: 'center 12%' },
-  { name: 'Murari',     img: guruMurariImg,    pos: 'center 15%' },
-  { name: 'Agasthya',   img: guruAgasthyaImg,  pos: 'center 18%' },
-  { name: 'Skandha',    img: guruSkandhaImg,   pos: 'center 16%' },
-  { name: 'Ananga',     img: guruAnangaImg,    pos: 'center 14%' },
-  { name: 'Lopamudra',  img: guruLopamudraImg, pos: 'center 20%' },
+  { name: 'Mahesha',   img: guruMaheshaImg,   pos: 'center 12%' },
+  { name: 'Madhava',   img: guruMurariImg,    pos: 'center 15%' },
+  { name: 'Vidhatru',  img: guruBrahmaImg,    pos: 'center 10%' },
+  { name: 'Manmata',   img: guruAnangaImg,    pos: 'center 14%' },
+  { name: 'Skandha',   img: guruSkandhaImg,   pos: 'center 16%' },
+  { name: 'Nandhi',    img: guruNandhiImg,    pos: 'center 15%' },
+  { name: 'Indra',     img: guruIndraImg,     pos: 'center 14%' },
+  { name: 'Manu',      img: guruManuImg,      pos: 'center 15%' },
+  { name: 'Chandra',   img: guruChandraImg,   pos: 'center 15%' },
+  { name: 'Kubera',    img: guruKuberaImg,    pos: 'center 22%' },
+  { name: 'Agastya',   img: guruAgasthyaImg,  pos: 'center 18%' },
+  { name: 'Durvasa',   img: guruDurvasaImg,   pos: 'center 15%' },
 ];
 
 export default function AboutPage() {

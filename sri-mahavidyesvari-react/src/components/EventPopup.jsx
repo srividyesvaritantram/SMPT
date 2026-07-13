@@ -7,14 +7,14 @@ import './EventPopup.css';
 // EVENT CONFIG — update only these fields for future events
 // ─────────────────────────────────────────────────────────────────────────────
 const EVENT = {
-  title:       'Sri Varahi Devi Puja',
-  description: 'Join us for the sacred worship of Sri Varahi Devi and receive divine blessings through traditional rituals, mantra chanting, and spiritual worship.',
+  title:       'Varahi Devi Pooja',
+  description: '📢 Upcoming Event: Varahi Devi Pooja – July 15, 2026. Join us for this sacred divine worship.',
   location:    'Sri MahaVidyesvari Tantra Peetham',
-  date:        '15 August 2026',
+  date:        '15 July 2026',
   time:        '8:00 AM',
   // ISO-style expiry — card auto-hides after this moment (local time)
-  expiresAt:   new Date('2026-08-15T08:00:00'),
-  link:        '/events#varahi-event',
+  expiresAt:   new Date('2026-07-15T23:59:00'),
+  link:        '/events',
 };
 // ─────────────────────────────────────────────────────────────────────────────
 
@@ -34,9 +34,6 @@ export default function EventPopup() {
   const handleKnowMore = () => {
     close();
     navigate('/events');
-    setTimeout(() => {
-      document.getElementById('varahi-event')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }, 420);
   };
 
   return (
@@ -72,7 +69,7 @@ export default function EventPopup() {
           </motion.button>
 
           {/* Badge */}
-          <span className="en-card__badge">🪔 Upcoming Event</span>
+          <span className="en-card__badge">📅 July 15, 2026</span>
 
           {/* Divider */}
           <div className="en-card__rule">

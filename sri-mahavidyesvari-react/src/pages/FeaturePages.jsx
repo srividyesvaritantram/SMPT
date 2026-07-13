@@ -1,4 +1,4 @@
-﻿import { useState } from 'react';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/navbar/Navbar.jsx';
@@ -7,6 +7,7 @@ import GlassCard from '../components/common/GlassCard.jsx';
 import ScrollReveal from '../components/common/ScrollReveal.jsx';
 import { blogPosts, workshops, offerings, events } from '../utils/mockData.js';
 import { FiCalendar, FiClock, FiUsers, FiMapPin } from 'react-icons/fi';
+import RegisterModal from '../components/RegisterModal.jsx';
 import govindaImg from '../assets/govinda.png';
 import blogHeroImg from '../assets/blog_hero.png';
 import eventHeroImg from '../assets/event_hero.png';
@@ -923,6 +924,7 @@ const eventFilters = ['Live', 'Workshop', 'Puja', 'Discourse'];
 export function EventsPage() {
   const [filter, setFilter] = useState(0);
   const [tab, setTab] = useState(0);
+  const [regModal, setRegModal] = useState(false);
   const navigate = useNavigate();
 
   return (
@@ -1078,14 +1080,14 @@ export function EventsPage() {
                       <span className="varahi-event__detail-icon">📅</span>
                       <div>
                         <p className="varahi-event__detail-label">Date</p>
-                        <p className="varahi-event__detail-value">Coming Soon</p>
+                        <p className="varahi-event__detail-value">July 15, 2026</p>
                       </div>
                     </div>
                     <div className="varahi-event__detail-row">
                       <span className="varahi-event__detail-icon">⏰</span>
                       <div>
                         <p className="varahi-event__detail-label">Time</p>
-                        <p className="varahi-event__detail-value">Will be Announced</p>
+                        <p className="varahi-event__detail-value">8:00 AM onwards</p>
                       </div>
                     </div>
                   </div>
@@ -1139,11 +1141,11 @@ export function EventsPage() {
               <motion.div className="event-card" whileHover={{ y: -6, boxShadow: '0 0 28px rgba(184,134,11,0.3)' }}>
                 <div className="event-card__thumb" style={{ background: `linear-gradient(135deg, ${event.gradientColors[0]}, ${event.gradientColors[1]})` }}>
                   <span style={{ fontSize: 56 }}>{event.emoji}</span>
-                  <div className="event-card__type-badge" style={{ background: event.isLive ? '#E53935' : 'rgba(9,9,9,0.8)' }}>
-                    {event.isLive && <span className="ws-card__live-dot" />}
-                    {event.isLive ? 'LIVE' : event.type}
+                  <div className="event-card__type-badge" style={{ background: '#6B1026' }}>
+                    
+                    COMING SOON
                   </div>
-                  {event.isFree && <div className="event-card__free-badge">FREE</div>}
+                  
                 </div>
                 <div className="event-card__body">
                   <h3 className="event-card__title">{event.title}</h3>
@@ -1158,7 +1160,7 @@ export function EventsPage() {
                     </span>
                     {!event.isFree && <span style={{ color: '#E8C76A', fontWeight: 700, fontSize: 14 }}>{event.price}</span>}
                   </div>
-                  <GoldenButton label={event.isLive ? 'JOIN NOW' : 'REGISTER'} width="100%" style={{ marginTop: 16 }} />
+                  <GoldenButton label="Coming Soon" width="100%" style={{ marginTop: 16, opacity: 0.55, pointerEvents: 'none' }} />
                 </div>
               </motion.div>
             </ScrollReveal>
@@ -1203,6 +1205,7 @@ export function EventsPage() {
         </ScrollReveal>
       </section>
 
+      <RegisterModal open={regModal} onClose={() => setRegModal(false)} />
       <FooterSection />
     </div>
   );

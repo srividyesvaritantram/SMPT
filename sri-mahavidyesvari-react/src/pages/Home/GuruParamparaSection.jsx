@@ -2,33 +2,33 @@ import { motion } from 'framer-motion';
 import ScrollReveal from '../../components/common/ScrollReveal.jsx';
 import GoldenButton from '../../components/common/GoldenButton.jsx';
 import dattatreyaImg from '../../assets/dathathreya.png';
-import guruSuryaImg     from '../../assets/guru_surya.png';
-import guruChandraImg   from '../../assets/guru_chandra.png';
-import guruAgniImg      from '../../assets/guru_agni.png';
-import guruKuberaImg    from '../../assets/guru_kubera.png';
-import guruIndraImg     from '../../assets/guru_indra.png';
-import guruBrahmaImg    from '../../assets/guru_brahma.png';
 import guruMaheshaImg   from '../../assets/guru_mahesha.png';
 import guruMurariImg    from '../../assets/guru_murari.png';
-import guruAgasthyaImg  from '../../assets/guru_agasthya.png';
-import guruSkandhaImg   from '../../assets/guru_skandha.png';
+import guruBrahmaImg    from '../../assets/guru_brahma.png';
 import guruAnangaImg    from '../../assets/guru_ananga.png';
-import guruLopamudraImg from '../../assets/guru_lopamudra.png';
+import guruSkandhaImg   from '../../assets/guru_skandha.png';
+import guruNandhiImg    from '../../assets/guru_nandhi.png';
+import guruIndraImg     from '../../assets/guru_indra.png';
+import guruManuImg      from '../../assets/guru_manu.png';
+import guruChandraImg   from '../../assets/guru_chandra.png';
+import guruKuberaImg    from '../../assets/guru_kubera.png';
+import guruAgasthyaImg  from '../../assets/guru_agasthya.png';
+import guruDurvasaImg   from '../../assets/guru_durvasa.png';
 import './GuruParamparaSection.css';
 
 const GURUS_12 = [
-  { name: 'Surya',     img: guruSuryaImg,     cls: 'guru-surya'     },
-  { name: 'Chandra',   img: guruChandraImg,   cls: 'guru-chandra'   },
-  { name: 'Agni',      img: guruAgniImg,      cls: 'guru-agni'      },
-  { name: 'Kubera',    img: guruKuberaImg,    cls: 'guru-kubera'    },
-  { name: 'Indra',     img: guruIndraImg,     cls: 'guru-indra'     },
-  { name: 'Brahma',    img: guruBrahmaImg,    cls: 'guru-brahma'    },
   { name: 'Mahesha',   img: guruMaheshaImg,   cls: 'guru-mahesha'   },
-  { name: 'Murari',    img: guruMurariImg,    cls: 'guru-murari'    },
-  { name: 'Agasthya',  img: guruAgasthyaImg,  cls: 'guru-agasthya'  },
+  { name: 'Madhava',   img: guruMurariImg,    cls: 'guru-murari'    },
+  { name: 'Vidhatru',  img: guruBrahmaImg,    cls: 'guru-brahma'    },
+  { name: 'Manmata',   img: guruAnangaImg,    cls: 'guru-ananga'    },
   { name: 'Skandha',   img: guruSkandhaImg,   cls: 'guru-skandha'   },
-  { name: 'Ananga',    img: guruAnangaImg,    cls: 'guru-ananga'    },
-  { name: 'Lopamudra', img: guruLopamudraImg, cls: 'guru-lopamudra' },
+  { name: 'Nandhi',    img: guruNandhiImg,    cls: 'guru-nandhi'    },
+  { name: 'Indra',     img: guruIndraImg,     cls: 'guru-indra'     },
+  { name: 'Manu',      img: guruManuImg,      cls: 'guru-manu'      },
+  { name: 'Chandra',   img: guruChandraImg,   cls: 'guru-chandra'   },
+  { name: 'Kubera',    img: guruKuberaImg,    cls: 'guru-kubera'    },
+  { name: 'Agastya',   img: guruAgasthyaImg,  cls: 'guru-agasthya'  },
+  { name: 'Durvasa',   img: guruDurvasaImg,   cls: 'guru-durvasa'   },
 ];
 
 /* Shared premium lotus SVG — unique gradient IDs per instance via idPrefix */

@@ -1750,6 +1750,7 @@
 .preview-event-card__thumb { height: 180px; display: flex; align-items: center; justify-content: center; position: relative; background: var(--card-elevated); }
 .preview-event-card__live { position: absolute; top: 12px; left: 12px; background: rgba(229,57,53,0.12); color: #E53935; border: 1px solid rgba(229,57,53,0.25); padding: 4px 10px; border-radius: 20px; font-size: 11px; font-weight: 700; }
 .preview-event-card__free { position: absolute; top: 12px; right: 12px; background: linear-gradient(135deg, #B8860B, #E8C76A); color: #0D0208; padding: 4px 10px; border-radius: 20px; font-size: 11px; font-weight: 700; }
+.preview-event-card__coming-soon { position: absolute; top: 12px; right: 12px; background: #6B1026; color: #fff; padding: 4px 12px; border-radius: 20px; font-size: 11px; font-weight: 700; box-shadow: 0 2px 8px rgba(107,16,38,0.35); }
 .preview-event-card__body { padding: 20px; }
 .preview-event-card__title { font-size: 15px; font-weight: 600; color: var(--heading); margin-bottom: 8px; }
 
