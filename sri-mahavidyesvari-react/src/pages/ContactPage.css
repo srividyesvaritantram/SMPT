@@ -8,7 +8,7 @@
 ══════════════════════════════════════════════════════════════ */
 .cp-hero {
   position: relative;
-  min-flex-shrink: 0;
+  min-height: 90vh;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -49,7 +49,7 @@
 .cp-hero__content {
   position: relative;
   z-index: 10;
-  width: 50%;
+  width: 42%;
   max-width: 560px;
   padding: 120px 0 80px 72px;
   display: flex;
@@ -200,12 +200,12 @@
 .cp-hero__img-panel {
   position: relative;
   z-index: 2;
-  width: 50%;
+  width: 58%;
   flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  padding: 60px 40px 60px 0;
+  padding: 60px 24px 60px 0;
   pointer-events: none;
 }
 
