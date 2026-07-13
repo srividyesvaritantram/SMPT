@@ -1,6 +1,6 @@
 import './WhatsAppFAB.css';
 
-const WA_LINK = 'https://wa.me/919390886029';
+const WA_LINK = 'https://chat.whatsapp.com/KOxlAGgqOzJDz8JbW6LUKy';
 
 export default function WhatsAppFAB() {
   return (
