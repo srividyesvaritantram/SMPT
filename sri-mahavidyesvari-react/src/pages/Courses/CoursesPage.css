@@ -48,8 +48,8 @@
   width: fit-content;
   padding: 8px 20px;
   border-radius: 999px;
-  border: 1px solid rgba(212, 175, 55, 0.40);
-  background: rgba(212, 175, 55, 0.10);
+  border: 1px solid rgba(212, 175, 55, 0.55);
+  background: rgba(90, 21, 53, 0.60);
   backdrop-filter: blur(10px);
   font-family: var(--font-body);
   font-size: 11px;
@@ -777,8 +777,8 @@
   gap: 8px;
   padding: 8px 22px;
   border-radius: 999px;
-  border: 1px solid rgba(212, 175, 55, 0.40);
-  background: rgba(212, 175, 55, 0.10);
+  border: 1px solid rgba(212, 175, 55, 0.55);
+  background: rgba(90, 21, 53, 0.60);
   backdrop-filter: blur(10px);
   font-family: var(--font-body);
   font-size: 11px;
@@ -793,8 +793,9 @@
   font-size: clamp(30px, 3.8vw, 52px);
   font-weight: 700;
   line-height: 1.16;
-  color: #fff8f0;
+  color: #ffffff;
   margin: 0;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.4);
 }
 
 .cp-cta__heading-gold {
@@ -829,9 +830,9 @@
 
 /* Body text */
 .cp-cta__body {
-  font-size: clamp(15px, 1.5vw, 17.5px);
-  line-height: 1.88;
-  color: rgba(232, 221, 208, 0.92);
+  font-size: clamp(16px, 1.6vw, 19px);
+  line-height: 1.78;
+  color: rgba(255, 252, 245, 0.95);
   max-width: 620px;
   margin: 0;
 }
