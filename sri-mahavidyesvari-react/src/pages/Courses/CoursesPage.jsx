@@ -319,7 +319,7 @@ export default function CoursesPage() {
                   transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
                 >
                   <div className="cp-card__accent" />
-                  <div className="cp-card__thumb">
+                  <div className={`cp-card__thumb${card.id === 'ganapathyam' ? ' cp-card__thumb--contain' : ''}`}>
                     <motion.img
                       src={card.img}
                       alt={card.title}

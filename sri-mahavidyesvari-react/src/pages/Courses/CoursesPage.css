@@ -520,10 +520,19 @@
 .cp-card:hover .cp-card__img { transform: scale(1.05); }
 
 /* Ganapathyam - show full image */
+.cp-card__thumb--contain {
+  height: 360px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+}
 .cp-card__img--contain {
   object-fit: contain !important;
   object-position: center center !important;
-  padding: 10px;
+  width: 100% !important;
+  height: 100% !important;
+  padding: 0;
 }
 
 /* Body */
