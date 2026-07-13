@@ -775,9 +775,9 @@
   font-size: clamp(30px, 3.8vw, 52px);
   font-weight: 700;
   line-height: 1.16;
-  color: #FDF8F2;
+  color: #FFFFFF;
   margin: 0;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  text-shadow: none;
 }
 
 .cp-cta__heading-gold {
