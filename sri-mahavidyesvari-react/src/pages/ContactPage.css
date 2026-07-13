@@ -49,9 +49,10 @@
 .cp-hero__content {
   position: relative;
   z-index: 10;
-  flex: 0 0 45%;
+  width: 50%;
+  flex-shrink: 0;
   max-width: 560px;
-  padding: 120px 0 80px 80px;
+  padding: 120px 56px 80px 72px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -200,12 +201,12 @@
 .cp-hero__img-panel {
   position: relative;
   z-index: 2;
-  flex: 0 0 55%;
-  height: 90vh;
+  width: 50%;
+  flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 40px 40px 80px 32px;
+  padding: 60px 56px 60px 24px;
   pointer-events: none;
 }
 
@@ -250,8 +251,9 @@
   .cp-hero__img { max-width: 640px; }
 }
 @media (max-width: 1200px) {
-  .cp-hero__content { flex: 0 0 45%; padding-left: 48px; }
-  .cp-hero__img-panel { flex: 0 0 55%; padding-right: 36px; }
+  .cp-hero__content { width: 50%;
+  flex-shrink: 0; padding-left: 48px; }
+  .cp-hero__img-panel { width: 50%; padding-right: 36px; }
   .cp-hero__img { max-width: 560px; }
 }
 @media (max-width: 1024px) {
