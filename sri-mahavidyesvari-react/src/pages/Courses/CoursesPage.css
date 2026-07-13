@@ -49,8 +49,7 @@
   padding: 8px 20px;
   border-radius: 999px;
   border: 1px solid rgba(212, 175, 55, 0.55);
-  background: rgba(90, 21, 53, 0.60);
-  backdrop-filter: blur(10px);
+  background: #5A1535;
   font-family: var(--font-body);
   font-size: 11px;
   font-weight: 700;
@@ -739,12 +738,12 @@
   padding: 48px 64px 56px;
   background: linear-gradient(
     145deg,
-    rgba(255, 255, 255, 0.04) 0%,
-    rgba(212, 175, 55, 0.04) 50%,
-    rgba(255, 255, 255, 0.02) 100%
+    rgba(30, 8, 18, 0.92) 0%,
+    rgba(45, 12, 25, 0.90) 50%,
+    rgba(30, 8, 18, 0.92) 100%
   );
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
   border: 1.5px solid rgba(212, 175, 55, 0.32);
   border-radius: 32px;
   box-shadow:
@@ -778,8 +777,7 @@
   padding: 8px 22px;
   border-radius: 999px;
   border: 1px solid rgba(212, 175, 55, 0.55);
-  background: rgba(90, 21, 53, 0.60);
-  backdrop-filter: blur(10px);
+  background: #5A1535;
   font-family: var(--font-body);
   font-size: 11px;
   font-weight: 700;
