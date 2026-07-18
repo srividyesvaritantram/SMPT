@@ -1,6 +1,4 @@
 # ── Sri Mahavidyesvari — Hostinger SPA Routing ───────────────────────────────
-# This file is required so that React Router routes work on Hostinger shared hosting.
-# Without it, refreshing any page other than "/" returns a 404 from Apache.
 
 Options -MultiViews
 RewriteEngine On
@@ -9,25 +7,33 @@ RewriteEngine On
 RewriteCond %{HTTPS} off
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-# Redirect www → non-www (optional — remove if you prefer www)
-# RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
-# RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
-
 # SPA fallback — serve index.html for all non-file, non-directory requests
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^ /index.html [L]
 
-# ── Security headers ─────────────────────────────────────────────────────────
+# ── MIME Types (critical for Vite JS modules) ─────────────────────────────────
+<IfModule mod_mime.c>
+  AddType application/javascript .js .mjs
+  AddType text/css .css
+  AddType image/svg+xml .svg
+  AddType application/json .json
+  AddType font/woff .woff
+  AddType font/woff2 .woff2
+  AddType image/webp .webp
+</IfModule>
+
+# ── Security headers ──────────────────────────────────────────────────────────
 <IfModule mod_headers.c>
-  # Prevent clickjacking
   Header always set X-Frame-Options "SAMEORIGIN"
-  # Prevent MIME sniffing
   Header always set X-Content-Type-Options "nosniff"
-  # Basic XSS protection
   Header always set X-XSS-Protection "1; mode=block"
-  # Referrer policy
   Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+  # Allow JS modules to load correctly
+  <FilesMatch "\.(js|mjs)$">
+    Header set Content-Type "application/javascript"
+  </FilesMatch>
 </IfModule>
 
 # ── Cache static assets ───────────────────────────────────────────────────────
