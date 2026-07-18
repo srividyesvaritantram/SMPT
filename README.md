@@ -1,60 +1,31 @@
-# Sri Mahavidyesvari
+# Sri Mahavidyesvari — Frontend
 
-Full-stack web application built with React (frontend) and Spring Boot (backend).
+React + Vite frontend for the Sri Mahavidyesvari web application.
 
-## Project Structure
-
-```
-Sri Mahavidyesvari/
-├── sri-mahavidyesvari-react/   # React + Vite frontend
-└── backend/                    # Spring Boot backend
-```
-
-## Frontend — React + Vite
-
-**Location:** `sri-mahavidyesvari-react/`
-
-### Setup
+## Setup
 
 ```bash
-cd sri-mahavidyesvari-react
 npm install
 npm run dev
 ```
 
-### Scripts
+## Scripts
 
 | Command | Description |
 |---|---|
-| `npm run dev` | Start development server |
+| `npm run dev` | Start development server (http://localhost:5173) |
 | `npm run build` | Build for production |
 | `npm run preview` | Preview production build |
 
-### Tech Stack
+## Tech Stack
 
 - React 19
 - Vite 8
-- React Router DOM
-- Zustand (state management)
-- TanStack Query
-- MUI (Material UI)
-- Framer Motion / GSAP
-- Axios
-- React Hook Form
-
-## Backend — Spring Boot
-
-**Location:** `backend/backend/`
-
-### Setup
-
-```bash
-cd backend/backend
-./mvnw spring-boot:run
-```
-
-## Requirements
-
-- Node.js 18+
-- Java 17+
-- Maven
+- React Router DOM — client-side routing
+- Zustand — state management
+- TanStack Query — server state / data fetching
+- MUI (Material UI) — component library
+- Framer Motion + GSAP — animations
+- Axios — HTTP client
+- React Hook Form — form handling
+- Swiper — carousels
