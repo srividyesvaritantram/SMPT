@@ -30,7 +30,6 @@ jobs:
       - name: Create .env file
         run: |
           echo "VITE_API_BASE_URL=${{ secrets.VITE_API_BASE_URL }}" >> .env
-        # Add more VITE_ variables here as needed
 
       # ── 5. Build Vite app ─────────────────────────────────────────────────
       - name: Build
@@ -39,7 +38,10 @@ jobs:
           NODE_ENV: production
 
       # ── 6. Deploy dist/ to Hostinger via FTP ─────────────────────────────
+      # Skipped until FTP secrets are added in GitHub → Settings → Secrets → Actions
+      # You can also deploy via Hostinger hPanel → Advanced → Git (no secrets needed)
       - name: Deploy to Hostinger FTP
+        if: ${{ secrets.FTP_SERVER != '' }}
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
@@ -47,7 +49,6 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./dist/
           server-dir: /public_html/
-          # Only upload changed files (faster deploys after the first)
           dangerous-clean-slate: false
           exclude: |
             **/.git*
