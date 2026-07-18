@@ -1,0 +1,30 @@
+.mega-menu {
+  background: rgba(13, 2, 8, 0.97);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(184, 134, 11, 0.2);
+  border-top: 1px solid rgba(184, 134, 11, 0.1);
+  padding: 32px 48px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.mega-menu__inner { max-width: 1400px; margin: 0 auto; display: flex; gap: 64px; }
+
+.mega-menu__section { display: flex; flex-direction: column; gap: 8px; }
+
+.mega-menu__title {
+  font-family: 'Cinzel', serif;
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 2px;
+  color: #D4AF37;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.mega-menu__link {
+  font-size: 14px;
+  color: #C8B89A;
+  padding: 6px 0;
+  transition: color 0.2s ease;
+  display: block;
+}
+.mega-menu__link:hover { color: #E8C76A; }
