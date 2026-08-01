@@ -1938,3 +1938,514 @@
   .blog-wa-section__icon { width: 100px; height: 100px; }
   .blog-wa-section__qr-wrap { width: 160px; }
 }
+
+/* ═══════════════════════════════════════════════════════════════════
+   UPCOMING DIVINE EVENTS — two premium panels
+   ═══════════════════════════════════════════════════════════════════ */
+.upcoming-divine-events {
+  background: linear-gradient(180deg, #0d0208 0%, #1a0810 50%, #0d0208 100%);
+  padding: 80px 48px 96px;
+  position: relative;
+  overflow: hidden;
+}
+
+.upcoming-divine-events::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 10%; right: 10%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(212,175,55,0.30), transparent);
+}
+
+.upcoming-divine-events__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.upcoming-divine-events__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  text-align: center;
+}
+
+.upcoming-divine-events__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 20px;
+  border-radius: 999px;
+  border: 1px solid rgba(212,175,55,0.35);
+  background: rgba(212,175,55,0.08);
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #D4AF37;
+}
+
+.upcoming-divine-events__title {
+  font-size: clamp(28px, 3.5vw, 46px);
+  font-weight: 700;
+  background: linear-gradient(135deg, #B8860B 0%, #D4AF37 40%, #E8C76A 70%, #D4AF37 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0;
+  line-height: 1.15;
+}
+
+.upcoming-divine-events__rule {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 240px;
+}
+
+.udiv-rule-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(212,175,55,0.45));
+}
+
+.udiv-rule-line:last-child {
+  background: linear-gradient(90deg, rgba(212,175,55,0.45), transparent);
+}
+
+.udiv-rule-logo {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  opacity: 0.7;
+  flex-shrink: 0;
+}
+
+.upcoming-divine-events__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  gap: 32px;
+}
+
+.udiv-panel {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(212,175,55,0.22);
+  border-radius: 24px;
+  padding: 40px;
+  box-shadow:
+    0 24px 64px rgba(13,2,8,0.50),
+    0 0 0 1px rgba(212,175,55,0.06),
+    inset 0 1px 0 rgba(255,255,255,0.04);
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.32s ease, box-shadow 0.32s ease, transform 0.32s ease;
+}
+
+.udiv-panel:hover {
+  border-color: rgba(212,175,55,0.45) !important;
+  transform: translateY(-4px);
+}
+
+.udiv-panel::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 40px; right: 40px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(212,175,55,0.55), transparent);
+}
+
+.udiv-panel__img-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+.udiv-panel__img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  border-radius: 20px;
+  border: 1.5px solid rgba(212,175,55,0.30);
+  box-shadow: 0 16px 48px rgba(90,18,40,0.25), 0 0 40px rgba(212,175,55,0.08);
+  flex-shrink: 0;
+}
+
+/* Event 2 (Varahi): show the complete deity without cropping, zoom, or distortion */
+.udiv-panel__img--contain {
+  width: 100%;
+  height: auto;
+  aspect-ratio: auto;
+  max-height: 800px;
+  object-fit: contain;
+  object-position: center;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.udiv-panel__date-badge {
+  margin-top: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 18px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(184,134,11,0.20), rgba(212,175,55,0.12));
+  border: 1px solid rgba(212,175,55,0.40);
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #E8C76A;
+}
+
+.udiv-panel__date-badge::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #E8C76A;
+  box-shadow: 0 0 8px rgba(232,199,106,0.70);
+  flex-shrink: 0;
+}
+
+.udiv-panel__content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.udiv-panel__title {
+  font-size: clamp(22px, 2.6vw, 32px);
+  font-weight: 700;
+  color: #fff8f0;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.udiv-panel__subtitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(14px, 1.4vw, 17px);
+  font-style: italic;
+  line-height: 1.7;
+  color: rgba(212,175,55,0.80);
+  margin: 0;
+}
+
+.udiv-panel__about {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(15px, 1.4vw, 18px);
+  line-height: 1.85;
+  color: rgba(232,221,208,0.82);
+  margin: 0;
+}
+
+.udiv-panel__benefits-title {
+  font-size: clamp(16px, 1.6vw, 20px);
+  font-weight: 700;
+  color: #E8C76A;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.udiv-panel__benefits {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.udiv-panel__benefit {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 10px 16px;
+  background: rgba(212,175,55,0.04);
+  border: 1px solid rgba(212,175,55,0.12);
+  border-radius: 12px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: rgba(232,221,208,0.85);
+}
+
+.udiv-panel__benefit-tick {
+  color: #25D366;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.udiv-panel__blessing {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(14px, 1.3vw, 17px);
+  font-style: italic;
+  line-height: 1.8;
+  color: rgba(212,175,55,0.75);
+  background: rgba(13,2,8,0.40);
+  border: 1px solid rgba(212,175,55,0.10);
+  border-radius: 16px;
+  padding: 20px 24px;
+}
+
+.udiv-panel__btns {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.udiv-panel__btn {
+  padding: 14px 32px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: all 0.25s cubic-bezier(0.25,0.46,0.45,0.94);
+}
+
+.udiv-panel__btn--primary {
+  background: linear-gradient(135deg, #1DA851, #25D366);
+  color: #fff;
+  box-shadow: 0 6px 24px rgba(37,211,102,0.28);
+}
+
+.udiv-panel__btn--secondary {
+  background: linear-gradient(135deg, #B8860B, #D4AF37, #E8C76A);
+  color: #fff;
+  box-shadow: 0 6px 24px rgba(184,134,11,0.28);
+}
+
+@media (max-width: 768px) {
+  .upcoming-divine-events { padding: 64px 32px 80px; }
+  .udiv-panel { padding: 32px 26px; }
+  .udiv-panel::before { left: 26px; right: 26px; }
+}
+
+@media (max-width: 600px) {
+  .upcoming-divine-events { padding: 48px 18px 64px; }
+  .udiv-panel { padding: 28px 20px; }
+  .udiv-panel::before { left: 20px; right: 20px; }
+  .udiv-panel__btns { flex-direction: column; }
+  .udiv-panel__btn { width: 100%; text-align: center; }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   SANKATA HARA GUIDANCE SECTION
+   ───────────────────────────────────────────────────────────────────────── */
+.sankata-guidance {
+  background: linear-gradient(180deg, #0d0208 0%, #1a0810 50%, #0d0208 100%);
+  padding: 80px 48px 96px;
+  position: relative;
+  overflow: hidden;
+}
+
+.sankata-guidance::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 10%; right: 10%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(212,175,55,0.30), transparent);
+}
+
+.sankata-guidance__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.sankata-guidance__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  text-align: center;
+}
+
+.sankata-guidance__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 22px;
+  border-radius: 999px;
+  border: 1px solid rgba(212,175,55,0.35);
+  background: rgba(212,175,55,0.08);
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #D4AF37;
+}
+
+.sankata-guidance__title {
+  font-size: clamp(28px, 3.5vw, 46px);
+  font-weight: 700;
+  background: linear-gradient(135deg, #B8860B 0%, #D4AF37 40%, #E8C76A 70%, #D4AF37 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0;
+  line-height: 1.15;
+}
+
+.sankata-guidance__rule {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 220px;
+}
+
+.sankata-guidance__subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(15px, 1.5vw, 18px);
+  font-weight: 500;
+  color: rgba(232,221,208,0.85);
+  max-width: 760px;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.sankata-guidance__body {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.sankata-guidance__about {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(16px, 1.5vw, 19px);
+  line-height: 1.85;
+  color: rgba(232,221,208,0.82);
+  margin: 0;
+}
+
+.sankata-guidance__guidance-title {
+  font-size: clamp(16px, 1.6vw, 20px);
+  font-weight: 700;
+  color: #E8C76A;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.sankata-guidance__guidance-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 14px;
+}
+
+.sankata-guidance__guidance-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 16px;
+  background: rgba(212,175,55,0.04);
+  border: 1px solid rgba(212,175,55,0.12);
+  border-radius: 12px;
+}
+
+.sankata-guidance__tick {
+  color: #25D366;
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.sankata-guidance__guidance-text {
+  font-size: 14px;
+  line-height: 1.5;
+  color: rgba(232,221,208,0.85);
+}
+
+.sankata-guidance__contact-title {
+  font-size: clamp(16px, 1.6vw, 20px);
+  font-weight: 700;
+  color: #E8C76A;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.sankata-guidance__contact-rows {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.sankata-guidance__contact-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: rgba(232,221,208,0.85);
+}
+
+.sankata-guidance__contact-icon {
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.sankata-guidance__contact-label {
+  font-weight: 600;
+  color: rgba(212,175,55,0.80);
+}
+
+.sankata-guidance__contact-value {
+  color: rgba(232,221,208,0.92);
+}
+
+.sankata-guidance__btns {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 4px;
+}
+
+.sankata-guidance__btn {
+  padding: 14px 36px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: all 0.25s cubic-bezier(0.25,0.46,0.45,0.94);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sankata-guidance__btn--whatsapp {
+  background: linear-gradient(135deg, #1DA851, #25D366);
+  color: #fff;
+  box-shadow: 0 6px 24px rgba(37,211,102,0.28);
+}
+
+.sankata-guidance__btn--contact {
+  background: linear-gradient(135deg, #B8860B, #D4AF37, #E8C76A);
+  color: #fff;
+  box-shadow: 0 6px 24px rgba(184,134,11,0.28);
+}
+
+@media (max-width: 768px) {
+  .sankata-guidance { padding: 64px 32px 80px; }
+  .sankata-guidance__guidance-list { grid-template-columns: 1fr; }
+  .sankata-guidance__contact-rows { flex-direction: column; gap: 16px; }
+  .sankata-guidance__btns { flex-direction: column; align-items: center; }
+}
+
+@media (max-width: 600px) {
+  .sankata-guidance { padding: 48px 18px 64px; }
+  .sankata-guidance__btn { width: 100%; }
+}

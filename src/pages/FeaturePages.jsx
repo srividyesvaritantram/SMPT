@@ -11,7 +11,8 @@ import RegisterModal from '../components/RegisterModal.jsx';
 import govindaImg from '../assets/govinda.png';
 import blogHeroImg from '../assets/blog_hero.png';
 import eventHeroImg from '../assets/event_hero.png';
-import sriMahadeviImg from '../assets/sri_mahadevi.png';
+import varahiMathaImg from '../assets/varahi.png';
+import ganapathiImg from '../assets/ganapathi.png';
 import workshopHeroImg from '../assets/workshop_hero.png';
 import narayaniImg from '../assets/narayani_vidya.png';
 import dhanvantariImg from '../assets/dhanvantari.png';
@@ -921,6 +922,49 @@ export function OfferingsPage() {
 // ─── Events Page ──────────────────────────────────────────────────────────────
 const eventFilters = ['Live', 'Workshop', 'Puja', 'Discourse'];
 
+const UPCOMING_DIVINE_EVENTS = [
+  {
+    id: 'gajanana',
+    date: '📅 2 August 2026',
+    title: 'Gajānana Sankata Hara Chaturthi',
+    subtitle: 'Rāja Yoga • Ravi Graha Anugraham',
+    image: ganapathiImg,
+    about: 'Gajānana Sankata Hara Chaturthi honors Lord Ganesha — the elephant-headed remover of obstacles — on the fourth night of the bright fortnight. This sacred vrat, observed on a Tuesday, amplifies the power to dissolve every form of hardship. Through traditional mantra, fragrant flower offerings, and the chanting of the Ganesha Purana, seekers invoke His grace to clear the path of all suffering and bestow the wisdom that turns difficulty into opportunity. The worship is especially potent for removing the great sorrow (Sankata) that blocks spiritual progress.',
+    benefits: [
+      'Removal of obstacles in spiritual practice and worldly pursuits',
+      'Awakening of intuitive wisdom and clear decision-making',
+      'Peace, prosperity, and harmony within the home',
+      'Grace of Ravi Graha (Sun) for vitality and inner clarity',
+      'Strong foundation for all higher spiritual sādhanās',
+    ],
+    blessing: 'May Lord Ganesha, the remover of every obstacle, awaken the wisdom within you and clear the sacred way for your spiritual journey.',
+  },
+  {
+    id: 'panchami',
+    date: '📅 3 August 2026',
+    title: 'Pañchamī Soukhya Pradā Vārāhī Ārādhana',
+    image: varahiMathaImg,
+    about: 'The Panchami Soukhya Pradā Vārāhī Ārādhana is a revered offering to Goddess Varahi — the boar-headed aspect of the Divine Mother who grants soukham (comfort), healing, and liberation. Observed on the fifth night of the bright fortnight, this ritual invokes Her tender compassion to dissolve pain, restore wholeness, and wrap the seeker in divine ease. Through mantra, lotus offerings, and the recitation of the Varaha Purana, the worship awakens the healing energy that transforms suffering into spiritual strength.',
+    benefits: [
+      'Alleviation of physical, mental, and emotional suffering',
+      'Restoration of health and inner balance through divine healing',
+      'Divine comfort and lasting inner peace',
+      'Dissolution of negative energies and karmic obstacles',
+      'Nourishment of devotion and spiritual awakening',
+    ],
+    blessing: 'Obeisant with folded hands, we seek the Compassionate Mother Varahi — Soukhya Pradā — to grant you enduring comfort, healing, and the bliss of divine union.',
+  },
+];
+
+const SANKATA_GUIDANCE_ITEMS = [
+  'Step-by-step pooja procedure',
+  'Required pooja materials',
+  'Sacred mantra chanting',
+  'Traditional method of worship',
+  'Spiritual discipline and practices',
+  'Guidance from our temple',
+];
+
 export function EventsPage() {
   const [filter, setFilter] = useState(0);
   const [tab, setTab] = useState(0);
@@ -1028,12 +1072,162 @@ export function EventsPage() {
 
       <div id="events-content">
 
-        {/* ══ VARAHI DEVI PUJA — Featured Event Card ══ */}
+        {/* ══ Upcoming Divine Events — two premium panels ══ */}
+        <ScrollReveal direction="up" duration={0.85}>
+          <section className="upcoming-divine-events" id="upcoming-events">
+            <div className="upcoming-divine-events__container">
+              <div className="upcoming-divine-events__header">
+                <span className="upcoming-divine-events__badge">🪔 Upcoming Divine Events</span>
+                <h2 className="upcoming-divine-events__title font-cinzel">Sacred Pujas & Celebrations</h2>
+                <div className="upcoming-divine-events__rule">
+                  <span className="udiv-rule-line" />
+                  <img src={logoImg} alt="" className="udiv-rule-logo" />
+                  <span className="udiv-rule-line" />
+                </div>
+              </div>
+
+              <div className="upcoming-divine-events__grid">
+                {UPCOMING_DIVINE_EVENTS.map((event) => (
+                  <motion.div
+                    key={event.id}
+                    className="udiv-panel"
+                    whileHover={{ y: -6, boxShadow: '0 0 32px rgba(212,175,55,0.22)' }}
+                    transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
+                  >
+                    <div className="udiv-panel__img-col">
+                      <img src={event.image} alt={event.title} className={`udiv-panel__img ${event.id === 'panchami' ? 'udiv-panel__img--contain' : ''}`} loading="lazy" />
+                      <span className="udiv-panel__date-badge">{event.date}</span>
+                    </div>
+
+                    <div className="udiv-panel__content">
+                      <h3 className="udiv-panel__title font-cinzel">{event.title}</h3>
+                      {event.subtitle && <p className="udiv-panel__subtitle font-serif">{event.subtitle}</p>}
+                      <p className="udiv-panel__about font-serif">{event.about}</p>
+
+                      <div className="udiv-panel__benefits">
+                        <h4 className="udiv-panel__benefits-title font-cinzel">Key Benefits</h4>
+                        {event.benefits.map((b, i) => (
+                          <div key={i} className="udiv-panel__benefit">
+                            <span className="udiv-panel__benefit-tick">✔</span>
+                            <span>{b}</span>
+                          </div>
+                        ))}
+                      </div>
+
+                      <div className="udiv-panel__blessing font-cormorant">
+                        <span>🙏</span> {event.blessing}
+                      </div>
+
+                      <div className="udiv-panel__btns">
+                        <motion.button
+                          className="udiv-panel__btn udiv-panel__btn--primary font-cinzel"
+                          onClick={() => window.open('https://wa.me/919390886029', '_blank')}
+                          whileHover={{ y: -2, boxShadow: '0 12px 36px rgba(37,211,102,0.35)' }}
+                          whileTap={{ scale: 0.97 }}
+                          transition={{ duration: 0.22 }}
+                        >
+                          WhatsApp
+                        </motion.button>
+                        <motion.button
+                          className="udiv-panel__btn udiv-panel__btn--secondary font-cinzel"
+                          onClick={() => navigate('/contact')}
+                          whileHover={{ y: -2, boxShadow: '0 12px 36px rgba(184,134,11,0.30)' }}
+                          whileTap={{ scale: 0.97 }}
+                          transition={{ duration: 0.22 }}
+                        >
+                          Contact Us
+                        </motion.button>
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </section>
+        </ScrollReveal>
+
+        {/* ─── Learn Sankata Hara Chaturthi Sādhana Guidance ─── */}
+        <ScrollReveal direction="up" duration={0.85}>
+          <section className="sankata-guidance">
+            <div className="sankata-guidance__container">
+              <div className="sankata-guidance__header">
+                <span className="sankata-guidance__badge">📿 Learn Sankata Hara Chaturthi Sādhana</span>
+                <h2 className="sankata-guidance__title font-cinzel">Traditional Guidance & Spiritual Support</h2>
+                <div className="sankata-guidance__rule">
+                  <span className="udiv-rule-line" />
+                  <img src={logoImg} alt="" className="udiv-rule-logo" />
+                  <span className="udiv-rule-line" />
+                </div>
+                <p className="sankata-guidance__subtitle font-serif">
+                  Want to learn how to perform Sankata Hara Chaturthi Sādhana correctly?
+                </p>
+              </div>
+
+              <div className="sankata-guidance__body">
+                <p className="sankata-guidance__about font-cormorant">
+                  We provide complete traditional guidance for devotees who wish to perform the
+                  pooja according to authentic spiritual practices.
+                </p>
+
+                <div className="sankata-guidance__guidance-list">
+                  <h4 className="sankata-guidance__guidance-title font-cinzel">Our guidance includes:</h4>
+                  {SANKATA_GUIDANCE_ITEMS.map((item, i) => (
+                    <ScrollReveal key={item} delay={i * 0.08}>
+                      <div className="sankata-guidance__guidance-item">
+                        <span className="sankata-guidance__tick">✔</span>
+                        <span className="sankata-guidance__guidance-text font-serif">{item}</span>
+                      </div>
+                    </ScrollReveal>
+                  ))}
+                </div>
+
+                <div className="sankata-guidance__contact">
+                  <h4 className="sankata-guidance__contact-title font-cinzel">CONTACT</h4>
+                  <div className="sankata-guidance__contact-rows">
+                    <div className="sankata-guidance__contact-row">
+                      <span className="sankata-guidance__contact-icon">📞</span>
+                      <span className="sankata-guidance__contact-label">Phone</span>
+                      <span className="sankata-guidance__contact-value">9390886029</span>
+                    </div>
+                    <div className="sankata-guidance__contact-row">
+                      <span className="sankata-guidance__contact-icon">📲</span>
+                      <span className="sankata-guidance__contact-label">WhatsApp</span>
+                      <span className="sankata-guidance__contact-value">9390886029</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="sankata-guidance__btns">
+                  <motion.button
+                    className="sankata-guidance__btn sankata-guidance__btn--whatsapp font-cinzel"
+                    onClick={() => window.open('https://wa.me/919390886029', '_blank')}
+                    whileHover={{ y: -2, boxShadow: '0 12px 36px rgba(37,211,102,0.35)' }}
+                    whileTap={{ scale: 0.97 }}
+                    transition={{ duration: 0.22 }}
+                  >
+                    📲 WhatsApp
+                  </motion.button>
+                  <motion.button
+                    className="sankata-guidance__btn sankata-guidance__btn--contact font-cinzel"
+                    onClick={() => navigate('/contact')}
+                    whileHover={{ y: -2, boxShadow: '0 12px 36px rgba(184,134,11,0.30)' }}
+                    whileTap={{ scale: 0.97 }}
+                    transition={{ duration: 0.22 }}
+                  >
+                    Contact Us
+                  </motion.button>
+                </div>
+              </div>
+            </div>
+          </section>
+        </ScrollReveal>
+
+        {/* ─── Past Events ─── */}
         <section className="varahi-event" id="varahi-event">
           <div className="varahi-event__inner">
             <ScrollReveal direction="up" duration={0.85}>
               <div className="varahi-event__header">
-                <span className="varahi-event__eyebrow">🪔 Upcoming Sacred Event</span>
+                <span className="varahi-event__eyebrow">Past Events</span>
                 <h2 className="varahi-event__title font-cinzel">Navaratri Sadhana & Aradhana</h2>
                 <div className="varahi-event__rule">
                   <span className="varahi-event__rule-line" />

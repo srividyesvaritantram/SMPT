@@ -11,6 +11,7 @@ import {
   FeaturedCoursesSection,
   WorkshopsShowcaseSection,
   OfferingsShowcaseSection,
+  DivineEventsNotificationCard,
   EventsPreviewSection,
   BlogPreviewSection,
   WhyChooseUsSection,
@@ -26,7 +27,10 @@ export default function HomePage() {
     <>
       <EventPopup />
       <Navbar />
-      <HeroSection />
+      <div className="hero-anchor">
+        <HeroSection />
+        <DivineEventsNotificationCard />
+      </div>
       <AboutSection />
       <GuruParamparaSection />
       <WhyTantraSection />

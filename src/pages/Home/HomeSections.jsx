@@ -545,6 +545,82 @@ export function FeaturedCoursesSection() {
   );
 }
 
+// ─── Divine Events Notification Card (compact, near Hero) ──────────────────────
+const UPCOMING_DIVINE_EVENTS = [
+  { date: '📅 2 August 2026', title: 'Gajānana Sankata Hara Chaturthi' },
+  { date: '📅 3 August 2026', title: 'Pañchamī Soukhya Pradā Vārāhī Ārādhana' },
+];
+
+export function DivineEventsNotificationCard() {
+  const navigate = useNavigate();
+  const openWhatsApp = () => window.open('https://wa.me/919390886029', '_blank');
+
+  // Automatically hide the notification once the event period has passed.
+  // Visible through 3 August 2026; disappears automatically on 4 August 2026 and later.
+  if (new Date() >= new Date('2026-08-04T00:00:00')) return null;
+
+  const navigateToUpcomingEvents = () => {
+    navigate('/events#upcoming-events');
+    setTimeout(() => {
+      const el = document.getElementById('upcoming-events');
+      if (!el) return;
+      const navbar = document.querySelector('nav.navbar');
+      const offset = navbar ? navbar.offsetHeight : 72;
+      const targetTop = el.getBoundingClientRect().top + window.pageYOffset - offset - 12;
+      window.scrollTo({ top: Math.max(0, targetTop), behavior: 'smooth' });
+    }, 300);
+  };
+
+  return (
+    <motion.div
+      className="divine-events-notification"
+      role="complementary"
+      aria-label="Upcoming Divine Events"
+      onClick={navigateToUpcomingEvents}
+      style={{ cursor: 'pointer' }}
+      initial={{ opacity: 0, y: 24, scale: 0.96 }}
+      animate={{ opacity: 1, y: 0, scale: 1 }}
+      transition={{ duration: 0.8, delay: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
+    >
+      <GlassCard
+        className="divine-events-notification__card"
+        borderRadius={16}
+        hoverable={false}
+        style={{
+          maxWidth: 330,
+          width: '100%',
+          padding: 20,
+          background: 'rgba(13, 2, 8, 0.62)',
+          border: '2px solid rgba(212, 175, 55, 0.55)',
+          boxShadow: '0 12px 48px rgba(0, 0, 0, 0.45), 0 0 28px rgba(212, 175, 55, 0.18)',
+          cursor: 'pointer',
+        }}
+      >
+        <div className="divine-events-notification__inner">
+          <div className="divine-events-notification__head">
+            <span className="divine-events-notification__icon">🪔</span>
+            <span className="divine-events-notification__label font-cinzel">Upcoming Divine Events</span>
+          </div>
+
+          <div className="divine-events-notification__list">
+            {UPCOMING_DIVINE_EVENTS.map((e) => (
+              <div key={e.title} className="divine-events-notification__row">
+                <span className="divine-events-notification__date">{e.date}</span>
+                <span className="divine-events-notification__title">{e.title}</span>
+              </div>
+            ))}
+          </div>
+
+          <div className="divine-events-notification__btns">
+            <GoldenButton label="View Details" size="sm" noOrnaments onClick={(e) => { e.stopPropagation(); navigateToUpcomingEvents(); }} />
+            <GoldenButton label="WhatsApp" size="sm" outlined noOrnaments onClick={(e) => { e.stopPropagation(); openWhatsApp(); }} />
+          </div>
+        </div>
+      </GlassCard>
+    </motion.div>
+  );
+}
+
 // ─── Events Preview ───────────────────────────────────────────────────────────
 export function EventsPreviewSection() {
   const navigate = useNavigate();
