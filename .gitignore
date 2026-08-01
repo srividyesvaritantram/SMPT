@@ -1,4 +1,4 @@
-# Logs
+# ── Logs ──────────────────────────────────────────────────────────────────────
 logs
 *.log
 npm-debug.log*
@@ -7,18 +7,39 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# ── Frontend build output ──────────────────────────────────────────────────────
 node_modules
 dist
 dist-ssr
 *.local
 
-# Editor directories and files
+# ── Environment / Secrets (NEVER commit these) ────────────────────────────────
+.env
+.env.local
+.env.*.local
+.env.production
+.env.development
+
+# ── Java / Maven backend ──────────────────────────────────────────────────────
+backend/backend/target/
+backend/backend/.mvn/wrapper/maven-wrapper.jar
+backend/backend/.classpath
+backend/backend/.project
+backend/backend/.settings/
+*.class
+*.jar
+*.war
+
+# ── Editor directories and files ─────────────────────────────────────────────
 .vscode/*
 !.vscode/extensions.json
-.idea
+.idea/
 .DS_Store
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+
+# ── OS files ──────────────────────────────────────────────────────────────────
+Thumbs.db
