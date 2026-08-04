@@ -27,9 +27,9 @@ import { FooterSection } from './Home/HomeSections.jsx';
 import logoImg from '../assets/logo.png';
 import './FeaturePages.css';
 
-const WA_URL = 'https://wa.me/91YOURNUMBER?text=Namaste%20%F0%9F%99%8F%20I%20would%20like%20to%20book%20a%20Workshop%20seat.';
-const WA_NARAYANI = 'https://wa.me/91YOURNUMBER?text=Namaste%20%F0%9F%99%8F%0AI%20would%20like%20to%20register%20for%20the%20N%C4%81r%C4%81ya%E1%B9%87%C4%AB%20Vidy%C4%81%20Workshop.';
-const WA_DHANVANTARI = 'https://wa.me/91YOURNUMBER?text=Namaste%20%F0%9F%99%8F%0AI%20would%20like%20to%20register%20for%20the%20Dhanvantari%20Vidy%C4%81%20Workshop.';
+const WA_URL = 'https://wa.me/919390886029?text=Namaste%20%F0%9F%99%8F%20I%20would%20like%20to%20book%20a%20Workshop%20seat.';
+const WA_NARAYANI = 'https://wa.me/919390886029?text=Namaste%20%F0%9F%99%8F%0AI%20would%20like%20to%20register%20for%20the%20N%C4%81r%C4%81ya%E1%B9%87%C4%AB%20Vidy%C4%81%20Workshop.';
+const WA_DHANVANTARI = 'https://wa.me/919390886029?text=Namaste%20%F0%9F%99%8F%0AI%20would%20like%20to%20register%20for%20the%20Dhanvantari%20Vidy%C4%81%20Workshop.';
 
 function WpLotusDivider({ id = 'wp-lotus', variant = 'cream' }) {
   return (
