@@ -2031,6 +2031,20 @@
   gap: 32px;
 }
 
+.upcoming-divine-events__empty {
+  display: flex;
+  justify-content: center;
+  padding: 60px 20px;
+}
+
+.upcoming-divine-events__empty-text {
+  max-width: 700px;
+  text-align: center;
+  font-size: clamp(15px, 1.5vw, 18px);
+  line-height: 1.8;
+  color: rgba(232,221,208,0.82);
+}
+
 .udiv-panel {
   background: rgba(255,255,255,0.03);
   border: 1px solid rgba(212,175,55,0.22);

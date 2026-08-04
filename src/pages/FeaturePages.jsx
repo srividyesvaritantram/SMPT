@@ -956,6 +956,58 @@ const UPCOMING_DIVINE_EVENTS = [
   },
 ];
 
+const COMPLETED_DIVINE_EVENTS = [
+  {
+    id: 'panchami',
+    sortDate: '2026-08-03',
+    date: '📅 3 August 2026',
+    title: 'Pañchamī Soukhya Pradā Vārāhī Ārādhana',
+    image: varahiMathaImg,
+    about: 'The Panchami Soukhya Pradā Vārāhī Ārādhana is a revered offering to Goddess Varahi — the boar-headed aspect of the Divine Mother who grants soukham (comfort), healing, and liberation. Observed on the fifth night of the bright fortnight, this ritual invokes Her tender compassion to dissolve pain, restore wholeness, and wrap the seeker in divine ease. Through mantra, lotus offerings, and the recitation of the Varaha Purana, the worship awakens the healing energy that transforms suffering into spiritual strength.',
+    benefits: [
+      'Alleviation of physical, mental, and emotional suffering',
+      'Restoration of health and inner balance through divine healing',
+      'Divine comfort and lasting inner peace',
+      'Dissolution of negative energies and karmic obstacles',
+      'Nourishment of devotion and spiritual awakening',
+    ],
+    blessing: 'Obeisant with folded hands, we seek the Compassionate Mother Varahi — Soukhya Pradā — to grant you enduring comfort, healing, and the bliss of divine union.',
+    location: 'Sri MahaVidyesvari Tantra Peetham, Visakhapatnam, Andhra Pradesh, India',
+    time: '8:00 AM onwards (9 days)',
+  },
+  {
+    id: 'gajanana',
+    sortDate: '2026-08-02',
+    date: '📅 2 August 2026',
+    title: 'Gajānana Sankata Hara Chaturthi',
+    subtitle: 'Rāja Yoga • Ravi Graha Anugraham',
+    image: ganapathiImg,
+    about: 'Gajānana Sankata Hara Chaturthi honors Lord Ganesha — the elephant-headed remover of obstacles — on the fourth night of the bright fortnight. This sacred vrat, observed on a Tuesday, amplifies the power to dissolve every form of hardship. Through traditional mantra, fragrant flower offerings, and the chanting of the Ganesha Purana, seekers invoke His grace to clear the path of all suffering and bestow the wisdom that turns difficulty into opportunity. The worship is especially potent for removing the great sorrow (Sankata) that blocks spiritual progress.',
+    benefits: [
+      'Removal of obstacles in spiritual practice and worldly pursuits',
+      'Awakening of intuitive wisdom and clear decision-making',
+      'Peace, prosperity, and harmony within the home',
+      'Grace of Ravi Graha (Sun) for vitality and inner clarity',
+      'Strong foundation for all higher spiritual sādhanās',
+    ],
+    blessing: 'May Lord Ganesha, the remover of every obstacle, awaken the wisdom within you and clear the sacred way for your spiritual journey.',
+    location: 'Sri MahaVidyesvari Tantra Peetham, Visakhapatnam, Andhra Pradesh, India',
+    time: '8:00 AM onwards',
+  },
+  {
+    id: 'navaratri',
+    sortDate: '2026-07-23',
+    date: '📅 July 15 – July 23, 2026',
+    title: 'Navaratri Sadhana & Aradhana',
+    image: null,
+    about: 'Join us for nine sacred nights of Navaratri Sadhana & Aradhana, a powerful period of intense spiritual practice. Participate in traditional rituals, mantra chanting, and receive divine blessings for protection, courage, prosperity, and spiritual transformation.',
+    benefits: [],
+    blessing: '',
+    location: 'Sri MahaVidyesvari Tantra Peetham, Visakhapatnam, Andhra Pradesh, India',
+    time: '8:00 AM onwards (9 days)',
+  },
+];
+
 const SANKATA_GUIDANCE_ITEMS = [
   'Step-by-step pooja procedure',
   'Required pooja materials',
@@ -1086,61 +1138,10 @@ export function EventsPage() {
                 </div>
               </div>
 
-              <div className="upcoming-divine-events__grid">
-                {UPCOMING_DIVINE_EVENTS.map((event) => (
-                  <motion.div
-                    key={event.id}
-                    className="udiv-panel"
-                    whileHover={{ y: -6, boxShadow: '0 0 32px rgba(212,175,55,0.22)' }}
-                    transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
-                  >
-                    <div className="udiv-panel__img-col">
-                      <img src={event.image} alt={event.title} className={`udiv-panel__img ${event.id === 'panchami' ? 'udiv-panel__img--contain' : ''}`} loading="lazy" />
-                      <span className="udiv-panel__date-badge">{event.date}</span>
-                    </div>
-
-                    <div className="udiv-panel__content">
-                      <h3 className="udiv-panel__title font-cinzel">{event.title}</h3>
-                      {event.subtitle && <p className="udiv-panel__subtitle font-serif">{event.subtitle}</p>}
-                      <p className="udiv-panel__about font-serif">{event.about}</p>
-
-                      <div className="udiv-panel__benefits">
-                        <h4 className="udiv-panel__benefits-title font-cinzel">Key Benefits</h4>
-                        {event.benefits.map((b, i) => (
-                          <div key={i} className="udiv-panel__benefit">
-                            <span className="udiv-panel__benefit-tick">✔</span>
-                            <span>{b}</span>
-                          </div>
-                        ))}
-                      </div>
-
-                      <div className="udiv-panel__blessing font-cormorant">
-                        <span>🙏</span> {event.blessing}
-                      </div>
-
-                      <div className="udiv-panel__btns">
-                        <motion.button
-                          className="udiv-panel__btn udiv-panel__btn--primary font-cinzel"
-                          onClick={() => window.open('https://wa.me/919390886029', '_blank')}
-                          whileHover={{ y: -2, boxShadow: '0 12px 36px rgba(37,211,102,0.35)' }}
-                          whileTap={{ scale: 0.97 }}
-                          transition={{ duration: 0.22 }}
-                        >
-                          WhatsApp
-                        </motion.button>
-                        <motion.button
-                          className="udiv-panel__btn udiv-panel__btn--secondary font-cinzel"
-                          onClick={() => navigate('/contact')}
-                          whileHover={{ y: -2, boxShadow: '0 12px 36px rgba(184,134,11,0.30)' }}
-                          whileTap={{ scale: 0.97 }}
-                          transition={{ duration: 0.22 }}
-                        >
-                          Contact Us
-                        </motion.button>
-                      </div>
-                    </div>
-                  </motion.div>
-                ))}
+              <div className="upcoming-divine-events__empty">
+                <p className="upcoming-divine-events__empty-text font-serif">
+                  No upcoming events at the moment. Please check back soon for future spiritual programs and celebrations.
+                </p>
               </div>
             </div>
           </section>
@@ -1222,93 +1223,109 @@ export function EventsPage() {
           </section>
         </ScrollReveal>
 
-        {/* ─── Past Events ─── */}
-        <section className="varahi-event" id="varahi-event">
-          <div className="varahi-event__inner">
+        {/* ─── Past Divine Events ─── */}
+        <section className="upcoming-divine-events" id="past-divine-events">
+          <div className="upcoming-divine-events__container">
             <ScrollReveal direction="up" duration={0.85}>
-              <div className="varahi-event__header">
-                <span className="varahi-event__eyebrow">Past Events</span>
-                <h2 className="varahi-event__title font-cinzel">Navaratri Sadhana & Aradhana</h2>
-                <div className="varahi-event__rule">
-                  <span className="varahi-event__rule-line" />
-                  <span className="varahi-event__rule-dot" />
-                  <span className="varahi-event__rule-line" />
+              <div className="upcoming-divine-events__header">
+                <span className="upcoming-divine-events__badge">🪔 Past Divine Events</span>
+                <h2 className="upcoming-divine-events__title font-cinzel">Completed Sacred Pujas & Celebrations</h2>
+                <div className="upcoming-divine-events__rule">
+                  <span className="udiv-rule-line" />
+                  <img src={logoImg} alt="" className="udiv-rule-logo" />
+                  <span className="udiv-rule-line" />
                 </div>
               </div>
             </ScrollReveal>
 
-            <ScrollReveal direction="up" delay={0.15} duration={0.85}>
-              <div className="varahi-event__card">
-                {/* Left — image placeholder */}
-                <div className="varahi-event__img-col">
-                  <div className="varahi-event__img-placeholder">
-                    <span className="varahi-event__img-icon">🪔</span>
-                    <p className="varahi-event__img-label font-cinzel">Navaratri Sadhana</p>
-                  </div>
-                  <span className="varahi-event__status-badge">Upcoming</span>
-                </div>
-
-                {/* Right — content */}
-                <div className="varahi-event__content">
-                  <h3 className="varahi-event__card-title font-cinzel">Navaratri Sadhana & Aradhana</h3>
-
-                  <p className="varahi-event__desc">
-                    Join us for nine sacred nights of Navaratri Sadhana & Aradhana, a powerful
-                    period of intense spiritual practice. Participate in traditional rituals,
-                    mantra chanting, and receive divine blessings for protection, courage,
-                    prosperity, and spiritual transformation.
-                  </p>
-
-                  <div className="varahi-event__details">
-                    <div className="varahi-event__detail-row">
-                      <span className="varahi-event__detail-icon">📍</span>
-                      <div>
-                        <p className="varahi-event__detail-label">Location</p>
-                        <p className="varahi-event__detail-value">
-                          Sri MahaVidyesvari Tantra Peetham<br />
-                          Visakhapatnam, Andhra Pradesh, India
-                        </p>
+            <div className="upcoming-divine-events__grid">
+              {COMPLETED_DIVINE_EVENTS.sort((a, b) => b.sortDate.localeCompare(a.sortDate)).map((event) => (
+                <motion.div
+                  key={event.id}
+                  className="udiv-panel"
+                  whileHover={{ y: -6, boxShadow: '0 0 32px rgba(212,175,55,0.22)' }}
+                  transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
+                >
+                  <div className="udiv-panel__img-col">
+                    {event.image ? (
+                      <img src={event.image} alt={event.title} className={`udiv-panel__img ${event.id === 'panchami' ? 'udiv-panel__img--contain' : ''}`} loading="lazy" />
+                    ) : (
+                      <div className="varahi-event__img-placeholder">
+                        <span className="varahi-event__img-icon">🪔</span>
+                        <p className="varahi-event__img-label font-cinzel">Navaratri Sadhana</p>
                       </div>
-                    </div>
-                    <div className="varahi-event__detail-row">
-                      <span className="varahi-event__detail-icon">📅</span>
-                      <div>
-                        <p className="varahi-event__detail-label">Date</p>
-                        <p className="varahi-event__detail-value">July 15 – July 23, 2026</p>
-                      </div>
-                    </div>
-                    <div className="varahi-event__detail-row">
-                      <span className="varahi-event__detail-icon">⏰</span>
-                      <div>
-                        <p className="varahi-event__detail-label">Time</p>
-                        <p className="varahi-event__detail-value">8:00 AM onwards (9 days)</p>
-                      </div>
-                    </div>
+                    )}
+                    <span className="udiv-panel__date-badge">{event.date}</span>
+                    <span className="varahi-event__status-badge" style={{ textTransform: 'none' }}>✅ Completed</span>
                   </div>
 
-                  <div className="varahi-event__btns">
-                    <motion.button
-                      className="varahi-event__btn varahi-event__btn--primary font-cinzel"
-                      onClick={() => window.open('https://wa.me/919390886029', '_blank')}
-                      whileHover={{ y: -2, boxShadow: '0 12px 36px rgba(37,211,102,0.35)' }}
-                      whileTap={{ scale: 0.97 }}
-                      transition={{ duration: 0.22 }}
-                    >
-                      Register Interest
-                    </motion.button>
-                    <motion.button
-                      className="varahi-event__btn varahi-event__btn--secondary font-cinzel"
-                      onClick={() => navigate('/contact')}
-                      whileHover={{ y: -2, boxShadow: '0 12px 36px rgba(184,134,11,0.30)' }}
-                      whileTap={{ scale: 0.97 }}
-                      transition={{ duration: 0.22 }}
-                    >
-                      Contact Us
-                    </motion.button>
+                  <div className="udiv-panel__content">
+                    <h3 className="udiv-panel__title font-cinzel">{event.title}</h3>
+                    {event.subtitle && <p className="udiv-panel__subtitle font-serif">{event.subtitle}</p>}
+                    <p className="udiv-panel__about font-serif">{event.about}</p>
+
+                    {event.benefits && event.benefits.length > 0 && (
+                      <div className="udiv-panel__benefits">
+                        <h4 className="udiv-panel__benefits-title font-cinzel">Key Benefits</h4>
+                        {event.benefits.map((b, i) => (
+                          <div key={i} className="udiv-panel__benefit">
+                            <span className="udiv-panel__benefit-tick">✔</span>
+                            <span>{b}</span>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+
+                    {event.blessing && (
+                      <div className="udiv-panel__blessing font-cormorant">
+                        <span>🙏</span> {event.blessing}
+                      </div>
+                    )}
+
+                    <div className="varahi-event__details">
+                      <div className="varahi-event__detail-row">
+                        <span className="varahi-event__detail-icon">📍</span>
+                        <div>
+                          <p className="varahi-event__detail-label">Location</p>
+                          <p className="varahi-event__detail-value">
+                            Sri MahaVidyesvari Tantra Peetham<br />
+                            Visakhapatnam, Andhra Pradesh, India
+                          </p>
+                        </div>
+                      </div>
+                      <div className="varahi-event__detail-row">
+                        <span className="varahi-event__detail-icon">⏰</span>
+                        <div>
+                          <p className="varahi-event__detail-label">Time</p>
+                          <p className="varahi-event__detail-value">{event.time}</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="udiv-panel__btns">
+                      <motion.button
+                        className="udiv-panel__btn udiv-panel__btn--primary font-cinzel"
+                        onClick={() => window.open('https://wa.me/919390886029', '_blank')}
+                        whileHover={{ y: -2, boxShadow: '0 12px 36px rgba(37,211,102,0.35)' }}
+                        whileTap={{ scale: 0.97 }}
+                        transition={{ duration: 0.22 }}
+                      >
+                        WhatsApp
+                      </motion.button>
+                      <motion.button
+                        className="udiv-panel__btn udiv-panel__btn--secondary font-cinzel"
+                        onClick={() => navigate('/contact')}
+                        whileHover={{ y: -2, boxShadow: '0 12px 36px rgba(184,134,11,0.30)' }}
+                        whileTap={{ scale: 0.97 }}
+                        transition={{ duration: 0.22 }}
+                      >
+                        Contact Us
+                      </motion.button>
+                    </div>
                   </div>
-                </div>
-              </div>
-            </ScrollReveal>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </section>
 
