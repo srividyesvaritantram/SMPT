@@ -310,12 +310,12 @@ export default function ContactPage() {
                   </div>
                   <h3 className="cp-icard__title font-cinzel">Email</h3>
                   <div className="cp-icard__rule"><span /><span className="cp-icard__rule-dot" /><span /></div>
-                  <p className="cp-icard__value">srimahavidyesvari@gmail.com</p>
+                  <p className="cp-icard__value">srividyesvaritantram@gmail.com</p>
                   <p className="cp-icard__desc font-cormorant">
                     For official communication, support and collaborations.
                   </p>
                   <motion.a
-                    href="mailto:srimahavidyesvari@gmail.com"
+                    href="mailto:srividyesvaritantram@gmail.com"
                     className="cp-icard__btn"
                     whileHover={{ y: -2, boxShadow: '0 10px 32px rgba(184,134,11,0.38)' }}
                     whileTap={{ scale: 0.97 }}

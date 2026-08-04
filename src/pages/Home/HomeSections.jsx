@@ -956,7 +956,7 @@ export function TestimonialsSection() {
 
 // ─── Contact Section ──────────────────────────────────────────────────────────
 const WA_NUMBER = '919390886029';
-const CONTACT_EMAIL = 'srimahavidyesvari@gmail.com';
+const CONTACT_EMAIL = 'srividyesvaritantram@gmail.com';
 
 const contactInfoItems = [
   {
@@ -1413,7 +1413,7 @@ export function FooterSection() {
               </li>
               <li className="footer__contact-item">
                 <FiMail size={14} className="footer__contact-icon" />
-                <a href="mailto:srimahavidyesvari@gmail.com" className="footer__contact-link">srimahavidyesvari@gmail.com</a>
+                <a href="mailto:srividyesvaritantram@gmail.com" className="footer__contact-link">srividyesvaritantram@gmail.com</a>
               </li>
               <li className="footer__contact-item">
                 <FiMessageCircle size={14} className="footer__contact-icon footer__contact-icon--wa" />
