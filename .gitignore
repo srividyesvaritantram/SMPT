@@ -9,7 +9,7 @@ lerna-debug.log*
 
 # ── Frontend build output ──────────────────────────────────────────────────────
 node_modules
-dist
+# dist — NOT ignored, we commit built files for Hostinger Git deploy
 dist-ssr
 *.local
 
