@@ -144,8 +144,8 @@ export function WhyTantraSection() {
   <div className="wt__body font-cormorant">
     <p>
       Tantra exists because human life has both material and spiritual needs. Unlike paths that reject the world,
-      Tantra addresses life as it is. It offers bhukti — worldly stability, health, protection, prosperity — and
-      mukti — inner freedom and liberation — through the same disciplined path, without forcing a false choice
+      Tantra addresses life as it is. It offers bhukti (worldly stability, health, protection, prosperity) and
+      mukti (inner freedom and liberation) through the same disciplined path, without forcing a false choice
       between the two.
     </p>
     <p>
