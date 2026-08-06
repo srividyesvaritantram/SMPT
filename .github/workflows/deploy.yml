@@ -32,12 +32,10 @@ jobs:
         env:
           NODE_ENV: production
 
-      # Verify .htaccess made it into dist (Vite copies public/ into dist/)
-      - name: Verify .htaccess exists in dist
-        run: ls -la dist/ && cat dist/.htaccess
+      - name: Verify dist output
+        run: ls -la dist/
 
-      - name: Deploy to Hostinger FTP
-        if: ${{ secrets.FTP_SERVER != '' }}
+      - name: Deploy to Hostinger via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
@@ -45,7 +43,6 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./dist/
           server-dir: /public_html/
-          # Clean slate ensures old files are removed and .htaccess is always fresh
           dangerous-clean-slate: true
           exclude: |
             **/.git*
