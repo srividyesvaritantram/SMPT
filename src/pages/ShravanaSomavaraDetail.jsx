@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/navbar/Navbar.jsx';
 import ScrollReveal from '../components/common/ScrollReveal.jsx';
 import GoldenButton from '../components/common/GoldenButton.jsx';
+import LockedSadhanaContent from '../components/common/LockedSadhanaContent.jsx';
 import { FooterSection } from './Home/HomeSections.jsx';
 import sivaAradhanaImg from '../assets/siva-aradhana.jpeg';
 import sivaLingaImg from '../assets/siva-linga.jpeg';
@@ -40,7 +41,7 @@ function SectionRule() {
   );
 }
 
-function DetailSection({ eyebrow, title, children }) {
+function DetailSection({ eyebrow, title, locked, children }) {
   return (
     <section className="ssd-part">
       <ScrollReveal direction="up" duration={0.8}>
@@ -48,7 +49,7 @@ function DetailSection({ eyebrow, title, children }) {
         <h2 className="ssd-part__title font-cinzel">{title}</h2>
         <SectionRule />
       </ScrollReveal>
-      {children}
+      {locked ? <LockedSadhanaContent>{children}</LockedSadhanaContent> : children}
     </section>
   );
 }
@@ -158,11 +159,12 @@ export default function ShravanaSomavaraDetail() {
           </DetailSection>
         </div>
       </section>
+      {/* ══ PART 2+ · LOCKED CONTENT — veiled behind Guru Dīkṣā ══ */}
 
       {/* ══ SECTION 2 · CREAM / IVORY — Importance of Śiva Ārādhana ══ */}
       <section className="ssd-band ssd-band--cream">
         <div className="ssd-article__inner">
-          <DetailSection eyebrow="PART 2 — IMPORTANCE OF ŚIVA ĀRĀDHANA IN ŚRĀVAṆA SOMAVĀRA" title="3 Core Importance">
+          <DetailSection eyebrow="PART 2 — IMPORTANCE OF ŚIVA ĀRĀDHANA IN ŚRĀVAṆA SOMAVĀRA" title="3 Core Importance" locked>
             <ScrollReveal direction="up" delay={0.08} duration={0.8}>
               <ul className="ssd-compact">
                 {SSD_CORE_IMPORTANCE.map((item) => (
@@ -175,7 +177,7 @@ export default function ShravanaSomavaraDetail() {
             </ScrollReveal>
           </DetailSection>
 
-          <DetailSection eyebrow="KEY ŚLOKA" title="The Promise of Śrāvaṇa Monday">
+          <DetailSection eyebrow="KEY ŚLOKA" title="The Promise of Śrāvaṇa Monday" locked>
             <ScrollReveal direction="up" delay={0.08} duration={0.8}>
               <div className="ssd-verse">
                 <span className="ssd-verse__label">Śrāvaṇa Somavāra Śloka</span>
@@ -190,7 +192,7 @@ export default function ShravanaSomavaraDetail() {
       {/* ══ SECTION 3 · DEEP MAROON — Śiva Abhiṣeka ══ */}
       <section className="ssd-band ssd-band--maroon">
         <div className="ssd-article__inner">
-          <DetailSection eyebrow="PART 3 — ŚIVA ABHIṢEKA" title="Benefits According to Purāṇas + Tantra">
+          <DetailSection eyebrow="PART 3 — ŚIVA ABHIṢEKA" title="Benefits According to Purāṇas + Tantra" locked>
             <ScrollReveal direction="up" delay={0.06} duration={0.8}>
               <p className="ssd-p">{SSD_ABHISEKA_INTRO}</p>
             </ScrollReveal>
@@ -229,7 +231,7 @@ export default function ShravanaSomavaraDetail() {
             </ScrollReveal>
           </DetailSection>
 
-          <DetailSection eyebrow="8 MAIN BENEFITS OF ŚIVA ABHIṢEKA IN ŚRĀVAṆA" title="Traditional Prayers & Aspirations">
+          <DetailSection eyebrow="8 MAIN BENEFITS OF ŚIVA ABHIṢEKA IN ŚRĀVAṆA" title="Traditional Prayers & Aspirations" locked>
             <ScrollReveal direction="up" delay={0.08} duration={0.8}>
               <ul className="ssd-compact ssd-compact--benefits">
                 {SSD_ABHISEKA_BENEFITS.map((b) => (
@@ -245,7 +247,7 @@ export default function ShravanaSomavaraDetail() {
             </ScrollReveal>
           </DetailSection>
 
-          <DetailSection eyebrow="TANTRA SECRET / MANTRA PRACTICE" title="The Mantra of the Abhiṣeka">
+          <DetailSection eyebrow="TANTRA SECRET / MANTRA PRACTICE" title="The Mantra of the Abhiṣeka" locked>
             <ScrollReveal direction="up" delay={0.08} duration={0.8}>
               <div className="ssd-verse">
                 <span className="ssd-verse__label">Mahāmṛtyuñjaya Mantra · Rudra Mantras</span>
@@ -260,7 +262,7 @@ export default function ShravanaSomavaraDetail() {
       {/* ══ SECTION 4 · CREAM / IVORY — Simple Pūjā Vidhi ══ */}
       <section className="ssd-band ssd-band--cream">
         <div className="ssd-article__inner">
-          <DetailSection eyebrow="PART 4 — SIMPLE ŚRĀVAṆA SOMAVĀRA PŪJĀ VIDHI" title="30-Minute Practice">
+          <DetailSection eyebrow="PART 4 — SIMPLE ŚRĀVAṆA SOMAVĀRA PŪJĀ VIDHI" title="30-Minute Practice" locked>
             <ScrollReveal direction="up" delay={0.08} duration={0.8}>
               <ol className="ssd-list ssd-list--steps">
                 {SSD_PUJA_STEPS.map((step) => (
@@ -288,7 +290,7 @@ export default function ShravanaSomavaraDetail() {
       {/* ══ SECTION 5 · DEEP MAROON — 5 Special Rules ══ */}
       <section className="ssd-band ssd-band--maroon">
         <div className="ssd-article__inner">
-          <DetailSection eyebrow="PART 5 — 5 SPECIAL RULES FOR ŚRĀVAṆA SOMAVĀRA" title="Discipline of the Sacred Monday">
+          <DetailSection eyebrow="PART 5 — 5 SPECIAL RULES FOR ŚRĀVAṆA SOMAVĀRA" title="Discipline of the Sacred Monday" locked>
             <ScrollReveal direction="up" delay={0.08} duration={0.8}>
               <ol className="ssd-list">
                 {SSD_RULES.map((rule) => (
@@ -309,7 +311,7 @@ export default function ShravanaSomavaraDetail() {
       {/* ══ SECTION 6 · CREAM / IVORY — Conclusion + Final Message ══ */}
       <section className="ssd-band ssd-band--cream">
         <div className="ssd-article__inner">
-          <DetailSection eyebrow="3-POINT CONCLUSION" title="Purāṇa · Tantra · Result">
+          <DetailSection eyebrow="3-POINT CONCLUSION" title="Purāṇa · Tantra · Result" locked>
             <ScrollReveal direction="up" delay={0.08} duration={0.8}>
               <div className="ssd-conclusion">
                 {SSD_CONCLUSION.map((item) => (
@@ -322,14 +324,14 @@ export default function ShravanaSomavaraDetail() {
             </ScrollReveal>
           </DetailSection>
 
-          <DetailSection eyebrow="FINAL DEVOTIONAL MESSAGE" title="The Heart of the Practice">
+          <DetailSection eyebrow="FINAL DEVOTIONAL MESSAGE" title="The Heart of the Practice" locked>
             <ScrollReveal direction="up" delay={0.08} duration={0.8}>
               <blockquote className="ssd-final font-cormorant">{SSD_FINAL_MESSAGE}</blockquote>
               <p className="ssd-note font-cormorant">{SSD_FINAL_NOTE}</p>
             </ScrollReveal>
           </DetailSection>
 
-          <DetailSection eyebrow="REFERENCES" title="Traditional Sources & References">
+          <DetailSection eyebrow="REFERENCES" title="Traditional Sources & References" locked>
             <ScrollReveal direction="up" delay={0.08} duration={0.8}>
               <ul className="ssd-sources">
                 {SSD_SOURCES.map((src) => (
@@ -339,7 +341,7 @@ export default function ShravanaSomavaraDetail() {
             </ScrollReveal>
           </DetailSection>
 
-          <DetailSection eyebrow="GURU DĪKṢĀ" title="Deeper Śiva Sādhana & Guru Guidance">
+          <DetailSection eyebrow="GURU DĪKṢĀ" title="Deeper Śiva Sādhana & Guru Guidance" locked>
             <ScrollReveal direction="up" delay={0.08} duration={0.8}>
               <div className="ssd-verse">
                 <span className="ssd-verse__label">Take Guru Dīkṣā</span>

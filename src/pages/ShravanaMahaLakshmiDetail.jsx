@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/navbar/Navbar.jsx';
 import ScrollReveal from '../components/common/ScrollReveal.jsx';
 import GoldenButton from '../components/common/GoldenButton.jsx';
+import LockedSadhanaContent from '../components/common/LockedSadhanaContent.jsx';
 import { FooterSection } from './Home/HomeSections.jsx';
 import mahaLakshmiImg from '../assets/maha-lakshmi-detail.jpeg';
 import {
@@ -38,7 +39,7 @@ function SectionRule() {
   );
 }
 
-function DetailSection({ eyebrow, title, children }) {
+function DetailSection({ eyebrow, title, locked, children }) {
   return (
     <section className="smld-part">
       <ScrollReveal direction="up" duration={0.8}>
@@ -46,7 +47,7 @@ function DetailSection({ eyebrow, title, children }) {
         <h2 className="smld-part__title font-cinzel">{title}</h2>
         <SectionRule />
       </ScrollReveal>
-      {children}
+      {locked ? <LockedSadhanaContent>{children}</LockedSadhanaContent> : children}
     </section>
   );
 }
@@ -167,7 +168,7 @@ export default function ShravanaMahaLakshmiDetail() {
       {/* ══ SECTION 2 · CREAM / IVORY — Śrīṁ Bīja Mantra + Guru Dīkṣā (final visible) ══ */}
       <section className="smld-band smld-band--cream">
         <div className="smld-article__inner">
-          <DetailSection eyebrow="ŚRĀVAṆA MĀSA — MAHĀ LAKṢMĪ SĀDHANA" title="Śrīṁ Bīja Mantra">
+          <DetailSection eyebrow="ŚRĀVAṆA MĀSA — MAHĀ LAKṢMĪ SĀDHANA" title="Śrīṁ Bīja Mantra" locked>
             <ScrollReveal direction="up" delay={0.08} duration={0.8}>
               <div className="smld-verse">
                 <span className="smld-verse__label">Śrīṁ Bīja Mantra</span>
@@ -187,20 +188,12 @@ export default function ShravanaMahaLakshmiDetail() {
           </DetailSection>
         </div>
       </section>
+      {/* ══ PART 2+ · LOCKED CONTENT — veiled behind Guru Dīkṣā ══ */}
 
-      {/*
-        ═════════════════════════════════════════════════════════════════════
-        HIDDEN CONTENT — INTENTIONALLY NOT RENDERED ON THE VISIBLE PAGE
-        The content below (from “2 · WHY SHE IS WORSHIPPED / The Lakṣmī Tantram”
-        through the end of the Mahā Lakṣmī Sādhana) is preserved in this source
-        file for internal reference but is hidden from the user-facing Read More
-        view. Nothing was deleted; the data remains in shravanaLakshmiData.js.
-        ═════════════════════════════════════════════════════════════════════
-
-      ══ SECTION 2 · CREAM / IVORY — The Lakṣmī Tantram ══
+      {/* ══ SECTION 2 · CREAM / IVORY — The Lakṣmī Tantram ══ */}
       <section className="smld-band smld-band--cream">
         <div className="smld-article__inner">
-          <DetailSection eyebrow="2 · WHY SHE IS WORSHIPPED" title="The Lakṣmī Tantram">
+          <DetailSection eyebrow="2 · WHY SHE IS WORSHIPPED" title="The Lakṣmī Tantram" locked>
             <ScrollReveal direction="up" delay={0.06} duration={0.8}>
               {SML_TANTRAM_LEAD.map((para) => (
                 <div className="smld-sub" key={para.heading}>
@@ -231,10 +224,10 @@ export default function ShravanaMahaLakshmiDetail() {
         </div>
       </section>
 
-      ══ SECTION 3 · DEEP MAROON — Ṣoḍaśa Mahā Lakṣmī ══
+      {/* ══ SECTION 3 · DEEP MAROON — Ṣoḍaśa Mahā Lakṣmī ══ */}
       <section className="smld-band smld-band--maroon">
         <div className="smld-article__inner">
-          <DetailSection eyebrow="3 · ṢOḌAŚA MAHĀ LAKṢMĪ" title="The Sixteen Forms — Sixteen Types of Wealth">
+          <DetailSection eyebrow="3 · ṢOḌAŚA MAHĀ LAKṢMĪ" title="The Sixteen Forms — Sixteen Types of Wealth" locked>
             <ScrollReveal direction="up" delay={0.08} duration={0.8}>
               <p className="smld-p">
                 Each form of the Goddess bestows a specific blessing — together they cover every wealth
@@ -258,10 +251,10 @@ export default function ShravanaMahaLakshmiDetail() {
         </div>
       </section>
 
-      ══ SECTION 4 · CREAM / IVORY — Śrāvaṇa Māsa + Importance ══
+      {/* ══ SECTION 4 · CREAM / IVORY — Śrāvaṇa Māsa + Importance ══ */}
       <section className="smld-band smld-band--cream">
         <div className="smld-article__inner">
-          <DetailSection eyebrow="4 · PART 2 — ŚRĀVAṆA MĀSA" title="The Month of Mahā Lakṣmī">
+          <DetailSection eyebrow="4 · PART 2 — ŚRĀVAṆA MĀSA" title="The Month of Mahā Lakṣmī" locked>
             <ScrollReveal direction="up" delay={0.06} duration={0.8}>
               {SML_SRAVANA.map((para) => (
                 <div className="smld-sub" key={para.heading}>
@@ -283,7 +276,7 @@ export default function ShravanaMahaLakshmiDetail() {
             </ScrollReveal>
           </DetailSection>
 
-          <DetailSection eyebrow="5 · IMPORTANCE FOR MAHĀ LAKṢMĪ" title="Why Śrāvaṇa Belongs to the Goddess">
+          <DetailSection eyebrow="5 · IMPORTANCE FOR MAHĀ LAKṢMĪ" title="Why Śrāvaṇa Belongs to the Goddess" locked>
             <ScrollReveal direction="up" delay={0.08} duration={0.8}>
               <ul className="smld-compact">
                 {SML_IMPORTANCE.map((item) => (
@@ -307,10 +300,10 @@ export default function ShravanaMahaLakshmiDetail() {
         </div>
       </section>
 
-      ══ SECTION 5 · DEEP MAROON — Vratas + Combined Sādhana ══
+      {/* ══ SECTION 5 · DEEP MAROON — Vratas + Combined Sādhana ══ */}
       <section className="smld-band smld-band--maroon">
         <div className="smld-article__inner">
-          <DetailSection eyebrow="6 · THE FIVE VRATAS" title="Five Main Vratas of Śrāvaṇa">
+          <DetailSection eyebrow="6 · THE FIVE VRATAS" title="Five Main Vratas of Śrāvaṇa" locked>
             <ScrollReveal direction="up" delay={0.08} duration={0.8}>
               <ol className="smld-list smld-list--vratas">
                 {SML_VRATAS.map((vrata, i) => (
@@ -327,7 +320,7 @@ export default function ShravanaMahaLakshmiDetail() {
             </ScrollReveal>
           </DetailSection>
 
-          <DetailSection eyebrow="7 · PART 3 — COMBINED SĀDHANA" title="Mahā Lakṣmī in Śrāvaṇa">
+          <DetailSection eyebrow="7 · PART 3 — COMBINED SĀDHANA" title="Mahā Lakṣmī in Śrāvaṇa" locked>
             <ScrollReveal direction="up" delay={0.08} duration={0.8}>
               <p className="smld-p">
                 In Śrāvaṇa, worship is not a separate act — the whole month becomes a living sādhana.
@@ -355,10 +348,10 @@ export default function ShravanaMahaLakshmiDetail() {
         </div>
       </section>
 
-      ══ SECTION 6 · CREAM / IVORY — Friday Rules + Eight Benefits ══
+      {/* ══ SECTION 6 · CREAM / IVORY — Friday Rules + Eight Benefits ══ */}
       <section className="smld-band smld-band--cream">
         <div className="smld-article__inner">
-          <DetailSection eyebrow="8 · FRIDAY DISCIPLINE" title="Special Rules for Śrāvaṇa Fridays">
+          <DetailSection eyebrow="8 · FRIDAY DISCIPLINE" title="Special Rules for Śrāvaṇa Fridays" locked>
             <ScrollReveal direction="up" delay={0.08} duration={0.8}>
               <ol className="smld-list smld-list--rules">
                 {SML_FRIDAY.map((rule, i) => (
@@ -374,7 +367,7 @@ export default function ShravanaMahaLakshmiDetail() {
             </ScrollReveal>
           </DetailSection>
 
-          <DetailSection eyebrow="9 · PART 4 — THE EIGHT BENEFITS" title="Eight Blessings of the Sādhana">
+          <DetailSection eyebrow="9 · PART 4 — THE EIGHT BENEFITS" title="Eight Blessings of the Sādhana" locked>
             <ScrollReveal direction="up" delay={0.08} duration={0.8}>
               <ul className="smld-compact">
                 {SML_BENEFITS.map((b, i) => (
@@ -391,10 +384,10 @@ export default function ShravanaMahaLakshmiDetail() {
         </div>
       </section>
 
-      ══ SECTION 7 · DEEP MAROON — Final Message + Sources ══
+      {/* ══ SECTION 7 · DEEP MAROON — Final Message + Sources ══ */}
       <section className="smld-band smld-band--maroon">
         <div className="smld-article__inner">
-          <DetailSection eyebrow="10 · THE PROMISE" title="Final Mahā Lakṣmī Message">
+          <DetailSection eyebrow="10 · THE PROMISE" title="Final Mahā Lakṣmī Message" locked>
             <ScrollReveal direction="up" delay={0.06} duration={0.8}>
               <div className="smld-finale">
                 <div className="smld-finale__block">
@@ -417,7 +410,7 @@ export default function ShravanaMahaLakshmiDetail() {
             </ScrollReveal>
           </DetailSection>
 
-          <DetailSection eyebrow="REFERENCES" title="Traditional Sources & References">
+          <DetailSection eyebrow="REFERENCES" title="Traditional Sources & References" locked>
             <ScrollReveal direction="up" delay={0.08} duration={0.8}>
               <ul className="smld-sources">
                 {SML_SOURCES.map((src) => (
@@ -441,7 +434,6 @@ export default function ShravanaMahaLakshmiDetail() {
           </ScrollReveal>
         </div>
       </section>
-      */}
 
       <FooterSection />
     </div>

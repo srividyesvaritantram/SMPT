@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/navbar/Navbar.jsx';
 import ScrollReveal from '../components/common/ScrollReveal.jsx';
 import GoldenButton from '../components/common/GoldenButton.jsx';
+import LockedSadhanaContent from '../components/common/LockedSadhanaContent.jsx';
 import { FooterSection } from './Home/HomeSections.jsx';
 import mangalaGauriImg from '../assets/mangala-gauri-main.jpeg';
 import mangalaGauriContentImg1 from '../assets/mangala-gauri-content-1.jpeg';
@@ -42,7 +43,7 @@ function SectionRule() {
   );
 }
 
-function DetailSection({ eyebrow, title, children }) {
+function DetailSection({ eyebrow, title, locked, children }) {
   return (
     <section className="smgd-part">
       <ScrollReveal direction="up" duration={0.8}>
@@ -50,7 +51,7 @@ function DetailSection({ eyebrow, title, children }) {
         <h2 className="smgd-part__title font-cinzel">{title}</h2>
         <SectionRule />
       </ScrollReveal>
-      {children}
+      {locked ? <LockedSadhanaContent>{children}</LockedSadhanaContent> : children}
     </section>
   );
 }
@@ -166,11 +167,12 @@ export default function ShravanaMangalaGauriDetail() {
           </DetailSection>
         </div>
       </section>
+      {/* ══ PART 2+ · LOCKED CONTENT — veiled behind Guru Dīkṣā ══ */}
 
       {/* ══ SECTION 2 · CREAM / IVORY — Importance of Mangala Gaurī Vratam ══ */}
       <section className="smgd-band smgd-band--cream">
         <div className="smgd-article__inner">
-          <DetailSection eyebrow="PART 2 — IMPORTANCE OF MANGALA GAURĪ VRATAM" title="The Prayers of the Vratam">
+          <DetailSection eyebrow="PART 2 — IMPORTANCE OF MANGALA GAURĪ VRATAM" title="The Prayers of the Vratam" locked>
             <ScrollReveal direction="up" delay={0.06} duration={0.8}>
               <p className="smgd-p">{SMG_VRATAM_LEAD}</p>
             </ScrollReveal>
@@ -186,7 +188,7 @@ export default function ShravanaMangalaGauriDetail() {
             </ScrollReveal>
           </DetailSection>
 
-          <DetailSection eyebrow="KEY ŚLOKA" title="The Promise of Śrāvaṇa Tuesday">
+          <DetailSection eyebrow="KEY ŚLOKA" title="The Promise of Śrāvaṇa Tuesday" locked>
             <ScrollReveal direction="up" delay={0.08} duration={0.8}>
               <div className="smgd-verse">
                 <span className="smgd-verse__label">Mangala Gaurī Vratam Śloka</span>
@@ -217,7 +219,7 @@ export default function ShravanaMangalaGauriDetail() {
       {/* ══ SECTION 3 · DEEP MAROON — Abhiṣeka + Archana ══ */}
       <section className="smgd-band smgd-band--maroon">
         <div className="smgd-article__inner">
-          <DetailSection eyebrow="PART 3 — MANGALA GAURĪ ABHIṢEKA + ARCHANA" title="Benefits According to Purāṇas + Tantra">
+          <DetailSection eyebrow="PART 3 — MANGALA GAURĪ ABHIṢEKA + ARCHANA" title="Benefits According to Purāṇas + Tantra" locked>
             <ScrollReveal direction="up" delay={0.06} duration={0.8}>
               <p className="smgd-p">{SMG_ABHISEKA_INTRO}</p>
             </ScrollReveal>
@@ -254,7 +256,7 @@ export default function ShravanaMangalaGauriDetail() {
             </ScrollReveal>
           </DetailSection>
 
-          <DetailSection eyebrow="8 MAIN BENEFITS OF ARCHANA" title="Traditional Prayers & Aspirations">
+          <DetailSection eyebrow="8 MAIN BENEFITS OF ARCHANA" title="Traditional Prayers & Aspirations" locked>
             <ScrollReveal direction="up" delay={0.08} duration={0.8}>
               <ul className="smgd-compact smgd-compact--benefits">
                 {SMG_ARCHANA_BENEFITS.map((b) => (
@@ -270,7 +272,7 @@ export default function ShravanaMangalaGauriDetail() {
             </ScrollReveal>
           </DetailSection>
 
-          <DetailSection eyebrow="TANTRA PRACTICE" title="The 108 Names & the Red Thread">
+          <DetailSection eyebrow="TANTRA PRACTICE" title="The 108 Names & the Red Thread" locked>
             <ScrollReveal direction="up" delay={0.08} duration={0.8}>
               <div className="smgd-verse">
                 <span className="smgd-verse__label">Gaurī Aṣṭottara · Lalitā Sahasranāma</span>
@@ -285,7 +287,7 @@ export default function ShravanaMangalaGauriDetail() {
       {/* ══ SECTION 4 · CREAM / IVORY — Simple Vrat Vidhi ══ */}
       <section className="smgd-band smgd-band--cream">
         <div className="smgd-article__inner">
-          <DetailSection eyebrow="PART 4 — SIMPLE MANGALA GAURĪ VRAT VIDHI" title="45-Minute Practice">
+          <DetailSection eyebrow="PART 4 — SIMPLE MANGALA GAURĪ VRAT VIDHI" title="45-Minute Practice" locked>
             <ScrollReveal direction="up" delay={0.08} duration={0.8}>
               <ol className="smgd-list smgd-list--steps">
                 {SMG_PUJA_STEPS.map((step) => (
@@ -313,7 +315,7 @@ export default function ShravanaMangalaGauriDetail() {
       {/* ══ SECTION 5 · DEEP MAROON — 5 Special Rules ══ */}
       <section className="smgd-band smgd-band--maroon">
         <div className="smgd-article__inner">
-          <DetailSection eyebrow="PART 5 — 5 SPECIAL RULES FOR ŚRĀVAṆA MANGALAVĀRA" title="Discipline of the Sacred Tuesday">
+          <DetailSection eyebrow="PART 5 — 5 SPECIAL RULES FOR ŚRĀVAṆA MANGALAVĀRA" title="Discipline of the Sacred Tuesday" locked>
             <ScrollReveal direction="up" delay={0.08} duration={0.8}>
               <ol className="smgd-list">
                 {SMG_RULES.map((rule) => (
@@ -334,7 +336,7 @@ export default function ShravanaMangalaGauriDetail() {
       {/* ══ SECTION 6 · CREAM / IVORY — Conclusion + Final Message ══ */}
       <section className="smgd-band smgd-band--cream">
         <div className="smgd-article__inner">
-          <DetailSection eyebrow="3-POINT CONCLUSION" title="Purāṇa · Tantra · Result">
+          <DetailSection eyebrow="3-POINT CONCLUSION" title="Purāṇa · Tantra · Result" locked>
             <ScrollReveal direction="up" delay={0.08} duration={0.8}>
               <div className="smgd-conclusion">
                 {SMG_CONCLUSION.map((item) => (
@@ -347,14 +349,14 @@ export default function ShravanaMangalaGauriDetail() {
             </ScrollReveal>
           </DetailSection>
 
-          <DetailSection eyebrow="FINAL DEVOTIONAL MESSAGE" title="The Heart of the Vratam">
+          <DetailSection eyebrow="FINAL DEVOTIONAL MESSAGE" title="The Heart of the Vratam" locked>
             <ScrollReveal direction="up" delay={0.08} duration={0.8}>
               <blockquote className="smgd-final font-cormorant">{SMG_FINAL_MESSAGE}</blockquote>
               <p className="smgd-note font-cormorant">{SMG_FINAL_NOTE}</p>
             </ScrollReveal>
           </DetailSection>
 
-          <DetailSection eyebrow="REFERENCES" title="Traditional Sources & References">
+          <DetailSection eyebrow="REFERENCES" title="Traditional Sources & References" locked>
             <ScrollReveal direction="up" delay={0.08} duration={0.8}>
               <ul className="smgd-sources">
                 {SMG_SOURCES.map((src) => (
@@ -364,7 +366,7 @@ export default function ShravanaMangalaGauriDetail() {
             </ScrollReveal>
           </DetailSection>
 
-          <DetailSection eyebrow="GURU DĪKṢĀ" title="Deeper Mangala Gaurī Sādhana & Guru Guidance">
+          <DetailSection eyebrow="GURU DĪKṢĀ" title="Deeper Mangala Gaurī Sādhana & Guru Guidance" locked>
             <ScrollReveal direction="up" delay={0.08} duration={0.8}>
               <div className="smgd-verse">
                 <span className="smgd-verse__label">Take Guru Dīkṣā</span>
