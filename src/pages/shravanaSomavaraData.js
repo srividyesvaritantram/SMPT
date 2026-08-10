@@ -7,9 +7,6 @@ export const SSD_INTRO =
 
 export const SSD_PREVIEW_HIGHLIGHTS = [
   { icon: '🔱', label: '5 Purāṇic Reasons for the Sacred Month' },
-  { icon: '🛕', label: 'Śiva Abhiṣeka — 11 Types & 8 Benefits' },
-  { icon: '🪔', label: '30-Minute Pūjā Vidhi Practice' },
-  { icon: '📿', label: '5 Special Rules for Śrāvaṇa Somavāra' },
 ];
 
 export const SSD_PURANIC_REASONS = [

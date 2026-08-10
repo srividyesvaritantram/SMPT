@@ -4,7 +4,7 @@ import Navbar from '../components/navbar/Navbar.jsx';
 import ScrollReveal from '../components/common/ScrollReveal.jsx';
 import GoldenButton from '../components/common/GoldenButton.jsx';
 import { FooterSection } from './Home/HomeSections.jsx';
-import mahaLakshmiImg from '../assets/maha-lakshmi.jpeg';
+import mahaLakshmiImg from '../assets/maha-lakshmi-detail.jpeg';
 import {
   SML_DATES,
   SML_FACTS,
@@ -25,6 +25,8 @@ import {
   SML_SOURCES,
 } from './shravanaLakshmiData.js';
 import './ShravanaMahaLakshmiDetail.css';
+
+const WA_URL = 'https://wa.me/919390886029';
 
 function SectionRule() {
   return (
@@ -66,7 +68,7 @@ export default function ShravanaMahaLakshmiDetail() {
             </ScrollReveal>
 
             <ScrollReveal delay={0.1} duration={0.85}>
-              <h1 className="smld-hero__title font-cinzel">MAHĀ LAKṢMĪ<br />SĀDHANA VIDHI</h1>
+              <h1 className="smld-hero__title font-cinzel">AISHWARYA PRADHA SRAVANA<br />MAHA LAKSHMI SADHANA VIDHI</h1>
             </ScrollReveal>
 
             <ScrollReveal delay={0.18} duration={0.85}>
@@ -162,7 +164,40 @@ export default function ShravanaMahaLakshmiDetail() {
         </div>
       </section>
 
-      {/* ══ SECTION 2 · CREAM / IVORY — The Lakṣmī Tantram ══ */}
+      {/* ══ SECTION 2 · CREAM / IVORY — Śrīṁ Bīja Mantra + Guru Dīkṣā (final visible) ══ */}
+      <section className="smld-band smld-band--cream">
+        <div className="smld-article__inner">
+          <DetailSection eyebrow="ŚRĀVAṆA MĀSA — MAHĀ LAKṢMĪ SĀDHANA" title="Śrīṁ Bīja Mantra">
+            <ScrollReveal direction="up" delay={0.08} duration={0.8}>
+              <div className="smld-verse">
+                <span className="smld-verse__label">Śrīṁ Bīja Mantra</span>
+                <p className="smld-verse__mantra font-cinzel">Śrīṁ</p>
+                <p className="smld-verse__body font-cormorant">
+                  “If you want to know more about inviting good fortune and the blessings of abundance
+                  and wealth, take Guru Dīkṣā.”
+                </p>
+                <GoldenButton
+                  label="JOIN"
+                  size="lg"
+                  outlined
+                  onClick={() => window.open(WA_URL, '_blank')}
+                />
+              </div>
+            </ScrollReveal>
+          </DetailSection>
+        </div>
+      </section>
+
+      {/*
+        ═════════════════════════════════════════════════════════════════════
+        HIDDEN CONTENT — INTENTIONALLY NOT RENDERED ON THE VISIBLE PAGE
+        The content below (from “2 · WHY SHE IS WORSHIPPED / The Lakṣmī Tantram”
+        through the end of the Mahā Lakṣmī Sādhana) is preserved in this source
+        file for internal reference but is hidden from the user-facing Read More
+        view. Nothing was deleted; the data remains in shravanaLakshmiData.js.
+        ═════════════════════════════════════════════════════════════════════
+
+      ══ SECTION 2 · CREAM / IVORY — The Lakṣmī Tantram ══
       <section className="smld-band smld-band--cream">
         <div className="smld-article__inner">
           <DetailSection eyebrow="2 · WHY SHE IS WORSHIPPED" title="The Lakṣmī Tantram">
@@ -189,14 +224,6 @@ export default function ShravanaMahaLakshmiDetail() {
               </div>
             </ScrollReveal>
 
-            <ScrollReveal direction="up" delay={0.14} duration={0.8}>
-              <div className="smld-verse">
-                <span className="smld-verse__label">Śrīṁ Bīja Mantra</span>
-                <p className="smld-verse__mantra font-cinzel">{SML_BIJA.mantra}</p>
-                <p className="smld-verse__body font-cormorant">{SML_BIJA.body}</p>
-              </div>
-            </ScrollReveal>
-
             <ScrollReveal direction="up" delay={0.18} duration={0.8}>
               <blockquote className="smld-quote font-cormorant">{SML_SIDDHI}</blockquote>
             </ScrollReveal>
@@ -204,7 +231,7 @@ export default function ShravanaMahaLakshmiDetail() {
         </div>
       </section>
 
-      {/* ══ SECTION 3 · DEEP MAROON — Ṣoḍaśa Mahā Lakṣmī ══ */}
+      ══ SECTION 3 · DEEP MAROON — Ṣoḍaśa Mahā Lakṣmī ══
       <section className="smld-band smld-band--maroon">
         <div className="smld-article__inner">
           <DetailSection eyebrow="3 · ṢOḌAŚA MAHĀ LAKṢMĪ" title="The Sixteen Forms — Sixteen Types of Wealth">
@@ -231,7 +258,7 @@ export default function ShravanaMahaLakshmiDetail() {
         </div>
       </section>
 
-      {/* ══ SECTION 4 · CREAM / IVORY — Śrāvaṇa Māsa + Importance ══ */}
+      ══ SECTION 4 · CREAM / IVORY — Śrāvaṇa Māsa + Importance ══
       <section className="smld-band smld-band--cream">
         <div className="smld-article__inner">
           <DetailSection eyebrow="4 · PART 2 — ŚRĀVAṆA MĀSA" title="The Month of Mahā Lakṣmī">
@@ -280,7 +307,7 @@ export default function ShravanaMahaLakshmiDetail() {
         </div>
       </section>
 
-      {/* ══ SECTION 5 · DEEP MAROON — Vratas + Combined Sādhana ══ */}
+      ══ SECTION 5 · DEEP MAROON — Vratas + Combined Sādhana ══
       <section className="smld-band smld-band--maroon">
         <div className="smld-article__inner">
           <DetailSection eyebrow="6 · THE FIVE VRATAS" title="Five Main Vratas of Śrāvaṇa">
@@ -328,7 +355,7 @@ export default function ShravanaMahaLakshmiDetail() {
         </div>
       </section>
 
-      {/* ══ SECTION 6 · CREAM / IVORY — Friday Rules + Eight Benefits ══ */}
+      ══ SECTION 6 · CREAM / IVORY — Friday Rules + Eight Benefits ══
       <section className="smld-band smld-band--cream">
         <div className="smld-article__inner">
           <DetailSection eyebrow="8 · FRIDAY DISCIPLINE" title="Special Rules for Śrāvaṇa Fridays">
@@ -364,7 +391,7 @@ export default function ShravanaMahaLakshmiDetail() {
         </div>
       </section>
 
-      {/* ══ SECTION 7 · DEEP MAROON — Final Message + Sources ══ */}
+      ══ SECTION 7 · DEEP MAROON — Final Message + Sources ══
       <section className="smld-band smld-band--maroon">
         <div className="smld-article__inner">
           <DetailSection eyebrow="10 · THE PROMISE" title="Final Mahā Lakṣmī Message">
@@ -414,6 +441,7 @@ export default function ShravanaMahaLakshmiDetail() {
           </ScrollReveal>
         </div>
       </section>
+      */}
 
       <FooterSection />
     </div>

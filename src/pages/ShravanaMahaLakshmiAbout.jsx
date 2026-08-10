@@ -26,7 +26,7 @@ export default function ShravanaMahaLakshmiAbout() {
             </ScrollReveal>
 
             <ScrollReveal delay={0.1} duration={0.85}>
-              <h1 className="sml-about__hero-title font-cinzel">MAHĀ LAKṢMĪ<br />SĀDHANA VIDHI</h1>
+              <h1 className="sml-about__hero-title font-cinzel">AISHWARYA PRADHA SRAVANA<br />MAHA LAKSHMI SADHANA VIDHI</h1>
             </ScrollReveal>
 
             <ScrollReveal delay={0.18} duration={0.85}>

@@ -30,6 +30,8 @@ import {
 } from './shravanaMangalaGauriData.js';
 import './ShravanaMangalaGauriDetail.css';
 
+const WA_URL = 'https://wa.me/919390886029';
+
 function SectionRule() {
   return (
     <div className="smgd-rule">
@@ -359,6 +361,24 @@ export default function ShravanaMangalaGauriDetail() {
                   <li key={src} className="smgd-sources__item">{src}</li>
                 ))}
               </ul>
+            </ScrollReveal>
+          </DetailSection>
+
+          <DetailSection eyebrow="GURU DĪKṢĀ" title="Deeper Mangala Gaurī Sādhana & Guru Guidance">
+            <ScrollReveal direction="up" delay={0.08} duration={0.8}>
+              <div className="smgd-verse">
+                <span className="smgd-verse__label">Take Guru Dīkṣā</span>
+                <p className="smgd-verse__body font-cormorant">
+                  If you wish to learn more about the deeper Mangala Gaurī Sādhana and receive
+                  traditional guidance, join us through Guru Dīkṣā.
+                </p>
+                <GoldenButton
+                  label="JOIN"
+                  size="lg"
+                  outlined
+                  onClick={() => window.open(WA_URL, '_blank')}
+                />
+              </div>
             </ScrollReveal>
           </DetailSection>
 

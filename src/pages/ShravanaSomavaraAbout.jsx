@@ -3,8 +3,10 @@ import { useNavigate } from 'react-router-dom';
 import ScrollReveal from '../components/common/ScrollReveal.jsx';
 import GoldenButton from '../components/common/GoldenButton.jsx';
 import sivaAradhanaImg from '../assets/siva-aradhana-event.jpeg';
-import { SSD_DATES, SSD_INTRO, SSD_PREVIEW_HIGHLIGHTS, SSD_TAGLINE } from './shravanaSomavaraData.js';
+import { SSD_DATES, SSD_INTRO, SSD_TAGLINE } from './shravanaSomavaraData.js';
 import './ShravanaSomavaraAbout.css';
+
+const WA_URL = 'https://wa.me/919390886029';
 
 export default function ShravanaSomavaraAbout() {
   const navigate = useNavigate();
@@ -13,7 +15,11 @@ export default function ShravanaSomavaraAbout() {
     <div className="ssa-about">
       {/* ══════════════════════════════════════════════════════════
           ŚRĀVAṆA SOMAVĀRA — ŚIVA ĀRĀDHANA & ŚIVA ABHIṢEKA · SHORT PREVIEW
-          Full content opens on its own detail page via READ MORE.
+          Event page shows ONLY: badge, title, subtitle, tagline,
+          short intro, dates, image, READ MORE + JOIN buttons.
+          PART 1 onward (through Conclusion + Guru Dīkṣā) exists ONLY
+          on the Read More detail page — nothing is hidden, just not
+          rendered here.
       ══════════════════════════════════════════════════════════ */}
       <section className="ssa-about__hero">
         <div className="ssa-about__hero-inner">
@@ -50,17 +56,8 @@ export default function ShravanaSomavaraAbout() {
               </div>
             </ScrollReveal>
 
-            {/* Preview — a glimpse of the complete content */}
-            <ScrollReveal delay={0.42} duration={0.85}>
-              <div className="ssa-about__preview">
-                {SSD_PREVIEW_HIGHLIGHTS.map((item) => (
-                  <div className="ssa-about__preview-item" key={item.label}>
-                    <span className="ssa-about__preview-icon" aria-hidden="true">{item.icon}</span>
-                    <span className="ssa-about__preview-text font-cormorant">{item.label}</span>
-                  </div>
-                ))}
-              </div>
-            </ScrollReveal>
+            {/* No detailed Parts on the Event page.
+                PART 1 → CONCLUSION lives ONLY on the Read More detail page. */}
 
             <ScrollReveal delay={0.48} duration={0.85}>
               <div className="ssa-about__hero-btns">
@@ -68,6 +65,12 @@ export default function ShravanaSomavaraAbout() {
                   label="Read More"
                   size="lg"
                   onClick={() => navigate('/events/shravana-somavara')}
+                />
+                <GoldenButton
+                  label="JOIN"
+                  size="lg"
+                  outlined
+                  onClick={() => window.open(WA_URL, '_blank')}
                 />
               </div>
             </ScrollReveal>

@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import ScrollReveal from '../components/common/ScrollReveal.jsx';
 import GoldenButton from '../components/common/GoldenButton.jsx';
 import mangalaGauriImg from '../assets/mangala-gauri-main.jpeg';
-import { SMG_DATES, SMG_INTRO, SMG_PREVIEW_HIGHLIGHTS, SMG_TAGLINE } from './shravanaMangalaGauriData.js';
+import { SMG_DATES, SMG_INTRO, SMG_TAGLINE } from './shravanaMangalaGauriData.js';
 import './ShravanaMangalaGauriAbout.css';
 
 const WA_URL = 'https://wa.me/919390886029';
@@ -58,17 +58,9 @@ export default function ShravanaMangalaGauriAbout() {
               <p className="smg-about__hero-intro font-cormorant">{SMG_INTRO}</p>
             </ScrollReveal>
 
-            {/* Preview — a glimpse of the complete content */}
-            <ScrollReveal delay={0.46} duration={0.85}>
-              <div className="smg-about__preview">
-                {SMG_PREVIEW_HIGHLIGHTS.map((item) => (
-                  <div className="smg-about__preview-item" key={item.label}>
-                    <span className="smg-about__preview-icon" aria-hidden="true">{item.icon}</span>
-                    <span className="smg-about__preview-text font-cormorant">{item.label}</span>
-                  </div>
-                ))}
-              </div>
-            </ScrollReveal>
+            {/* No detailed Parts on the Event page.
+                PART 2 onward (Prayers of the Vratam → Conclusion) lives
+                ONLY on the Read More detail page. */}
 
             <ScrollReveal delay={0.52} duration={0.85}>
               <div className="smg-about__hero-btns">

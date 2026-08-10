@@ -28,6 +28,8 @@ import {
 } from './shravanaSomavaraData.js';
 import './ShravanaSomavaraDetail.css';
 
+const WA_URL = 'https://wa.me/919390886029';
+
 function SectionRule() {
   return (
     <div className="ssd-rule">
@@ -334,6 +336,24 @@ export default function ShravanaSomavaraDetail() {
                   <li key={src} className="ssd-sources__item">{src}</li>
                 ))}
               </ul>
+            </ScrollReveal>
+          </DetailSection>
+
+          <DetailSection eyebrow="GURU DĪKṢĀ" title="Deeper Śiva Sādhana & Guru Guidance">
+            <ScrollReveal direction="up" delay={0.08} duration={0.8}>
+              <div className="ssd-verse">
+                <span className="ssd-verse__label">Take Guru Dīkṣā</span>
+                <p className="ssd-verse__body font-cormorant">
+                  “If you want to know more about the deeper Śiva Sādhana, Abhiṣeka practices and
+                  traditional Guru guidance, take Guru Dīkṣā.”
+                </p>
+                <GoldenButton
+                  label="JOIN"
+                  size="lg"
+                  outlined
+                  onClick={() => window.open(WA_URL, '_blank')}
+                />
+              </div>
             </ScrollReveal>
           </DetailSection>
 

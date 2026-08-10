@@ -54,7 +54,7 @@
 }
 
 .smld-hero__title {
-  font-size: clamp(36px, 5vw, 72px);
+  font-size: clamp(24px, 3.2vw, 42px);
   font-weight: 900;
   line-height: 1.05;
   letter-spacing: 0.04em;
@@ -662,7 +662,7 @@
   }
 
   .smld-hero__title {
-    font-size: 32px;
+    font-size: 28px;
   }
 
   .smld-hero__subtitle {
@@ -711,7 +711,7 @@
 
 @media (max-width: 400px) {
   .smld-hero__title {
-    font-size: 28px;
+    font-size: 24px;
   }
 
   .smld-hero__subtitle {
