@@ -528,6 +528,7 @@
   z-index: 1;
   display: block;
   width: 100%;
+  max-width: 60%;
   height: auto;
   border-radius: 22px;
   border: 2px solid rgba(212, 175, 55, 0.45);
@@ -815,6 +816,10 @@
 
   .smgd-verse {
     padding: 22px 18px;
+  }
+
+  .smgd-article-img__img {
+    max-width: 100%;
   }
 }
 

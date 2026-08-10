@@ -15,7 +15,7 @@ import logoImg from '../../assets/logo.png';
 import './AstrologyPage.css';
 
 const WA_URL =
-  'https://wa.me/91YOURNUMBER?text=Namaste%20%F0%9F%99%8F%20I%20would%20like%20to%20book%20a%20Consultation.';
+  'https://wa.me/919390886029?text=Namaste%20%F0%9F%99%8F%20I%20would%20like%20to%20book%20a%20Consultation.';
 
 const ASTROLOGY_CHECKLIST = [
   'Horoscope Analysis',

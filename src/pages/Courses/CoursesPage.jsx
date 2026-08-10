@@ -14,7 +14,7 @@ import ganapathyamImg     from '../../assets/ganapathyam.png';
 import logoImg from '../../assets/logo.png';
 import './CoursesPage.css';
 
-const WA_URL = 'https://wa.me/91YOURNUMBER?text=Namaste%20%F0%9F%99%8F%0A%0AI%20would%20like%20to%20enroll%20in%20a%20course%20at%20Sri%20MahaVidyesvari%20Tantra%20Peetham.';
+const WA_URL = 'https://wa.me/919390886029?text=Namaste%20%F0%9F%99%8F%0A%0AI%20would%20like%20to%20enroll%20in%20a%20course%20at%20Sri%20MahaVidyesvari%20Tantra%20Peetham.';
 
 function CpLotusDivider({ id = 'cp-lotus', variant = 'cream' }) {
   return (
