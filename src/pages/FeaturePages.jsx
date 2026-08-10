@@ -24,6 +24,9 @@ import completeChakraImg from '../assets/complete_chakra_course.png';
 import ayyappaVidyaImg from '../assets/ayyappa_vidya.png';
 import whatsappQrImg from '../assets/whatsapp_qr.jpeg';
 import { FooterSection } from './Home/HomeSections.jsx';
+import ShravanaMahaLakshmiAbout from './ShravanaMahaLakshmiAbout.jsx';
+import ShravanaSomavaraAbout from './ShravanaSomavaraAbout.jsx';
+import ShravanaMangalaGauriAbout from './ShravanaMangalaGauriAbout.jsx';
 import logoImg from '../assets/logo.png';
 import './FeaturePages.css';
 
@@ -1123,6 +1126,15 @@ export function EventsPage() {
       </section>
 
       <div id="events-content">
+
+        {/* ══ Śrāvaṇa Māsa — Mahā Lakṣmī Sādhana Vidhi · About Section ══ */}
+        <ShravanaMahaLakshmiAbout />
+
+        {/* ══ Śrāvaṇa Somavāra — Śiva Ārādhana & Śiva Abhiṣeka · About Section ══ */}
+        <ShravanaSomavaraAbout />
+
+        {/* ══ Śrāvaṇa Mangalavāra — Mangala Gaurī Vratam · About Section ══ */}
+        <ShravanaMangalaGauriAbout />
 
         {/* ══ Upcoming Divine Events — two premium panels ══ */}
         <ScrollReveal direction="up" duration={0.85}>

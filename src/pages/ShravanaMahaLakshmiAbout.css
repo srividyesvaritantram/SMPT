@@ -1,0 +1,549 @@
+/* ═══════════════════════════════════════════════════════════════════════
+   ŚRĀVAṆA MĀSA — MAHĀ LAKṢMĪ SĀDHANA VIDHI ABOUT SECTION
+   ShravanaMahaLakshmiAbout.css
+   STEP 1 — Hero + More About Mahā Lakṣmī (5 cards)
+═══════════════════════════════════════════════════════════════════════ */
+
+/* ─────────────────────────────────────────────────────────────────────────
+   HERO
+───────────────────────────────────────────────────────────────────────── */
+.sml-about__hero {
+  position: relative;
+  width: 100%;
+  background: linear-gradient(135deg, #0d0208 0%, #1c0610 35%, #2e0d1c 65%, #1c0610 100%);
+  overflow: hidden;
+}
+
+.sml-about__hero-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 64px;
+  padding: 120px 64px 100px;
+}
+
+.sml-about__hero-content {
+  flex: 1 1 55%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sml-about__hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  padding: 8px 20px;
+  border-radius: 999px;
+  border: 1px solid rgba(212, 175, 55, 0.40);
+  background: rgba(212, 175, 55, 0.10);
+  backdrop-filter: blur(10px);
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold-light);
+}
+
+.sml-about__hero-title {
+  font-size: clamp(36px, 5vw, 72px);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: 0.04em;
+  color: #fff8f0;
+  margin: 0;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.60);
+}
+
+.sml-about__hero-subtitle {
+  font-size: clamp(16px, 1.4vw, 20px);
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: 0.04em;
+  color: var(--gold-light);
+  margin: 0;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.50);
+}
+
+.sml-about__hero-rule {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 4px 0;
+}
+
+.sml-about__hero-rule-line {
+  flex: 1;
+  max-width: 80px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.55));
+}
+
+.sml-about__hero-rule-dot {
+  width: 6px;
+  height: 6px;
+  background: linear-gradient(135deg, #B8860B, #E8C76A);
+  transform: rotate(45deg);
+  flex-shrink: 0;
+  border-radius: 1px;
+}
+
+.sml-about__hero-desc {
+  font-size: clamp(15px, 1.3vw, 17px);
+  line-height: 1.85;
+  color: rgba(232, 221, 208, 0.82);
+  margin: 0;
+  max-width: 520px;
+}
+
+.sml-about__hero-date-badge {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 4px;
+  width: fit-content;
+  padding: 14px 24px;
+  border-radius: 16px;
+  background: rgba(212, 175, 55, 0.08);
+  border: 1px solid rgba(212, 175, 55, 0.30);
+  backdrop-filter: blur(12px);
+}
+
+.sml-about__hero-date-label {
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--gold-light);
+}
+
+.sml-about__hero-date-value {
+  font-family: var(--font-heading);
+  font-size: clamp(16px, 1.6vw, 20px);
+  font-weight: 700;
+  color: #fff8f0;
+  letter-spacing: 0.02em;
+}
+
+.sml-about__hero-btns {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+/* RIGHT — Image */
+.sml-about__hero-image-col {
+  flex: 0 0 45%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sml-about__hero-img-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sml-about__hero-img-glow {
+  position: absolute;
+  inset: -40px;
+  background: radial-gradient(
+    ellipse 70% 70% at 50% 50%,
+    rgba(212, 175, 55, 0.14) 0%,
+    rgba(184, 134, 11, 0.06) 50%,
+    transparent 75%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.sml-about__hero-img {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  max-width: 560px;
+  height: auto;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 28px;
+  border: 2px solid rgba(212, 175, 55, 0.45);
+  box-shadow:
+    0 32px 88px rgba(90, 18, 40, 0.30),
+    0 0 0 1px rgba(212, 175, 55, 0.14),
+    0 0 80px rgba(212, 175, 55, 0.16);
+  filter:
+    drop-shadow(0 10px 56px rgba(212, 175, 55, 0.24))
+    drop-shadow(0 0 80px rgba(90, 18, 40, 0.30));
+  image-rendering: -webkit-optimize-contrast;
+}
+
+.sml-about__hero-img-frame {
+  position: absolute;
+  inset: -20px;
+  border: 1px solid rgba(212, 175, 55, 0.14);
+  border-radius: 36px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   LOTUS DIVIDER
+───────────────────────────────────────────────────────────────────────── */
+.sml-about__lotus-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 24px 40px;
+  background: linear-gradient(180deg, #0d0208 0%, #1a0810 50%, #0d0208 100%);
+}
+
+.sml-about__lotus-line {
+  width: 100%;
+  max-width: 200px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.40), transparent);
+}
+
+.sml-about__lotus-emblem {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  flex-shrink: 0;
+  filter: drop-shadow(0 0 12px rgba(212, 175, 55, 0.40));
+}
+
+.sml-about__lotus-emblem svg {
+  width: 80px;
+  height: 80px;
+  display: block;
+}
+
+.sml-about__lotus-glow {
+  position: absolute;
+  inset: -16px;
+  background: radial-gradient(circle at center, rgba(212, 175, 55, 0.12) 0%, transparent 70%);
+  pointer-events: none;
+  border-radius: 50%;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   SECTION SHARED STYLES
+───────────────────────────────────────────────────────────────────────── */
+.sml-about__section {
+  position: relative;
+  padding: 100px 64px;
+  overflow: hidden;
+}
+
+.sml-about__section--cream {
+  background: #FFF8EE;
+}
+
+.sml-about__section--maroon {
+  background: linear-gradient(180deg, #0d0208 0%, #1a0810 50%, #0d0208 100%);
+}
+
+.sml-about__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.sml-about__section-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+}
+
+.sml-about__section-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 22px;
+  border-radius: 999px;
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  background: rgba(212, 175, 55, 0.08);
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+}
+
+.sml-about__section-title {
+  font-size: clamp(28px, 3.5vw, 46px);
+  font-weight: 800;
+  line-height: 1.15;
+  color: #4A0F22;
+  margin: 0;
+}
+
+.sml-about__section-subtitle {
+  font-size: clamp(15px, 1.3vw, 17px);
+  line-height: 1.8;
+  color: #5E2032;
+  font-weight: 500;
+  max-width: 700px;
+  margin: 0;
+}
+
+.sml-about__section-rule {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 220px;
+}
+
+.sml-about__section-rule-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.45));
+}
+
+.sml-about__section-rule-line:last-child {
+  background: linear-gradient(90deg, rgba(212, 175, 55, 0.45), transparent);
+}
+
+.sml-about__section-rule-dot {
+  width: 6px;
+  height: 6px;
+  background: linear-gradient(135deg, #B8860B, #E8C76A);
+  transform: rotate(45deg);
+  flex-shrink: 0;
+  border-radius: 1px;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   FACTS GRID (More About Mahā Lakṣmī)
+───────────────────────────────────────────────────────────────────────── */
+.sml-about__facts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 28px;
+}
+
+.sml-about__fact-card {
+  position: relative;
+  background: #fff;
+  border-radius: 20px;
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  padding: 32px 28px 28px;
+  box-shadow:
+    0 8px 32px rgba(90, 18, 40, 0.08),
+    0 0 0 1px rgba(212, 175, 55, 0.06);
+  overflow: hidden;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.sml-about__fact-card-accent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.55), transparent);
+}
+
+.sml-about__fact-num {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--gold-light);
+  margin-bottom: 10px;
+}
+
+.sml-about__fact-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #4A0F22;
+  margin: 0 0 6px;
+  line-height: 1.3;
+}
+
+.sml-about__fact-source {
+  font-size: 13px;
+  font-style: italic;
+  color: #B8A882;
+  margin: 0 0 12px;
+}
+
+.sml-about__fact-text {
+  font-size: 15px;
+  line-height: 1.75;
+  color: #5E2032;
+  margin: 0;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   RESPONSIVE
+───────────────────────────────────────────────────────────────────────── */
+@media (max-width: 1100px) {
+  .sml-about__hero-inner {
+    padding: 100px 40px 80px;
+    gap: 48px;
+  }
+
+  .sml-about__hero-img {
+    max-width: 440px;
+  }
+}
+
+@media (max-width: 900px) {
+  .sml-about__hero-inner {
+    flex-direction: column;
+    padding: 100px 36px 72px;
+    gap: 40px;
+  }
+
+  .sml-about__hero-content {
+    flex: none;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+
+  .sml-about__hero-desc {
+    max-width: 520px;
+  }
+
+  .sml-about__hero-image-col {
+    flex: none;
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  .sml-about__hero-img {
+    max-width: 100%;
+    aspect-ratio: 3/4;
+  }
+
+  .sml-about__hero-btns {
+    justify-content: center;
+  }
+
+  .sml-about__section {
+    padding: 80px 36px;
+  }
+
+  .sml-about__facts-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .sml-about__hero-inner {
+    padding: 80px 20px 60px;
+    gap: 32px;
+  }
+
+  .sml-about__hero-title {
+    font-size: 32px;
+  }
+
+  .sml-about__hero-subtitle {
+    font-size: 16px;
+  }
+
+  .sml-about__hero-btns {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .sml-about__hero-btns .pb {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .sml-about__hero-img {
+    aspect-ratio: 3/4;
+    border-radius: 20px;
+  }
+
+  .sml-about__section {
+    padding: 64px 20px;
+  }
+
+  .sml-about__section-title {
+    font-size: 24px;
+  }
+
+  .sml-about__fact-card {
+    padding: 24px 20px;
+  }
+}
+
+@media (max-width: 400px) {
+  .sml-about__hero-title {
+    font-size: 28px;
+  }
+
+  .sml-about__hero-subtitle {
+    font-size: 15px;
+  }
+
+  .sml-about__hero-date-badge {
+    padding: 12px 18px;
+  }
+
+  .sml-about__hero-img {
+    aspect-ratio: 3/4;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   PREVIEW LIST (Event page — short About preview)
+───────────────────────────────────────────────────────────────────────── */
+.sml-about__preview {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 2px;
+}
+
+.sml-about__preview-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  border-radius: 14px;
+  background: rgba(212, 175, 55, 0.07);
+  border: 1px solid rgba(212, 175, 55, 0.22);
+}
+
+.sml-about__preview-icon {
+  flex-shrink: 0;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.sml-about__preview-text {
+  font-size: 15px;
+  line-height: 1.4;
+  color: rgba(232, 221, 208, 0.9);
+}
+
+@media (max-width: 600px) {
+  .sml-about__preview-item {
+    padding: 9px 14px;
+  }
+}

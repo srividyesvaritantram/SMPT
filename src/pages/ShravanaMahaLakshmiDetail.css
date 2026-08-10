@@ -1,0 +1,724 @@
+/* ═══════════════════════════════════════════════════════════════════════
+   ŚRĀVAṆA MĀSA — MAHĀ LAKṢMĪ SĀDHANA VIDHI · DETAIL ARTICLE
+   ShravanaMahaLakshmiDetail.css
+   Deep maroon + cream/gold long-form spiritual article
+═══════════════════════════════════════════════════════════════════════ */
+
+.smld {
+  width: 100%;
+  background: #0d0208;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   HERO
+───────────────────────────────────────────────────────────────────────── */
+.smld-hero {
+  position: relative;
+  width: 100%;
+  background: linear-gradient(135deg, #0d0208 0%, #1c0610 35%, #2e0d1c 65%, #1c0610 100%);
+  overflow: hidden;
+}
+
+.smld-hero__inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 64px;
+  padding: 120px 64px 100px;
+}
+
+.smld-hero__content {
+  flex: 1 1 55%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.smld-hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  padding: 8px 20px;
+  border-radius: 999px;
+  border: 1px solid rgba(212, 175, 55, 0.40);
+  background: rgba(212, 175, 55, 0.10);
+  backdrop-filter: blur(10px);
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold-light);
+}
+
+.smld-hero__title {
+  font-size: clamp(36px, 5vw, 72px);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: 0.04em;
+  color: #fff8f0;
+  margin: 0;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.60);
+}
+
+.smld-hero__subtitle {
+  font-size: clamp(16px, 1.4vw, 20px);
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: 0.04em;
+  color: var(--gold-light);
+  margin: 0;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.50);
+}
+
+.smld-hero__rule {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 4px 0;
+}
+
+.smld-hero__rule-line {
+  flex: 1;
+  max-width: 80px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.55));
+}
+
+.smld-hero__rule-dot {
+  width: 6px;
+  height: 6px;
+  background: linear-gradient(135deg, #B8860B, #E8C76A);
+  transform: rotate(45deg);
+  flex-shrink: 0;
+  border-radius: 1px;
+}
+
+.smld-hero__desc {
+  font-size: clamp(15px, 1.3vw, 17px);
+  line-height: 1.85;
+  color: rgba(232, 221, 208, 0.82);
+  margin: 0;
+  max-width: 520px;
+}
+
+.smld-hero__date-badge {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 4px;
+  width: fit-content;
+  padding: 14px 24px;
+  border-radius: 16px;
+  background: rgba(212, 175, 55, 0.08);
+  border: 1px solid rgba(212, 175, 55, 0.30);
+  backdrop-filter: blur(12px);
+}
+
+.smld-hero__date-label {
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--gold-light);
+}
+
+.smld-hero__date-value {
+  font-family: var(--font-heading);
+  font-size: clamp(16px, 1.6vw, 20px);
+  font-weight: 700;
+  color: #fff8f0;
+  letter-spacing: 0.02em;
+}
+
+.smld-hero__btns {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+/* RIGHT — Image */
+.smld-hero__image-col {
+  flex: 0 0 45%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.smld-hero__img-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.smld-hero__img-glow {
+  position: absolute;
+  inset: -40px;
+  background: radial-gradient(
+    ellipse 70% 70% at 50% 50%,
+    rgba(212, 175, 55, 0.14) 0%,
+    rgba(184, 134, 11, 0.06) 50%,
+    transparent 75%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.smld-hero__img {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  max-width: 560px;
+  height: auto;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 28px;
+  border: 2px solid rgba(212, 175, 55, 0.45);
+  box-shadow:
+    0 32px 88px rgba(90, 18, 40, 0.30),
+    0 0 0 1px rgba(212, 175, 55, 0.14),
+    0 0 80px rgba(212, 175, 55, 0.16);
+  filter:
+    drop-shadow(0 10px 56px rgba(212, 175, 55, 0.24))
+    drop-shadow(0 0 80px rgba(90, 18, 40, 0.30));
+  image-rendering: -webkit-optimize-contrast;
+}
+
+.smld-hero__img-frame {
+  position: absolute;
+  inset: -20px;
+  border: 1px solid rgba(212, 175, 55, 0.14);
+  border-radius: 36px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   ARTICLE — deep maroon body
+───────────────────────────────────────────────────────────────────────── */
+.smld-article {
+  position: relative;
+  width: 100%;
+  background: linear-gradient(180deg, #0d0208 0%, #16060f 45%, #0d0208 100%);
+  overflow: hidden;
+}
+
+.smld-article__inner {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 96px 40px 110px;
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+
+/* Part (section) */
+.smld-part {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.smld-part__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  width: fit-content;
+  padding: 7px 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  background: rgba(212, 175, 55, 0.08);
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--gold-light);
+}
+
+.smld-part__title {
+  font-size: clamp(26px, 3vw, 38px);
+  font-weight: 800;
+  line-height: 1.18;
+  color: #F5E6C8;
+  margin: 0;
+}
+
+.smld-rule {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 240px;
+}
+
+.smld-rule__line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.45));
+}
+
+.smld-rule__line:last-child {
+  background: linear-gradient(90deg, rgba(212, 175, 55, 0.45), transparent);
+}
+
+.smld-rule__diamond {
+  color: #E8C76A;
+  font-size: 13px;
+  line-height: 1;
+}
+
+/* Paragraphs */
+.smld-p {
+  font-size: 16px;
+  line-height: 1.9;
+  color: rgba(232, 221, 208, 0.86);
+  margin: 0;
+}
+
+.smld-p--tight {
+  margin-top: 6px;
+}
+
+.smld-sub {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 22px;
+}
+
+.smld-sub:last-child {
+  margin-bottom: 0;
+}
+
+.smld-sub__heading {
+  font-size: 18px;
+  font-weight: 700;
+  color: #E8C76A;
+  margin: 0;
+}
+
+/* Numbered / structured lists */
+.smld-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.smld-list li {
+  display: flex;
+  gap: 18px;
+  padding: 20px 24px;
+  border-radius: 16px;
+  background: rgba(212, 175, 55, 0.05);
+  border: 1px solid rgba(212, 175, 55, 0.16);
+}
+
+.smld-list__num {
+  flex-shrink: 0;
+  min-width: 58px;
+  height: 30px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(212, 175, 55, 0.40);
+  background: rgba(212, 175, 55, 0.12);
+  font-family: var(--font-heading);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--gold-light);
+}
+
+.smld-list__body {
+  flex: 1;
+}
+
+.smld-list__title {
+  display: block;
+  font-size: 16px;
+  font-weight: 700;
+  color: #F5E6C8;
+  line-height: 1.4;
+}
+
+.smld-list__source {
+  display: block;
+  margin-top: 2px;
+  font-size: 12.5px;
+  font-style: italic;
+  color: rgba(212, 175, 55, 0.75);
+}
+
+/* Compact highlighted blocks */
+.smld-compact {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+.smld-compact__item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 18px 22px;
+  border-radius: 16px;
+  background: rgba(212, 175, 55, 0.05);
+  border: 1px solid rgba(212, 175, 55, 0.16);
+}
+
+.smld-compact__name {
+  font-size: 15px;
+  font-weight: 700;
+  color: #E8C76A;
+  line-height: 1.4;
+}
+
+.smld-compact__text {
+  font-size: 15px;
+  line-height: 1.8;
+  color: rgba(232, 221, 208, 0.86);
+}
+
+/* Verse / highlighted Sanskrit block */
+.smld-verse {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 28px 30px;
+  border-radius: 20px;
+  background: linear-gradient(160deg, rgba(212, 175, 55, 0.12), rgba(212, 175, 55, 0.05));
+  border: 1px solid rgba(212, 175, 55, 0.30);
+  text-align: center;
+}
+
+.smld-verse__label {
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--gold-light);
+}
+
+.smld-verse__mantra {
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 800;
+  color: #F5E6C8;
+  margin: 0;
+}
+
+.smld-verse__sanskrit {
+  font-size: 19px;
+  line-height: 2;
+  color: #F5E6C8;
+  margin: 0;
+}
+
+.smld-verse__translit {
+  font-size: 14px;
+  font-style: italic;
+  line-height: 1.8;
+  color: rgba(232, 221, 208, 0.82);
+  margin: 0;
+}
+
+.smld-verse__body {
+  font-size: 14.5px;
+  line-height: 1.8;
+  color: rgba(232, 221, 208, 0.9);
+  margin: 0;
+}
+
+.smld-verse__body strong {
+  color: #E8C76A;
+}
+
+/* Blockquote */
+.smld-quote {
+  margin: 0;
+  padding: 6px 10px 6px 26px;
+  border-left: 2px solid rgba(212, 175, 55, 0.55);
+  font-size: 16.5px;
+  line-height: 1.9;
+  color: rgba(245, 230, 200, 0.92);
+}
+
+/* Ṣoḍaśa — 16 forms compact grid */
+.smld-sodasa {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.smld-sodasa__item {
+  display: flex;
+  gap: 12px;
+  padding: 16px 18px;
+  border-radius: 14px;
+  background: rgba(212, 175, 55, 0.05);
+  border: 1px solid rgba(212, 175, 55, 0.14);
+}
+
+.smld-sodasa__num {
+  flex-shrink: 0;
+  font-family: var(--font-heading);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: rgba(212, 175, 55, 0.8);
+  padding-top: 2px;
+}
+
+.smld-sodasa__name {
+  display: block;
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #E8C76A;
+  line-height: 1.4;
+}
+
+.smld-sodasa__text {
+  display: block;
+  margin-top: 3px;
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: rgba(232, 221, 208, 0.82);
+}
+
+/* Festivals */
+.smld-festivals {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.smld-festivals__item {
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: rgba(212, 175, 55, 0.06);
+  border: 1px solid rgba(212, 175, 55, 0.16);
+  font-size: 14px;
+  color: rgba(245, 230, 200, 0.92);
+}
+
+/* Finale */
+.smld-finale {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.smld-finale__block {
+  padding: 24px 26px;
+  border-radius: 18px;
+  background: linear-gradient(160deg, rgba(212, 175, 55, 0.10), rgba(212, 175, 55, 0.04));
+  border: 1px solid rgba(212, 175, 55, 0.26);
+}
+
+.smld-finale__heading {
+  font-size: 19px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: #E8C76A;
+  margin: 0 0 8px;
+}
+
+.smld-closing {
+  margin: 0;
+  padding: 28px 30px;
+  border-radius: 20px;
+  background: rgba(212, 175, 55, 0.08);
+  border: 1px solid rgba(212, 175, 55, 0.30);
+  font-size: 19px;
+  font-weight: 600;
+  line-height: 1.8;
+  text-align: center;
+  color: #F5E6C8;
+}
+
+/* Sources */
+.smld-sources {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.smld-sources__item {
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: 1px solid rgba(212, 175, 55, 0.22);
+  background: rgba(212, 175, 55, 0.06);
+  font-size: 13.5px;
+  color: rgba(232, 221, 208, 0.9);
+}
+
+/* CTA */
+.smld-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  padding: 40px 30px;
+  border-radius: 22px;
+  background: linear-gradient(160deg, rgba(212, 175, 55, 0.12), rgba(212, 175, 55, 0.04));
+  border: 1px solid rgba(212, 175, 55, 0.30);
+  text-align: center;
+}
+
+.smld-cta__text {
+  font-size: 18px;
+  line-height: 1.7;
+  color: rgba(245, 230, 200, 0.94);
+  margin: 0;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   RESPONSIVE
+───────────────────────────────────────────────────────────────────────── */
+@media (max-width: 1100px) {
+  .smld-hero__inner {
+    padding: 100px 40px 80px;
+    gap: 48px;
+  }
+
+  .smld-hero__img {
+    max-width: 440px;
+  }
+}
+
+@media (max-width: 900px) {
+  .smld-hero__inner {
+    flex-direction: column;
+    padding: 100px 36px 72px;
+    gap: 40px;
+  }
+
+  .smld-hero__content {
+    flex: none;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+
+  .smld-hero__desc {
+    max-width: 520px;
+  }
+
+  .smld-hero__image-col {
+    flex: none;
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  .smld-hero__img {
+    max-width: 100%;
+  }
+
+  .smld-hero__btns {
+    justify-content: center;
+  }
+
+  .smld-article__inner {
+    padding: 80px 28px 90px;
+  }
+
+  .smld-sodasa {
+    grid-template-columns: 1fr;
+  }
+
+  .smld-festivals {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .smld-hero__inner {
+    padding: 80px 20px 60px;
+    gap: 32px;
+  }
+
+  .smld-hero__title {
+    font-size: 32px;
+  }
+
+  .smld-hero__subtitle {
+    font-size: 16px;
+  }
+
+  .smld-hero__btns {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .smld-hero__btns .pb {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .smld-article__inner {
+    padding: 64px 18px 72px;
+    gap: 48px;
+  }
+
+  .smld-list li {
+    flex-direction: column;
+    gap: 12px;
+    padding: 18px;
+  }
+
+  .smld-list__num {
+    min-width: 0;
+    width: fit-content;
+  }
+
+  .smld-finale {
+    grid-template-columns: 1fr;
+  }
+
+  .smld-festivals {
+    grid-template-columns: 1fr;
+  }
+
+  .smld-verse {
+    padding: 22px 18px;
+  }
+}
+
+@media (max-width: 400px) {
+  .smld-hero__title {
+    font-size: 28px;
+  }
+
+  .smld-hero__subtitle {
+    font-size: 15px;
+  }
+
+  .smld-hero__img {
+    aspect-ratio: 3/4;
+  }
+}

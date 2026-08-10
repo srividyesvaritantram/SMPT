@@ -16,6 +16,9 @@ import {
   VideoPlayerPage,
 } from './pages/FeaturePages.jsx';
 import AstrologyPage from './pages/Offerings/AstrologyPage.jsx';
+import ShravanaMahaLakshmiDetail from './pages/ShravanaMahaLakshmiDetail.jsx';
+import ShravanaSomavaraDetail from './pages/ShravanaSomavaraDetail.jsx';
+import ShravanaMangalaGauriDetail from './pages/ShravanaMangalaGauriDetail.jsx';
 
 function NotFound() {
   return (
@@ -23,6 +26,7 @@ function NotFound() {
       <span style={{ fontSize: 64 }}>🪷</span>
       <h2 style={{ color: '#E8DDD0', fontFamily: 'Cinzel, serif' }}>Page Not Found</h2>
       <a href="/" style={{ color: '#E8C76A' }}>← Return Home</a>
+      {/* TEST BUILD CHANGE */}
     </div>
   );
 }
@@ -79,6 +83,9 @@ export default function App() {
         <Route path="/offerings/ritual-consultation" element={<OfferingsPage />} />
         <Route path="/offerings/vastu-guidance" element={<OfferingsPage />} />
         <Route path="/events" element={<EventsPage />} />
+        <Route path="/events/shravana-maha-lakshmi" element={<ShravanaMahaLakshmiDetail />} />
+        <Route path="/events/shravana-somavara" element={<ShravanaSomavaraDetail />} />
+        <Route path="/events/shravana-mangala-gauri" element={<ShravanaMangalaGauriDetail />} />
         <Route path="/blog" element={<BlogPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/login" element={<LoginPage />} />

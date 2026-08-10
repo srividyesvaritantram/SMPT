@@ -1,0 +1,826 @@
+/* ═══════════════════════════════════════════════════════════════════════
+   ŚRĀVAṆA SOMAVĀRA — ŚIVA ĀRĀDHANA & ŚIVA ABHIṢEKA · DETAIL ARTICLE
+   ShravanaSomavaraDetail.css
+   Alternating band system · Deep maroon ↔ cream/ivory across major sections
+   Each band sets CSS custom properties; all content classes derive from them,
+   so maroon bands show cream text + subtle gold, cream bands show deep
+   maroon text + subtle gold. Only major content sections alternate.
+╔═══════════════════════════════════════════════════════════════════════ */
+
+.ssd {
+  width: 100%;
+  background: #0d0208;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   BAND THEME VARIABLES
+──────────────────────────────────────────────────────────────────────── */
+.ssd-band {
+  --ssd-text: rgba(232, 221, 208, 0.86);
+  --ssd-text-strong: rgba(245, 230, 200, 0.94);
+  --ssd-heading: #F5E6C8;
+  --ssd-gold: #E8C76A;
+  --ssd-gold-deep: #B8860B;
+  --ssd-gold-soft: rgba(212, 175, 55, 0.55);
+  --ssd-chip-bg: rgba(212, 175, 55, 0.05);
+  --ssd-chip-border: rgba(212, 175, 55, 0.16);
+  --ssd-verse-bg: linear-gradient(160deg, rgba(212, 175, 55, 0.12), rgba(212, 175, 55, 0.05));
+  --ssd-verse-border: rgba(212, 175, 55, 0.30);
+}
+
+.ssd-band--maroon {
+  --ssd-bg1: #0d0208;
+  --ssd-bg2: #16060f;
+  --ssd-bg3: #1d0a14;
+}
+
+.ssd-band--cream {
+  --ssd-text: #5E2032;
+  --ssd-text-strong: #4A0F22;
+  --ssd-heading: #4A0F22;
+  --ssd-gold: #B8860B;
+  --ssd-gold-deep: #8a5a12;
+  --ssd-gold-soft: rgba(184, 134, 11, 0.60);
+  --ssd-chip-bg: rgba(184, 134, 11, 0.08);
+  --ssd-chip-border: rgba(184, 134, 11, 0.28);
+  --ssd-verse-bg: linear-gradient(160deg, rgba(184, 134, 11, 0.12), rgba(184, 134, 11, 0.05));
+  --ssd-verse-border: rgba(184, 134, 11, 0.35);
+  --ssd-bg1: #FFF8EE;
+  --ssd-bg2: #FBF1DC;
+  --ssd-bg3: #F6E8CC;
+}
+
+.ssd-band {
+  position: relative;
+  width: 100%;
+  background: linear-gradient(180deg, var(--ssd-bg1) 0%, var(--ssd-bg2) 45%, var(--ssd-bg1) 100%);
+  overflow: hidden;
+}
+
+.ssd-band--maroon::before,
+.ssd-band--cream::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 60% 45% at 85% 8%, rgba(212, 175, 55, 0.05), transparent 70%),
+    radial-gradient(ellipse 55% 42% at 4% 92%, rgba(212, 175, 55, 0.04), transparent 70%);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   HERO (deep maroon)
+──────────────────────────────────────────────────────────────────────── */
+.ssd-hero {
+  position: relative;
+  width: 100%;
+  background: linear-gradient(135deg, #0d0208 0%, #1c0610 35%, #2e0d1c 65%, #1c0610 100%);
+  overflow: hidden;
+}
+
+.ssd-hero__inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 64px;
+  padding: 120px 64px 100px;
+}
+
+.ssd-hero__content {
+  flex: 1 1 55%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.ssd-hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  padding: 8px 20px;
+  border-radius: 999px;
+  border: 1px solid rgba(212, 175, 55, 0.40);
+  background: rgba(212, 175, 55, 0.10);
+  backdrop-filter: blur(10px);
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold-light);
+}
+
+.ssd-hero__title {
+  font-size: clamp(36px, 5vw, 72px);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: 0.04em;
+  color: #fff8f0;
+  margin: 0;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.60);
+}
+
+.ssd-hero__subtitle {
+  font-size: clamp(16px, 1.4vw, 20px);
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: 0.04em;
+  color: var(--gold-light);
+  margin: 0;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.50);
+}
+
+.ssd-hero__rule {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 4px 0;
+}
+
+.ssd-hero__rule-line {
+  flex: 1;
+  max-width: 80px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.55));
+}
+
+.ssd-hero__rule-dot {
+  width: 6px;
+  height: 6px;
+  background: linear-gradient(135deg, #B8860B, #E8C76A);
+  transform: rotate(45deg);
+  flex-shrink: 0;
+  border-radius: 1px;
+}
+
+.ssd-hero__desc {
+  font-size: clamp(15px, 1.3vw, 17px);
+  line-height: 1.85;
+  color: rgba(232, 221, 208, 0.82);
+  margin: 0;
+  max-width: 520px;
+}
+
+.ssd-hero__date-badge {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 4px;
+  width: fit-content;
+  padding: 14px 24px;
+  border-radius: 16px;
+  background: rgba(212, 175, 55, 0.08);
+  border: 1px solid rgba(212, 175, 55, 0.30);
+  backdrop-filter: blur(12px);
+}
+
+.ssd-hero__date-label {
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--gold-light);
+}
+
+.ssd-hero__date-value {
+  font-family: var(--font-heading);
+  font-size: clamp(15px, 1.6vw, 20px);
+  font-weight: 700;
+  color: #fff8f0;
+  letter-spacing: 0.02em;
+}
+
+.ssd-hero__btns {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+/* RIGHT — Image */
+.ssd-hero__image-col {
+  flex: 0 0 45%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ssd-hero__img-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ssd-hero__img-glow {
+  position: absolute;
+  inset: -40px;
+  background: radial-gradient(
+    ellipse 70% 70% at 50% 50%,
+    rgba(212, 175, 55, 0.14) 0%,
+    rgba(184, 134, 11, 0.06) 50%,
+    transparent 75%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.ssd-hero__img {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  max-width: 560px;
+  height: auto;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 28px;
+  border: 2px solid rgba(212, 175, 55, 0.45);
+  box-shadow:
+    0 32px 88px rgba(90, 18, 40, 0.30),
+    0 0 0 1px rgba(212, 175, 55, 0.14),
+    0 0 80px rgba(212, 175, 55, 0.16);
+  filter:
+    drop-shadow(0 10px 56px rgba(212, 175, 55, 0.24))
+    drop-shadow(0 0 80px rgba(90, 18, 40, 0.30));
+  image-rendering: -webkit-optimize-contrast;
+}
+
+.ssd-hero__img-frame {
+  position: absolute;
+  inset: -20px;
+  border: 1px solid rgba(212, 175, 55, 0.14);
+  border-radius: 36px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   ARTICLE IMAGE (Liṅga — within Śiva Abhiṣeka)
+──────────────────────────────────────────────────────────────────────── */
+.ssd-article-img {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 8px 0 4px;
+}
+
+.ssd-article-img__glow {
+  position: absolute;
+  inset: -36px;
+  background: radial-gradient(
+    ellipse 70% 70% at 50% 50%,
+    rgba(212, 175, 55, 0.14) 0%,
+    rgba(184, 134, 11, 0.06) 50%,
+    transparent 75%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.ssd-article-img__img {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  max-width: 460px;
+  height: auto;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 22px;
+  border: 2px solid rgba(212, 175, 55, 0.45);
+  box-shadow:
+    0 24px 72px rgba(90, 18, 40, 0.26),
+    0 0 0 1px rgba(212, 175, 55, 0.14),
+    0 0 64px rgba(212, 175, 55, 0.14);
+  filter:
+    drop-shadow(0 8px 44px rgba(212, 175, 55, 0.20))
+    drop-shadow(0 0 64px rgba(90, 18, 40, 0.26));
+  image-rendering: -webkit-optimize-contrast;
+}
+
+.ssd-article-img__frame {
+  position: absolute;
+  inset: -16px;
+  border: 1px solid rgba(212, 175, 55, 0.18);
+  border-radius: 30px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   ARTICLE INNER
+──────────────────────────────────────────────────────────────────────── */
+.ssd-article__inner {
+  position: relative;
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 96px 40px 110px;
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+
+/* Part (section) */
+.ssd-part {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.ssd-part__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  width: fit-content;
+  padding: 7px 18px;
+  border-radius: 999px;
+  border: 1px solid var(--ssd-gold-soft);
+  background: var(--ssd-chip-bg);
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--ssd-gold);
+}
+
+.ssd-part__title {
+  font-size: clamp(26px, 3vw, 38px);
+  font-weight: 800;
+  line-height: 1.18;
+  color: var(--ssd-heading);
+  margin: 0;
+}
+
+.ssd-rule {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 240px;
+}
+
+.ssd-rule__line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--ssd-gold-soft));
+}
+
+.ssd-rule__line:last-child {
+  background: linear-gradient(90deg, var(--ssd-gold-soft), transparent);
+}
+
+.ssd-rule__diamond {
+  color: var(--ssd-gold);
+  font-size: 13px;
+  line-height: 1;
+}
+
+/* Paragraphs */
+.ssd-p {
+  font-size: 16px;
+  line-height: 1.9;
+  color: var(--ssd-text);
+  margin: 0;
+}
+
+.ssd-p--tight {
+  margin-top: 6px;
+}
+
+.ssd-sub {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 22px;
+}
+
+.ssd-sub:last-child {
+  margin-bottom: 0;
+}
+
+.ssd-sub__heading {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--ssd-gold);
+  margin: 0;
+}
+
+/* Numbered / structured lists */
+.ssd-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.ssd-list li {
+  display: flex;
+  gap: 18px;
+  padding: 20px 24px;
+  border-radius: 16px;
+  background: var(--ssd-chip-bg);
+  border: 1px solid var(--ssd-chip-border);
+}
+
+.ssd-list__num {
+  flex-shrink: 0;
+  min-width: 58px;
+  height: 30px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
+  border-radius: 999px;
+  border: 1px solid var(--ssd-gold-soft);
+  background: color-mix(in srgb, var(--ssd-gold) 12%, transparent);
+  font-family: var(--font-heading);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--ssd-gold);
+}
+
+.ssd-list__body {
+  flex: 1;
+}
+
+.ssd-list__title {
+  display: block;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--ssd-heading);
+  line-height: 1.4;
+}
+
+.ssd-list__source {
+  display: block;
+  margin-top: 2px;
+  font-size: 12.5px;
+  font-style: italic;
+  color: var(--ssd-gold);
+  opacity: 0.85;
+}
+
+/* Compact highlighted blocks */
+.ssd-compact {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+.ssd-compact__item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 18px 22px;
+  border-radius: 16px;
+  background: var(--ssd-chip-bg);
+  border: 1px solid var(--ssd-chip-border);
+}
+
+.ssd-compact__name {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ssd-gold);
+  line-height: 1.4;
+}
+
+.ssd-compact__text {
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--ssd-text);
+}
+
+/* Abhiṣeka types — 2-column compact grid */
+.ssd-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.ssd-grid__item {
+  display: flex;
+  gap: 12px;
+  padding: 16px 18px;
+  border-radius: 14px;
+  background: var(--ssd-chip-bg);
+  border: 1px solid var(--ssd-chip-border);
+}
+
+.ssd-grid__num {
+  flex-shrink: 0;
+  font-family: var(--font-heading);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--ssd-gold);
+  opacity: 0.85;
+  padding-top: 2px;
+}
+
+.ssd-grid__name {
+  display: block;
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--ssd-gold);
+  line-height: 1.4;
+}
+
+.ssd-grid__detail {
+  display: block;
+  margin-top: 3px;
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: var(--ssd-text);
+}
+
+/* Verse / highlighted śloka block */
+.ssd-verse {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 28px 30px;
+  border-radius: 20px;
+  background: var(--ssd-verse-bg);
+  border: 1px solid var(--ssd-verse-border);
+  text-align: center;
+}
+
+.ssd-verse__label {
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--ssd-gold);
+}
+
+.ssd-verse__sanskrit {
+  font-size: 18px;
+  line-height: 2;
+  color: var(--ssd-heading);
+  margin: 0;
+}
+
+.ssd-verse__body {
+  font-size: 14.5px;
+  line-height: 1.8;
+  color: var(--ssd-text);
+  margin: 0;
+}
+
+.ssd-verse__body strong {
+  color: var(--ssd-gold);
+}
+
+/* Small note */
+.ssd-note {
+  margin: 0;
+  font-size: 13.5px;
+  font-style: italic;
+  line-height: 1.7;
+  color: var(--ssd-text);
+  opacity: 0.85;
+}
+
+/* Steps list (inside numbered items) */
+.ssd-steps-list {
+  list-style: none;
+  margin: 12px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ssd-steps-list__item {
+  display: flex;
+  gap: 10px;
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: var(--ssd-text);
+}
+
+.ssd-steps-list__tick {
+  flex-shrink: 0;
+  color: var(--ssd-gold);
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+/* Conclusion — 3 points */
+.ssd-conclusion {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.ssd-conclusion__item {
+  padding: 24px 26px;
+  border-radius: 18px;
+  background: var(--ssd-verse-bg);
+  border: 1px solid var(--ssd-verse-border);
+}
+
+.ssd-conclusion__label {
+  display: block;
+  font-size: 19px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: var(--ssd-gold);
+  margin: 0 0 8px;
+}
+
+.ssd-conclusion__text {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.75;
+  color: var(--ssd-text);
+}
+
+/* Final message */
+.ssd-final {
+  margin: 0;
+  padding: 28px 30px;
+  border-radius: 20px;
+  background: var(--ssd-verse-bg);
+  border: 1px solid var(--ssd-verse-border);
+  font-size: 19px;
+  font-weight: 600;
+  line-height: 1.8;
+  text-align: center;
+  color: var(--ssd-heading);
+}
+
+/* Sources */
+.ssd-sources {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.ssd-sources__item {
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--ssd-chip-border);
+  background: var(--ssd-chip-bg);
+  font-size: 13.5px;
+  color: var(--ssd-text-strong);
+}
+
+/* CTA */
+.ssd-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  padding: 40px 30px;
+  border-radius: 22px;
+  background: var(--ssd-verse-bg);
+  border: 1px solid var(--ssd-verse-border);
+  text-align: center;
+}
+
+.ssd-cta__text {
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--ssd-text-strong);
+  margin: 0;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   RESPONSIVE
+──────────────────────────────────────────────────────────────────────── */
+@media (max-width: 1100px) {
+  .ssd-hero__inner {
+    padding: 100px 40px 80px;
+    gap: 48px;
+  }
+
+  .ssd-hero__img {
+    max-width: 440px;
+  }
+}
+
+@media (max-width: 900px) {
+  .ssd-hero__inner {
+    flex-direction: column;
+    padding: 100px 36px 72px;
+    gap: 40px;
+  }
+
+  .ssd-hero__content {
+    flex: none;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+
+  .ssd-hero__desc {
+    max-width: 520px;
+  }
+
+  .ssd-hero__image-col {
+    flex: none;
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  .ssd-hero__img {
+    max-width: 100%;
+  }
+
+  .ssd-hero__btns {
+    justify-content: center;
+  }
+
+  .ssd-article__inner {
+    padding: 80px 28px 90px;
+  }
+
+  .ssd-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ssd-conclusion {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .ssd-hero__inner {
+    padding: 80px 20px 60px;
+    gap: 32px;
+  }
+
+  .ssd-hero__title {
+    font-size: 32px;
+  }
+
+  .ssd-hero__subtitle {
+    font-size: 16px;
+  }
+
+  .ssd-hero__btns {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .ssd-hero__btns .pb {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .ssd-article__inner {
+    padding: 64px 18px 72px;
+    gap: 48px;
+  }
+
+  .ssd-list li {
+    flex-direction: column;
+    gap: 12px;
+    padding: 18px;
+  }
+
+  .ssd-list__num {
+    min-width: 0;
+    width: fit-content;
+  }
+
+  .ssd-conclusion {
+    grid-template-columns: 1fr;
+  }
+
+  .ssd-verse {
+    padding: 22px 18px;
+  }
+}
+
+@media (max-width: 400px) {
+  .ssd-hero__title {
+    font-size: 28px;
+  }
+
+  .ssd-hero__subtitle {
+    font-size: 15px;
+  }
+}
