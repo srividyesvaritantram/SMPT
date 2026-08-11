@@ -28,6 +28,7 @@ import ShravanaMahaLakshmiAbout from './ShravanaMahaLakshmiAbout.jsx';
 import ShravanaSomavaraAbout from './ShravanaSomavaraAbout.jsx';
 import ShravanaMangalaGauriAbout from './ShravanaMangalaGauriAbout.jsx';
 import MangalaGauriGuidance from '../components/events/MangalaGauriGuidance.jsx';
+import Shravana2026Events from '../components/events/Shravana2026Events.jsx';
 import logoImg from '../assets/logo.png';
 import './FeaturePages.css';
 
@@ -1239,6 +1240,9 @@ export function EventsPage() {
             </div>
           </section>
         </ScrollReveal>
+
+        {/* ─── Śrāvaṇa 2026 Sacred Events — date-wise event cards ─── */}
+        <Shravana2026Events />
 
         {/* ─── Past Divine Events ─── */}
         <section className="upcoming-divine-events" id="past-divine-events">

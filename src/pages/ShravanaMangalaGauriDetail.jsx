@@ -6,7 +6,7 @@ import GoldenButton from '../components/common/GoldenButton.jsx';
 import LockedSadhanaContent from '../components/common/LockedSadhanaContent.jsx';
 import { FooterSection } from './Home/HomeSections.jsx';
 import mangalaGauriImg from '../assets/mangala-gauri-main.jpeg';
-import mangalaGauriContentImg1 from '../assets/mangala-gauri-content-1.jpeg';
+import mangalaGauriContentImg1 from '../assets/mangala-gauri-content-1.png';
 import mangalaGauriContentImg2 from '../assets/mangala-gauri-content-2.jpeg';
 import {
   SMG_DATES,

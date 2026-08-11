@@ -14,7 +14,7 @@ export default function ShravanaMangalaGauriAbout() {
   return (
     <div className="smg-about">
       {/* ══════════════════════════════════════════════════════════
-          ŚRĀVAṆA MANGALAVĀRA — MANGALA GAURĪ VRATAM · SHORT PREVIEW
+          SAUBHĀGYA PRADĀ ŚRĀVAṆA MANGALA GAURĪ ĀRĀDHANA · SHORT PREVIEW
           Full content opens on its own detail page via READ MORE.
       ══════════════════════════════════════════════════════════ */}
       <section className="smg-about__hero">
@@ -26,7 +26,7 @@ export default function ShravanaMangalaGauriAbout() {
             </ScrollReveal>
 
             <ScrollReveal delay={0.1} duration={0.85}>
-              <h1 className="smg-about__hero-title font-cinzel">MANGALA GAURĪ<br />VRATAM</h1>
+              <h1 className="smg-about__hero-title font-cinzel">SAUBHĀGYA PRADĀ ŚRĀVAṆA<br />MANGALA GAURĪ ĀRĀDHANA</h1>
             </ScrollReveal>
 
             <ScrollReveal delay={0.18} duration={0.85}>

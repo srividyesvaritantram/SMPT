@@ -53,18 +53,18 @@
   border: 1px solid rgba(123, 30, 58, 0.30);
   background: rgba(123, 30, 58, 0.06);
   font-family: var(--font-body);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 3px;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 2px;
   text-transform: uppercase;
   color: #7B1E3A;
 }
 
 .ssa-about__hero-title {
-  font-size: clamp(32px, 4.6vw, 64px);
-  font-weight: 900;
-  line-height: 1.08;
-  letter-spacing: 0.04em;
+  font-size: clamp(28px, 3vw, 32px);
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: 0.03em;
   color: #4A0F22;
   margin: 0;
 }
@@ -279,6 +279,10 @@
     aspect-ratio: 3/4;
   }
 
+  .ssa-about__hero-title {
+    font-size: 26px;
+  }
+
   .ssa-about__hero-btns {
     justify-content: center;
   }
@@ -291,7 +295,7 @@
   }
 
   .ssa-about__hero-title {
-    font-size: 30px;
+    font-size: 24px;
   }
 
   .ssa-about__hero-subtitle {
@@ -321,7 +325,7 @@
 
 @media (max-width: 400px) {
   .ssa-about__hero-title {
-    font-size: 26px;
+    font-size: 22px;
   }
 
   .ssa-about__hero-subtitle {

@@ -14,7 +14,7 @@ export default function ShravanaSomavaraAbout() {
   return (
     <div className="ssa-about">
       {/* ══════════════════════════════════════════════════════════
-          ŚRĀVAṆA SOMAVĀRA — ŚIVA ĀRĀDHANA & ŚIVA ABHIṢEKA · SHORT PREVIEW
+          VIDYĀ JÑĀNA PRADĀYAKA ŚRĀVAṆA SOMAVĀRA ĀRĀDHANA · SHORT PREVIEW
           Event page shows ONLY: badge, title, subtitle, tagline,
           short intro, dates, image, READ MORE + JOIN buttons.
           PART 1 onward (through Conclusion + Guru Dīkṣā) exists ONLY
@@ -30,7 +30,7 @@ export default function ShravanaSomavaraAbout() {
             </ScrollReveal>
 
             <ScrollReveal delay={0.1} duration={0.85}>
-              <h1 className="ssa-about__hero-title font-cinzel">ŚIVA ĀRĀDHANA<br />ŚIVA ABHIṢEKA</h1>
+              <h1 className="ssa-about__hero-title font-cinzel">VIDYĀ JÑĀNA PRADĀYAKA<br />ŚRĀVAṆA SOMAVĀRA ĀRĀDHANA</h1>
             </ScrollReveal>
 
             <ScrollReveal delay={0.18} duration={0.85}>

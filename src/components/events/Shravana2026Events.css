@@ -1,0 +1,446 @@
+/* ═══════════════════════════════════════════════════════════════════════
+   ŚRĀVAṆA 2026 — SACRED EVENTS
+   Premium devotional section — warm parchment cream / antique gold / maroon
+═══════════════════════════════════════════════════════════════════════ */
+
+.sve {
+  background: #FFF8E7;
+  padding: 80px 48px 96px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Fine gold hairline across the top of the section */
+.sve::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 8%; right: 8%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(181,138,58,0.55), transparent);
+}
+
+/* Faint temple-inspired dotted lattice + soft gold glows across the cream */
+.sve::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.5;
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(181,138,58,0.10) 1px, transparent 1.6px),
+    radial-gradient(ellipse 55% 38% at 12% 8%, rgba(181,138,58,0.06), transparent),
+    radial-gradient(ellipse 55% 38% at 88% 92%, rgba(110,31,42,0.05), transparent);
+  background-size: 26px 26px, auto, auto;
+}
+
+/* Subtle lotus (top-left) and diya (bottom-right) corner ornaments */
+.sve__container::before,
+.sve__container::after {
+  content: '';
+  position: absolute;
+  pointer-events: none;
+  opacity: 0.14;
+  z-index: 0;
+  line-height: 1;
+}
+
+.sve__container::before {
+  content: '❁';
+  top: 26px;
+  left: 18px;
+  font-size: 56px;
+  color: #B58A3A;
+}
+
+.sve__container::after {
+  content: '🪔';
+  bottom: 18px;
+  right: 22px;
+  font-size: 44px;
+}
+
+.sve__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  position: relative;
+  z-index: 1;
+}
+
+.sve__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  text-align: center;
+}
+
+.sve__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 22px;
+  border-radius: 999px;
+  border: 1px solid rgba(181,138,58,0.50);
+  background: linear-gradient(135deg, rgba(181,138,58,0.14), rgba(214,181,106,0.10));
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #6E1F2A;
+}
+
+.sve__title {
+  font-size: clamp(24px, 3.2vw, 42px);
+  font-weight: 700;
+  color: #6E1F2A;
+  margin: 0;
+  line-height: 1.15;
+}
+
+/* Subtle gold divider beneath the section heading */
+.sve__rule {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 240px;
+}
+
+.sve__rule-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(181,138,58,0.60));
+}
+
+.sve__rule-line:last-child {
+  background: linear-gradient(90deg, rgba(181,138,58,0.60), transparent);
+}
+
+.sve__rule-diamond {
+  color: #B58A3A;
+  font-size: 13px;
+  opacity: 0.85;
+  flex-shrink: 0;
+}
+
+/* ── Grid: 3-col desktop · 2-col tablet · 1-col mobile ── */
+.sve__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+/* ── Card ── */
+.sve-card {
+  background: #FFFCF4;
+  border: 1px solid #D6B56A;
+  border-radius: 24px;
+  padding: 28px;
+  box-shadow:
+    0 12px 32px rgba(110,31,42,0.08),
+    0 2px 8px rgba(181,138,58,0.10),
+    inset 0 1px 0 rgba(255,255,255,0.85);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.32s ease, box-shadow 0.32s ease, transform 0.32s ease;
+}
+
+.sve-card:hover {
+  border-color: rgba(181,138,58,0.80) !important;
+  box-shadow:
+    0 18px 44px rgba(110,31,42,0.14),
+    0 0 0 1px rgba(181,138,58,0.15);
+}
+
+.sve-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 40px; right: 40px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(181,138,58,0.60), transparent);
+}
+
+.sve-card__img-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.sve-card__img-wrap {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 18px;
+  position: relative;
+  border: 1.5px solid rgba(181,138,58,0.40);
+  box-shadow: 0 12px 32px rgba(110,31,42,0.14), 0 0 24px rgba(181,138,58,0.10);
+  flex-shrink: 0;
+  background: #F8F0DD;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sve-card__img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  object-position: center;
+}
+
+/* Gold date badge */
+.sve-card__date-badge {
+  margin-top: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(214,181,106,0.28), rgba(181,138,58,0.12));
+  border: 1px solid rgba(181,138,58,0.50);
+  font-family: 'Inter', sans-serif;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #7A5217;
+  text-align: center;
+}
+
+.sve-card__date-badge-icon {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #B58A3A;
+  box-shadow: 0 0 8px rgba(181,138,58,0.70);
+  flex-shrink: 0;
+}
+
+/* Small tag pill on the image — deep maroon with gold text */
+.sve-card__tag {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #6E1F2A, #8A2B36);
+  border: 1px solid rgba(214,181,106,0.65);
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #E8C76A;
+  box-shadow: 0 6px 20px rgba(110,31,42,0.35);
+}
+
+.sve-card__tag-icon {
+  font-size: 13px;
+  line-height: 1;
+}
+
+.sve-card__content {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  flex: 1;
+}
+
+/* Deep maroon headings */
+.sve-card__title {
+  font-size: clamp(21px, 2.2vw, 28px);
+  font-weight: 700;
+  color: #6E1F2A;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.sve-card__transliteration {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(14px, 1.3vw, 16px);
+  font-style: italic;
+  line-height: 1.6;
+  color: #8A6420;
+  margin: 0;
+}
+
+/* Dark brown body text */
+.sve-card__about {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(15px, 1.35vw, 17px);
+  line-height: 1.8;
+  color: #4A3528;
+  margin: 0;
+}
+
+.sve-card__benefits {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sve-card__benefits-title {
+  font-size: clamp(15px, 1.5vw, 18px);
+  font-weight: 700;
+  color: #6E1F2A;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.sve-card__benefit {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 9px 14px;
+  background: rgba(214,181,106,0.14);
+  border: 1px solid rgba(181,138,58,0.25);
+  border-radius: 12px;
+  font-family: 'Inter', sans-serif;
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: #4A3528;
+}
+
+.sve-card__benefit-tick {
+  color: #B58A3A;
+  font-weight: 700;
+  flex-shrink: 0;
+  line-height: 1.4;
+}
+
+.sve-card__blessing {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(14px, 1.25vw, 16px);
+  font-style: italic;
+  line-height: 1.75;
+  color: #6E1F2A;
+  background: rgba(214,181,106,0.12);
+  border: 1px solid rgba(181,138,58,0.22);
+  border-radius: 16px;
+  padding: 16px 20px;
+}
+
+.sve-card__details {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: auto;
+}
+
+.sve-card__detail-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.sve-card__detail-icon {
+  font-size: 16px;
+  line-height: 1.4;
+  flex-shrink: 0;
+}
+
+.sve-card__detail-label {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #8A6420;
+}
+
+.sve-card__detail-value {
+  margin: 2px 0 0;
+  font-family: 'Inter', sans-serif;
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: #4A3528;
+}
+
+.sve-card__btns {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.sve-card__btn {
+  padding: 13px 26px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: all 0.25s cubic-bezier(0.25,0.46,0.45,0.94);
+  flex: 1;
+  white-space: nowrap;
+}
+
+.sve-card__btn--primary {
+  background: linear-gradient(135deg, #1DA851, #25D366);
+  color: #fff;
+  box-shadow: 0 6px 24px rgba(37,211,102,0.28);
+}
+
+.sve-card__btn--secondary {
+  background: linear-gradient(135deg, #B58A3A, #D4AF37, #E8C76A);
+  color: #fff;
+  box-shadow: 0 6px 24px rgba(181,138,58,0.28);
+}
+
+/* Soft closing note */
+.sve__note {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(15px, 1.4vw, 18px);
+  line-height: 1.8;
+  color: #4A3528;
+  background: #FFFCF4;
+  border: 1px solid #D6B56A;
+  border-radius: 18px;
+  padding: 24px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  box-shadow: 0 8px 24px rgba(181,138,58,0.12);
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .sve__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .sve { padding: 64px 32px 80px; }
+  .sve-card { padding: 26px 22px; }
+  .sve-card::before { left: 22px; right: 22px; }
+  .sve__container::before { font-size: 40px; }
+  .sve__container::after { font-size: 34px; }
+}
+
+@media (max-width: 640px) {
+  .sve { padding: 48px 18px 64px; }
+  .sve__grid {
+    grid-template-columns: 1fr;
+  }
+  .sve-card { padding: 24px 18px; }
+  .sve-card__btn { padding: 12px 20px; }
+  .sve__note { padding: 20px 22px; }
+}
