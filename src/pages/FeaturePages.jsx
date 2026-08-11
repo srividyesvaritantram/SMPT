@@ -27,6 +27,7 @@ import { FooterSection } from './Home/HomeSections.jsx';
 import ShravanaMahaLakshmiAbout from './ShravanaMahaLakshmiAbout.jsx';
 import ShravanaSomavaraAbout from './ShravanaSomavaraAbout.jsx';
 import ShravanaMangalaGauriAbout from './ShravanaMangalaGauriAbout.jsx';
+import MangalaGauriGuidance from '../components/events/MangalaGauriGuidance.jsx';
 import logoImg from '../assets/logo.png';
 import './FeaturePages.css';
 
@@ -1135,6 +1136,10 @@ export function EventsPage() {
 
         {/* ══ Śrāvaṇa Mangalavāra — Mangala Gaurī Vratam · About Section ══ */}
         <ShravanaMangalaGauriAbout />
+
+        {/* ══ SECTION 2 · DEVOTIONAL GUIDANCE CARDS — separate section, below the
+             complete MANGALA GAURĪ VRATAM section, outside its Read More content ══ */}
+        <MangalaGauriGuidance />
 
         {/* ══ Upcoming Divine Events — two premium panels ══ */}
         <ScrollReveal direction="up" duration={0.85}>
