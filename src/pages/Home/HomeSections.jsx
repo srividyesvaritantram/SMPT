@@ -547,22 +547,14 @@ export function FeaturedCoursesSection() {
 }
 
 // ─── Śrāvaṇa Events Notification Card (compact, near Hero) ────────────────
-const SRAVANA_NOTIFICATION_STORAGE_KEY = 'shravana2026_notification_dismissed';
 const SRAVANA_NOTIFICATION_EXPIRY = new Date('2026-08-28T23:59:59');
 
 export function DivineEventsNotificationCard() {
   const navigate = useNavigate();
-  const [dismissed, setDismissed] = useState(() => {
-    try {
-      return window.localStorage.getItem(SRAVANA_NOTIFICATION_STORAGE_KEY) === '1';
-    } catch {
-      return false;
-    }
-  });
+  const [dismissed, setDismissed] = useState(false);
 
   // Automatically hide the notification once the Śrāvaṇa event period has passed.
-  // Visible through 28 August 2026; disappears automatically after that date,
-  // regardless of the localStorage dismissed state.
+  // Visible through 28 August 2026; disappears automatically after that date.
   if (new Date() > SRAVANA_NOTIFICATION_EXPIRY) return null;
   if (dismissed) return null;
 
@@ -571,11 +563,6 @@ export function DivineEventsNotificationCard() {
   const handleClose = (e) => {
     e.stopPropagation();
     setDismissed(true);
-    try {
-      window.localStorage.setItem(SRAVANA_NOTIFICATION_STORAGE_KEY, '1');
-    } catch {
-      /* ignore storage errors */
-    }
   };
 
   return (
