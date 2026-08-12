@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FiX, FiChevronDown } from 'react-icons/fi';
+import { FiX, FiChevronDown, FiSettings } from 'react-icons/fi';
 import { NAV_CONFIG } from './Navbar.jsx';
 import logoImg from '../../assets/logo.png';
 import './MobileDrawer.css';
@@ -105,6 +105,15 @@ export default function MobileDrawer({ open, onClose }) {
                   )}
                 </div>
               ))}
+
+              {/* Temporary Admin access (Phase 1) */}
+              <button className="drawer__row drawer__admin-row" onClick={() => handleLink('/admin')}>
+                <span className="drawer__admin-label">
+                  <FiSettings size={16} />
+                  Admin Dashboard
+                </span>
+                <span className="drawer__admin-badge">Admin</span>
+              </button>
             </div>
 
             <div className="drawer__divider" />

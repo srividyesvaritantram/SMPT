@@ -19,6 +19,17 @@ import AstrologyPage from './pages/Offerings/AstrologyPage.jsx';
 import ShravanaMahaLakshmiDetail from './pages/ShravanaMahaLakshmiDetail.jsx';
 import ShravanaSomavaraDetail from './pages/ShravanaSomavaraDetail.jsx';
 import ShravanaMangalaGauriDetail from './pages/ShravanaMangalaGauriDetail.jsx';
+import AdminLayout from './admin/layouts/AdminLayout.jsx';
+import AdminDashboard from './admin/pages/AdminDashboard.jsx';
+import AdminStudents from './admin/pages/AdminStudents.jsx';
+import AdminCourses from './admin/pages/AdminCourses.jsx';
+import AdminClasses from './admin/pages/AdminClasses.jsx';
+import AdminEvents from './admin/pages/AdminEvents.jsx';
+import AdminPayments from './admin/pages/AdminPayments.jsx';
+import AdminContent from './admin/pages/AdminContent.jsx';
+import AdminNotifications from './admin/pages/AdminNotifications.jsx';
+import AdminProfile from './admin/pages/AdminProfile.jsx';
+import AdminSettings from './admin/pages/AdminSettings.jsx';
 
 function NotFound() {
   return (
@@ -92,6 +103,18 @@ export default function App() {
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/dashboard" element={<DashboardPage />} />
         <Route path="/watch/:id" element={<VideoPlayerPage />} />
+        <Route path="/admin" element={<AdminLayout />}>
+          <Route index element={<AdminDashboard />} />
+          <Route path="students" element={<AdminStudents />} />
+          <Route path="courses" element={<AdminCourses />} />
+          <Route path="classes" element={<AdminClasses />} />
+          <Route path="events" element={<AdminEvents />} />
+          <Route path="payments" element={<AdminPayments />} />
+          <Route path="content" element={<AdminContent />} />
+          <Route path="notifications" element={<AdminNotifications />} />
+          <Route path="profile" element={<AdminProfile />} />
+          <Route path="settings" element={<AdminSettings />} />
+        </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>

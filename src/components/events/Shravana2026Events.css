@@ -147,7 +147,32 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  scroll-margin-top: 130px;
   transition: border-color 0.32s ease, box-shadow 0.32s ease, transform 0.32s ease;
+}
+
+.sve-card--highlighted {
+  border-color: rgba(212,175,55,0.95) !important;
+  box-shadow:
+    0 0 0 2px rgba(212,175,55,0.55),
+    0 18px 44px rgba(110,31,42,0.16),
+    0 0 34px rgba(212,175,55,0.38) !important;
+  animation: sve-card-highlight-pulse 0.9s ease-in-out 2;
+}
+
+@keyframes sve-card-highlight-pulse {
+  0%, 100% {
+    box-shadow:
+      0 0 0 2px rgba(212,175,55,0.55),
+      0 18px 44px rgba(110,31,42,0.16),
+      0 0 30px rgba(212,175,55,0.32) !important;
+  }
+  50% {
+    box-shadow:
+      0 0 0 2px rgba(212,175,55,0.85),
+      0 18px 44px rgba(110,31,42,0.16),
+      0 0 46px rgba(212,175,55,0.55) !important;
+  }
 }
 
 .sve-card:hover {
@@ -256,11 +281,13 @@
 
 /* Deep maroon headings */
 .sve-card__title {
-  font-size: clamp(21px, 2.2vw, 28px);
+  font-size: clamp(16px, 1.6vw, 20px);
   font-weight: 700;
   color: #6E1F2A;
   margin: 0;
-  line-height: 1.2;
+  line-height: 1.35;
+  overflow-wrap: break-word;
+  word-break: normal;
 }
 
 .sve-card__transliteration {

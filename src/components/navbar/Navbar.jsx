@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FiSearch, FiMenu, FiChevronDown } from 'react-icons/fi';
+import { FiSearch, FiMenu, FiChevronDown, FiSettings } from 'react-icons/fi';
 import Dropdown from './Dropdown.jsx';
 import MobileDrawer from './MobileDrawer.jsx';
 import logoImg from '../../assets/logo.png';
@@ -115,6 +115,14 @@ export default function Navbar() {
 
             {/* Actions */}
             <div className="navbar__actions">
+              <button
+                className="navbar__admin-btn"
+                onClick={() => navigate('/admin')}
+                aria-label="Admin Dashboard"
+              >
+                <FiSettings size={15} />
+                <span>Admin</span>
+              </button>
               <button className="navbar__icon-btn" aria-label="Search">
                 <FiSearch size={18} />
               </button>

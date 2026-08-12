@@ -1,5 +1,6 @@
+import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import ScrollReveal from '../common/ScrollReveal.jsx';
 import mahaLakshmiImg from '../../assets/maha-lakshmi.jpeg';
 import sivaAradhanaEventImg from '../../assets/siva-aradhana-event.jpeg';
@@ -33,14 +34,15 @@ const EVENT_THEMES = {
   },
 };
 
-const SRAVANA_2026_EVENTS = [
+export const SRAVANA_2026_EVENTS = [
   {
     id: 'aug-14-lakshmi',
+    anchor: 'event-14',
     theme: 'lakshmi',
     date: '14 August 2026',
     weekday: 'Śrāvaṇa Śukravāra',
-    title: 'Mahā Lakṣmī Ārādhana',
-    transliteration: 'Śrī Mahālakṣmī Sādhana Vidhi',
+    title: 'Śukravāra Rājayoga-Pradāyaka Śrāvaṇa Mahālakṣmī Ārādhana',
+    transliteration: 'Higher Position / Rajayoga Prayoga Vidhi',
     image: mahaLakshmiImg,
     about:
       'On this sacred Friday of Śrāvaṇa Māsa, devotees gather to honor Goddess Mahā Lakṣmī — the bestower of abundance, auspiciousness and grace. Through mantra, lotus and fragrant flower offerings, and the recitation of the Śrī Sūkta, the worship invokes Her blessings for prosperity, family harmony and spiritual well-being.',
@@ -55,11 +57,12 @@ const SRAVANA_2026_EVENTS = [
   },
   {
     id: 'aug-17-siva',
+    anchor: 'event-17',
     theme: 'siva',
     date: '17 August 2026',
     weekday: 'Śrāvaṇa Somavāra',
-    title: 'Śiva Ārādhana & Abhiṣeka',
-    transliteration: 'Śrī Rudrābhiṣekam • Somavāra Pūjā',
+    title: 'Vidya-Jñāna-Pradāyaka Śrāvaṇa Monday Ārādhana',
+    transliteration: 'Higher Education Prayoga Vidhi',
     image: sivaAradhanaEventImg,
     about:
       'Monday is the sacred day of Lord Śiva. On this Śrāvaṇa Somavāra, devotees offer the holy Rudrābhiṣekam — bathing the Śiva Liṅga with milk, ghee, honey and pañchāmṛta — while chanting the Śrī Rudram. The worship invokes Śiva\u2019s grace for inner purity, removal of karmic burdens and steadfastness on the spiritual path.',
@@ -74,11 +77,12 @@ const SRAVANA_2026_EVENTS = [
   },
   {
     id: 'aug-18-gauri',
+    anchor: 'event-18',
     theme: 'gauri',
     date: '18 August 2026',
     weekday: 'Śrāvaṇa Maṅgalavāra',
-    title: 'Mangala Gaurī Vratam',
-    transliteration: 'Śrī Gaurī Vrata • Saubhāgya Prada',
+    title: 'Satsaṅtāna-Pradāyaka Śrāvaṇa Maṅgaḷa Gaurī Ārādhana',
+    transliteration: 'Garbha Ariṣṭa Nivāraṇa Prayoga Kriya Vidhi',
     image: mangalaGauriMainImg,
     about:
       'Observed on Śrāvaṇa Tuesdays, the Mangala Gaurī Vratam honors Goddess Gaurī — the auspicious form of Pārvatī — with sincere saṅkalpa and prayer for saubhāgya, marital harmony and family well-being. Devotees offer turmeric, kumkum and red adornments, and pray for grace, peace and a blessed married life.',
@@ -93,11 +97,12 @@ const SRAVANA_2026_EVENTS = [
   },
   {
     id: 'aug-21-lakshmi',
+    anchor: 'event-21',
     theme: 'lakshmi',
     date: '21 August 2026',
     weekday: 'Śrāvaṇa Śukravāra',
-    title: 'Mahā Lakṣmī Ārādhana',
-    transliteration: 'Śrī Lakṣmī Ṣoḍaśopacāra Pūjā',
+    title: 'Sakala Vara-Prada Aṣṭaiśvarya-Pradāyaka Varalakṣmī Ārādhana',
+    transliteration: 'Sakala Kārya Siddhyartha Kārya Jaya Prayoga Vidhi',
     image: mahaImg,
     about:
       'A continuation of the sacred Friday worship of Śrāvaṇa, this ārādhana honors Mahā Lakṣmī through the sixteen-fold offering — sandalwood, fragrant flowers, dhūpa, dīpa and naivedya — accompanied by the chanting of Her thousand names. The ritual awakens gratitude, devotion and receptivity to divine abundance.',
@@ -112,11 +117,12 @@ const SRAVANA_2026_EVENTS = [
   },
   {
     id: 'aug-23-siva',
+    anchor: 'event-23',
     theme: 'siva',
     date: '23 August 2026',
     weekday: 'Śrāvaṇa Ravivāra',
-    title: 'Śiva Ārādhana & Abhiṣeka',
-    transliteration: 'Śrī Mahākāla Abhiṣekam • Ravi Vāra Pūjā',
+    title: 'Śrāvaṇa Putradā Ekādaśī – Satsaṅtāna-Pradāyaka Ārādhana',
+    transliteration: '',
     image: mahakalaImg,
     about:
       'On this Śrāvaṇa Sunday, devotees offer a grand abhiṣeka to Lord Śiva as Mahākāla — the remover of darkness and destroyer of ignorance. The worship, performed with sacred mantras and bilva leaves, invokes the Sun\u2019s light of clarity and Śiva\u2019s power to transform suffering into spiritual strength.',
@@ -131,6 +137,7 @@ const SRAVANA_2026_EVENTS = [
   },
   {
     id: 'aug-24-siva',
+    anchor: 'event-24',
     theme: 'siva',
     date: '24 August 2026',
     weekday: 'Śrāvaṇa Somavāra',
@@ -150,11 +157,12 @@ const SRAVANA_2026_EVENTS = [
   },
   {
     id: 'aug-25-gauri',
+    anchor: 'event-25-marriage',
     theme: 'gauri',
     date: '25 August 2026',
     weekday: 'Śrāvaṇa Maṅgalavāra',
-    title: 'Mangala Gaurī Vratam',
-    transliteration: 'Śrī Gaurī Vrata • Saubhāgya Prada',
+    title: 'Śīghra Vivāha-Katākṣa-Pradāyaka Śrāvaṇa Maṅgaḷa Gaurī Ārādhana',
+    transliteration: 'Śīghra Vivāha Prayoga Vidhi',
     image: soubhagyaImg,
     about:
       'The concluding Maṅgalavāra of Śrāvaṇa, this Mangala Gaurī Vratam is observed with heightened devotion. Through saṅkalpa, vrat kathā and humble prayer, devotees seek Goddess Gaurī\u2019s blessings for a life of saubhāgya, harmony and spiritual fulfillment.',
@@ -169,11 +177,12 @@ const SRAVANA_2026_EVENTS = [
   },
   {
     id: 'aug-25-pradosha',
+    anchor: 'event-25-bhauma-pradosha',
     theme: 'pradosha',
     date: '25 August 2026',
     weekday: 'Bhauma Pradoṣa',
-    title: 'Bhauma Pradoṣa Ārādhana',
-    transliteration: 'Śrī Pradoṣa Vrata • Trayodaśī Pūjā',
+    title: 'Śrāvaṇa Bhauma Pradoṣa Ārādhana',
+    transliteration: 'Ṛṇa-Vimukti Prayoga Kriya',
     image: bhuamaImg,
     about:
       'Pradoṣa, the sacred twilight worship of Lord Śiva on Trayodaśī, becomes supremely powerful when it falls on Tuesday — known as Bhauma Pradoṣa. Devotees observe the Pradoṣa vrata, offer bilva leaves and lamp worship during the twilight, and chant Śiva\u2019s mantras to invoke the removal of obstacles and the blessing of inner illumination.',
@@ -188,11 +197,12 @@ const SRAVANA_2026_EVENTS = [
   },
   {
     id: 'aug-28-lakshmi',
+    anchor: 'event-28',
     theme: 'lakshmi',
     date: '28 August 2026',
     weekday: 'Śrāvaṇa Śukravāra',
-    title: 'Mahā Lakṣmī Ārādhana',
-    transliteration: 'Śrī Mahālakṣmī Homa • Śukravāra Pūjā',
+    title: 'Rājayoga-Pradāyaka Mahālakṣmī Ārādhana',
+    transliteration: 'Higher Position Prayoga Kriya',
     image: homaImg,
     about:
       'The grand concluding Friday of the Śrāvaṇa period, this Mahā Lakṣmī Ārādhana culminates in a sacred homa — the fire ritual of divine offering. Devotees offer ghee, herbs and sacred grains into the consecrated fire while invoking Mahā Lakṣmī\u2019s blessings of abundance, protection and lasting prosperity.',
@@ -210,14 +220,15 @@ const SRAVANA_2026_EVENTS = [
 const LOCATION =
   'Sri MahaVidyesvari Tantra Peetham, Visakhapatnam, Andhra Pradesh, India';
 
-function EventCard({ event, index }) {
+function EventCard({ event, index, highlighted }) {
   const navigate = useNavigate();
   const theme = EVENT_THEMES[event.theme];
 
   return (
     <ScrollReveal delay={(index % 3) * 0.08} duration={0.75}>
       <motion.article
-        className="sve-card"
+        id={event.anchor}
+        className={`sve-card${highlighted ? ' sve-card--highlighted' : ''}`}
         whileHover={{ y: -6, boxShadow: '0 0 32px rgba(212,175,55,0.22)' }}
         transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
       >
@@ -244,9 +255,11 @@ function EventCard({ event, index }) {
 
         <div className="sve-card__content">
           <h3 className="sve-card__title font-cinzel">{event.title}</h3>
-          <p className="sve-card__transliteration font-serif">
-            {event.transliteration}
-          </p>
+          {event.transliteration && (
+            <p className="sve-card__transliteration font-serif">
+              {event.transliteration}
+            </p>
+          )}
           <p className="sve-card__about font-serif">{event.about}</p>
 
           <div className="sve-card__benefits">
@@ -311,8 +324,31 @@ function EventCard({ event, index }) {
 }
 
 export default function Shravana2026Events() {
+  const location = useLocation();
+  const [highlighted, setHighlighted] = useState(null);
+
+  useEffect(() => {
+    const hash = location.hash.replace('#', '');
+    if (!hash) return;
+    let clearTimer;
+    const timer = window.setTimeout(() => {
+      const el = document.getElementById(hash);
+      if (!el) return;
+      const navbar = document.querySelector('nav.navbar');
+      const offset = navbar ? navbar.offsetHeight : 72;
+      const top = el.getBoundingClientRect().top + window.pageYOffset - offset - 18;
+      window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+      setHighlighted(hash);
+      clearTimer = window.setTimeout(() => setHighlighted(null), 2800);
+    }, 280);
+    return () => {
+      window.clearTimeout(timer);
+      window.clearTimeout(clearTimer);
+    };
+  }, [location.hash]);
+
   return (
-    <section className="sve" id="shravana-2026-events" aria-label="Śrāvaṇa 2026 Sacred Events">
+    <section className="sve" id="sravana-events" aria-label="Śrāvaṇa 2026 Sacred Events">
       <div className="sve__container">
         <ScrollReveal direction="up" duration={0.85}>
           <div className="sve__header">
@@ -330,7 +366,12 @@ export default function Shravana2026Events() {
 
         <div className="sve__grid">
           {SRAVANA_2026_EVENTS.map((event, i) => (
-            <EventCard key={event.id} event={event} index={i} />
+            <EventCard
+              key={event.id}
+              event={event}
+              index={i}
+              highlighted={highlighted === event.anchor}
+            />
           ))}
         </div>
 

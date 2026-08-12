@@ -4,7 +4,8 @@ import { useNavigate } from 'react-router-dom';
 import ScrollReveal from '../../components/common/ScrollReveal.jsx';
 import GlassCard from '../../components/common/GlassCard.jsx';
 import GoldenButton from '../../components/common/GoldenButton.jsx';
-import { courses, workshops, testimonials, offerings, events, blogPosts } from '../../utils/mockData.js';
+import { courses, workshops, testimonials, offerings, blogPosts } from '../../utils/mockData.js';
+import { SRAVANA_2026_EVENTS } from '../../components/events/Shravana2026Events.jsx';
 import { FiStar, FiCheck, FiChevronRight, FiMail, FiPhone, FiMapPin, FiClock, FiYoutube, FiInstagram, FiFacebook, FiMessageCircle } from 'react-icons/fi';
 import { FaStar, FaStarHalfAlt } from 'react-icons/fa';
 import { Flower2, MonitorPlay, GraduationCap, Globe, Award, HeadphonesIcon } from 'lucide-react';
@@ -545,75 +546,114 @@ export function FeaturedCoursesSection() {
   );
 }
 
-// ─── Divine Events Notification Card (compact, near Hero) ──────────────────────
-const UPCOMING_DIVINE_EVENTS = [
-  { date: '📅 2 August 2026', title: 'Gajānana Sankata Hara Chaturthi' },
-  { date: '📅 3 August 2026', title: 'Pañchamī Soukhya Pradā Vārāhī Ārādhana' },
-];
+// ─── Śrāvaṇa Events Notification Card (compact, near Hero) ────────────────
+const SRAVANA_NOTIFICATION_STORAGE_KEY = 'shravana2026_notification_dismissed';
+const SRAVANA_NOTIFICATION_EXPIRY = new Date('2026-08-28T23:59:59');
 
 export function DivineEventsNotificationCard() {
   const navigate = useNavigate();
-  const openWhatsApp = () => window.open('https://wa.me/919390886029', '_blank');
+  const [dismissed, setDismissed] = useState(() => {
+    try {
+      return window.localStorage.getItem(SRAVANA_NOTIFICATION_STORAGE_KEY) === '1';
+    } catch {
+      return false;
+    }
+  });
 
-  // Automatically hide the notification once the event period has passed.
-  // Visible through 3 August 2026; disappears automatically on 4 August 2026 and later.
-  if (new Date() >= new Date('2026-08-04T00:00:00')) return null;
+  // Automatically hide the notification once the Śrāvaṇa event period has passed.
+  // Visible through 28 August 2026; disappears automatically after that date,
+  // regardless of the localStorage dismissed state.
+  if (new Date() > SRAVANA_NOTIFICATION_EXPIRY) return null;
+  if (dismissed) return null;
 
-  const navigateToUpcomingEvents = () => {
-    navigate('/events#upcoming-events');
-    setTimeout(() => {
-      const el = document.getElementById('upcoming-events');
-      if (!el) return;
-      const navbar = document.querySelector('nav.navbar');
-      const offset = navbar ? navbar.offsetHeight : 72;
-      const targetTop = el.getBoundingClientRect().top + window.pageYOffset - offset - 12;
-      window.scrollTo({ top: Math.max(0, targetTop), behavior: 'smooth' });
-    }, 300);
+  const goToEvents = () => navigate('/events#sravana-events');
+
+  const handleClose = (e) => {
+    e.stopPropagation();
+    setDismissed(true);
+    try {
+      window.localStorage.setItem(SRAVANA_NOTIFICATION_STORAGE_KEY, '1');
+    } catch {
+      /* ignore storage errors */
+    }
   };
 
   return (
     <motion.div
       className="divine-events-notification"
       role="complementary"
-      aria-label="Upcoming Divine Events"
-      onClick={navigateToUpcomingEvents}
-      style={{ cursor: 'pointer' }}
+      aria-label="Śrāvaṇa Ārādhanas"
       initial={{ opacity: 0, y: 24, scale: 0.96 }}
       animate={{ opacity: 1, y: 0, scale: 1 }}
       transition={{ duration: 0.8, delay: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
     >
       <GlassCard
         className="divine-events-notification__card"
-        borderRadius={16}
+        borderRadius={18}
         hoverable={false}
+        onClick={goToEvents}
         style={{
           maxWidth: 330,
           width: '100%',
           padding: 20,
           background: 'rgba(13, 2, 8, 0.62)',
-          border: '2px solid rgba(212, 175, 55, 0.55)',
-          boxShadow: '0 12px 48px rgba(0, 0, 0, 0.45), 0 0 28px rgba(212, 175, 55, 0.18)',
+          border: '1px solid rgba(212, 175, 55, 0.50)',
+          boxShadow: '0 12px 48px rgba(0, 0, 0, 0.45), 0 0 28px rgba(212, 175, 55, 0.16)',
+          backdropFilter: 'blur(14px)',
+          WebkitBackdropFilter: 'blur(14px)',
           cursor: 'pointer',
         }}
       >
+        <button
+          type="button"
+          className="divine-events-notification__close"
+          onClick={handleClose}
+          aria-label="Close notification"
+        >
+          ✕
+        </button>
         <div className="divine-events-notification__inner">
           <div className="divine-events-notification__head">
-            <span className="divine-events-notification__icon">🪔</span>
-            <span className="divine-events-notification__label font-cinzel">Upcoming Divine Events</span>
+            <span className="divine-events-notification__ornament" aria-hidden="true">✦</span>
+            <span className="divine-events-notification__label">ŚRĀVAṆA SPECIAL</span>
           </div>
 
-          <div className="divine-events-notification__list">
-            {UPCOMING_DIVINE_EVENTS.map((e) => (
-              <div key={e.title} className="divine-events-notification__row">
-                <span className="divine-events-notification__date">{e.date}</span>
-                <span className="divine-events-notification__title">{e.title}</span>
-              </div>
-            ))}
-          </div>
+          <h4 className="divine-events-notification__heading font-cinzel">
+            Śrāvaṇa Ārādhanas
+          </h4>
+
+          <p className="divine-events-notification__desc font-cormorant">
+            Sacred Ārādhanas and special spiritual practices are being conducted throughout the holy month of Śrāvaṇa, dedicated to prosperity, knowledge, health, family well-being, marriage, and divine blessings.
+          </p>
+
+          <p className="divine-events-notification__date">14 – 28 August</p>
 
           <div className="divine-events-notification__btns">
-            <GoldenButton label="View Details" size="sm" noOrnaments onClick={(e) => { e.stopPropagation(); navigateToUpcomingEvents(); }} />
-            <GoldenButton label="WhatsApp" size="sm" outlined noOrnaments onClick={(e) => { e.stopPropagation(); openWhatsApp(); }} />
+            <GoldenButton
+              label="View All Ārādhanas"
+              size="sm"
+              noOrnaments
+              onClick={(e) => {
+                e.stopPropagation();
+                goToEvents();
+              }}
+            />
+            <GoldenButton
+              label="Contact"
+              size="sm"
+              outlined
+              noOrnaments
+              onClick={(e) => {
+                e.stopPropagation();
+                window.open(
+                  `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(
+                    'Hello, I would like to know more about the Śrāvaṇa Ārādhanas.'
+                  )}`,
+                  '_blank',
+                  'noopener,noreferrer'
+                );
+              }}
+            />
           </div>
         </div>
       </GlassCard>
@@ -622,8 +662,25 @@ export function DivineEventsNotificationCard() {
 }
 
 // ─── Events Preview ───────────────────────────────────────────────────────────
+const SRAVANA_CATEGORY = {
+  lakshmi: 'Ārādhana',
+  siva: 'Abhiṣeka',
+  gauri: 'Vratam',
+  pradosha: 'Vratam',
+};
+
+function sravanaShortAbout(about) {
+  const cut = about.slice(0, 118);
+  const lastSpace = cut.lastIndexOf(' ');
+  const text = lastSpace > 70 ? cut.slice(0, lastSpace) : cut;
+  return `${text}…`;
+}
+
 export function EventsPreviewSection() {
   const navigate = useNavigate();
+
+  const openEvent = (anchor) => navigate(`/events#${anchor}`);
+
   return (
     <>
     <section className="events-section">
@@ -631,27 +688,40 @@ export function EventsPreviewSection() {
         <ScrollReveal>
           <div className="events-section__header">
             <div>
-              <p className="events-section__eyebrow">SACRED CALENDAR</p>
-              <h2 className="events-section__title font-cinzel">Upcoming Events</h2>
+              <p className="events-section__eyebrow">ŚRĀVAṆA 2026 · SACRED EVENTS</p>
+              <h2 className="events-section__title font-cinzel">Śrāvaṇa Special Events</h2>
             </div>
             <GoldenButton label="VIEW ALL EVENTS" outlined onClick={() => navigate('/events')} />
           </div>
         </ScrollReveal>
 
         <ScrollReveal delay={0.2}>
-          <div className="events-section__grid">
-            {events.slice(0, 3).map((event, i) => (
-              <motion.div key={event.id} className="event-card" whileHover={{ y: -6, boxShadow: '0 0 32px rgba(212,175,55,0.22)' }}>
-                <div className="event-card__thumb" style={{ background: `linear-gradient(135deg, ${event.gradientColors[0]}, ${event.gradientColors[1]})` }}>
-                  <span style={{ fontSize: 48 }}>{event.emoji}</span>
-                  {event.isLive && <span className="preview-event-card__live">\ud83d\udd34 LIVE</span>}
-                  
+          <div className="sve-preview__grid">
+            {SRAVANA_2026_EVENTS.map((event) => (
+              <motion.div
+                key={event.anchor}
+                className="sve-preview-card"
+                whileHover={{ y: -6 }}
+                transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
+              >
+                <div className="sve-preview-card__top">
+                  <span className="sve-preview-card__date">
+                    <span className="sve-preview-card__date-dot" aria-hidden="true" />
+                    {event.weekday} • {event.date}
+                  </span>
+                  <span className="sve-preview-card__cat">{SRAVANA_CATEGORY[event.theme]}</span>
                 </div>
-                <div className="event-card__body">
-                  <h4 className="event-card__title">{event.title}</h4>
-                  <p className="event-card__meta" style={{ color: '#E8C76A', fontWeight: 600 }}>Coming Soon</p>
-                  <p className="event-card__desc">{event.description.slice(0, 80)}...</p>
-                  <GoldenButton label="Coming Soon" outlined width="100%" style={{ marginTop: 16, opacity: 0.55, pointerEvents: 'none' }} />
+                <h4 className="sve-preview-card__title font-cinzel">{event.title}</h4>
+                <p className="sve-preview-card__desc font-serif">
+                  {sravanaShortAbout(event.about)}
+                </p>
+                <div className="sve-preview-card__footer">
+                  <GoldenButton
+                    label="About / More Details"
+                    size="sm"
+                    noOrnaments
+                    onClick={() => openEvent(event.anchor)}
+                  />
                 </div>
               </motion.div>
             ))}
