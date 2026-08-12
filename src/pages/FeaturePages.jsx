@@ -21,7 +21,7 @@ import dasaMahavidyasImg from '../assets/dasa_maha_vidyas.png';
 import kshipraGanapatiImg from '../assets/kshipra_ganapati.png';
 import fundamentalsTantraImg from '../assets/fundamentals_of_tantra.png';
 import completeChakraImg from '../assets/complete_chakra_course.png';
-import ayyappaVidyaImg from '../assets/ayyappa_vidya.png';
+import ayyappaVidyaImg from '../assets/ayyappa_vidya.jpeg';
 import whatsappQrImg from '../assets/whatsapp_qr.jpeg';
 import { FooterSection } from './Home/HomeSections.jsx';
 import ShravanaMahaLakshmiAbout from './ShravanaMahaLakshmiAbout.jsx';

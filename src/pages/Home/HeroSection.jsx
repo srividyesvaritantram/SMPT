@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { FiPlay, FiArrowDown } from 'react-icons/fi';
 import GoldenButton from '../../components/common/GoldenButton.jsx';
-import heroImg from '../../assets/home-hero.png';
+import heroImg from '../../assets/home-hero.jpeg';
 import logoImg from '../../assets/logo.png';
 import './HeroSection.css';
 
