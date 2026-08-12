@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import ScrollReveal from '../components/common/ScrollReveal.jsx';
 import GoldenButton from '../components/common/GoldenButton.jsx';
-import mangalaGauriImg from '../assets/mangala-gauri-main.jpeg';
+import mangalaGauriImg from '../assets/gowri-matha.jpeg';
 import { SMG_DATES, SMG_INTRO, SMG_TAGLINE } from './shravanaMangalaGauriData.js';
 import './ShravanaMangalaGauriAbout.css';
 

@@ -192,7 +192,7 @@
   width: 100%;
   max-width: 560px;
   height: auto;
-  aspect-ratio: 3/4;
+  aspect-ratio: 2/3;
   object-fit: cover;
   object-position: center top;
   border-radius: 28px;
@@ -290,7 +290,7 @@
 
   .smg-about__hero-img {
     max-width: 100%;
-    aspect-ratio: 3/4;
+    aspect-ratio: 2/3;
   }
 
   .smg-about__hero-title {
@@ -328,7 +328,7 @@
   }
 
   .smg-about__hero-img {
-    aspect-ratio: 3/4;
+    aspect-ratio: 2/3;
     border-radius: 20px;
   }
 

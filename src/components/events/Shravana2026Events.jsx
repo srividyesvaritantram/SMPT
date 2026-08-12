@@ -2,15 +2,15 @@ import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate, useLocation } from 'react-router-dom';
 import ScrollReveal from '../common/ScrollReveal.jsx';
-import mahaLakshmiImg from '../../assets/maha-lakshmi.jpeg';
 import sivaAradhanaEventImg from '../../assets/siva-aradhana-event.jpeg';
-import mangalaGauriMainImg from '../../assets/mangala-gauri-main.jpeg';
 import mahaImg from '../../assets/maha.jpeg';
-import mahakalaImg from '../../assets/mahakala.jpeg';
 import rudhraImg from '../../assets/rudhra.jpeg';
 import soubhagyaImg from '../../assets/soubhagya.jpeg';
 import bhuamaImg from '../../assets/bhuama.jpeg';
 import homaImg from '../../assets/homa.jpeg';
+import sravanaEvent14Img from '../../assets/sravana-event-14.jpeg';
+import sravanaEvent18Img from '../../assets/sravana-event-18.jpeg';
+import sravanaEvent23Img from '../../assets/sravana-event-23.jpeg';
 import './Shravana2026Events.css';
 
 const WA_URL = 'https://wa.me/919390886029';
@@ -43,7 +43,7 @@ export const SRAVANA_2026_EVENTS = [
     weekday: 'Śrāvaṇa Śukravāra',
     title: 'Śukravāra Rājayoga-Pradāyaka Śrāvaṇa Mahālakṣmī Ārādhana',
     transliteration: 'Higher Position / Rajayoga Prayoga Vidhi',
-    image: mahaLakshmiImg,
+    image: sravanaEvent14Img,
     about:
       'On this sacred Friday of Śrāvaṇa Māsa, devotees gather to honor Goddess Mahā Lakṣmī — the bestower of abundance, auspiciousness and grace. Through mantra, lotus and fragrant flower offerings, and the recitation of the Śrī Sūkta, the worship invokes Her blessings for prosperity, family harmony and spiritual well-being.',
     benefits: [
@@ -83,7 +83,7 @@ export const SRAVANA_2026_EVENTS = [
     weekday: 'Śrāvaṇa Maṅgalavāra',
     title: 'Satsaṅtāna-Pradāyaka Śrāvaṇa Maṅgaḷa Gaurī Ārādhana',
     transliteration: 'Garbha Ariṣṭa Nivāraṇa Prayoga Kriya Vidhi',
-    image: mangalaGauriMainImg,
+    image: sravanaEvent18Img,
     about:
       'Observed on Śrāvaṇa Tuesdays, the Mangala Gaurī Vratam honors Goddess Gaurī — the auspicious form of Pārvatī — with sincere saṅkalpa and prayer for saubhāgya, marital harmony and family well-being. Devotees offer turmeric, kumkum and red adornments, and pray for grace, peace and a blessed married life.',
     benefits: [
@@ -123,17 +123,18 @@ export const SRAVANA_2026_EVENTS = [
     weekday: 'Śrāvaṇa Ravivāra',
     title: 'Śrāvaṇa Putradā Ekādaśī – Satsaṅtāna-Pradāyaka Ārādhana',
     transliteration: '',
-    image: mahakalaImg,
+    image: sravanaEvent23Img,
     about:
-      'On this Śrāvaṇa Sunday, devotees offer a grand abhiṣeka to Lord Śiva as Mahākāla — the remover of darkness and destroyer of ignorance. The worship, performed with sacred mantras and bilva leaves, invokes the Sun\u2019s light of clarity and Śiva\u2019s power to transform suffering into spiritual strength.',
+      'On this Śrāvaṇa Sunday, devotees observe the sacred Śrāvaṇa Putradā Ekādaśī — the blessed Ekādaśī that bestows the divine gift of progeny and good children. The worship invokes the grace of the Divine for the removal of pregnancy-related obstacles, and seeks family blessings, family growth, the growth and prosperity of the family lineage, and enduring family happiness and well-being.',
     benefits: [
-      'Dispelling of ignorance and inner darkness',
-      'Vitality, courage and inner strength',
-      'Dissolution of deep-seated karmic impressions',
-      'Clarity of purpose on the spiritual path',
+      'Blessing for Progeny and Good Children',
+      'Relief from Pregnancy-Related Obstacles',
+      'Family Blessings & Family Growth',
+      'Growth and Prosperity of the Family Lineage',
+      'Family Happiness and Well-Being',
     ],
     blessing:
-      'May Śiva\u2019s radiant grace illumine your path and grant you strength, wisdom and liberation.',
+      'May the grace of the Divine Mother bless your family with good progeny, prosperity and enduring happiness.',
   },
   {
     id: 'aug-24-siva',
