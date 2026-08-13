@@ -1,5 +1,6 @@
 import { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import GoldenButton from '../../components/common/GoldenButton.jsx';
 import templeArchImg from '../../assets/temple_architecture.jpeg';
 import templesImg from '../../assets/temples.png';
@@ -66,10 +67,10 @@ function SilpaBlock({ tone = 'maroon', eyebrow, title, subtitle, children, wide 
 }
 
 /* Large framed temple image — ratio matches the photo, so nothing is cropped */
-function SilpaImage({ src, alt, fit = 'cover', ratio = '3/2', caption }) {
+function SilpaImage({ src, alt, fit = 'cover', caption }) {
   return (
     <figure className={`silpa-fig${fit === 'contain' ? ' silpa-fig--contain' : ''}`}>
-      <div className="silpa-fig__frame" style={{ aspectRatio: ratio }}>
+      <div className="silpa-fig__frame">
         <img
           src={src}
           alt={alt}
@@ -509,6 +510,7 @@ const KHAJURAHO_POINTS = [
 export default function TempleSilpaShastra() {
   const [expanded, setExpanded] = useState(false);
   const sectionRef = useRef(null);
+  const navigate = useNavigate();
 
   const handleReadLess = () => {
     setExpanded(false);
@@ -519,6 +521,12 @@ export default function TempleSilpaShastra() {
 
   const navToBooking = () => {
     window.open(WA_URL, '_blank');
+  };
+
+  const navToOfferings = () => {
+    setExpanded(false);
+    navigate('/offerings');
+    window.scrollTo(0, 0);
   };
 
   return (
@@ -1462,6 +1470,10 @@ export default function TempleSilpaShastra() {
                   onClick={handleReadLess}
                 >
                   <span className="silpa-toggle__arrow" aria-hidden="true">↑</span> READ LESS
+                </button>
+                <button type="button" className="silpa-back-btn" onClick={navToOfferings}>
+                  <span className="silpa-back-btn__arrow" aria-hidden="true">←</span>
+                  BACK TO OFFERINGS PAGE
                 </button>
               </div>
             </motion.div>
