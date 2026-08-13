@@ -1,0 +1,1644 @@
+/* ═══════════════════════════════════════════════════════════════════════
+   TEMPLE ŚILPA ŚĀSTRA — SACRED ARCHITECTURE KNOWLEDGE LIBRARY
+   Deep Maroon ⇄ Cream  ·  Maroon borders  ·  Subtle gold accents only
+   Scope: every rule is prefixed .silpa- so no other section is affected
+═══════════════════════════════════════════════════════════════════════ */
+
+.silpa {
+  /* ── palette ── */
+  --silpa-maroon:        #4A0F1C;
+  --silpa-maroon-deep:   #360A14;
+  --silpa-maroon-soft:   #5C1626;
+  --silpa-maroon-line:   rgba(250, 243, 227, 0.22);
+  --silpa-maroon-line-hi:rgba(212, 175, 55, 0.45);
+  --silpa-cream:         #FBF4E4;
+  --silpa-cream-soft:    #F5EBD3;
+  --silpa-cream-deep:    #EFE1C4;
+  --silpa-cream-line:    rgba(74, 15, 28, 0.22);
+  --silpa-cream-line-hi: rgba(74, 15, 28, 0.45);
+  --silpa-ink:           #4A0F1C;
+  --silpa-ink-soft:      #5E2032;
+  --silpa-cream-text:    #F6EBD6;
+  --silpa-cream-dim:     rgba(246, 235, 214, 0.82);
+  --silpa-gold:          #C9A24B;
+  --silpa-gold-deep:     #A67C28;
+  --silpa-gold-soft:     rgba(201, 162, 75, 0.35);
+  --silpa-shadow:        0 22px 60px rgba(54, 10, 20, 0.28);
+  --silpa-radius:        22px;
+  --silpa-radius-sm:     14px;
+
+  position: relative;
+  background: var(--silpa-maroon);
+  color: var(--silpa-cream-text);
+  font-family: var(--font-body);
+  overflow: hidden;
+  scroll-margin-top: 84px;
+}
+
+.silpa::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle at 18% 12%, rgba(212, 175, 55, 0.05) 0%, transparent 42%),
+    radial-gradient(circle at 85% 30%, rgba(255, 248, 238, 0.03) 0%, transparent 40%);
+  z-index: 0;
+}
+
+.silpa__shell {
+  position: relative;
+  z-index: 1;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0;
+}
+
+.silpa__shell--open {
+  padding: 100px var(--section-px) 110px;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   COLLAPSED OFFERING CARD
+═══════════════════════════════════════════════════════════════════════ */
+
+.silpa-card {
+  max-width: 860px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+}
+
+.silpa-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  padding: 8px 22px;
+  border-radius: 999px;
+  border: 1px solid var(--silpa-gold-soft);
+  background: rgba(212, 175, 55, 0.08);
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--silpa-gold);
+}
+
+.silpa-card__title {
+  font-size: clamp(28px, 3.4vw, 46px);
+  font-weight: 800;
+  line-height: 1.14;
+  color: #FFF8F0;
+  margin: 0;
+}
+
+.silpa-card__intro {
+  font-size: clamp(16px, 1.6vw, 19px);
+  line-height: 1.85;
+  color: var(--silpa-cream-dim);
+  max-width: 640px;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   MAIN SECTION — deep maroon · image-left / content-right
+   Mirrors the other Offerings sections (aop-astro) in proportions
+═══════════════════════════════════════════════════════════════════════ */
+
+.silpa-intro {
+  position: relative;
+  background: var(--silpa-maroon);
+  padding: 110px var(--section-px) 120px;
+  overflow: hidden;
+}
+
+.silpa-intro .aop-astro__inner {
+  position: relative;
+  z-index: 1;
+}
+
+.silpa-intro .aop-feat-h2 {
+  color: #FFF8F0;
+  font-weight: 800;
+}
+
+.silpa-intro .aop-body {
+  color: var(--silpa-cream-dim);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.9;
+}
+
+.silpa-intro .aop-section-badge {
+  border-color: rgba(212, 175, 55, 0.40);
+  background: rgba(212, 175, 55, 0.10);
+  color: var(--silpa-gold);
+}
+
+.silpa-intro .aop-feat-img-card {
+  border-color: rgba(212, 175, 55, 0.45);
+  background: rgba(250, 243, 227, 0.04);
+  box-shadow:
+    0 28px 72px rgba(0, 0, 0, 0.42),
+    0 0 48px rgba(212, 175, 55, 0.10);
+}
+
+.silpa-intro .aop-feat-img-glow {
+  background: radial-gradient(ellipse at center, rgba(212, 175, 55, 0.12) 0%, transparent 68%);
+}
+
+.silpa-intro .aop-feat-corner {
+  color: var(--silpa-gold);
+  opacity: 0.60;
+}
+
+/* ── main section buttons (READ MORE + BOOK CONSULTATION) ── */
+.silpa-intro__btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.silpa-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 38px;
+  border-radius: 999px;
+  border: 1px solid rgba(212, 175, 55, 0.70);
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.20) 0%, rgba(212, 175, 55, 0.06) 55%, rgba(212, 175, 55, 0.12) 100%);
+  color: #F6EBD6;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 0 28px rgba(212, 175, 55, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  transition: border-color 0.3s var(--ease), transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+
+.silpa-cta-btn__mark {
+  display: inline-block;
+  font-size: 15px;
+  line-height: 1;
+  color: var(--silpa-gold);
+}
+
+.silpa-cta-btn:hover {
+  border-color: rgba(212, 175, 55, 0.95);
+  transform: translateY(-3px) scale(1.01);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.34), 0 0 36px rgba(212, 175, 55, 0.30);
+}
+
+.silpa-cta-btn:active {
+  transform: translateY(-1px) scale(0.98);
+}
+
+/* ── toggle buttons (READ MORE / READ LESS) ── */
+.silpa-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 38px;
+  border-radius: 999px;
+  border: 1px solid var(--silpa-gold-soft);
+  background: linear-gradient(135deg, #5C1626 0%, #4A0F1C 55%, #3B0C16 100%);
+  color: #F6EBD6;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  transition: border-color 0.3s var(--ease), transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+
+.silpa-toggle:hover {
+  border-color: rgba(212, 175, 55, 0.65);
+  transform: translateY(-3px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.34), 0 0 28px rgba(212, 175, 55, 0.14);
+}
+
+.silpa-toggle:active {
+  transform: translateY(-1px) scale(0.98);
+}
+
+.silpa-toggle__arrow {
+  display: inline-block;
+  font-size: 16px;
+  line-height: 1;
+  color: var(--silpa-gold);
+  transition: transform 0.35s var(--ease);
+}
+
+.silpa-toggle:hover .silpa-toggle__arrow {
+  transform: translateY(3px);
+}
+
+.silpa-toggle--read-less .silpa-toggle__arrow {
+  transform: rotate(180deg);
+}
+
+.silpa-toggle--read-less:hover .silpa-toggle__arrow {
+  transform: rotate(180deg) translateY(3px);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   EXPANDED CONTENT
+═══════════════════════════════════════════════════════════════════════ */
+
+.silpa-expand {
+  overflow: hidden;
+}
+
+/* ── alternating blocks ── */
+.silpa-block {
+  padding: 96px 0 20px;
+}
+
+.silpa-block--maroon { background: var(--silpa-maroon); }
+.silpa-block--cream { background: var(--silpa-cream); color: var(--silpa-ink); }
+.silpa-block--deep-maroon {
+  background:
+    radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.06) 0%, transparent 55%),
+    var(--silpa-maroon-deep);
+  color: var(--silpa-cream-text);
+  border-top: 1px solid var(--silpa-maroon-line);
+  border-bottom: 1px solid var(--silpa-maroon-line);
+}
+
+.silpa-block__inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 34px;
+}
+
+.silpa-block__inner--wide {
+  max-width: var(--container-max);
+}
+
+/* ── typography ── */
+.silpa-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+}
+
+.silpa-block--maroon .silpa-eyebrow,
+.silpa-block--deep-maroon .silpa-eyebrow { color: var(--silpa-gold); }
+
+.silpa-block--cream .silpa-eyebrow { color: var(--silpa-maroon); }
+
+.silpa-eyebrow__rule {
+  width: 42px;
+  height: 1px;
+  background: var(--silpa-gold);
+  opacity: 0.6;
+}
+
+.silpa-h3 {
+  font-size: clamp(25px, 3vw, 40px);
+  font-weight: 800;
+  line-height: 1.16;
+  margin: 0;
+  letter-spacing: 0.01em;
+}
+
+.silpa-block--maroon .silpa-h3,
+.silpa-block--deep-maroon .silpa-h3 { color: #FFF8F0; }
+
+.silpa-block--cream .silpa-h3 { color: var(--silpa-ink); }
+
+.silpa-sub {
+  font-size: clamp(16px, 1.6vw, 20px);
+  line-height: 1.7;
+  margin: -14px 0 0;
+  font-weight: 500;
+}
+
+.silpa-block--maroon .silpa-sub,
+.silpa-block--deep-maroon .silpa-sub { color: var(--silpa-cream-dim); }
+
+.silpa-block--cream .silpa-sub { color: var(--silpa-ink-soft); }
+
+.silpa-h4 {
+  font-size: clamp(20px, 2.2vw, 28px);
+  font-weight: 700;
+  margin: 0;
+}
+
+.silpa-block--maroon .silpa-h4,
+.silpa-block--deep-maroon .silpa-h4 { color: #FFF8F0; }
+
+.silpa-block--cream .silpa-h4 { color: var(--silpa-ink); }
+
+.silpa-body {
+  font-size: clamp(16px, 1.5vw, 18px);
+  line-height: 1.95;
+  margin: 0;
+  font-weight: 500;
+}
+
+.silpa-block--maroon .silpa-body,
+.silpa-block--deep-maroon .silpa-body { color: var(--silpa-cream-dim); }
+
+.silpa-block--cream .silpa-body { color: var(--silpa-ink-soft); }
+
+.silpa-strong {
+  font-weight: 700;
+  color: inherit;
+}
+
+.silpa-block--maroon .silpa-strong,
+.silpa-block--deep-maroon .silpa-strong { color: #FFF4E0; }
+
+.silpa-block--cream .silpa-strong { color: var(--silpa-ink); }
+
+/* ── large Sanskrit statement ── */
+.silpa-statement {
+  position: relative;
+  margin: 0;
+  padding: 30px 40px;
+  text-align: center;
+  font-size: clamp(19px, 2.3vw, 28px);
+  font-weight: 700;
+  line-height: 1.55;
+  letter-spacing: 0.01em;
+  border-radius: var(--silpa-radius);
+  background: rgba(250, 243, 227, 0.05);
+  border: 1px solid var(--silpa-gold-soft);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.silpa-block--cream .silpa-statement {
+  background: var(--silpa-cream-soft);
+  border-color: var(--silpa-cream-line-hi);
+  color: var(--silpa-ink);
+}
+
+.silpa-statement__mark {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+  font-size: 30px;
+  color: var(--silpa-gold);
+  opacity: 0.5;
+  line-height: 1;
+}
+
+/* ── image frame ── */
+.silpa-fig {
+  position: relative;
+  margin: 0;
+  width: 100%;
+  max-width: 940px;
+  align-self: center;
+  border-radius: var(--silpa-radius);
+  border: 1px solid var(--silpa-gold-soft);
+  box-shadow: var(--silpa-shadow);
+  overflow: hidden;
+  background: #2B0813;
+}
+
+.silpa-block--cream .silpa-fig {
+  background: var(--silpa-cream-deep);
+  border-color: var(--silpa-cream-line-hi);
+  box-shadow: 0 22px 60px rgba(74, 15, 28, 0.18);
+}
+
+.silpa-fig__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.6s var(--ease);
+}
+
+.silpa-fig--contain .silpa-fig__img {
+  object-fit: contain;
+  padding: 18px;
+}
+
+.silpa-fig:hover .silpa-fig__img {
+  transform: scale(1.015);
+}
+
+.silpa-fig--contain:hover .silpa-fig__img {
+  transform: none;
+}
+
+.silpa-fig__cap {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+  padding: 14px 22px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  color: #FFF4E0;
+  background: linear-gradient(to top, rgba(54, 10, 20, 0.9), rgba(54, 10, 20, 0.35) 70%, transparent);
+  text-align: center;
+}
+
+.silpa-block--cream .silpa-fig__cap {
+  color: #4A0F1C;
+  background: linear-gradient(to top, rgba(239, 225, 196, 0.95), rgba(239, 225, 196, 0.4) 70%, transparent);
+}
+
+/* ── quote card (cream panel, maroon border) ── */
+.silpa-quote {
+  position: relative;
+  max-width: 860px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 42px 48px;
+  text-align: center;
+  border-radius: var(--silpa-radius);
+  background: var(--silpa-cream);
+  border: 2px solid var(--silpa-maroon);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.22);
+}
+
+.silpa-quote__mark {
+  position: absolute;
+  top: -6px;
+  right: 22px;
+  font-size: 54px;
+  line-height: 1;
+  color: var(--silpa-gold);
+  opacity: 0.65;
+}
+
+.silpa-quote__sanskrit {
+  font-size: clamp(19px, 2.2vw, 27px);
+  font-weight: 800;
+  color: var(--silpa-maroon);
+  margin: 0 0 12px;
+  line-height: 1.4;
+}
+
+.silpa-quote__translation {
+  font-size: clamp(15px, 1.5vw, 18px);
+  font-style: italic;
+  color: var(--silpa-ink-soft);
+  margin: 0;
+  line-height: 1.7;
+}
+
+.silpa-quote__source {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 6px 18px;
+  border-radius: 999px;
+  background: rgba(74, 15, 28, 0.08);
+  border: 1px solid rgba(74, 15, 28, 0.2);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--silpa-maroon);
+}
+
+/* ── chips ── */
+.silpa-chiprow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.silpa-chip {
+  padding: 8px 18px;
+  border-radius: 999px;
+  border: 1px solid var(--silpa-gold-soft);
+  background: rgba(212, 175, 55, 0.08);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+}
+
+.silpa-block--maroon .silpa-chip,
+.silpa-block--deep-maroon .silpa-chip { color: var(--silpa-gold); }
+
+.silpa-block--cream .silpa-chip {
+  border-color: var(--silpa-cream-line-hi);
+  background: rgba(74, 15, 28, 0.06);
+  color: var(--silpa-maroon);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   CARDS
+═══════════════════════════════════════════════════════════════════════ */
+
+.silpa-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 26px 26px 28px;
+  border-radius: var(--silpa-radius-sm);
+  height: 100%;
+  transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease);
+}
+
+/* card tones */
+.silpa-card--light {
+  background: #FFFFFF;
+  border: 1px solid var(--silpa-cream-line);
+  box-shadow: 0 10px 30px rgba(74, 15, 28, 0.10);
+  color: var(--silpa-ink-soft);
+}
+
+.silpa-card--light:hover {
+  box-shadow: 0 18px 46px rgba(74, 15, 28, 0.16);
+}
+
+.silpa-card--dark {
+  background: var(--silpa-maroon);
+  border: 1px solid var(--silpa-maroon-line-hi);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.30);
+  color: var(--silpa-cream-dim);
+}
+
+.silpa-card--cream-on-maroon {
+  background: var(--silpa-cream);
+  border: 1px solid var(--silpa-cream-line);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.30);
+  color: var(--silpa-ink-soft);
+}
+
+.silpa-card--cream-on-deep {
+  background: rgba(250, 243, 227, 0.06);
+  border: 1px solid var(--silpa-maroon-line-hi);
+  color: var(--silpa-cream-dim);
+}
+
+.silpa-card--dark:hover,
+.silpa-card--cream-on-deep:hover {
+  border-color: rgba(212, 175, 55, 0.6);
+}
+
+.silpa-card__num {
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--silpa-gold);
+  opacity: 0.9;
+}
+
+.silpa-card--light .silpa-card__num { color: var(--silpa-maroon); }
+
+.silpa-card__icon {
+  font-size: 30px;
+  line-height: 1;
+}
+
+.silpa-card__title {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin: 0;
+  color: inherit;
+}
+
+.silpa-card--cream-on-maroon .silpa-card__title,
+.silpa-card--light .silpa-card__title { color: var(--silpa-ink); }
+
+.silpa-card--cream-on-deep .silpa-card__title,
+.silpa-card--dark .silpa-card__title { color: #FFF4E0; }
+
+.silpa-card__desc {
+  font-size: 15px;
+  line-height: 1.78;
+  margin: 0;
+  font-weight: 500;
+}
+
+.silpa-card__region,
+.silpa-card__sigil,
+.silpa-card__text,
+.silpa-card__examples {
+  font-size: 15px;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.silpa-card__region {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--silpa-gold);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   RESPONSIVE DATA TABLE  (desktop table · mobile stacked cards)
+═══════════════════════════════════════════════════════════════════════ */
+
+.silpa-table-wrap {
+  overflow: hidden;
+  border-radius: var(--silpa-radius);
+  border: 1px solid var(--silpa-cream-line);
+  box-shadow: 0 16px 44px rgba(0, 0, 0, 0.18);
+}
+
+.silpa-block--maroon .silpa-table-wrap,
+.silpa-block--deep-maroon .silpa-table-wrap {
+  border-color: var(--silpa-maroon-line-hi);
+}
+
+.silpa-table {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.silpa-table__head {
+  display: grid;
+  grid-template-columns: var(--silpa-cols, 1fr);
+  background: var(--silpa-cream-deep);
+  color: var(--silpa-ink);
+  border-bottom: 1px solid var(--silpa-cream-line);
+}
+
+.silpa-table__row {
+  display: grid;
+  grid-template-columns: var(--silpa-cols, 1fr);
+  background: #FFFFFF;
+  color: var(--silpa-ink-soft);
+  border-top: 1px solid var(--silpa-cream-line);
+}
+
+.silpa-table__row:nth-child(even) {
+  background: var(--silpa-cream);
+}
+
+.silpa-table__th {
+  padding: 16px 18px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--silpa-ink);
+}
+
+.silpa-table__td {
+  padding: 16px 18px;
+  font-size: 15px;
+  line-height: 1.75;
+  font-weight: 500;
+}
+
+/* first-column / emphasised names inside tables are always dark maroon,
+   regardless of the surrounding block tone (never pale on cream rows) */
+.silpa-table__td .silpa-strong {
+  color: var(--silpa-ink);
+  font-weight: 800;
+}
+
+/* column counts set inline by the component via --silpa-cols */
+
+/* ═══════════════════════════════════════════════════════════════════════
+   SECTION LAYOUTS
+═══════════════════════════════════════════════════════════════════════ */
+
+/* definitions (What is Śilpa Śāstra) */
+.silpa-defs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* three styles */
+.silpa-style-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* learning path */
+.silpa-path {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.silpa-path__step {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  padding: 20px 24px;
+  border-radius: var(--silpa-radius-sm);
+  background: rgba(250, 243, 227, 0.05);
+  border: 1px solid var(--silpa-maroon-line);
+  transition: border-color 0.3s var(--ease), transform 0.3s var(--ease);
+}
+
+.silpa-path__step:hover {
+  border-color: var(--silpa-gold-soft);
+  transform: translateX(6px);
+}
+
+.silpa-path__num {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid var(--silpa-gold-soft);
+  background: rgba(212, 175, 55, 0.10);
+  color: var(--silpa-gold);
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.silpa-path__body {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.silpa-path__level {
+  font-size: 17px;
+  font-weight: 700;
+  color: #FFF4E0;
+  margin: 0;
+}
+
+.silpa-path__texts {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--silpa-gold);
+  margin: 0;
+}
+
+.silpa-path__desc {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--silpa-cream-dim);
+  margin: 0;
+}
+
+/* three foundations */
+.silpa-foundations {
+  margin-top: 10px;
+  padding: 38px 30px 30px;
+  border-radius: var(--silpa-radius);
+  border: 1px solid var(--silpa-gold-soft);
+  background:
+    radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.08) 0%, transparent 60%),
+    rgba(250, 243, 227, 0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.silpa-foundations__title {
+  text-align: center;
+  font-size: clamp(20px, 2.4vw, 28px);
+  color: #FFF4E0;
+  margin: 0;
+}
+
+.silpa-foundations__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.silpa-truths {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.silpa-truth {
+  margin: 0;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--silpa-gold);
+  letter-spacing: 0.3px;
+}
+
+/* numbered cards (Khajuraho, Kaliṅga, why-śāstra, key concepts) */
+.silpa-numcards,
+.silpa-why-grid,
+.silpa-key-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.silpa-kalinga {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+/* chola */
+.silpa-chola {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+/* meenakshi + kanchi feature cards */
+.silpa-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+/* konark detail grid */
+.silpa-konark-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+/* śrī yantra */
+.silpa-yantra-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+/* why puri/konark */
+.silpa-why-kalinga {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   DIKPĀLAKA GRID
+═══════════════════════════════════════════════════════════════════════ */
+
+.silpa-dik-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.silpa-dik {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 22px 20px;
+  border-radius: var(--silpa-radius-sm);
+  background: #FFFFFF;
+  border: 1px solid var(--silpa-cream-line);
+  border-top: 3px solid var(--silpa-maroon);
+  box-shadow: 0 10px 28px rgba(74, 15, 28, 0.10);
+}
+
+.silpa-dik__name {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--silpa-maroon);
+  line-height: 1.2;
+}
+
+.silpa-dik__dir {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--silpa-gold-deep);
+}
+
+.silpa-dik__vahana,
+.silpa-dik__duty,
+.silpa-dik__mantra {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--silpa-ink-soft);
+  margin: 0;
+}
+
+.silpa-dik__mantra {
+  margin-top: 6px;
+  padding-top: 8px;
+  border-top: 1px dashed var(--silpa-cream-line);
+  font-weight: 700;
+  color: var(--silpa-maroon);
+}
+
+.silpa-dik-center {
+  text-align: center;
+  padding: 18px 24px;
+  border-radius: var(--silpa-radius-sm);
+  background: var(--silpa-maroon);
+  color: #F6EBD6;
+  border: 1px solid var(--silpa-maroon-line-hi);
+}
+
+/* stories + roadmap + key concepts */
+.silpa-stories {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.silpa-roadmap {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.silpa-roadmap__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px 26px;
+  border-radius: var(--silpa-radius-sm);
+  background: #FFFFFF;
+  border: 1px solid var(--silpa-cream-line);
+  border-left: 4px solid var(--silpa-maroon);
+  box-shadow: 0 10px 28px rgba(74, 15, 28, 0.08);
+}
+
+.silpa-roadmap__for {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--silpa-maroon);
+  white-space: nowrap;
+}
+
+.silpa-roadmap__texts {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--silpa-ink-soft);
+  text-align: right;
+}
+
+/* ── body · life · soul (Śilpa-Āgama-Purāṇa) ── */
+.silpa-three {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.silpa-three__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 30px 20px;
+  text-align: center;
+  border-radius: var(--silpa-radius-sm);
+  background: var(--silpa-maroon);
+  border: 1px solid var(--silpa-maroon-line-hi);
+  box-shadow: 0 14px 36px rgba(74, 15, 28, 0.16);
+}
+
+.silpa-three__name {
+  font-size: 19px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  color: #FFF8F0;
+}
+
+.silpa-three__role {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--silpa-gold);
+}
+
+.silpa-without {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px 26px;
+  border-radius: var(--silpa-radius-sm);
+  background: var(--silpa-cream-soft);
+  border: 1px solid var(--silpa-cream-line);
+}
+
+.silpa-without__line {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--silpa-ink-soft);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.silpa-without__line::before {
+  content: '✕';
+  color: var(--silpa-maroon);
+  font-weight: 800;
+  opacity: 0.6;
+}
+
+/* reference granthas (Nāgara) */
+.silpa-ref-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.silpa-card__meta {
+  margin: 0;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--silpa-gold);
+  letter-spacing: 0.4px;
+}
+
+/* duties of the dikpālakas */
+.silpa-duties {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.silpa-duty {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 28px 28px 30px;
+  border-radius: var(--silpa-radius-sm);
+  background: var(--silpa-cream);
+  border: 1px solid var(--silpa-cream-line);
+  border-top: 4px solid var(--silpa-gold);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.26);
+  color: var(--silpa-ink-soft);
+}
+
+.silpa-duty__name {
+  margin: 0;
+  font-size: 19px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  color: var(--silpa-maroon);
+  padding-bottom: 10px;
+  border-bottom: 1px dashed var(--silpa-cream-line);
+}
+
+.silpa-duty__row {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.silpa-duty__label {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2.4px;
+  text-transform: uppercase;
+  color: var(--silpa-gold-deep);
+}
+
+.silpa-duty__value {
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.silpa-duty__mantra {
+  margin: 4px 0 0;
+  padding-top: 12px;
+  border-top: 1px dashed var(--silpa-cream-line);
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--silpa-maroon);
+}
+
+/* dikpālaka center note */
+.silpa-dik-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.silpa-dik-center__text {
+  font-size: 14.5px;
+  color: var(--silpa-cream-dim);
+}
+
+/* triad (Śilpa/Purāṇa/Āgama placement) */
+.silpa-triad {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px 26px;
+  border-radius: var(--silpa-radius-sm);
+  background: var(--silpa-cream-soft);
+  border: 1px solid var(--silpa-cream-line);
+}
+
+.silpa-triad__line {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--silpa-ink-soft);
+}
+
+/* remember — memory grid */
+.silpa-memory {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  align-items: stretch;
+}
+
+.silpa-memory__title {
+  grid-column: 1 / -1;
+  margin: 0;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--silpa-gold-deep);
+}
+
+.silpa-memory__row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 18px 12px;
+  border-radius: var(--silpa-radius-sm);
+  background: var(--silpa-maroon);
+  border: 1px solid var(--silpa-maroon-line-hi);
+  text-align: center;
+}
+
+.silpa-memory__dir {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--silpa-gold);
+}
+
+.silpa-memory__arrow {
+  color: var(--silpa-gold);
+  opacity: 0.7;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.silpa-memory__val {
+  margin: 0;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--silpa-cream-dim);
+}
+
+/* purāṇic pramāṇa rows */
+.silpa-pramana {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.silpa-pramana__row {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 20px 26px;
+  border-radius: var(--silpa-radius-sm);
+  background: #FFFFFF;
+  border: 1px solid var(--silpa-cream-line);
+  box-shadow: 0 10px 28px rgba(74, 15, 28, 0.08);
+}
+
+.silpa-pramana__row--line {
+  border-left: 4px solid var(--silpa-gold);
+}
+
+.silpa-pramana__name {
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: var(--silpa-maroon);
+}
+
+.silpa-pramana__text {
+  font-size: 15.5px;
+  line-height: 1.75;
+  color: var(--silpa-ink-soft);
+}
+
+/* reading path groups */
+.silpa-path {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.silpa-path__group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 24px 22px;
+  border-radius: var(--silpa-radius-sm);
+  background: var(--silpa-cream);
+  border: 1px solid var(--silpa-cream-line);
+  border-top: 3px solid var(--silpa-maroon);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.22);
+}
+
+.silpa-path__group-title {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--silpa-maroon);
+  padding-bottom: 8px;
+  border-bottom: 1px dashed var(--silpa-cream-line);
+}
+
+.silpa-path__step {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--silpa-ink-soft);
+  display: flex;
+  gap: 8px;
+}
+
+.silpa-path__step-num {
+  font-weight: 800;
+  color: var(--silpa-gold-deep);
+}
+
+/* twin images */
+.silpa-twin {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+/* temple feature cards */
+.silpa-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+/* special śilpa rule rows */
+.silpa-rules {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.silpa-rule {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 18px 22px;
+  border-radius: var(--silpa-radius-sm);
+  background: var(--silpa-cream);
+  border: 1px solid var(--silpa-cream-line);
+  border-left: 4px solid var(--silpa-gold);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.2);
+}
+
+.silpa-rule__num {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--silpa-gold-deep);
+  line-height: 1.4;
+  min-width: 34px;
+}
+
+.silpa-rule__text {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--silpa-ink-soft);
+}
+
+/* twin callouts (puri/konark) */
+.silpa-twin-callouts {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.silpa-callout {
+  margin: 0;
+  padding: 18px 22px;
+  border-radius: var(--silpa-radius-sm);
+  background: var(--silpa-cream-soft);
+  border: 1px solid var(--silpa-cream-line);
+  border-left: 4px solid var(--silpa-maroon);
+  font-size: 15.5px;
+  line-height: 1.75;
+  color: var(--silpa-ink-soft);
+}
+
+.silpa-callout--gold {
+  text-align: center;
+  font-size: 15px;
+  font-weight: 700;
+  border-left: 4px solid var(--silpa-gold);
+}
+
+.silpa-callout em {
+  font-style: italic;
+  color: var(--silpa-maroon);
+}
+
+/* reference note line */
+.silpa-ref-note {
+  margin: 0;
+  font-size: 13.5px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: var(--silpa-gold-deep);
+}
+
+/* cream block overrides for new elements */
+.silpa-block--cream .silpa-without {
+  background: #FFFFFF;
+}
+
+.silpa-block--cream .silpa-callout {
+  background: #FFFFFF;
+}
+
+.silpa-block--cream .silpa-dik-center {
+  background: var(--silpa-maroon);
+  color: #F6EBD6;
+}
+
+.silpa-block--cream .silpa-pramana__row--line {
+  background: #FFFFFF;
+}
+
+
+/* final conclusion */
+.silpa-final-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+/* directions of grace card */
+.silpa-directions-card {
+  padding: 34px 30px;
+  border-radius: var(--silpa-radius);
+  background: var(--silpa-cream);
+  border: 2px solid var(--silpa-maroon);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.25);
+}
+
+.silpa-directions-card__title {
+  text-align: center;
+  font-size: clamp(18px, 2vw, 24px);
+  color: var(--silpa-maroon);
+  margin: 0 0 20px;
+}
+
+.silpa-directions-card__grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+}
+
+.silpa-direction {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 0;
+  text-align: center;
+  font-size: 15px;
+  color: var(--silpa-ink-soft);
+}
+
+.silpa-direction__arrow {
+  color: var(--silpa-gold-deep);
+  font-size: 16px;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   CLOSING (CTA + READ LESS)
+═══════════════════════════════════════════════════════════════════════ */
+
+.silpa-closing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 96px 24px 8px;
+  text-align: center;
+}
+
+.silpa-closing__note {
+  max-width: 560px;
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.8;
+  color: var(--silpa-cream-dim);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 900px) {
+  .silpa__shell--open {
+    padding: 80px var(--section-px) 90px;
+  }
+
+  .silpa-block {
+    padding: 72px 0 12px;
+  }
+
+  .silpa-defs,
+  .silpa-style-grid,
+  .silpa-foundations__grid,
+  .silpa-truths,
+  .silpa-kalinga,
+  .silpa-chola,
+  .silpa-yantra-grid,
+  .silpa-stories,
+  .silpa-final-grid,
+  .silpa-three,
+  .silpa-ref-grid,
+  .silpa-path {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .silpa-memory {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .silpa-twin-callouts {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .silpa-dik-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .silpa-directions-card__grid {
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 20px;
+  }
+}
+
+@media (max-width: 720px) {
+  /* tables → stacked cards */
+  .silpa-table__head { display: none; }
+
+  .silpa-table__row {
+    grid-template-columns: 1fr;
+    padding: 6px 0;
+    background: #FFFFFF;
+  }
+
+  .silpa-table__td {
+    padding: 10px 20px;
+    font-size: 14.5px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .silpa-table__td:first-child {
+    background: var(--silpa-maroon);
+    color: #F6EBD6;
+  }
+
+  .silpa-table__td:first-child .silpa-strong {
+    color: #FFF4E0;
+  }
+
+  .silpa-table__td:not(:first-child)::before {
+    content: attr(data-label);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--silpa-ink);
+  }
+
+  .silpa-table__row:nth-child(even) .silpa-table__td:not(:first-child) {
+    background: var(--silpa-cream);
+  }
+}
+
+@media (max-width: 640px) {
+  .silpa__shell--open {
+    padding: 64px 18px 72px;
+  }
+
+  .silpa-block {
+    padding: 56px 0 8px;
+  }
+
+  .silpa-block__inner {
+    padding: 0 14px;
+    gap: 26px;
+  }
+
+  /* single column grids */
+  .silpa-defs,
+  .silpa-style-grid,
+  .silpa-numcards,
+  .silpa-why-grid,
+  .silpa-key-grid,
+  .silpa-kalinga,
+  .silpa-chola,
+  .silpa-feature-grid,
+  .silpa-konark-grid,
+  .silpa-yantra-grid,
+  .silpa-stories,
+  .silpa-final-grid,
+  .silpa-foundations__grid,
+  .silpa-truths,
+  .silpa-why-kalinga,
+  .silpa-three,
+  .silpa-ref-grid,
+  .silpa-path,
+  .silpa-duties,
+  .silpa-twin,
+  .silpa-twin-callouts {
+    grid-template-columns: 1fr;
+  }
+
+  .silpa-memory {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .silpa-quote {
+    padding: 32px 24px;
+  }
+
+  .silpa-statement {
+    padding: 24px 20px;
+    font-size: 18px;
+  }
+
+  .silpa-fig--contain .silpa-fig__img {
+    padding: 10px;
+  }
+
+  .silpa-roadmap__row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .silpa-roadmap__texts {
+    text-align: left;
+  }
+
+  .silpa-dik-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .silpa-directions-card__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .silpa-directions-card {
+    padding: 26px 20px;
+  }
+
+  .silpa-closing {
+    padding: 72px 18px 4px;
+  }
+}
+
+@media (max-width: 400px) {
+  .silpa-dik-grid,
+  .silpa-memory {
+    grid-template-columns: 1fr;
+  }
+
+  .silpa-toggle {
+    padding: 13px 28px;
+    font-size: 12px;
+    letter-spacing: 2px;
+  }
+}

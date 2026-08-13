@@ -10,8 +10,8 @@ import homamImg      from '../../assets/homam_offerings.png';
 import abhishekamImg from '../../assets/abhishekam.png';
 import yantraImg     from '../../assets/yantra_puja_offerings.png';
 import archanaImg    from '../../assets/archana.png';
-import templesImg    from '../../assets/temples.png';
 import logoImg from '../../assets/logo.png';
+import TempleSilpaShastra from './TempleSilpaShastra.jsx';
 import './AstrologyPage.css';
 
 const WA_URL =
@@ -258,106 +258,9 @@ export default function AstrologyPage() {
 
       {/* ═══════════════════════════════════════════════════════
           SECTION 3 — TEMPLE ŚILPA ŚĀSTRA
+          (expanded sacred-architecture knowledge library)
       ═══════════════════════════════════════════════════════ */}
-      <section className="aop-featured">
-        <div className="aop-featured__inner">
-          <div className="aop-featured__grid">
-
-            {/* LEFT — image */}
-            <ScrollReveal direction="right" duration={0.9}>
-              <div className="aop-feat-img-col">
-                <div className="aop-feat-img-glow" />
-                <motion.div
-                  className="aop-feat-img-card"
-                  whileHover={{
-                    scale: 1.022,
-                    boxShadow:
-                      '0 48px 96px rgba(90,18,40,0.20), 0 0 0 2.5px rgba(212,175,55,0.65), 0 0 64px rgba(212,175,55,0.16)',
-                  }}
-                  transition={{ duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
-                >
-                  <img
-                    src={templesImg}
-                    alt="Temple Śilpa Śāstra — Sacred Iconography"
-                    className="aop-feat-img"
-                    loading="lazy"
-                  />
-                  <div className="aop-feat-img-shine" />
-                </motion.div>
-                <span className="aop-feat-corner aop-feat-corner--tl">✦</span>
-                <span className="aop-feat-corner aop-feat-corner--br">✦</span>
-              </div>
-            </ScrollReveal>
-
-            {/* RIGHT — content */}
-            <ScrollReveal direction="left" duration={0.85}>
-              <div className="aop-feat-content">
-
-                <span className="aop-section-badge">🏛 Sacred Architecture</span>
-
-                <h2 className="aop-feat-h2 font-cinzel">
-                  Temple Śilpa Śāstra
-                </h2>
-
-                <p className="aop-body font-serif">
-                  At Sri MahaVidyesvari Tantra Peetham, we provide Āgamic and
-                  Śilpa guidance on mūrti-lakṣaṇa for temple deities, including
-                  the deity's form, proportions, mudrās, ornaments, and
-                  iconographic details.
-                </p>
-
-                <p className="aop-body font-serif">
-                  Temple Śilpa Śāstra is the sacred science of temple design,
-                  iconography, sculpture, and consecrated space. This guidance
-                  helps devotees, temple committees, and spiritual institutions
-                  understand the scriptural principles behind deity forms, temple
-                  layout, icon placement, measurements, symbolism, and ritual
-                  suitability.
-                </p>
-
-                <p className="aop-body font-serif">
-                  The service brings together traditional knowledge, spiritual
-                  sensitivity, and practical clarity so that sacred spaces and
-                  deity forms are created with beauty, purity, devotion, and
-                  complete śāstric correctness.
-                </p>
-
-                <div className="aop-feat-highlights">
-                  {[
-                    'Mūrti-Lakṣaṇa Guidance',
-                    'Āgamic Iconography',
-                    'Temple Layout Principles',
-                    'Deity Proportions & Mudrās',
-                    'Ritual Suitability Review',
-                    'Śāstric Correctness',
-                  ].map((item, i) => (
-                    <motion.span
-                      key={item}
-                      className="aop-feat-tag"
-                      initial={{ opacity: 0, scale: 0.9 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.3, delay: i * 0.06 }}
-                    >
-                      ✦ {item}
-                    </motion.span>
-                  ))}
-                </div>
-
-                <div className="aop-feat-cta">
-                  <GoldenButton
-                    label="Book Consultation"
-                    size="lg"
-                    onClick={() => window.open(WA_URL, '_blank')}
-                  />
-                </div>
-
-              </div>
-            </ScrollReveal>
-
-          </div>
-        </div>
-      </section>
+      <TempleSilpaShastra />
 
       {/* ═══════════════════════════════════════════════════════
           SECTION 4 — OTHER SACRED OFFERINGS (4-card grid)
