@@ -289,6 +289,13 @@
   max-width: var(--container-max);
 }
 
+/* tight, elegant heading stack — eyebrow · title · subtitle stay connected */
+.silpa-block__head {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
 /* ── typography ── */
 .silpa-eyebrow {
   display: inline-flex;
@@ -329,7 +336,7 @@
 .silpa-sub {
   font-size: clamp(16px, 1.6vw, 20px);
   line-height: 1.7;
-  margin: -14px 0 0;
+  margin: 0;
   font-weight: 500;
 }
 
@@ -1447,7 +1454,7 @@
   flex-direction: column;
   align-items: center;
   gap: 24px;
-  padding: 96px 24px 8px;
+  padding: 56px 24px 8px;
   text-align: center;
 }
 
@@ -1501,6 +1508,221 @@
 
 .silpa-back-btn:hover .silpa-back-btn__arrow {
   transform: translateX(-3px);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   LOCKED KNOWLEDGE PANELS
+   Headings stay sharp · the detailed body (text + images) is blurred
+   behind a soft dark scrim, finished with a gold-edged lock badge
+═══════════════════════════════════════════════════════════════════════ */
+
+.silpa-locked {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--silpa-radius);
+  border: 1px solid var(--silpa-gold-soft);
+  box-shadow: var(--silpa-shadow);
+  isolation: isolate;
+  background: rgba(250, 243, 227, 0.03);
+}
+
+.silpa-block--cream .silpa-locked {
+  border-color: var(--silpa-cream-line-hi);
+}
+
+.silpa-locked__body {
+  filter: blur(7px);
+  opacity: 0.55;
+  pointer-events: none;
+  user-select: none;
+  max-height: clamp(300px, 44vh, 520px);
+  overflow: hidden;
+  transform: translateZ(0);
+}
+
+.silpa-locked__fade {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    to bottom,
+    rgba(20, 6, 12, 0.10) 0%,
+    rgba(20, 6, 12, 0.44) 55%,
+    rgba(20, 6, 12, 0.66) 100%
+  );
+}
+
+.silpa-locked__badge {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  padding: 16px 30px;
+  border-radius: 18px;
+  text-align: center;
+  background: linear-gradient(135deg, rgba(45, 14, 24, 0.94), rgba(28, 7, 15, 0.94));
+  border: 1px solid rgba(212, 175, 55, 0.45);
+  box-shadow:
+    0 16px 40px rgba(0, 0, 0, 0.38),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.silpa-locked__icon {
+  width: 20px;
+  height: 20px;
+  color: var(--silpa-gold);
+  margin-bottom: 4px;
+}
+
+.silpa-locked__badge-title {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--silpa-gold);
+}
+
+.silpa-locked__badge-sub {
+  font-family: var(--font-serif);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  color: rgba(246, 235, 214, 0.82);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   GURU CONNECTION CTA
+   Premium maroon · gold panel that opens the existing WhatsApp flow
+═══════════════════════════════════════════════════════════════════════ */
+
+.silpa-guru {
+  margin-top: 40px;
+}
+
+.silpa-guru__inner {
+  position: relative;
+  text-align: center;
+  padding: 58px 40px 62px;
+  border-radius: var(--silpa-radius);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  background:
+    radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.12) 0%, transparent 60%),
+    linear-gradient(160deg, rgba(92, 22, 38, 0.92) 0%, rgba(54, 10, 20, 0.96) 100%);
+  box-shadow: var(--silpa-shadow), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+
+.silpa-guru__inner::before {
+  content: '';
+  position: absolute;
+  inset: 12px;
+  border: 1px solid rgba(212, 175, 55, 0.16);
+  border-radius: calc(var(--silpa-radius) - 8px);
+  pointer-events: none;
+}
+
+.silpa-guru__divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.silpa-guru__divider-line {
+  width: 64px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--silpa-gold));
+  opacity: 0.55;
+}
+
+.silpa-guru__divider-line:last-of-type {
+  background: linear-gradient(to left, transparent, var(--silpa-gold));
+}
+
+.silpa-guru__divider-star {
+  color: var(--silpa-gold);
+  font-size: 13px;
+  line-height: 1;
+}
+
+.silpa-guru__title {
+  margin: 0;
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: 800;
+  line-height: 1.22;
+  color: #FFF8F0;
+}
+
+.silpa-guru__text {
+  max-width: 560px;
+  margin: 14px auto 0;
+  font-size: clamp(15px, 1.5vw, 18px);
+  line-height: 1.85;
+  font-weight: 500;
+  color: var(--silpa-cream-dim);
+}
+
+.silpa-guru__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 30px;
+  padding: 16px 38px;
+  border-radius: 999px;
+  border: 1px solid rgba(212, 175, 55, 0.75);
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.24) 0%, rgba(212, 175, 55, 0.06) 55%, rgba(212, 175, 55, 0.14) 100%);
+  color: #F6EBD6;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  cursor: pointer;
+  white-space: nowrap;
+  box-shadow:
+    0 0 32px rgba(212, 175, 55, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.10);
+  transition: border-color 0.3s var(--ease), transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+
+.silpa-guru__btn:hover {
+  border-color: rgba(212, 175, 55, 1);
+  transform: translateY(-3px) scale(1.015);
+  box-shadow:
+    0 18px 44px rgba(0, 0, 0, 0.40),
+    0 0 44px rgba(212, 175, 55, 0.30),
+    inset 0 1px 0 rgba(255, 255, 255, 0.10);
+}
+
+.silpa-guru__btn:active {
+  transform: translateY(-1px) scale(0.98);
+}
+
+.silpa-guru__mark {
+  font-size: 14px;
+  line-height: 1;
+  color: var(--silpa-gold);
+}
+
+.silpa-guru__arrow {
+  font-size: 15px;
+  line-height: 1;
+  color: var(--silpa-gold);
+  transition: transform 0.3s var(--ease);
+}
+
+.silpa-guru__btn:hover .silpa-guru__arrow {
+  transform: translateX(4px);
 }
 
 /* ═══════════════════════════════════════════════════════════════════════
@@ -1669,8 +1891,38 @@
     padding: 26px 20px;
   }
 
+  .silpa-locked__body {
+    max-height: 300px;
+    filter: blur(6px);
+  }
+
+  .silpa-locked__badge {
+    padding: 14px 22px;
+    border-radius: 16px;
+  }
+
+  .silpa-locked__badge-title {
+    font-size: 11px;
+    letter-spacing: 3px;
+  }
+
+  .silpa-guru {
+    margin-top: 28px;
+  }
+
+  .silpa-guru__inner {
+    padding: 44px 20px 48px;
+  }
+
+  .silpa-guru__btn {
+    padding: 14px 28px;
+    font-size: 12px;
+    letter-spacing: 2.5px;
+    gap: 10px;
+  }
+
   .silpa-closing {
-    padding: 72px 18px 4px;
+    padding: 40px 18px 4px;
   }
 }
 
@@ -1684,5 +1936,30 @@
     padding: 13px 28px;
     font-size: 12px;
     letter-spacing: 2px;
+  }
+
+  .silpa-locked__body {
+    max-height: 260px;
+  }
+
+  .silpa-locked__badge-sub {
+    font-size: 10px;
+    letter-spacing: 1.2px;
+  }
+
+  .silpa-guru__inner {
+    padding: 38px 16px 42px;
+  }
+
+  .silpa-guru__btn {
+    padding: 13px 22px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    gap: 8px;
+  }
+
+  .silpa-guru__mark,
+  .silpa-guru__arrow {
+    font-size: 12px;
   }
 }

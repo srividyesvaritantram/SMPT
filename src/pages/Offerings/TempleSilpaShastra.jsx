@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 import GoldenButton from '../../components/common/GoldenButton.jsx';
 import templeArchImg from '../../assets/temple_architecture.jpeg';
 import templesImg from '../../assets/temples.png';
-import astangaImg from '../../assets/astangha.png';
 import navaraImg from '../../assets/navara.jpeg';
 import nagaraImg from '../../assets/nagara.jpeg';
 import kajarahoImg from '../../assets/kajaraho.jpeg';
@@ -45,22 +44,56 @@ function SilpaReveal({ children, delay = 0, className = '' }) {
   );
 }
 
-/* Alternating maroon / cream content block */
-function SilpaBlock({ tone = 'maroon', eyebrow, title, subtitle, children, wide = false }) {
+/* Alternating maroon / cream content block.
+   Headings stay sharp and readable; the detailed body is wrapped in a
+   premium locked panel so the deeper knowledge is reserved for the Guru. */
+function SilpaBlock({ tone = 'maroon', eyebrow, title, subtitle, children, wide = false, locked = true }) {
+  const hasHead = Boolean(eyebrow || title || subtitle);
   return (
     <div className={`silpa-block silpa-block--${tone}`}>
       <div className={`silpa-block__inner${wide ? ' silpa-block__inner--wide' : ''}`}>
-        <SilpaReveal>
-          {eyebrow && (
-            <span className="silpa-eyebrow">
-              <span className="silpa-eyebrow__rule" />
-              {eyebrow}
-            </span>
-          )}
-          {title && <h3 className="silpa-h3 font-cinzel">{title}</h3>}
-          {subtitle && <p className="silpa-sub font-serif">{subtitle}</p>}
-        </SilpaReveal>
-        {children}
+        {hasHead && (
+          <SilpaReveal>
+            <div className="silpa-block__head">
+              {eyebrow && (
+                <span className="silpa-eyebrow">
+                  <span className="silpa-eyebrow__rule" />
+                  {eyebrow}
+                </span>
+              )}
+              {title && <h3 className="silpa-h3 font-cinzel">{title}</h3>}
+              {subtitle && <p className="silpa-sub font-serif">{subtitle}</p>}
+            </div>
+          </SilpaReveal>
+        )}
+        {locked ? <SilpaLocked>{children}</SilpaLocked> : children}
+      </div>
+    </div>
+  );
+}
+
+/* Premium locked knowledge panel — blurred body behind a soft dark scrim,
+   finished with a gold-edged lock badge. */
+function SilpaLocked({ children }) {
+  return (
+    <div className="silpa-locked">
+      <div className="silpa-locked__body">{children}</div>
+      <div className="silpa-locked__fade" aria-hidden="true" />
+      <div className="silpa-locked__badge">
+        <svg
+          className="silpa-locked__icon"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+        >
+          <rect x="4.5" y="10.5" width="15" height="9.5" rx="2.5" stroke="currentColor" strokeWidth="1.6" />
+          <path d="M8 10.5V7.8a4 4 0 0 1 8 0v2.7" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+          <path d="M12 13.8v2.6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+          <circle cx="12" cy="16.9" r="1.1" fill="currentColor" />
+        </svg>
+        <span className="silpa-locked__badge-title">Locked</span>
+        <span className="silpa-locked__badge-sub">Reserved for Guru-guided study</span>
       </div>
     </div>
   );
@@ -653,12 +686,6 @@ export default function TempleSilpaShastra() {
                 eyebrow="The Knowledge Grid"
                 title="The Eight Foundations of Śilpa Śāstra"
               >
-                <SilpaImage
-                  src={astangaImg}
-                  alt="Aṣṭāṅga — the eight foundations of Śilpa Śāstra"
-                  fit="cover"
-                  ratio="5/4"
-                />
                 <SilpaDataTable
                   colWidths="1.1fr 1.8fr 1fr"
                   columns={[
@@ -1452,6 +1479,36 @@ export default function TempleSilpaShastra() {
                   Dharma, Kāma and Mokṣa — the whole of life, carved in stone.
                 </SilpaStatement>
               </SilpaBlock>
+
+              {/* ── GURU CONNECTION — the deeper knowledge is reached through the Guru ── */}
+              <div className="silpa-guru">
+                <SilpaReveal>
+                  <div className="silpa-guru__inner">
+                    <div className="silpa-guru__divider" aria-hidden="true">
+                      <span className="silpa-guru__divider-line" />
+                      <span className="silpa-guru__divider-star">✦</span>
+                      <span className="silpa-guru__divider-line" />
+                    </div>
+                    <h3 className="silpa-guru__title font-cinzel">
+                      Want to learn more about Temple Śilpa Śāstra?
+                    </h3>
+                    <p className="silpa-guru__text font-serif">
+                      Connect with Guru for deeper knowledge, traditional
+                      guidance, and learning.
+                    </p>
+                    <button
+                      type="button"
+                      className="silpa-guru__btn"
+                      onClick={navToBooking}
+                    >
+                      <span className="silpa-guru__mark" aria-hidden="true">✦</span>
+                      CONNECT TO GURU
+                      <span className="silpa-guru__arrow" aria-hidden="true">→</span>
+                      <span className="silpa-guru__mark" aria-hidden="true">✦</span>
+                    </button>
+                  </div>
+                </SilpaReveal>
+              </div>
 
               {/* CLOSING — CTA + READ LESS */}
               <div className="silpa-closing">
