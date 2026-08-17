@@ -12,6 +12,7 @@ import yantraImg     from '../../assets/yantra_puja_offerings.png';
 import archanaImg    from '../../assets/archana.png';
 import logoImg from '../../assets/logo.png';
 import TempleSilpaShastra from './TempleSilpaShastra.jsx';
+import SouthIndianIconography from './SouthIndianIconography.jsx';
 import './AstrologyPage.css';
 
 const WA_URL =
@@ -261,6 +262,11 @@ export default function AstrologyPage() {
           (expanded sacred-architecture knowledge library)
       ═══════════════════════════════════════════════════════ */}
       <TempleSilpaShastra />
+
+      {/* ═══════════════════════════════════════════════════════
+          SECTION 3B — SOUTH INDIAN ICONOGRAPHY / PĀÑCALOHA
+      ═══════════════════════════════════════════════════════ */}
+      <SouthIndianIconography />
 
       {/* ═══════════════════════════════════════════════════════
           SECTION 4 — OTHER SACRED OFFERINGS (4-card grid)
