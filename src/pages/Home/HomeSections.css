@@ -3045,7 +3045,7 @@
   top: 64px;
   right: 48px;
   z-index: 90;
-  max-width: 330px;
+  max-width: 340px;
   width: 100%;
   pointer-events: none;
 }
@@ -3058,15 +3058,28 @@
 
 .divine-events-notification__card:hover {
   border-color: rgba(212, 175, 55, 0.75) !important;
-  box-shadow: 0 16px 56px rgba(0, 0, 0, 0.50), 0 0 32px rgba(212, 175, 55, 0.28) !important;
+  box-shadow: 0 16px 56px rgba(74, 15, 34, 0.16), 0 0 32px rgba(212, 175, 55, 0.18) !important;
   transform: translateY(-3px);
 }
 
 .divine-events-notification__inner {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
   padding-right: 24px;
+  max-height: 520px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(212, 175, 55, 0.30) transparent;
+}
+
+.divine-events-notification__inner::-webkit-scrollbar {
+  width: 4px;
+}
+
+.divine-events-notification__inner::-webkit-scrollbar-thumb {
+  background: rgba(212, 175, 55, 0.30);
+  border-radius: 4px;
 }
 
 .divine-events-notification__close {
@@ -3079,11 +3092,11 @@
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  border: 1px solid rgba(212, 175, 55, 0.45);
-  background: rgba(255, 248, 238, 0.10);
+  border: 1px solid rgba(212, 175, 55, 0.40);
+  background: rgba(255, 248, 238, 0.60);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  color: rgba(255, 248, 238, 0.85);
+  color: #4A0F22;
   font-size: 12px;
   line-height: 1;
   cursor: pointer;
@@ -3094,7 +3107,7 @@
 .divine-events-notification__close:hover {
   background: rgba(212, 175, 55, 0.28);
   border-color: rgba(212, 175, 55, 0.85);
-  color: #FFF8EE;
+  color: #4A0F22;
   transform: scale(1.08);
 }
 
@@ -3105,36 +3118,46 @@
 }
 
 .divine-events-notification__ornament {
-  font-size: 11px;
+  font-size: 13px;
   color: #D4AF37;
-  filter: drop-shadow(0 0 6px rgba(212, 175, 55, 0.60));
+  filter: drop-shadow(0 0 6px rgba(212, 175, 55, 0.50));
   line-height: 1;
   flex-shrink: 0;
 }
 
 .divine-events-notification__label {
   font-family: 'Inter', sans-serif;
-  font-size: 9.5px;
+  font-size: 9px;
   font-weight: 700;
-  letter-spacing: 2.6px;
+  letter-spacing: 2.4px;
   text-transform: uppercase;
-  color: rgba(212, 175, 55, 0.92);
+  color: #8B6914;
 }
 
 .divine-events-notification__heading {
   font-family: 'Cinzel', serif;
-  font-size: 19px;
+  font-size: 18px;
   font-weight: 700;
   line-height: 1.25;
-  color: #FFF8EE;
+  color: #4A0F22;
   margin: 0;
+}
+
+.divine-events-notification__subtitle {
+  font-family: 'Cinzel', serif;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #8B6914;
+  margin: 0;
+  letter-spacing: 0.3px;
 }
 
 .divine-events-notification__desc {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 13.5px;
-  line-height: 1.5;
-  color: rgba(255, 248, 238, 0.82);
+  font-size: 14px;
+  line-height: 1.55;
+  color: #5E2032;
   margin: 0;
 }
 
@@ -3144,34 +3167,99 @@
   font-size: 11.5px;
   font-weight: 600;
   letter-spacing: 1.5px;
-  color: rgba(232, 199, 106, 0.85);
+  color: #8B6914;
 }
 
 .divine-events-notification__btns {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
+  margin-top: 2px;
 }
 
-/* Tablet & Mobile: sit below the Hero Banner with proper spacing */
+/* ── event block wrapper ── */
+.divine-events-notification__event {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  cursor: pointer;
+  border-radius: 12px;
+  padding: 4px;
+  margin: -4px;
+  transition: background 0.25s ease;
+}
+
+.divine-events-notification__event:hover {
+  background: rgba(212, 175, 55, 0.06);
+}
+
+.divine-events-notification__event:focus-visible {
+  outline: 2px solid rgba(212, 175, 55, 0.60);
+  outline-offset: 2px;
+}
+
+/* ── divider between events ── */
+.divine-events-notification__divider {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 4px 0;
+}
+
+.divine-events-notification__divider-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.35), transparent);
+}
+
+.divine-events-notification__divider-dot {
+  font-size: 7px;
+  color: rgba(212, 175, 55, 0.50);
+  line-height: 1;
+}
+
+/* Tablet & Mobile: keep inside the Hero section */
 @media (max-width: 1024px) {
   .divine-events-notification {
-    position: relative;
+    position: absolute;
     top: auto;
+    bottom: 100px;
     right: auto;
-    margin: 32px auto 0;
+    left: 50%;
+    transform: translateX(-50%);
     max-width: 90%;
     pointer-events: none;
   }
 }
 @media (max-width: 768px) {
   .divine-events-notification {
-    margin-top: 28px;
+    bottom: 60px;
     max-width: 94%;
+  }
+
+  .divine-events-notification__inner {
+    max-height: 440px;
   }
 }
 @media (max-width: 480px) {
+  .divine-events-notification {
+    bottom: 40px;
+    max-width: 94%;
+  }
+
+  .divine-events-notification__inner {
+    max-height: 380px;
+  }
+
   .divine-events-notification__btns {
     flex-direction: column;
+  }
+
+  .divine-events-notification__heading {
+    font-size: 16px;
+  }
+
+  .divine-events-notification__desc {
+    font-size: 13px;
   }
 }

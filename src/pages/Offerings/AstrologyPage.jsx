@@ -322,10 +322,19 @@ export default function AstrologyPage() {
       </section>
 
       {/* ═══════════════════════════════════════════════════════
-          SECTION 5 — NEED GUIDANCE? (CTA)
+          SECTION 5 — NEED GUIDANCE? (CTA) (DEEP MAROON)
       ═══════════════════════════════════════════════════════ */}
       <section className="aop-cta">
-        <div className="aop-cta__om" aria-hidden="true"><img src={logoImg} alt="" className="aop-cta__om-img" /></div>
+
+        {/* subtle gold decorative edges */}
+        <div className="aop-cta__deco-line aop-cta__deco-line--left" aria-hidden="true" />
+        <div className="aop-cta__deco-line aop-cta__deco-line--right" aria-hidden="true" />
+        <div className="aop-cta__deco-diamond aop-cta__deco-diamond--tl" aria-hidden="true">✦</div>
+        <div className="aop-cta__deco-diamond aop-cta__deco-diamond--tr" aria-hidden="true">✦</div>
+        <div className="aop-cta__deco-lotus aop-cta__deco-lotus--bl" aria-hidden="true">❋</div>
+        <div className="aop-cta__deco-lotus aop-cta__deco-lotus--br" aria-hidden="true">❋</div>
+        <div className="aop-cta__deco-wave" aria-hidden="true" />
+
         <ScrollReveal direction="up" duration={0.8}>
           <div className="aop-cta__inner">
             <span className="aop-cta__badge">🙏 We Are Here to Help</span>

@@ -158,6 +158,11 @@
   opacity: 0.60;
 }
 
+.silpa-intro .aop-feat-img {
+  object-fit: cover;
+  object-position: center 30%;
+}
+
 /* ── main section buttons (READ MORE + BOOK CONSULTATION) ── */
 .silpa-intro__btns {
   display: flex;

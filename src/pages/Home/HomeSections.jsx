@@ -558,7 +558,8 @@ export function DivineEventsNotificationCard() {
   if (new Date() > SRAVANA_NOTIFICATION_EXPIRY) return null;
   if (dismissed) return null;
 
-  const goToEvents = () => navigate('/events#sravana-events');
+  const goToSravana = () => navigate('/events#sravana-events');
+  const goToLakshmi = () => navigate('/events#sravana-events');
 
   const handleClose = (e) => {
     e.stopPropagation();
@@ -569,7 +570,7 @@ export function DivineEventsNotificationCard() {
     <motion.div
       className="divine-events-notification"
       role="complementary"
-      aria-label="Śrāvaṇa Ārādhanas"
+      aria-label="Upcoming Spiritual Events"
       initial={{ opacity: 0, y: 24, scale: 0.96 }}
       animate={{ opacity: 1, y: 0, scale: 1 }}
       transition={{ duration: 0.8, delay: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
@@ -578,17 +579,16 @@ export function DivineEventsNotificationCard() {
         className="divine-events-notification__card"
         borderRadius={18}
         hoverable={false}
-        onClick={goToEvents}
         style={{
-          maxWidth: 330,
+          maxWidth: 340,
           width: '100%',
-          padding: 20,
-          background: 'rgba(13, 2, 8, 0.62)',
-          border: '1px solid rgba(212, 175, 55, 0.50)',
-          boxShadow: '0 12px 48px rgba(0, 0, 0, 0.45), 0 0 28px rgba(212, 175, 55, 0.16)',
-          backdropFilter: 'blur(14px)',
-          WebkitBackdropFilter: 'blur(14px)',
-          cursor: 'pointer',
+          padding: 22,
+          background: 'rgba(255, 248, 238, 0.88)',
+          border: '1px solid rgba(212, 175, 55, 0.45)',
+          boxShadow: '0 12px 48px rgba(74, 15, 34, 0.12), 0 0 28px rgba(212, 175, 55, 0.10)',
+          backdropFilter: 'blur(16px)',
+          WebkitBackdropFilter: 'blur(16px)',
+          cursor: 'default',
         }}
       >
         <button
@@ -599,49 +599,90 @@ export function DivineEventsNotificationCard() {
         >
           ✕
         </button>
+
         <div className="divine-events-notification__inner">
-          <div className="divine-events-notification__head">
-            <span className="divine-events-notification__ornament" aria-hidden="true">✦</span>
-            <span className="divine-events-notification__label">ŚRĀVAṆA SPECIAL</span>
+
+          {/* ── EVENT 1 — Śrāvaṇa Ārādhanas ── */}
+          <div
+            className="divine-events-notification__event"
+            role="button"
+            tabIndex={0}
+            onClick={goToSravana}
+            onKeyDown={(e) => { if (e.key === 'Enter') goToSravana(); }}
+          >
+            <div className="divine-events-notification__head">
+              <span className="divine-events-notification__ornament" aria-hidden="true">✦</span>
+              <span className="divine-events-notification__label">ŚRĀVAṆA ĀRĀDHANAS</span>
+            </div>
+
+            <h4 className="divine-events-notification__heading font-cinzel">
+              Śrāvaṇa Ārādhanas
+            </h4>
+
+            <p className="divine-events-notification__desc font-cormorant">
+              Sacred Ārādhanas and special spiritual practices conducted throughout the holy month of Śrāvaṇa, dedicated to prosperity, knowledge, health, and divine blessings.
+            </p>
+
+            <p className="divine-events-notification__date">14 – 28 August</p>
+
+            <div className="divine-events-notification__btns">
+              <GoldenButton
+                label="View All Ārādhanas"
+                size="sm"
+                noOrnaments
+                onClick={(e) => {
+                  e.stopPropagation();
+                  goToSravana();
+                }}
+              />
+            </div>
           </div>
 
-          <h4 className="divine-events-notification__heading font-cinzel">
-            Śrāvaṇa Ārādhanas
-          </h4>
-
-          <p className="divine-events-notification__desc font-cormorant">
-            Sacred Ārādhanas and special spiritual practices are being conducted throughout the holy month of Śrāvaṇa, dedicated to prosperity, knowledge, health, family well-being, marriage, and divine blessings.
-          </p>
-
-          <p className="divine-events-notification__date">14 – 28 August</p>
-
-          <div className="divine-events-notification__btns">
-            <GoldenButton
-              label="View All Ārādhanas"
-              size="sm"
-              noOrnaments
-              onClick={(e) => {
-                e.stopPropagation();
-                goToEvents();
-              }}
-            />
-            <GoldenButton
-              label="Contact"
-              size="sm"
-              outlined
-              noOrnaments
-              onClick={(e) => {
-                e.stopPropagation();
-                window.open(
-                  `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(
-                    'Hello, I would like to know more about the Śrāvaṇa Ārādhanas.'
-                  )}`,
-                  '_blank',
-                  'noopener,noreferrer'
-                );
-              }}
-            />
+          {/* ── Divider ── */}
+          <div className="divine-events-notification__divider" aria-hidden="true">
+            <span className="divine-events-notification__divider-line" />
+            <span className="divine-events-notification__divider-dot">◆</span>
+            <span className="divine-events-notification__divider-line" />
           </div>
+
+          {/* ── EVENT 2 — Śrī Mahālakṣmī Sādhanas ── */}
+          <div
+            className="divine-events-notification__event"
+            role="button"
+            tabIndex={0}
+            onClick={goToLakshmi}
+            onKeyDown={(e) => { if (e.key === 'Enter') goToLakshmi(); }}
+          >
+            <div className="divine-events-notification__head">
+              <span className="divine-events-notification__ornament" aria-hidden="true">✿</span>
+              <span className="divine-events-notification__label">ŚRĪ MAHĀLAKṢMĪ SĀDHANAS</span>
+            </div>
+
+            <h4 className="divine-events-notification__heading font-cinzel">
+              Śrī Mahālakṣmī Sādhanas
+            </h4>
+
+            <p className="divine-events-notification__subtitle font-cinzel">
+              Sacred Sādhanas for Prosperity, Abundance &amp; Divine Grace
+            </p>
+
+            <p className="divine-events-notification__desc font-cormorant">
+              Experience sacred Śrī Mahālakṣmī Sādhanas rooted in authentic tradition and Guru Paramparā, offered for spiritual growth, prosperity, abundance, and divine grace.
+            </p>
+
+            <div className="divine-events-notification__btns">
+              <GoldenButton
+                label="View Śrī Mahālakṣmī Sādhanas"
+                size="sm"
+                noOrnaments
+                onClick={(e) => {
+                  e.stopPropagation();
+                  goToLakshmi();
+                }}
+              />
+            </div>
+          </div>
+
         </div>
       </GlassCard>
     </motion.div>
