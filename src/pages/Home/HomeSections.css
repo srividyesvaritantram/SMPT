@@ -3037,6 +3037,7 @@
 .hero-anchor {
   position: relative;
   width: 100%;
+  overflow-x: hidden;
 }
 
 /* ── Divine Events Notification Card ── */
@@ -3227,14 +3228,20 @@
     right: auto;
     left: 50%;
     transform: translateX(-50%);
-    max-width: 90%;
+    width: calc(100% - 48px);
+    max-width: 360px;
     pointer-events: none;
+    box-sizing: border-box;
   }
 }
 @media (max-width: 768px) {
   .divine-events-notification {
     bottom: 60px;
-    max-width: 94%;
+    width: calc(100% - 32px);
+    max-width: 100%;
+    left: 16px;
+    right: 16px;
+    transform: none;
   }
 
   .divine-events-notification__inner {
@@ -3244,15 +3251,27 @@
 @media (max-width: 480px) {
   .divine-events-notification {
     bottom: 40px;
-    max-width: 94%;
+    width: calc(100% - 24px);
+    left: 12px;
+    right: 12px;
   }
 
   .divine-events-notification__inner {
     max-height: 380px;
+    padding-right: 20px;
+  }
+
+  .divine-events-notification__card {
+    padding: 18px !important;
   }
 
   .divine-events-notification__btns {
     flex-direction: column;
+  }
+
+  .divine-events-notification__btns .gbtn {
+    width: 100%;
+    text-align: center;
   }
 
   .divine-events-notification__heading {
@@ -3261,5 +3280,10 @@
 
   .divine-events-notification__desc {
     font-size: 13px;
+  }
+
+  .divine-events-notification__label {
+    font-size: 8px;
+    letter-spacing: 2px;
   }
 }
