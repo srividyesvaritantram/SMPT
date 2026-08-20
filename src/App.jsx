@@ -16,6 +16,10 @@ import {
   VideoPlayerPage,
 } from './pages/FeaturePages.jsx';
 import AstrologyPage from './pages/Offerings/AstrologyPage.jsx';
+import HomasDetail from './pages/Offerings/HomasDetail.jsx';
+import ArchanaDetail from './pages/Offerings/ArchanaDetail.jsx';
+import AbhishekamDetail from './pages/Offerings/AbhishekamDetail.jsx';
+import YantraDetail from './pages/Offerings/YantraDetail.jsx';
 import ShravanaMahaLakshmiDetail from './pages/ShravanaMahaLakshmiDetail.jsx';
 import ShravanaSomavaraDetail from './pages/ShravanaSomavaraDetail.jsx';
 import ShravanaMangalaGauriDetail from './pages/ShravanaMangalaGauriDetail.jsx';
@@ -78,11 +82,11 @@ export default function App() {
         <Route path="/offerings/astrology" element={<AstrologyPage />} />
         <Route path="/offerings/temple-shilpa-sastra" element={<OfferingsPage />} />
         <Route path="/offerings/temple-shilpas" element={<OfferingsPage />} />
-        <Route path="/offerings/homas" element={<OfferingsPage />} />
-        <Route path="/offerings/homa" element={<OfferingsPage />} />
-        <Route path="/offerings/abhishekam" element={<OfferingsPage />} />
-        <Route path="/offerings/yantra-puja" element={<OfferingsPage />} />
-        <Route path="/offerings/archana" element={<OfferingsPage />} />
+        <Route path="/offerings/homas" element={<HomasDetail />} />
+        <Route path="/offerings/homa" element={<HomasDetail />} />
+        <Route path="/offerings/abhishekam" element={<AbhishekamDetail />} />
+        <Route path="/offerings/yantra-puja" element={<YantraDetail />} />
+        <Route path="/offerings/archana" element={<ArchanaDetail />} />
         <Route path="/offerings/sri-vidya" element={<OfferingsPage />} />
         <Route path="/offerings/deeksha" element={<OfferingsPage />} />
         <Route path="/offerings/temple-consultation" element={<OfferingsPage />} />
