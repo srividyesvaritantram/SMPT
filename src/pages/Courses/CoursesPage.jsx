@@ -1,20 +1,26 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../../components/navbar/Navbar.jsx';
 import GoldenButton from '../../components/common/GoldenButton.jsx';
 import ScrollReveal from '../../components/common/ScrollReveal.jsx';
+import ComingSoonModal from '../../components/common/ComingSoonModal.jsx';
 import { FooterSection } from '../Home/HomeSections.jsx';
 import saraswathiImg      from '../../assets/saraswathi_devi.png';
-import sriVidyaImg        from '../../assets/sri_vidya1.png';
 import chandImg           from '../../assets/chandi.png';
 import shaivamImg         from '../../assets/shaivam.png';
 import vaishImg           from '../../assets/vaishnavam_course.png';
 import skaanImg           from '../../assets/skaandam_course.png';
 import ganapathyamImg     from '../../assets/ganapathyam.png';
+import shaktamImg         from '../../assets/bhuvaneswari.jpeg';
+import suryaImg           from '../../assets/surya.jpeg';
 import logoImg from '../../assets/logo.png';
 import './CoursesPage.css';
 
 const WA_URL = 'https://wa.me/919390886029?text=Namaste%20%F0%9F%99%8F%0A%0AI%20would%20like%20to%20enroll%20in%20a%20course%20at%20Sri%20MahaVidyesvari%20Tantra%20Peetham.';
+
+const COURSE_COMING_SOON_MESSAGE =
+  'We are preparing more information about this Vidya. Please check back soon for updates.';
 
 function CpLotusDivider({ id = 'cp-lotus', variant = 'cream' }) {
   return (
@@ -86,23 +92,38 @@ const ALL_COURSES = [
     path: '/courses/vaishnavam',
   },
   {
-    id: 'ganapathyam',
+    id: 'ganapatyam',
     title: 'Gāṇapatyam',
     desc: 'Ganapati Tantram is the practical path of invoking Lord Ganesha to remove obstacles, sharpen intellect, and establish success through sacred mantra and disciplined worship.',
     img: ganapathyamImg,
-    path: '/courses/ganapathyam',
+    path: '/courses/ganapatyam',
   },
   {
     id: 'skaandam',
     title: 'Skaandam',
-    desc: 'Skaandam is the heroic path of Lord Skanda that awakens courage, discipline, wisdom, and victory over inner and outer obstacles.',
+    desc: 'Skaandam is the heroic path of Lord Skanda — Kaumaram / Kartikeya — that awakens courage, discipline, wisdom, and victory over inner and outer obstacles.',
     img: skaanImg,
-    path: '/courses/skaandam',
+    path: '/courses/skandam',
+  },
+  {
+    id: 'shaktam',
+    title: 'Shaktam',
+    desc: 'Shaktam is the path of the Divine Mother — the worship of Shakti as the Supreme Reality through mantra, tantra, the Mahavidyas and the grace of Sri Kula and Kali Kula traditions.',
+    img: shaktamImg,
+    path: '/courses/shaktam',
+  },
+  {
+    id: 'souram',
+    title: 'SOURAM / SAURAM',
+    desc: 'Explore the ancient Sauram tradition, Surya worship, Aditya Upasana, Gayatri, Surya Namaskar, Surya Yantra, and the spiritual significance of the Sun as Parabrahman.',
+    img: suryaImg,
+    path: '/courses/souram',
   },
 ];
 
 export default function CoursesPage() {
   const navigate = useNavigate();
+  const [comingSoonCourse, setComingSoonCourse] = useState(null);
 
   return (
     <div className="cp-page">
@@ -227,7 +248,7 @@ export default function CoursesPage() {
                   transition={{ duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
                 >
                   <img
-                    src={sriVidyaImg}
+                    src="/assets/course-images/sri-vidhya/sri-vidhya2.jpeg"
                     alt="Sri Vidyā — Sacred Course"
                     className="cp-feat-img cp-feat-img--sri-vidya"
                     loading="lazy"
@@ -279,7 +300,7 @@ export default function CoursesPage() {
                   <GoldenButton
                     label="Know More"
                     size="lg"
-                    onClick={() => navigate('/courses/sri-vidya')}
+                    onClick={() => setComingSoonCourse('Sri Vidyā')}
                   />
                 </div>
 
@@ -319,12 +340,12 @@ export default function CoursesPage() {
                   transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
                 >
                   <div className="cp-card__accent" />
-                  <div className={`cp-card__thumb${card.id === 'ganapathyam' ? ' cp-card__thumb--contain' : ''}`}>
+                  <div className={`cp-card__thumb${card.id === 'ganapatyam' || card.id === 'shaktam' || card.id === 'skaandam' || card.id === 'souram' ? ' cp-card__thumb--contain' : ''}`}>
                     <motion.img
                       src={card.img}
                       alt={card.title}
                       loading="lazy"
-                      className={`cp-card__img${card.id === 'ganapathyam' ? ' cp-card__img--contain' : ''}`}
+                      className={`cp-card__img${card.id === 'ganapatyam' || card.id === 'shaktam' || card.id === 'skaandam' || card.id === 'souram' ? ' cp-card__img--contain' : ''}`}
                       transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
                     />
                   </div>
@@ -339,7 +360,7 @@ export default function CoursesPage() {
                     <GoldenButton
                       label="Know More"
                       size="md"
-                      onClick={() => navigate(card.path)}
+                      onClick={() => setComingSoonCourse(card.title)}
                     />
                   </div>
                 </motion.div>
@@ -407,6 +428,15 @@ export default function CoursesPage() {
       </section>
 
       <FooterSection />
+
+      <ComingSoonModal
+        open={Boolean(comingSoonCourse)}
+        onClose={() => setComingSoonCourse(null)}
+        itemName={comingSoonCourse}
+        title="More Details Coming Soon"
+        message={COURSE_COMING_SOON_MESSAGE}
+        eyebrow="Sacred Courses"
+      />
 
     </div>
   );

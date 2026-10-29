@@ -14,6 +14,7 @@ RewriteRule ^ /index.html [L]
   AddType text/css .css
   AddType image/svg+xml .svg
   AddType image/png .png
+  AddType image/x-icon .ico
   AddType image/jpeg .jpg .jpeg
   AddType image/webp .webp
   AddType application/json .json
@@ -32,6 +33,7 @@ RewriteRule ^ /index.html [L]
 <IfModule mod_expires.c>
   ExpiresActive On
   ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/x-icon "access plus 1 year"
   ExpiresByType image/jpeg "access plus 1 year"
   ExpiresByType image/svg+xml "access plus 1 year"
   ExpiresByType text/css "access plus 1 month"

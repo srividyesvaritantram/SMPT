@@ -15,8 +15,10 @@ import whyTantraImg from '../../assets/why_tantra.png';
 import learnSriVidyaImg from '../../assets/learn_sri_vidya.png';
 import mahavidyeswariImg from '../../assets/mahavidyeswari.png';
 import homamImg       from '../../assets/homam_offerings.png';
-import tarpanaImg     from '../../assets/tarpana_offerings.png';
 import yantraImg      from '../../assets/yantra_puja_offerings.png';
+import astrologyImg   from '../../assets/astrology.jpeg';
+import templesImg     from '../../assets/temples.png';
+import silpaImg       from '../../assets/silpa_sastra.jpeg';
 import narayaniImg from '../../assets/narayani_vidya.png';
 import dhanvantariImg from '../../assets/dhanvantari.png';
 import ashtaLakshmiImg from '../../assets/ashta_lakshmi_vidya.png';
@@ -511,12 +513,12 @@ export function FeaturedCoursesSection() {
                 transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
               >
                 <div className="cp-card__accent" />
-                <div className={`cp-card__thumb${c.id === 'ganapathyam' ? ' cp-card__thumb--contain' : ''}`}>
+                <div className={`cp-card__thumb${c.id === 'ganapatyam' ? ' cp-card__thumb--contain' : ''}`}>
                   <motion.img
                     src={c.img}
                     alt={c.title}
                     loading="lazy"
-                    className={`cp-card__img${c.id === 'ganapathyam' ? ' cp-card__img--contain' : ''}`}
+                    className={`cp-card__img${c.id === 'ganapatyam' ? ' cp-card__img--contain' : ''}`}
                     transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
                   />
                 </div>
@@ -897,18 +899,35 @@ const OFFERING_CARDS = [
     image: homamImg,
     title: 'Homa',
     description: 'Homa is the sacred act of feeding the devas through fire with mantra and offerings, inviting divine grace, purification, protection, and spiritual transformation.',
-  },
-  {
-    id: 'tarpana',
-    image: tarpanaImg,
-    title: 'Tarpana',
-    description: 'Tarpana is the sacred offering of water and other liquids to the devas, expressing gratitude, reverence, and devotion while invoking divine blessings and inner peace.',
+    path: '/offerings/homa',
   },
   {
     id: 'yantra',
     image: yantraImg,
     title: 'Yantra Puja',
     description: 'Yantra Puja is the worship of the sacred Yantra through mantra, offerings, and meditation, awakening it as the living seat of the Divine Mother.',
+    path: '/offerings/yantra-puja',
+  },
+  {
+    id: 'astrology',
+    image: astrologyImg,
+    title: 'Astrology',
+    description: 'Authentic Vedic Jyotisha consultations rooted in classical tradition and Guru Parampara, illuminating the deeper karmic patterns of your life with clarity and divine support.',
+    path: '/offerings#astrology-section',
+  },
+  {
+    id: 'temple-sastra',
+    image: templesImg,
+    title: 'Temple Sastra',
+    description: 'Temple Śilpa Śāstra is the sacred science of temple design, iconography, sculpture and consecrated space, governed by the Śilpa Śāstras, the Āgamas and the Purāṇas.',
+    path: '/offerings#temple-silpa-sastra',
+  },
+  {
+    id: 'silpa-sastra',
+    image: silpaImg,
+    title: 'Silpa Sastra',
+    description: 'Śilpa Śāstra is the ancient science of sacred image-making that governs every proportion, material, and gesture in temple sculpture.',
+    path: '/offerings#silpa-sastra',
   },
 ];
 
@@ -964,7 +983,7 @@ export function OfferingsShowcaseSection() {
                     <span className="off-card__rule-line" />
                   </div>
                   <p className="off-card__desc font-cormorant">{card.description}</p>
-                  <GoldenButton label="Know More" size="md" onClick={() => navigate('/offerings')} />
+                  <GoldenButton label="Know More" size="md" onClick={() => navigate(card.path)} />
                 </div>
               </motion.div>
             </ScrollReveal>
@@ -1392,8 +1411,10 @@ const footerLinks = [
       { label: 'Chandi Vidya', href: '/courses/chandi-vidya' },
       { label: 'Shaivam',      href: '/courses/shaivam' },
       { label: 'Vaishnavam',   href: '/courses/vaishnavam' },
-      { label: 'Gāṇapatyam',   href: '/courses/ganapathyam' },
-      { label: 'Skaandam',     href: '/courses/skaandam' },
+      { label: 'Gāṇapatyam',   href: '/courses/ganapatyam' },
+      { label: 'Shaktam',      href: '/courses/shaktam' },
+      { label: 'Skaandam',     href: '/courses/skandam' },
+      { label: 'Souram / Sauram', href: '/courses/souram' },
     ],
   },
   {
@@ -1541,6 +1562,15 @@ export function FooterSection() {
             <span className="footer__bottom-sep">·</span>
             <motion.button className="footer__bottom-link" onClick={() => navigate('/terms')} whileHover={{ color: '#E8C76A' }} transition={{ duration: 0.18 }}>Terms of Service</motion.button>
           </div>
+        </div>
+
+        {/* ── WEBSITE CREDIT ── */}
+        <div className="footer__credit">
+          <span className="footer__credit-line" aria-hidden="true" />
+          <p className="footer__credit-text">
+            Website Designed &amp; Developed by <span className="footer__credit-name">Kiran Kumar</span>
+          </p>
+          <span className="footer__credit-line" aria-hidden="true" />
         </div>
 
       </div>

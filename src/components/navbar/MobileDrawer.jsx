@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { FiX, FiChevronDown, FiSettings } from 'react-icons/fi';
 import { NAV_CONFIG } from './Navbar.jsx';
 import logoImg from '../../assets/logo.png';
+import { CONTENT_VISIBILITY } from '../../config/contentVisibility.js';
 import './MobileDrawer.css';
 
 export default function MobileDrawer({ open, onClose }) {
@@ -107,13 +108,15 @@ export default function MobileDrawer({ open, onClose }) {
               ))}
 
               {/* Temporary Admin access (Phase 1) */}
-              <button className="drawer__row drawer__admin-row" onClick={() => handleLink('/admin')}>
-                <span className="drawer__admin-label">
-                  <FiSettings size={16} />
-                  Admin Dashboard
-                </span>
-                <span className="drawer__admin-badge">Admin</span>
-              </button>
+              {CONTENT_VISIBILITY.admin && (
+                <button className="drawer__row drawer__admin-row" onClick={() => handleLink('/admin')}>
+                  <span className="drawer__admin-label">
+                    <FiSettings size={16} />
+                    Admin Dashboard
+                  </span>
+                  <span className="drawer__admin-badge">Admin</span>
+                </button>
+              )}
             </div>
 
             <div className="drawer__divider" />

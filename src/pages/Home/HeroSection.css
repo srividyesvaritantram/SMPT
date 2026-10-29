@@ -74,7 +74,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center top;
+  object-position: 65% 25%;
   display: block;
   z-index: 0;
   filter: brightness(0.7) contrast(1.08) saturate(1.05);
@@ -466,7 +466,7 @@
 
 @media (max-width: 768px) {
   .hero { align-items: flex-end; min-height: 100svh; }
-  .hero__bg-img { object-position: 65% top; }
+  .hero__bg-img { object-position: 82% top; }
   .hero__left-veil {
     background: linear-gradient(
       to bottom,

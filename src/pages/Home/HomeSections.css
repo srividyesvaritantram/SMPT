@@ -970,8 +970,6 @@
   transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.off-card__img[alt="Tarpana"] { object-position: center 20%; }
-
 .off-card:hover .off-card__img {
   transform: scale(1.04);
 }
@@ -1639,6 +1637,57 @@
   font-size: 12px;
   color: var(--muted);
   opacity: 0.40;
+}
+
+/* ── WEBSITE CREDIT ── */
+.footer__credit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 0 0 30px;
+}
+
+.footer__credit-line {
+  flex: 0 1 84px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.34));
+}
+
+.footer__credit-line:last-child {
+  background: linear-gradient(90deg, rgba(212, 175, 55, 0.34), transparent);
+}
+
+.footer__credit-text {
+  margin: 0;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 14px;
+  letter-spacing: 0.045em;
+  line-height: 1.5;
+  color: var(--muted);
+  opacity: 0.86;
+  text-align: center;
+}
+
+.footer__credit-name {
+  color: #E8C76A;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+@media (max-width: 560px) {
+  .footer__credit {
+    gap: 10px;
+    padding-bottom: 24px;
+  }
+
+  .footer__credit-line {
+    flex-basis: 34px;
+  }
+
+  .footer__credit-text {
+    font-size: 12.5px;
+  }
 }
 
 /* ── RESPONSIVE ── */

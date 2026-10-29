@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import GoldenButton from '../../components/common/GoldenButton.jsx';
+import ComingSoonModal from '../../components/common/ComingSoonModal.jsx';
+import { CONTENT_VISIBILITY } from '../../config/contentVisibility.js';
 
 import silpaImg      from '../../assets/silpa_sastra.jpeg';
 import mudhraImg     from '../../assets/mudhra.jpeg';
@@ -16,6 +18,9 @@ import './SouthIndianIconography.css';
 
 const WA_URL =
   'https://wa.me/919390886029?text=Namaste%20%F0%9F%99%8F%20I%20would%20like%20to%20book%20a%20Consultation.';
+
+const OFFERING_COMING_SOON_MESSAGE =
+  'We are working on adding more information about this offering. Please check back soon for updates.';
 
 /* ── Reusable reveal wrapper ── */
 function Reveal({ children, delay = 0, className = '' }) {
@@ -115,9 +120,12 @@ function SiTable({ headers, rows }) {
 
 export default function SouthIndianIconography() {
   const [expanded, setExpanded] = useState(false);
+  const [comingSoonOpen, setComingSoonOpen] = useState(false);
+  // Temporary visibility switch — the complete expanded content stays below.
+  const detailsVisible = CONTENT_VISIBILITY.offerings.southIndianIconography;
 
   return (
-    <div className="si-section">
+    <div className="si-section" id="silpa-sastra">
 
       {/* ═══ PREVIEW / INTRO CARD ═══ */}
       <div className="si-preview">
@@ -150,10 +158,10 @@ export default function SouthIndianIconography() {
                 </div>
                 <div className="si-preview__btns">
                   <GoldenButton
-                    label={expanded ? 'Show Less ↑' : 'Read More →'}
+                    label={detailsVisible && expanded ? 'Show Less ↑' : 'Read More →'}
                     size="md"
                     noOrnaments
-                    onClick={() => setExpanded(!expanded)}
+                    onClick={() => (detailsVisible ? setExpanded(!expanded) : setComingSoonOpen(true))}
                   />
                   <GoldenButton
                     label="Book Consultation →"
@@ -171,7 +179,7 @@ export default function SouthIndianIconography() {
 
       {/* ═══ EXPANDED CONTENT ═══ */}
       <AnimatePresence>
-        {expanded && (
+        {detailsVisible && expanded && (
           <motion.div
             className="si-expanded"
             initial={{ opacity: 0, height: 0 }}
@@ -704,6 +712,15 @@ export default function SouthIndianIconography() {
           </motion.div>
         )}
       </AnimatePresence>
+
+      <ComingSoonModal
+        open={comingSoonOpen}
+        onClose={() => setComingSoonOpen(false)}
+        itemName="South Indian Iconography"
+        title="Details Coming Soon"
+        message={OFFERING_COMING_SOON_MESSAGE}
+        eyebrow="Sacred Offerings"
+      />
     </div>
   );
 }

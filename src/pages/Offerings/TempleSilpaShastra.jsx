@@ -2,6 +2,8 @@ import { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import GoldenButton from '../../components/common/GoldenButton.jsx';
+import ComingSoonModal from '../../components/common/ComingSoonModal.jsx';
+import { CONTENT_VISIBILITY } from '../../config/contentVisibility.js';
 import templeArchImg from '../../assets/temple_architecture.jpeg';
 import templesImg from '../../assets/temples.png';
 import navaraImg from '../../assets/navara.jpeg';
@@ -25,6 +27,9 @@ import './TempleSilpaShastra.css';
 
 const WA_URL =
   'https://wa.me/919390886029?text=Namaste%20%F0%9F%99%8F%20I%20would%20like%20to%20book%20a%20Consultation.';
+
+const OFFERING_COMING_SOON_MESSAGE =
+  'We are working on adding more information about this offering. Please check back soon for updates.';
 
 /* ───────────────────────────────────────────────────────────────────────
    REUSABLE BUILDING BLOCKS
@@ -542,8 +547,11 @@ const KHAJURAHO_POINTS = [
 
 export default function TempleSilpaShastra() {
   const [expanded, setExpanded] = useState(false);
+  const [comingSoonOpen, setComingSoonOpen] = useState(false);
   const sectionRef = useRef(null);
   const navigate = useNavigate();
+  // Temporary visibility switch — the full educational content stays below.
+  const detailsVisible = CONTENT_VISIBILITY.offerings.templeSilpaShastra;
 
   const handleReadLess = () => {
     setExpanded(false);
@@ -623,7 +631,7 @@ export default function TempleSilpaShastra() {
                 <button
                   type="button"
                   className="silpa-toggle silpa-toggle--read-more"
-                  onClick={() => setExpanded(true)}
+                  onClick={() => (detailsVisible ? setExpanded(true) : setComingSoonOpen(true))}
                 >
                   READ MORE <span className="silpa-toggle__arrow" aria-hidden="true">↓</span>
                 </button>
@@ -638,11 +646,11 @@ export default function TempleSilpaShastra() {
         </div>
       </div>
 
-      <div className={`silpa__shell${expanded ? ' silpa__shell--open' : ''}`}>
+      <div className={`silpa__shell${detailsVisible && expanded ? ' silpa__shell--open' : ''}`}>
 
         {/* ── EXPANDED EDUCATIONAL CONTENT ─────────────────────── */}
         <AnimatePresence initial={false}>
-          {expanded && (
+          {detailsVisible && expanded && (
             <motion.div
               key="silpa-content"
               className="silpa-expand"
@@ -1538,6 +1546,15 @@ export default function TempleSilpaShastra() {
         </AnimatePresence>
 
       </div>
+
+      <ComingSoonModal
+        open={comingSoonOpen}
+        onClose={() => setComingSoonOpen(false)}
+        itemName="Temple Śilpa Śāstra"
+        title="Details Coming Soon"
+        message={OFFERING_COMING_SOON_MESSAGE}
+        eyebrow="Sacred Offerings"
+      />
     </section>
   );
 }

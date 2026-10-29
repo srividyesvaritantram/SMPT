@@ -263,14 +263,13 @@
   image-rendering: -webkit-optimize-contrast;
 }
 
-/* Sri Vidyā — full deity visible, no crop, matches Narāyaṇī/Dhanvantari style */
+/* Sri Vidyā — full image fills card width edge-to-edge, natural height, no crop */
 .cp-feat-img--sri-vidya {
   width: 100%;
   height: auto;
-  min-height: 520px;
-  max-height: 620px;
-  object-fit: cover;
-  object-position: center 20%;
+  max-height: none;
+  object-fit: contain;
+  object-position: center;
   display: block;
   background: transparent;
   transition: transform 0.55s ease;
@@ -639,7 +638,6 @@
   .cp-featured { padding: 80px 36px 90px; }
   .cp-featured__grid { grid-template-columns: 1fr; gap: 48px; }
   .cp-feat-img-col { max-width: 560px; margin: 0 auto; width: 100%; }
-  .cp-feat-img--sri-vidya { min-height: 400px; max-height: 500px; }
 
   .cp-catalogue { padding: 72px 36px 88px; }
   .cp-catalogue__grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
@@ -653,7 +651,6 @@
   .cp-hero__btns { flex-direction: column; align-items: center; }
 
   .cp-featured { padding: 64px 18px 72px; }
-  .cp-feat-img--sri-vidya { min-height: 320px; max-height: 420px; }
   .cp-catalogue { padding: 64px 18px 72px; }
   .cp-catalogue__grid { grid-template-columns: 1fr; gap: 24px; }
   .cp-card__thumb { height: 260px; }
@@ -662,7 +659,6 @@
 @media (max-width: 400px) {
   .cp-hero__h1 { font-size: 26px; }
   .cp-hero__img { max-height: 68vw; }
-  .cp-feat-img--sri-vidya { min-height: 280px; }
   .cp-card__thumb { height: 220px; }
 }
 

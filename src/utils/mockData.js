@@ -1,5 +1,5 @@
 import mahavidyeswariImg from '../assets/mahavidyeswari.png';
-import sriVidyaImg    from '../assets/sri_vidya1.png';
+import sriVidyaImg    from '../assets/sri_vidya2.jpeg';
 import chandiImg      from '../assets/chandi.png';
 import shaivamImg     from '../assets/shaivam.png';
 import vaishnavamImg  from '../assets/vaishnavam_course.png';
@@ -14,8 +14,8 @@ export const courses = [
   { id: 'chandi-vidya',  title: 'Chandi Vidyā',   img: chandiImg,      path: '/courses/chandi-vidya',  desc: 'Chandi Vidya is the fierce, compassionate Shakti-path where Devi as Chandika destroys inner darkness and awakens courage, purity, protection, and spiritual transformation.' },
   { id: 'shaivam',       title: 'Shaivam',         img: shaivamImg,     path: '/courses/shaivam',       desc: 'Study the sacred traditions of Lord Shiva, including mantra, Agama, temple worship, meditation, and the deeper philosophy of Shaivism according to authentic Guru Parampara.' },
   { id: 'vaishnavam',    title: 'Vaishnavam',      img: vaishnavamImg,  path: '/courses/vaishnavam',    desc: 'Vaishnavam is the devotion-centered path of surrender to Lord Vishnu and His divine incarnations, cultivating dharma, devotion, compassion, and inner peace.' },
-  { id: 'ganapathyam',   title: 'Gāṇapatyam',     img: ganapathyamImg, path: '/courses/ganapathyam',   desc: 'Ganapati Tantram is the practical path of invoking Lord Ganesha to remove obstacles, sharpen intellect, and establish success through sacred mantra and disciplined worship.' },
-  { id: 'skaandam',      title: 'Skaandam',        img: skaandamImg,    path: '/courses/skaandam',      desc: 'Skaandam is the heroic path of Lord Skanda that awakens courage, discipline, wisdom, and victory over inner and outer obstacles.' },
+  { id: 'ganapatyam',   title: 'Gāṇapatyam',     img: ganapathyamImg, path: '/courses/ganapatyam',   desc: 'Ganapati Tantram is the practical path of invoking Lord Ganesha to remove obstacles, sharpen intellect, and establish success through sacred mantra and disciplined worship.' },
+  { id: 'skaandam',      title: 'Skaandam',        img: skaandamImg,    path: '/courses/skandam',      desc: 'Skaandam is the heroic path of Lord Skanda that awakens courage, discipline, wisdom, and victory over inner and outer obstacles.' },
 ];
 
 export const workshops = [

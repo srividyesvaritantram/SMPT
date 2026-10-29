@@ -1,8 +1,10 @@
+import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import Navbar from '../../components/navbar/Navbar.jsx';
 import GoldenButton from '../../components/common/GoldenButton.jsx';
 import ScrollReveal from '../../components/common/ScrollReveal.jsx';
+import ComingSoonModal from '../../components/common/ComingSoonModal.jsx';
 import govindaImg  from '../../assets/govinda.png';
 import { FooterSection } from '../Home/HomeSections.jsx';
 import astrologyImg from '../../assets/astrology.jpeg';
@@ -17,6 +19,9 @@ import './AstrologyPage.css';
 
 const WA_URL =
   'https://wa.me/919390886029?text=Namaste%20%F0%9F%99%8F%20I%20would%20like%20to%20book%20a%20Consultation.';
+
+const OFFERING_COMING_SOON_MESSAGE =
+  'We are working on adding more information about this offering. Please check back soon for updates.';
 
 const ASTROLOGY_CHECKLIST = [
   'Horoscope Analysis',
@@ -67,7 +72,22 @@ const ritualCards = [
 ];
 
 export default function AstrologyPage() {
-  const navigate = useNavigate();
+  const location = useLocation();
+  const [comingSoonOffering, setComingSoonOffering] = useState(null);
+
+  useEffect(() => {
+    const hash = location.hash.replace('#', '');
+    if (!hash) return;
+    const timer = window.setTimeout(() => {
+      const el = document.getElementById(hash);
+      if (!el) return;
+      const navbar = document.querySelector('nav.navbar');
+      const offset = navbar ? navbar.offsetHeight : 72;
+      const top = el.getBoundingClientRect().top + window.pageYOffset - offset - 18;
+      window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+    }, 280);
+    return () => window.clearTimeout(timer);
+  }, [location.hash]);
 
   return (
     <div className="aop-page">
@@ -314,7 +334,7 @@ export default function AstrologyPage() {
                       <GoldenButton
                         label="Know More"
                         outlined
-                        onClick={() => navigate(card.path)}
+                        onClick={() => setComingSoonOffering(card.title)}
                       />
                     </div>
                   </div>
@@ -384,6 +404,15 @@ export default function AstrologyPage() {
           FOOTER
       ═══════════════════════════════════════════════════════ */}
       <FooterSection />
+
+      <ComingSoonModal
+        open={Boolean(comingSoonOffering)}
+        onClose={() => setComingSoonOffering(null)}
+        itemName={comingSoonOffering}
+        title="Details Coming Soon"
+        message={OFFERING_COMING_SOON_MESSAGE}
+        eyebrow="Sacred Offerings"
+      />
 
     </div>
   );

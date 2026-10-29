@@ -1,0 +1,194 @@
+.cs-modal__backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 100000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(13, 2, 8, 0.72);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.cs-modal {
+  position: relative;
+  width: 100%;
+  max-width: 470px;
+  overflow: hidden;
+  padding: 44px 38px 36px;
+  text-align: center;
+  border: 1px solid rgba(212, 175, 55, 0.42);
+  border-radius: 20px;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.14), transparent 48%),
+    linear-gradient(160deg, rgba(59, 16, 32, 0.97), rgba(20, 6, 13, 0.98));
+  box-shadow:
+    0 34px 100px rgba(0, 0, 0, 0.52),
+    0 0 0 1px rgba(212, 175, 55, 0.06),
+    inset 0 1px 0 rgba(255, 247, 214, 0.08);
+}
+
+.cs-modal::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 72%;
+  height: 1px;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, transparent, rgba(232, 199, 106, 0.85), transparent);
+}
+
+.cs-modal__glow {
+  position: absolute;
+  top: -110px;
+  left: 50%;
+  width: 300px;
+  height: 220px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(232, 199, 106, 0.16), transparent 68%);
+  pointer-events: none;
+}
+
+.cs-modal__close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid rgba(232, 199, 106, 0.24);
+  border-radius: 50%;
+  background: rgba(255, 248, 238, 0.05);
+  color: #E8C76A;
+  font-size: 12px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.cs-modal__close:hover {
+  background: rgba(232, 199, 106, 0.14);
+  border-color: rgba(232, 199, 106, 0.52);
+  transform: rotate(90deg);
+}
+
+.cs-modal__ornament {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 74px;
+  height: 74px;
+  margin: 0 auto 18px;
+}
+
+.cs-modal__ornament-ring {
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(212, 175, 55, 0.38);
+  border-radius: 50%;
+  box-shadow: 0 0 28px rgba(212, 175, 55, 0.12);
+}
+
+.cs-modal__ornament-ring::before,
+.cs-modal__ornament-ring::after {
+  content: '';
+  position: absolute;
+  border: 1px solid rgba(212, 175, 55, 0.16);
+  border-radius: 50%;
+}
+
+.cs-modal__ornament-ring::before { inset: 8px; }
+.cs-modal__ornament-ring::after { inset: 16px; }
+
+.cs-modal__ornament-lotus {
+  position: relative;
+  z-index: 1;
+  font-size: 30px;
+  line-height: 1;
+  filter: drop-shadow(0 0 12px rgba(232, 199, 106, 0.18));
+}
+
+.cs-modal__eyebrow {
+  margin: 0 0 6px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: #B8A882;
+}
+
+.cs-modal__item {
+  margin: 0 0 10px;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  color: #E8C76A;
+}
+
+.cs-modal__title {
+  margin: 0;
+  font-size: clamp(22px, 4vw, 28px);
+  line-height: 1.3;
+  color: #F5EBDD;
+}
+
+.cs-modal__rule {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  max-width: 220px;
+  margin: 18px auto 20px;
+}
+
+.cs-modal__rule-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.52), transparent);
+}
+
+.cs-modal__rule-dot {
+  font-size: 10px;
+  color: #E8C76A;
+}
+
+.cs-modal__message {
+  margin: 0 auto 28px;
+  max-width: 360px;
+  font-size: 15.5px;
+  line-height: 1.8;
+  color: #D6C7B6;
+}
+
+.cs-modal__button {
+  min-width: 160px;
+  padding: 13px 32px;
+  border: 1px solid rgba(232, 199, 106, 0.72);
+  border-radius: 999px;
+  background: linear-gradient(135deg, #E8C76A, #C49A2C);
+  color: #2A0B16;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 6px 22px rgba(184, 134, 11, 0.24);
+}
+
+@media (max-width: 520px) {
+  .cs-modal__backdrop { padding: 16px; }
+
+  .cs-modal {
+    padding: 38px 22px 30px;
+    border-radius: 16px;
+  }
+
+  .cs-modal__message { font-size: 14.5px; }
+  .cs-modal__button { width: 100%; }
+}

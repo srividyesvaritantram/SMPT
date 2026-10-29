@@ -1,0 +1,100 @@
+.cup-page {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 50% 18%, rgba(184, 134, 11, 0.10), transparent 46%),
+    linear-gradient(180deg, #0D0208 0%, #1A0A10 58%, #0D0208 100%);
+}
+
+.cup-main {
+  min-height: 68vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 150px 24px 90px;
+}
+
+.cup-card {
+  width: 100%;
+  max-width: 620px;
+  text-align: center;
+  padding: 54px 38px 48px;
+  border: 1px solid rgba(184, 134, 11, 0.32);
+  border-radius: 6px;
+  background: linear-gradient(160deg, rgba(38, 12, 22, 0.94), rgba(16, 5, 11, 0.96));
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.42), inset 0 0 48px rgba(184, 134, 11, 0.04);
+}
+
+.cup-lotus {
+  display: block;
+  font-size: 44px;
+  line-height: 1;
+  margin-bottom: 18px;
+}
+
+.cup-eyebrow {
+  margin: 0 0 12px;
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #B8A882;
+}
+
+.cup-title {
+  margin: 0;
+  font-size: clamp(24px, 4vw, 34px);
+  line-height: 1.25;
+  color: #E8DDD0;
+}
+
+.cup-rule {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 22px auto;
+  max-width: 240px;
+}
+
+.cup-rule-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.55), transparent);
+}
+
+.cup-rule-dot {
+  font-size: 11px;
+  color: #E8C76A;
+}
+
+.cup-message {
+  margin: 0 auto 30px;
+  max-width: 460px;
+  font-size: 16px;
+  line-height: 1.8;
+  color: #C9BCA8;
+}
+
+.cup-back {
+  display: inline-block;
+  padding: 11px 24px;
+  border: 1px solid rgba(212, 175, 55, 0.58);
+  border-radius: 3px;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #E8C76A;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.cup-back:hover {
+  background: #B8860B;
+  border-color: #B8860B;
+  color: #1A0A10;
+}
+
+@media (max-width: 560px) {
+  .cup-main { padding: 125px 18px 70px; }
+  .cup-card { padding: 42px 22px 38px; }
+  .cup-message { font-size: 15px; }
+}

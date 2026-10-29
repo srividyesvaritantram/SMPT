@@ -1,0 +1,193 @@
+.admin404 {
+  position: relative;
+  display: flex;
+  min-height: 100vh;
+  min-height: 100svh;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 56px 24px 64px;
+  background:
+    radial-gradient(circle at 14% 16%, rgba(214, 205, 245, 0.42), transparent 31%),
+    radial-gradient(circle at 86% 20%, rgba(228, 222, 248, 0.55), transparent 28%),
+    linear-gradient(180deg, #F7F5FD 0%, #F3F0FC 58%, #F6F4FD 100%);
+  color: #252238;
+  isolation: isolate;
+}
+
+.admin404::before,
+.admin404::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  border: 1px solid rgba(174, 161, 221, 0.18);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.admin404::before {
+  top: -240px;
+  left: -220px;
+  width: 620px;
+  height: 620px;
+}
+
+.admin404::after {
+  right: -250px;
+  bottom: -320px;
+  width: 720px;
+  height: 720px;
+}
+
+.admin404__halo {
+  position: absolute;
+  z-index: -1;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(1px);
+}
+
+.admin404__halo--one {
+  top: 9%;
+  left: 50%;
+  width: min(680px, 86vw);
+  height: min(680px, 86vw);
+  transform: translateX(-50%);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.72), transparent 67%);
+}
+
+.admin404__halo--two {
+  right: 8%;
+  bottom: 10%;
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(circle, rgba(211, 201, 242, 0.24), transparent 68%);
+}
+
+.admin404__content {
+  position: relative;
+  display: flex;
+  width: 100%;
+  max-width: 720px;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  animation: admin404-enter 0.75s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+}
+
+.admin404__art {
+  width: min(620px, 88vw);
+  margin-bottom: 12px;
+}
+
+.admin404__art svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.admin404__browser {
+  transform-origin: 330px 192px;
+  animation: admin404-float 7s ease-in-out infinite;
+}
+
+.admin404__rider {
+  transform-origin: 340px 355px;
+  animation: admin404-ride 5.5s ease-in-out infinite;
+}
+
+.admin404__title {
+  margin: 0;
+  color: #252238;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  font-size: clamp(28px, 4.2vw, 42px);
+  font-weight: 650;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+}
+
+.admin404__description {
+  max-width: 540px;
+  margin: 16px auto 0;
+  color: #918DA0;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  font-size: clamp(14px, 1.65vw, 17px);
+  font-weight: 400;
+  line-height: 1.75;
+}
+
+body.admin-404-active .wa-fab {
+  display: none;
+}
+
+@keyframes admin404-enter {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes admin404-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+@keyframes admin404-ride {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-2.5px) rotate(-0.35deg); }
+}
+
+@media (max-width: 760px) {
+  .admin404 {
+    padding: 38px 20px 48px;
+  }
+
+  .admin404__art {
+    width: min(560px, 94vw);
+    margin-bottom: 6px;
+  }
+
+  .admin404__description {
+    max-width: 450px;
+    margin-top: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .admin404 {
+    padding: 28px 18px 38px;
+  }
+
+  .admin404__art {
+    width: min(430px, 100%);
+    margin-bottom: 2px;
+  }
+
+  .admin404__title {
+    font-size: 27px;
+  }
+
+  .admin404__description {
+    margin-top: 12px;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .admin404::before {
+    top: -330px;
+    left: -310px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .admin404__content,
+  .admin404__browser,
+  .admin404__rider {
+    animation: none;
+  }
+}

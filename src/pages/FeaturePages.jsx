@@ -8,6 +8,7 @@ import ScrollReveal from '../components/common/ScrollReveal.jsx';
 import { blogPosts, workshops, offerings, events } from '../utils/mockData.js';
 import { FiCalendar, FiClock, FiUsers, FiMapPin } from 'react-icons/fi';
 import RegisterModal from '../components/RegisterModal.jsx';
+import { CONTENT_VISIBILITY } from '../config/contentVisibility.js';
 import govindaImg from '../assets/govinda.png';
 import blogHeroImg from '../assets/blog_hero.png';
 import eventHeroImg from '../assets/event_hero.png';
@@ -1130,17 +1131,17 @@ export function EventsPage() {
       <div id="events-content">
 
         {/* ══ Śrāvaṇa Māsa — Mahā Lakṣmī Sādhana Vidhi · About Section ══ */}
-        <ShravanaMahaLakshmiAbout />
+        {CONTENT_VISIBILITY.events.shravanaMasa && <ShravanaMahaLakshmiAbout />}
 
         {/* ══ Śrāvaṇa Somavāra — Śiva Ārādhana & Śiva Abhiṣeka · About Section ══ */}
-        <ShravanaSomavaraAbout />
+        {CONTENT_VISIBILITY.events.shravanaSomavara && <ShravanaSomavaraAbout />}
 
         {/* ══ Śrāvaṇa Mangalavāra — Mangala Gaurī Vratam · About Section ══ */}
-        <ShravanaMangalaGauriAbout />
+        {CONTENT_VISIBILITY.events.shravanaMangalavara && <ShravanaMangalaGauriAbout />}
 
         {/* ══ SECTION 2 · DEVOTIONAL GUIDANCE CARDS — separate section, below the
              complete MANGALA GAURĪ VRATAM section, outside its Read More content ══ */}
-        <MangalaGauriGuidance />
+        {CONTENT_VISIBILITY.events.shravanaMangalavara && <MangalaGauriGuidance />}
 
         {/* ══ Upcoming Divine Events — two premium panels ══ */}
         <ScrollReveal direction="up" duration={0.85}>
@@ -1242,7 +1243,7 @@ export function EventsPage() {
         </ScrollReveal>
 
         {/* ─── Śrāvaṇa 2026 Sacred Events — date-wise event cards ─── */}
-        <Shravana2026Events />
+        {CONTENT_VISIBILITY.events.shravana2026Schedule && <Shravana2026Events />}
 
         {/* ─── Past Divine Events ─── */}
         <section className="upcoming-divine-events" id="past-divine-events">
@@ -1260,7 +1261,10 @@ export function EventsPage() {
             </ScrollReveal>
 
             <div className="upcoming-divine-events__grid">
-              {COMPLETED_DIVINE_EVENTS.sort((a, b) => b.sortDate.localeCompare(a.sortDate)).map((event) => (
+              {COMPLETED_DIVINE_EVENTS
+                .filter((event) => CONTENT_VISIBILITY.events.completedEvents[event.id] !== false)
+                .sort((a, b) => b.sortDate.localeCompare(a.sortDate))
+                .map((event) => (
                 <motion.div
                   key={event.id}
                   className="udiv-panel"
@@ -1352,52 +1356,56 @@ export function EventsPage() {
 
 
 
-        {/* Filters */}
-        <div className="events-filters">
-          <div className="events-tabs">
-            {['Upcoming', 'Past Events'].map((t, i) => (
-              <button key={t} className={`events-tab ${tab === i ? 'events-tab--active' : ''}`} onClick={() => setTab(i)}>{t}</button>
-            ))}
-          </div>
-          <div className="events-filter-chips">
-            {eventFilters.map((f, i) => (
-              <motion.button key={f} className={`filter-chip ${filter === i ? 'filter-chip--active' : ''}`} onClick={() => setFilter(i)} whileTap={{ scale: 0.95 }}>{f}</motion.button>
-            ))}
-          </div>
-        </div>
+        {CONTENT_VISIBILITY.events.comingSoonEvents && (
+          <>
+            {/* Filters */}
+            <div className="events-filters">
+              <div className="events-tabs">
+                {['Upcoming', 'Past Events'].map((t, i) => (
+                  <button key={t} className={`events-tab ${tab === i ? 'events-tab--active' : ''}`} onClick={() => setTab(i)}>{t}</button>
+                ))}
+              </div>
+              <div className="events-filter-chips">
+                {eventFilters.map((f, i) => (
+                  <motion.button key={f} className={`filter-chip ${filter === i ? 'filter-chip--active' : ''}`} onClick={() => setFilter(i)} whileTap={{ scale: 0.95 }}>{f}</motion.button>
+                ))}
+              </div>
+            </div>
 
-        {/* Events Grid */}
-        <div className="events-grid">
-          {events.map((event, i) => (
-            <ScrollReveal key={event.id} delay={i * 0.08}>
-              <motion.div className="event-card" whileHover={{ y: -6, boxShadow: '0 0 28px rgba(184,134,11,0.3)' }}>
-                <div className="event-card__thumb" style={{ background: `linear-gradient(135deg, ${event.gradientColors[0]}, ${event.gradientColors[1]})` }}>
-                  <span style={{ fontSize: 56 }}>{event.emoji}</span>
-                  <div className="event-card__type-badge" style={{ background: '#6B1026' }}>
-                    
-                    COMING SOON
-                  </div>
-                  
-                </div>
-                <div className="event-card__body">
-                  <h3 className="event-card__title">{event.title}</h3>
-                  <p className="event-card__desc">{event.description}</p>
-                  <div className="event-card__meta">
-                    <span><FiCalendar size={12} color="#E8C76A" /> {event.date}</span>
-                    <span><FiClock size={12} /> {event.time}</span>
-                  </div>
-                  <div className="event-card__footer">
-                    <span style={{ color: event.seats < 20 ? '#FF9800' : '#B8A882', fontSize: 12 }}>
-                      <FiUsers size={12} /> {event.seats} seats left
-                    </span>
-                    {!event.isFree && <span style={{ color: '#E8C76A', fontWeight: 700, fontSize: 14 }}>{event.price}</span>}
-                  </div>
-                  <GoldenButton label="Coming Soon" width="100%" style={{ marginTop: 16, opacity: 0.55, pointerEvents: 'none' }} />
-                </div>
-              </motion.div>
-            </ScrollReveal>
-          ))}
-        </div>
+            {/* Events Grid */}
+            <div className="events-grid">
+              {events.map((event, i) => (
+                <ScrollReveal key={event.id} delay={i * 0.08}>
+                  <motion.div className="event-card" whileHover={{ y: -6, boxShadow: '0 0 28px rgba(184,134,11,0.3)' }}>
+                    <div className="event-card__thumb" style={{ background: `linear-gradient(135deg, ${event.gradientColors[0]}, ${event.gradientColors[1]})` }}>
+                      <span style={{ fontSize: 56 }}>{event.emoji}</span>
+                      <div className="event-card__type-badge" style={{ background: '#6B1026' }}>
+                        
+                        COMING SOON
+                      </div>
+                      
+                    </div>
+                    <div className="event-card__body">
+                      <h3 className="event-card__title">{event.title}</h3>
+                      <p className="event-card__desc">{event.description}</p>
+                      <div className="event-card__meta">
+                        <span><FiCalendar size={12} color="#E8C76A" /> {event.date}</span>
+                        <span><FiClock size={12} /> {event.time}</span>
+                      </div>
+                      <div className="event-card__footer">
+                        <span style={{ color: event.seats < 20 ? '#FF9800' : '#B8A882', fontSize: 12 }}>
+                          <FiUsers size={12} /> {event.seats} seats left
+                        </span>
+                        {!event.isFree && <span style={{ color: '#E8C76A', fontWeight: 700, fontSize: 14 }}>{event.price}</span>}
+                      </div>
+                      <GoldenButton label="Coming Soon" width="100%" style={{ marginTop: 16, opacity: 0.55, pointerEvents: 'none' }} />
+                    </div>
+                  </motion.div>
+                </ScrollReveal>
+              ))}
+            </div>
+          </>
+        )}
       </div>{/* end events-content */}
 
       {/* ══ CTA — Join Our Upcoming Spiritual Events ══ */}
