@@ -1,45 +1,34 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-
-  // Ensures assets are referenced from the root — required for Hostinger shared hosting
   base: '/',
 
   build: {
-    // Output directory (GitHub Actions will upload this to Hostinger public_html)
     outDir: 'dist',
-
-    // Generate smaller, cache-friendly chunks
-    rollupOptions: {
-      output: {
-        manualChunks(id) {
-          if (id.includes('node_modules')) {
-            if (id.includes('react') || id.includes('react-dom') || id.includes('react-router-dom')) {
-              return 'vendor';
-            }
-            if (id.includes('@mui') || id.includes('@emotion')) {
-              return 'ui';
-            }
-            if (id.includes('framer-motion') || id.includes('gsap')) {
-              return 'motion';
-            }
-          }
-        },
-      },
-    },
   },
 
   server: {
+    host: '0.0.0.0',
     port: 5173,
-    // Proxy API calls to local Spring Boot during development
+
+    // Hostinger preview domain (explicit allowlist; localhost is always allowed)
+    allowedHosts: ['mh1wxgi4qz.c40.airoapp.ai'],
+
     proxy: {
       '/api': {
         target: 'http://localhost:8080',
         changeOrigin: true,
       },
     },
+  },
+
+  preview: {
+    host: '0.0.0.0',
+    port: 4173,
+
+    // Same allowlist for `vite preview`, in case the preview proxies the built build
+    allowedHosts: ['mh1wxgi4qz.c40.airoapp.ai'],
   },
 })
