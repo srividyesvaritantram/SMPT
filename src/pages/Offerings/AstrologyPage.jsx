@@ -1,10 +1,9 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import Navbar from '../../components/navbar/Navbar.jsx';
 import GoldenButton from '../../components/common/GoldenButton.jsx';
 import ScrollReveal from '../../components/common/ScrollReveal.jsx';
-import ComingSoonModal from '../../components/common/ComingSoonModal.jsx';
 import govindaImg  from '../../assets/govinda.png';
 import { FooterSection } from '../Home/HomeSections.jsx';
 import astrologyImg from '../../assets/astrology.jpeg';
@@ -19,9 +18,6 @@ import './AstrologyPage.css';
 
 const WA_URL =
   'https://wa.me/919390886029?text=Namaste%20%F0%9F%99%8F%20I%20would%20like%20to%20book%20a%20Consultation.';
-
-const OFFERING_COMING_SOON_MESSAGE =
-  'We are working on adding more information about this offering. Please check back soon for updates.';
 
 const ASTROLOGY_CHECKLIST = [
   'Horoscope Analysis',
@@ -73,7 +69,7 @@ const ritualCards = [
 
 export default function AstrologyPage() {
   const location = useLocation();
-  const [comingSoonOffering, setComingSoonOffering] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const hash = location.hash.replace('#', '');
@@ -334,7 +330,7 @@ export default function AstrologyPage() {
                       <GoldenButton
                         label="Know More"
                         outlined
-                        onClick={() => setComingSoonOffering(card.title)}
+                        onClick={() => navigate(card.path)}
                       />
                     </div>
                   </div>
@@ -404,15 +400,6 @@ export default function AstrologyPage() {
           FOOTER
       ═══════════════════════════════════════════════════════ */}
       <FooterSection />
-
-      <ComingSoonModal
-        open={Boolean(comingSoonOffering)}
-        onClose={() => setComingSoonOffering(null)}
-        itemName={comingSoonOffering}
-        title="Details Coming Soon"
-        message={OFFERING_COMING_SOON_MESSAGE}
-        eyebrow="Sacred Offerings"
-      />
 
     </div>
   );

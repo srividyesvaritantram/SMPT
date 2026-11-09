@@ -2,9 +2,12 @@ import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { FiPlay, FiArrowDown } from 'react-icons/fi';
 import GoldenButton from '../../components/common/GoldenButton.jsx';
-import heroImg from '../../assets/home-hero.jpeg';
 import logoImg from '../../assets/logo.png';
 import './HeroSection.css';
+
+// Hero image is bundled through Vite's public assets directory so it is
+// copied into the production build at /assets/home-hero.jpeg.
+const heroImg = '/assets/home-hero.jpeg';
 
 const stats = [
   { value: '25+',  label: 'Sacred Courses' },

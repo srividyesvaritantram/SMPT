@@ -27,10 +27,12 @@ export const CONTENT_VISIBILITY = {
   admin: false,
 
   // ── Courses — detail views ───────────────────────────────────────────────
+  // Only Shaivam is open for now. Every other course card and route remains
+  // in the code, exactly as before, and can be restored independently.
   courses: {
     sriVidya: false,
     chandiVidya: false,
-    shaivam: false,
+    shaivam: true,
     vaishnavam: false,
     ganapatyam: false,
     skaandam: false,
@@ -42,31 +44,34 @@ export const CONTENT_VISIBILITY = {
 
   // ── Offerings — detail views / expandable sections ───────────────────────
   offerings: {
-    templeSilpaShastra: false,
-    southIndianIconography: false,
-    homas: false,
-    archana: false,
-    abhishekam: false,
-    yantraPuja: false,
+    templeSilpaShastra: true,
+    southIndianIconography: true,
+    homas: true,
+    archana: true,
+    abhishekam: true,
+    yantraPuja: true,
   },
 
   // ── Events — card sections ───────────────────────────────────────────────
   events: {
     // Three Śrāvaṇa event previews shown on the Events page.
-    shravanaMasa: false,
-    shravanaSomavara: false,
-    shravanaMangalavara: false,
+    shravanaMasa: true,
+    shravanaSomavara: true,
+    shravanaMangalavara: true,
 
     // Additional event-card collections on the Events page. These remain in
     // the code and can be switched back on independently.
-    shravana2026Schedule: false,
+    shravana2026Schedule: true,
+    // Legacy placeholder grid ("Coming Soon" cards with no dates/details).
+    // Kept in the code for later restoration, but not shown because it does
+    // not contain real event content.
     comingSoonEvents: false,
 
     // Individual cards in the "Past Divine Events" grid.
     completedEvents: {
       panchami: true, // Vārāhī Ammavaru
       gajanana: true, // Gajānana Sankata Hara Chaturthi
-      navaratri: false,
+      navaratri: true,
     },
   },
 };

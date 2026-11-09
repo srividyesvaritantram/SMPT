@@ -50,9 +50,9 @@ function SilpaReveal({ children, delay = 0, className = '' }) {
 }
 
 /* Alternating maroon / cream content block.
-   Headings stay sharp and readable; the detailed body is wrapped in a
-   premium locked panel so the deeper knowledge is reserved for the Guru. */
-function SilpaBlock({ tone = 'maroon', eyebrow, title, subtitle, children, wide = false, locked = true }) {
+   The complete educational body is shown in full. The optional locked
+   presentation is preserved for future use but is not applied here. */
+function SilpaBlock({ tone = 'maroon', eyebrow, title, subtitle, children, wide = false, locked = false }) {
   const hasHead = Boolean(eyebrow || title || subtitle);
   return (
     <div className={`silpa-block silpa-block--${tone}`}>

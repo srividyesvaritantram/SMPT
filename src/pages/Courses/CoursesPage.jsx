@@ -360,7 +360,11 @@ export default function CoursesPage() {
                     <GoldenButton
                       label="Know More"
                       size="md"
-                      onClick={() => setComingSoonCourse(card.title)}
+                      onClick={() =>
+                        card.id === 'shaivam'
+                          ? navigate(card.path)
+                          : setComingSoonCourse(card.title)
+                      }
                     />
                   </div>
                 </motion.div>

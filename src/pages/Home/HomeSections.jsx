@@ -1431,7 +1431,7 @@ const footerLinks = [
     title: 'Offerings',
     links: [
       { label: 'Astrology',           href: '/offerings/astrology' },
-      { label: 'Temple Śilpa Śāstra', href: '/offerings/temple-shilpa-sastra' },
+      { label: 'Temple Śilpa Śāstra', href: '/offerings#temple-silpa-sastra' },
       { label: 'Homas',               href: '/offerings/homas' },
       { label: 'Archana',             href: '/offerings/archana' },
       { label: 'Abhishekam',          href: '/offerings/abhishekam' },
