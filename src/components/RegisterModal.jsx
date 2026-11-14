@@ -31,7 +31,7 @@ export default function RegisterModal({ open, onClose }) {
           className="reg-modal__backdrop"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
+          exit={{ opacity: 0, pointerEvents: 'none' }}
           transition={{ duration: 0.25 }}
           onClick={onClose}
         >

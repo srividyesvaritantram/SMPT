@@ -1,26 +1,21 @@
-import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../../components/navbar/Navbar.jsx';
 import GoldenButton from '../../components/common/GoldenButton.jsx';
 import ScrollReveal from '../../components/common/ScrollReveal.jsx';
-import ComingSoonModal from '../../components/common/ComingSoonModal.jsx';
 import { FooterSection } from '../Home/HomeSections.jsx';
-import saraswathiImg      from '../../assets/saraswathi_devi.png';
-import chandImg           from '../../assets/chandi.png';
-import shaivamImg         from '../../assets/shaivam.png';
-import vaishImg           from '../../assets/vaishnavam_course.png';
-import skaanImg           from '../../assets/skaandam_course.png';
-import ganapathyamImg     from '../../assets/ganapathyam.png';
+import saraswathiImg      from '../../assets/saraswathi_devi.opt.jpg';
+import chandImg           from '../../assets/chandi.opt.jpg';
+import shaivamImg         from '../../assets/shaivam.opt.jpg';
+import vaishImg           from '../../assets/vaishnavam_course.opt.jpg';
+import skaanImg           from '../../assets/skaandam_course.opt.jpg';
+import ganapathyamImg     from '../../assets/ganapathyam.opt.jpg';
 import shaktamImg         from '../../assets/bhuvaneswari.jpeg';
 import suryaImg           from '../../assets/surya.jpeg';
-import logoImg from '../../assets/logo.png';
+import logoImg from '../../assets/logo.opt.webp';
 import './CoursesPage.css';
 
 const WA_URL = 'https://wa.me/919390886029?text=Namaste%20%F0%9F%99%8F%0A%0AI%20would%20like%20to%20enroll%20in%20a%20course%20at%20Sri%20MahaVidyesvari%20Tantra%20Peetham.';
-
-const COURSE_COMING_SOON_MESSAGE =
-  'We are preparing more information about this Vidya. Please check back soon for updates.';
 
 function CpLotusDivider({ id = 'cp-lotus', variant = 'cream' }) {
   return (
@@ -123,7 +118,6 @@ const ALL_COURSES = [
 
 export default function CoursesPage() {
   const navigate = useNavigate();
-  const [comingSoonCourse, setComingSoonCourse] = useState(null);
 
   return (
     <div className="cp-page">
@@ -300,7 +294,7 @@ export default function CoursesPage() {
                   <GoldenButton
                     label="Know More"
                     size="lg"
-                    onClick={() => setComingSoonCourse('Sri Vidyā')}
+                    onClick={() => navigate('/courses/sri-vidya')}
                   />
                 </div>
 
@@ -360,11 +354,7 @@ export default function CoursesPage() {
                     <GoldenButton
                       label="Know More"
                       size="md"
-                      onClick={() =>
-                        card.id === 'shaivam'
-                          ? navigate(card.path)
-                          : setComingSoonCourse(card.title)
-                      }
+                      onClick={() => navigate(card.path)}
                     />
                   </div>
                 </motion.div>
@@ -432,15 +422,6 @@ export default function CoursesPage() {
       </section>
 
       <FooterSection />
-
-      <ComingSoonModal
-        open={Boolean(comingSoonCourse)}
-        onClose={() => setComingSoonCourse(null)}
-        itemName={comingSoonCourse}
-        title="More Details Coming Soon"
-        message={COURSE_COMING_SOON_MESSAGE}
-        eyebrow="Sacred Courses"
-      />
 
     </div>
   );

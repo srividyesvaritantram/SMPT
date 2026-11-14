@@ -8,18 +8,18 @@ import soubhagyaImg from '../../assets/soubhagya.jpeg';
 import bhuamaImg from '../../assets/bhuama.jpeg';
 import homaImg from '../../assets/homa.jpeg';
 
-import sriVidyaImg from '../../assets/sri_vidya.png';
-import chandiImg from '../../assets/chandi.png';
-import shaivamImg from '../../assets/shaivam.png';
-import vaishnavamImg from '../../assets/vaishnavam.png';
-import skaandamImg from '../../assets/skaandam.png';
-import sauramImg from '../../assets/sauram.png';
-import ashtaLakshmiImg from '../../assets/ashta_lakshmi_vidya.png';
-import dasaMahaVidyasImg from '../../assets/dasa_maha_vidyas.png';
-import fundamentalsImg from '../../assets/fundamentals_of_tantra.png';
-import kshipraGanapatiImg from '../../assets/kshipra_ganapati.png';
-import completeChakraImg from '../../assets/complete_chakra_course.png';
-import ayyappaVidyaImg from '../../assets/ayyappa_vidya.png';
+import sriVidyaImg from '../../assets/sri_vidya.opt.jpg';
+import chandiImg from '../../assets/chandi.opt.jpg';
+import shaivamImg from '../../assets/shaivam.opt.jpg';
+import vaishnavamImg from '../../assets/vaishnavam.opt.jpg';
+import skaandamImg from '../../assets/skaandam.opt.jpg';
+import sauramImg from '../../assets/sauram.opt.jpg';
+import ashtaLakshmiImg from '../../assets/ashta_lakshmi_vidya.opt.jpg';
+import dasaMahaVidyasImg from '../../assets/dasa_maha_vidyas.opt.jpg';
+import fundamentalsImg from '../../assets/fundamentals_of_tantra.opt.jpg';
+import kshipraGanapatiImg from '../../assets/kshipra_ganapati.opt.jpg';
+import completeChakraImg from '../../assets/complete_chakra_course.opt.jpg';
+import ayyappaVidyaImg from '../../assets/ayyappa_vidya.opt.jpg';
 
 export const formatINR = (value) =>
   '₹' + Number(value).toLocaleString('en-IN');

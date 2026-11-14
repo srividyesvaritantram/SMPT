@@ -1,0 +1,1 @@
+var e=`/assets/bhuvaneswari-DDwnmZ3m.jpeg`;export{e as t};

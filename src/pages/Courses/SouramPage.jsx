@@ -10,7 +10,7 @@ import surya2Img from '../../assets/surya2.jpeg';
 import surya3Img from '../../assets/surya3.jpeg';
 import surya4Img from '../../assets/surya4.jpeg';
 import surya5Img from '../../assets/surya5.jpeg';
-import logoImg from '../../assets/logo.png';
+import logoImg from '../../assets/logo.opt.webp';
 import './SouramPage.css';
 
 const NAV_SECTIONS = [

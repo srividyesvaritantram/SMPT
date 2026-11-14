@@ -38,7 +38,9 @@ export default function ComingSoonModal({
           className="cs-modal__backdrop"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
+          /* While fading out the backdrop must not intercept the visitor's
+             next click — otherwise a second click is needed to navigate. */
+          exit={{ opacity: 0, pointerEvents: 'none' }}
           transition={{ duration: 0.24 }}
           onClick={onClose}
         >

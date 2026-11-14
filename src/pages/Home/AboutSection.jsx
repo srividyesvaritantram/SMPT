@@ -3,8 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import ScrollReveal from '../../components/common/ScrollReveal.jsx';
 import GoldenButton from '../../components/common/GoldenButton.jsx';
 import { FiEye, FiCompass } from 'react-icons/fi';
-import sriMahadeviImg from '../../assets/sri_mahadevi.png';
-import logoImg from '../../assets/logo.png';
+import sriMahadeviImg from '../../assets/sri_mahadevi.opt.jpg';
+import logoImg from '../../assets/logo.opt.webp';
 import './AboutSection.css';
 
 export default function AboutSection() {

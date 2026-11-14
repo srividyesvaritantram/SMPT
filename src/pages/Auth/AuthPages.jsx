@@ -5,7 +5,7 @@ import { FiEye, FiEyeOff, FiMail, FiLock, FiUser } from 'react-icons/fi';
 import GlassCard from '../../components/common/GlassCard.jsx';
 import GoldenButton from '../../components/common/GoldenButton.jsx';
 import GoldenParticleBackground from '../../components/common/GoldenParticleBackground.jsx';
-import logoImg from '../../assets/logo.png';
+import logoImg from '../../assets/logo.opt.webp';
 import './AuthPages.css';
 
 export function LoginPage() {

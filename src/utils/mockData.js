@@ -1,11 +1,11 @@
-import mahavidyeswariImg from '../assets/mahavidyeswari.png';
+import mahavidyeswariImg from '../assets/mahavidyeswari.opt.jpg';
 import sriVidyaImg    from '../assets/sri_vidya2.jpeg';
-import chandiImg      from '../assets/chandi.png';
-import shaivamImg     from '../assets/shaivam.png';
-import vaishnavamImg  from '../assets/vaishnavam_course.png';
-import ganapathyamImg from '../assets/ganapathyam.png';
-import skaandamImg    from '../assets/skaandam_course.png';
-import blogHeroImg    from '../assets/blog_hero.png';
+import chandiImg      from '../assets/chandi.opt.jpg';
+import shaivamImg     from '../assets/shaivam.opt.jpg';
+import vaishnavamImg  from '../assets/vaishnavam_course.opt.jpg';
+import ganapathyamImg from '../assets/ganapathyam.opt.jpg';
+import skaandamImg    from '../assets/skaandam_course.opt.jpg';
+import blogHeroImg    from '../assets/blog_hero.opt.jpg';
 
 const img = mahavidyeswariImg;
 

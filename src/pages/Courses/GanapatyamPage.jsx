@@ -8,7 +8,7 @@ import { FooterSection } from '../Home/HomeSections.jsx';
 import heroImg from '../../assets/ganapathy2.jpeg';
 import ganapathyaImg from '../../assets/ganapathya.jpeg';
 import balaGanapathiImg from '../../assets/bala_ganapathi.jpeg';
-import logoImg from '../../assets/logo.png';
+import logoImg from '../../assets/logo.opt.webp';
 import './GanapatyamPage.css';
 
 const NAV_SECTIONS = [

@@ -1,0 +1,1 @@
+var e=`/assets/govinda.opt-euI6znNo.jpg`;export{e as t};

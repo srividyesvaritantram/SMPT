@@ -1,0 +1,1 @@
+var e=`/assets/surya-DBeUX4_C.jpeg`;export{e as t};

@@ -4,7 +4,7 @@ import { FiGrid, FiPlay, FiAward, FiBookmark, FiDownload, FiCreditCard, FiSettin
 import Navbar from '../../components/navbar/Navbar.jsx';
 import GlassCard from '../../components/common/GlassCard.jsx';
 import GoldenButton from '../../components/common/GoldenButton.jsx';
-import logoImg from '../../assets/logo.png';
+import logoImg from '../../assets/logo.opt.webp';
 import './DashboardPage.css';
 
 const sidebarItems = [

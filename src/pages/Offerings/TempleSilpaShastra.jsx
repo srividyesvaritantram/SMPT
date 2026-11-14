@@ -5,7 +5,7 @@ import GoldenButton from '../../components/common/GoldenButton.jsx';
 import ComingSoonModal from '../../components/common/ComingSoonModal.jsx';
 import { CONTENT_VISIBILITY } from '../../config/contentVisibility.js';
 import templeArchImg from '../../assets/temple_architecture.jpeg';
-import templesImg from '../../assets/temples.png';
+import templesImg from '../../assets/temples.opt.jpg';
 import navaraImg from '../../assets/navara.jpeg';
 import nagaraImg from '../../assets/nagara.jpeg';
 import kajarahoImg from '../../assets/kajaraho.jpeg';

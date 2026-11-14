@@ -10,7 +10,7 @@ import skandam2Img from '../../assets/skandam2.jpeg';
 import skandam3Img from '../../assets/skandam3.jpeg';
 import skandam5Img from '../../assets/skandam5.jpeg';
 import skandam6Img from '../../assets/skandam6.jpeg';
-import logoImg from '../../assets/logo.png';
+import logoImg from '../../assets/logo.opt.webp';
 import './SkandamPage.css';
 
 const NAV_SECTIONS = [

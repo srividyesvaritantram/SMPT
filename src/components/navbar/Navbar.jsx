@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { FiSearch, FiMenu, FiChevronDown, FiSettings } from 'react-icons/fi';
 import Dropdown from './Dropdown.jsx';
 import MobileDrawer from './MobileDrawer.jsx';
-import logoImg from '../../assets/logo.png';
+import logoImg from '../../assets/logo.opt.webp';
 import { CONTENT_VISIBILITY } from '../../config/contentVisibility.js';
 import './Navbar.css';
 

@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { FiPlay, FiArrowDown } from 'react-icons/fi';
 import GoldenButton from '../../components/common/GoldenButton.jsx';
-import logoImg from '../../assets/logo.png';
+import logoImg from '../../assets/logo.opt.webp';
 import './HeroSection.css';
 
 // Hero image is bundled through Vite's public assets directory so it is
@@ -33,6 +33,9 @@ export default function HeroSection() {
         src={heroImg}
         alt="Sri Mahavidyesvari"
         className="hero__bg-img"
+        loading="eager"
+        decoding="async"
+        fetchPriority="high"
       />
 
       {/* ── SOFT LEFT-SIDE READABILITY GRADIENT (fades to transparent at ~40%) ── */}

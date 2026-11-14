@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FiClock, FiPlay, FiMonitor, FiAward, FiArrowLeft, FiRepeat } from 'react-icons/fi';
 import { FaStar } from 'react-icons/fa';
@@ -14,9 +14,13 @@ const sections = ['Introduction to Sri Vidya', 'Mantra Initiation', 'Sri Chakra 
 
 export default function CourseDetailPage() {
   const { id } = useParams();
+  const { pathname } = useLocation();
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState(0);
-  const course = courses.find((c) => c.id === id) || courses[1];
+  // The dedicated `/courses/sri-vidya` route has no `:id` param, so fall back
+  // to the last URL segment before defaulting. Never show another course's data.
+  const slug = id || pathname.split('/').filter(Boolean).pop();
+  const course = courses.find((c) => c.id === slug) || courses[0];
 
   return (
     <div className="course-detail">
@@ -30,7 +34,7 @@ export default function CourseDetailPage() {
             </button>
             <span className="course-detail__category">{course.category?.toUpperCase()}</span>
             <h1 className="course-detail__title font-cinzel">{course.title}</h1>
-            <p className="course-detail__desc">A comprehensive journey into the sacred science of Sri Vidya, covering Panchadashi Mantra, Sri Chakra, and advanced Upasana.</p>
+            <p className="course-detail__desc">{course.desc}</p>
             <div className="course-detail__ctas">
               <GoldenButton label={course.isFree ? 'ENROLL FREE' : `ENROLL NOW — ₹${course.price}`} icon={FiPlay} />
               <GoldenButton label="FREE PREVIEW" outlined onClick={() => navigate('/watch/preview')} />

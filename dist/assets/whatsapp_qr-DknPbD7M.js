@@ -1,0 +1,1 @@
+var e=`/assets/whatsapp_qr-C5M6eMPx.jpeg`;export{e as t};

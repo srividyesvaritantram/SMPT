@@ -1,0 +1,78 @@
+/* ═══════════════════════════════════════════════════════════════════════
+   SRI MAHAVIDYESVARI — SITE WATERMARK
+   A very subtle, non-interactive brand layer that sits above page content
+   but below the navbar, modals and floating action buttons.
+═══════════════════════════════════════════════════════════════════════ */
+
+.site-watermark {
+  position: fixed;
+  inset: 0;
+  z-index: 2;
+  overflow: hidden;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Repeating seal pattern, softly rotated */
+.site-watermark__pattern {
+  position: absolute;
+  inset: -28%;
+  background-repeat: repeat;
+  background-size: 340px auto;
+  opacity: 0.022;
+  transform: rotate(-12deg);
+  transform-origin: center;
+}
+
+/* Large centred seal */
+.site-watermark__emblem {
+  position: absolute;
+  top: 38%;
+  left: 50%;
+  width: min(62vmin, 700px);
+  aspect-ratio: 360 / 203;
+  transform: translate(-50%, -50%);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  opacity: 0.032;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .site-watermark__pattern {
+    background-size: 290px auto;
+  }
+
+  .site-watermark__emblem {
+    width: min(68vmin, 560px);
+  }
+}
+
+/* Mobile — fewer, larger repeats so the mark never clutters small screens */
+@media (max-width: 768px) {
+  .site-watermark__pattern {
+    background-size: 230px auto;
+    opacity: 0.018;
+  }
+
+  .site-watermark__emblem {
+    top: 30%;
+    width: min(78vmin, 420px);
+    opacity: 0.028;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-watermark__pattern {
+    background-size: 190px auto;
+  }
+}
+
+/* Never print the decorative layer */
+@media print {
+  .site-watermark {
+    display: none;
+  }
+}

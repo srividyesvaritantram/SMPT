@@ -9,7 +9,7 @@ import heroImg from '../../assets/shaivam4.jpeg';
 import shaivam5Img from '../../assets/shaivam5.jpeg';
 import shaivam2Img from '../../assets/shaivam2.jpeg';
 import shaivam3Img from '../../assets/shaivam3.jpeg';
-import logoImg from '../../assets/logo.png';
+import logoImg from '../../assets/logo.opt.webp';
 import './ShaivamPage.css';
 
 const NAV_SECTIONS = [

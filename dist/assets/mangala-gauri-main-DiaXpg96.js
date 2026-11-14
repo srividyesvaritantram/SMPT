@@ -1,0 +1,1 @@
+var e=`/assets/mangala-gauri-main-ChPH29cT.jpeg`;export{e as t};

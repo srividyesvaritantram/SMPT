@@ -9,7 +9,7 @@ import heroImg from '../../assets/bhuvaneswari.jpeg';
 import shaktam1Img from '../../assets/shaktham1.jpeg';
 import shaktam2Img from '../../assets/shaktham2.jpeg';
 import shaktam3Img from '../../assets/shaktham3.jpeg';
-import logoImg from '../../assets/logo.png';
+import logoImg from '../../assets/logo.opt.webp';
 import './ShaktamPage.css';
 
 const NAV_SECTIONS = [

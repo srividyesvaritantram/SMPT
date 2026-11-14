@@ -27,19 +27,20 @@ export const CONTENT_VISIBILITY = {
   admin: false,
 
   // ── Courses — detail views ───────────────────────────────────────────────
-  // Only Shaivam is open for now. Every other course card and route remains
-  // in the code, exactly as before, and can be restored independently.
+  // Every course now has real detail content in the project, so all detail
+  // views are open. Set an individual flag to false to hide it again without
+  // deleting any content.
   courses: {
-    sriVidya: false,
-    chandiVidya: false,
+    sriVidya: true,
+    chandiVidya: true,
     shaivam: true,
-    vaishnavam: false,
-    ganapatyam: false,
-    skaandam: false,
-    shaktam: false,
-    souram: false,
+    vaishnavam: true,
+    ganapatyam: true,
+    skaandam: true,
+    shaktam: true,
+    souram: true,
     // Used by the /courses/:id catch-all route.
-    wildcardDetail: false,
+    wildcardDetail: true,
   },
 
   // ── Offerings — detail views / expandable sections ───────────────────────

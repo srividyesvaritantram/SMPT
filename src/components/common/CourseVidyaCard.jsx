@@ -1,12 +1,12 @@
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import GoldenButton from './GoldenButton.jsx';
-import chandImg  from '../../assets/chandi.png';
-import ganapImg  from '../../assets/ganapathyam.png';
-import vaishImg  from '../../assets/vaishnavam_course.png';
-import skaanImg  from '../../assets/skaandam_course.png';
-import ashtaImg  from '../../assets/astangha.png';
-import nityaImg  from '../../assets/nithya_kriya.png';
+import chandImg  from '../../assets/chandi.opt.jpg';
+import ganapImg  from '../../assets/ganapathyam.opt.jpg';
+import vaishImg  from '../../assets/vaishnavam_course.opt.jpg';
+import skaanImg  from '../../assets/skaandam_course.opt.jpg';
+import ashtaImg  from '../../assets/astangha.opt.jpg';
+import nityaImg  from '../../assets/nithya_kriya.opt.jpg';
 import './CourseVidyaCard.css';
 
 export const COURSE_CARDS = [

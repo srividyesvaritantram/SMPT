@@ -2173,6 +2173,9 @@
 @media (max-width: 560px) {
   .ap-og { padding: 48px 0 40px; }
   .ap-og__container    { padding: 0 20px; gap: 32px; }
+  /* Put the "Our Guru / Living Flame" text first so a #our-guru deep link
+     lands on the heading, not on a full-screen portrait. */
+  .ap-og__img-col      { order: 1; }
   .ap-og__img-wrap     { max-width: 100%; }
   .ap-og__vm-grid      { grid-template-columns: 1fr; }
   .ap-og__heading      { font-size: 26px; }
@@ -3110,4 +3113,13 @@
 
 @media (max-width: 380px) {
   .ap-cta__content { padding: 0 18px; }
+}
+
+/* ── Deep-link anchors ─────────────────────────────────────────────
+   Keep the section heading visible below the fixed navbar when arriving
+   from the homepage (Guru's Bio / Know More) or a direct URL. */
+#our-guru,
+#guru-parampara,
+#guru-bio {
+  scroll-margin-top: calc(var(--navbar-height, 72px) + 24px);
 }

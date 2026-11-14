@@ -45,7 +45,7 @@ export default function EventPopup() {
           aria-label="Upcoming Event Notification"
           initial={{ opacity: 0, y: -24 }}
           animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -20, scale: 0.96 }}
+          exit={{ opacity: 0, y: -20, scale: 0.96, pointerEvents: 'none' }}
           transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
           whileHover={{
             scale: 1.02,

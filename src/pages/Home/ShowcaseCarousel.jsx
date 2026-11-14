@@ -3,9 +3,9 @@ import { useNavigate } from 'react-router-dom';
 import ScrollReveal from '../../components/common/ScrollReveal.jsx';
 import GoldenButton from '../../components/common/GoldenButton.jsx';
 import { COURSE_CARDS, CourseVidyaCard } from '../../components/common/CourseVidyaCard.jsx';
-import narayaniImg     from '../../assets/narayani_vidya.png';
-import dhanvantariImg  from '../../assets/dhanavanthari.png';
-import ashtaLakshmiImg from '../../assets/ashta_lakshmi_vidya.png';
+import narayaniImg     from '../../assets/narayani_vidya.opt.jpg';
+import dhanvantariImg  from '../../assets/dhanavanthari.opt.jpg';
+import ashtaLakshmiImg from '../../assets/ashta_lakshmi_vidya.opt.jpg';
 import './ShowcaseCarousel.css';
 
 /* ═══════════════════════════════════════════════════════════════

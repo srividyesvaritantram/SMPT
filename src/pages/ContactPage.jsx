@@ -3,9 +3,9 @@ import Navbar from '../components/navbar/Navbar.jsx';
 import ScrollReveal from '../components/common/ScrollReveal.jsx';
 import { FooterSection } from './Home/HomeSections.jsx';
 import { FiMapPin, FiMail, FiInstagram, FiMessageCircle } from 'react-icons/fi';
-import contactHeroImg from '../assets/contact.png';
+import contactHeroImg from '../assets/contact.opt.jpg';
 import whatsappQrImg from '../assets/whatsapp_qr.jpeg';
-import logoImg from '../assets/logo.png';
+import logoImg from '../assets/logo.opt.webp';
 import './ContactPage.css';
 
 export default function ContactPage() {

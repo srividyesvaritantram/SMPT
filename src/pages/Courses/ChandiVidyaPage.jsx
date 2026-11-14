@@ -5,7 +5,7 @@ import Navbar from '../../components/navbar/Navbar.jsx';
 import GoldenButton from '../../components/common/GoldenButton.jsx';
 import ScrollReveal from '../../components/common/ScrollReveal.jsx';
 import { FooterSection } from '../Home/HomeSections.jsx';
-import logoImg from '../../assets/logo.png';
+import logoImg from '../../assets/logo.opt.webp';
 import './ChandiVidyaPage.css';
 
 const HERO_IMG = '/assets/course-images/chandi-vidya/chandi-1.jpeg';

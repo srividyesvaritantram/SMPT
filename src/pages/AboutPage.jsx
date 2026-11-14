@@ -4,26 +4,26 @@ import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/navbar/Navbar.jsx';
 import ScrollReveal from '../components/common/ScrollReveal.jsx';
 import GoldenButton from '../components/common/GoldenButton.jsx';
-import aboutHeroImg from '../assets/about_hero.png';
-import aboutPageImg  from '../assets/about_page.png';
-import dattatreyaImg from '../assets/dathathreya.png';
-import ourGuruImg from '../assets/our_guru.png';
-import ardhanariswariImg from '../assets/ardhanariswari.png';
-import whyTantraImg from '../assets/why_tantra.png';
-import guruMaheshaImg   from '../assets/guru_mahesha.png';
-import guruMurariImg    from '../assets/guru_murari.png';
-import guruBrahmaImg    from '../assets/guru_brahma.png';
-import guruAnangaImg    from '../assets/guru_ananga.png';
-import guruSkandhaImg   from '../assets/guru_skandha.png';
-import guruNandhiImg    from '../assets/guru_nandhi.png';
-import guruIndraImg     from '../assets/guru_indra.png';
-import guruManuImg      from '../assets/guru_manu.png';
-import guruChandraImg   from '../assets/guru_chandra.png';
-import guruKuberaImg    from '../assets/guru_kubera.png';
-import guruAgasthyaImg  from '../assets/guru_agasthya.png';
-import guruDurvasaImg   from '../assets/guru_durvasa.png';
+import aboutHeroImg from '../assets/about_hero.opt.jpg';
+import aboutPageImg  from '../assets/about_page.opt.jpg';
+import dattatreyaImg from '../assets/dathathreya.opt.jpg';
+import ourGuruImg from '../assets/our_guru.opt.jpg';
+import ardhanariswariImg from '../assets/ardhanariswari.opt.jpg';
+import whyTantraImg from '../assets/why_tantra.opt.jpg';
+import guruMaheshaImg   from '../assets/guru_mahesha.opt.jpg';
+import guruMurariImg    from '../assets/guru_murari.opt.jpg';
+import guruBrahmaImg    from '../assets/guru_brahma.opt.jpg';
+import guruAnangaImg    from '../assets/guru_ananga.opt.jpg';
+import guruSkandhaImg   from '../assets/guru_skandha.opt.jpg';
+import guruNandhiImg    from '../assets/guru_nandhi.opt.jpg';
+import guruIndraImg     from '../assets/guru_indra.opt.jpg';
+import guruManuImg      from '../assets/guru_manu.opt.jpg';
+import guruChandraImg   from '../assets/guru_chandra.opt.jpg';
+import guruKuberaImg    from '../assets/guru_kubera.opt.jpg';
+import guruAgasthyaImg  from '../assets/guru_agasthya.opt.jpg';
+import guruDurvasaImg   from '../assets/guru_durvasa.opt.jpg';
 import { FooterSection } from './Home/HomeSections.jsx';
-import logoImg from '../assets/logo.png';
+import logoImg from '../assets/logo.opt.webp';
 import './AboutPage.css';
 
 function LotusDividerIcon({ id = 'ap-divider-icon' }) {
@@ -367,7 +367,7 @@ export default function AboutPage() {
       {/* ══════════════════════════════════════════════════════
           STEP 3 — GURU PARAMPARA
       ══════════════════════════════════════════════════════ */}
-      <section className="ap-gp" ref={gpRef}>
+      <section className="ap-gp" ref={gpRef} id="guru-parampara">
         <div className="ap-gp__pattern" aria-hidden="true" />
 
         {/* ── PART A: Dattatreya intro two-column ── */}
@@ -677,7 +677,7 @@ export default function AboutPage() {
       {/* ══════════════════════════════════════════════════════
           STEP 5 — OUR GURU
       ══════════════════════════════════════════════════════ */}
-      <section className="ap-og">
+      <section className="ap-og" id="our-guru">
         <div className="ap-og__pattern" aria-hidden="true" />
         <div className="ap-og__container">
 

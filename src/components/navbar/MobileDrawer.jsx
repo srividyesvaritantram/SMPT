@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiX, FiChevronDown, FiSettings } from 'react-icons/fi';
 import { NAV_CONFIG } from './Navbar.jsx';
-import logoImg from '../../assets/logo.png';
+import logoImg from '../../assets/logo.opt.webp';
 import { CONTENT_VISIBILITY } from '../../config/contentVisibility.js';
 import './MobileDrawer.css';
 
@@ -27,7 +27,8 @@ export default function MobileDrawer({ open, onClose }) {
             className="drawer-backdrop"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
+            /* Do not swallow the first click after the drawer is dismissed. */
+            exit={{ opacity: 0, pointerEvents: 'none' }}
             transition={{ duration: 0.25 }}
             onClick={onClose}
           />
@@ -35,7 +36,7 @@ export default function MobileDrawer({ open, onClose }) {
             className="drawer"
             initial={{ x: '100%' }}
             animate={{ x: 0 }}
-            exit={{ x: '100%' }}
+            exit={{ x: '100%', pointerEvents: 'none' }}
             transition={{ type: 'tween', duration: 0.32, ease: [0.32, 0.72, 0, 1] }}
           >
             {/* Header */}
