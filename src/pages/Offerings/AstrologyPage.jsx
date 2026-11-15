@@ -1,8 +1,9 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Navbar from '../../components/navbar/Navbar.jsx';
 import GoldenButton from '../../components/common/GoldenButton.jsx';
+import BookGuruModal from '../../components/common/BookGuruModal.jsx';
 import ScrollReveal from '../../components/common/ScrollReveal.jsx';
 import govindaImg  from '../../assets/govinda.opt.jpg';
 import { FooterSection } from '../Home/HomeSections.jsx';
@@ -70,6 +71,7 @@ const ritualCards = [
 export default function AstrologyPage() {
   const location = useLocation();
   const navigate = useNavigate();
+  const [bookGuruOpen, setBookGuruOpen] = useState(false);
 
   useEffect(() => {
     const hash = location.hash.replace('#', '');
@@ -327,11 +329,25 @@ export default function AstrologyPage() {
                     <h3 className="aop-ocard__title font-cinzel">{card.title}</h3>
                     <p className="aop-ocard__desc aop-ocard__desc--full font-serif">{card.desc}</p>
                     <div className="aop-ocard__footer">
-                      <GoldenButton
-                        label="Know More"
-                        outlined
-                        onClick={() => navigate(card.path)}
-                      />
+                      <div className={`aop-ocard__actions${card.id === 'homas' ? ' aop-ocard__actions--dual' : ''}`}>
+                        <GoldenButton
+                          label="Know More"
+                          size="sm"
+                          outlined
+                          noOrnaments
+                          noArrow={card.id === 'homas'}
+                          onClick={() => navigate(card.path)}
+                        />
+                        {card.id === 'homas' ? (
+                          <GoldenButton
+                            label="Book Guru"
+                            size="sm"
+                            noOrnaments
+                            noArrow
+                            onClick={() => setBookGuruOpen(true)}
+                          />
+                        ) : null}
+                      </div>
                     </div>
                   </div>
                   <div className="aop-ocard__topbar" />
@@ -395,6 +411,17 @@ export default function AstrologyPage() {
           </div>
         </ScrollReveal>
       </section>
+
+      {/* ═══════════════════════════════════════════════════════
+          BOOK GURU — HOMAS
+      ═══════════════════════════════════════════════════════ */}
+      <BookGuruModal
+        open={bookGuruOpen}
+        onClose={() => setBookGuruOpen(false)}
+        ritualName="Homas — Sacred Fire Rituals"
+        category="Sacred Offerings"
+        mode="booking"
+      />
 
       {/* ═══════════════════════════════════════════════════════
           FOOTER

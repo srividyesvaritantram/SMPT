@@ -351,11 +351,22 @@ export default function CoursesPage() {
                       <span className="cp-card__rule-line" />
                     </div>
                     <p className="cp-card__desc font-serif">{card.desc}</p>
-                    <GoldenButton
-                      label="Know More"
-                      size="md"
-                      onClick={() => navigate(card.path)}
-                    />
+                    <div className={`cp-card__actions${card.id === 'ganapatyam' ? ' cp-card__actions--dual' : ''}`}>
+                      <GoldenButton
+                        label="Know More"
+                        size="md"
+                        onClick={() => navigate(card.path)}
+                      />
+                      {card.id === 'ganapatyam' && (
+                        <GoldenButton
+                          label="Sadhana Kramam"
+                          size="md"
+                          noArrow
+                          noOrnaments
+                          onClick={() => navigate('/courses/ganapatyam/sadhana-kramam')}
+                        />
+                      )}
+                    </div>
                   </div>
                 </motion.div>
               </ScrollReveal>

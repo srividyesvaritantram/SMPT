@@ -20,6 +20,7 @@ import dhanvantariImg from '../assets/dhanvantari.opt.jpg';
 import ashtaLakshmiImg from '../assets/ashta_lakshmi_vidya.opt.jpg';
 import dasaMahavidyasImg from '../assets/dasa_maha_vidyas.opt.jpg';
 import kshipraGanapatiImg from '../assets/kshipra_ganapati.opt.jpg';
+import ganapathyamWorkshopImg from '../assets/ganapathyam.opt.jpg';
 import fundamentalsTantraImg from '../assets/fundamentals_of_tantra.opt.jpg';
 import completeChakraImg from '../assets/complete_chakra_course.opt.jpg';
 import ayyappaVidyaImg from '../assets/ayyappa_vidya.jpeg';
@@ -36,6 +37,7 @@ import './FeaturePages.css';
 const WA_URL = 'https://wa.me/919390886029?text=Namaste%20%F0%9F%99%8F%20I%20would%20like%20to%20book%20a%20Workshop%20seat.';
 const WA_NARAYANI = 'https://wa.me/919390886029?text=Namaste%20%F0%9F%99%8F%0AI%20would%20like%20to%20register%20for%20the%20N%C4%81r%C4%81ya%E1%B9%87%C4%AB%20Vidy%C4%81%20Workshop.';
 const WA_DHANVANTARI = 'https://wa.me/919390886029?text=Namaste%20%F0%9F%99%8F%0AI%20would%20like%20to%20register%20for%20the%20Dhanvantari%20Vidy%C4%81%20Workshop.';
+const WA_KSHIPRA = 'https://wa.me/919390886029?text=Namaste%20%F0%9F%99%8F%0AI%20am%20interested%20in%20registering%20for%20the%20Kshipra%20Ganapati%20workshop%20at%20Sri%20Mahavidyesvari.%20Please%20share%20the%20workshop%20details%20and%20registration%20process.';
 
 function WpLotusDivider({ id = 'wp-lotus', variant = 'cream' }) {
   return (
@@ -105,6 +107,13 @@ const OTHER_WORKSHOPS = [
     desc: 'In a world demanding speed, Kṣipra Gaṇapati is revered as the swift remover of obstacles and the bestower of divine grace. Learn the sacred worship, mantra, and spiritual practices that help cultivate wisdom, success, protection, and auspicious beginnings.',
     img: kshipraGanapatiImg,
     path: '/workshops/kshipra-ganapati',
+  },
+  {
+    id: 'ganapatyam',
+    title: 'Gāṇapatyam',
+    desc: 'Gāṇapatyam is the complete path of Ganapati worship — the five scriptural classifications, the eight and four Yuga avatars, the thirty-two forms, the six Sampradayas, the sixty-four Tantric Ganapati and the Tantric sciences of yantra, beeja, kundalini and protection.',
+    img: ganapathyamWorkshopImg,
+    path: '/workshops/ganapatyam',
   },
   {
     id: 'fundamentals-of-tantra',
@@ -797,13 +806,25 @@ export function WorkshopsPage() {
                   <div className="aop-ocard__body">
                     <h3 className="aop-ocard__title font-cinzel">{card.title}</h3>
                     <p className="aop-ocard__desc aop-ocard__desc--full font-serif">{card.desc}</p>
-                    <div className="aop-ocard__footer">
+                    <div className="aop-ocard__footer" style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
                       <GoldenButton
                         label={card.comingSoon ? 'Coming Soon' : 'Know More'}
                         outlined
                         onClick={(e) => { e.stopPropagation(); if (!card.comingSoon) navigate(card.path); }}
                         style={card.comingSoon ? { opacity: 0.55, cursor: 'not-allowed', pointerEvents: 'none' } : {}}
                       />
+                      {!card.comingSoon && card.id === 'kshipra-ganapati' && (
+                        <GoldenButton
+                          label="Register Now"
+                          onClick={(e) => { e.stopPropagation(); window.open(WA_KSHIPRA, '_blank', 'noopener,noreferrer'); }}
+                        />
+                      )}
+                      {!card.comingSoon && card.id === 'ganapatyam' && (
+                        <GoldenButton
+                          label="Sadhana Kramam"
+                          onClick={(e) => { e.stopPropagation(); navigate('/workshops/ganapatyam/sadhana-kramam'); }}
+                        />
+                      )}
                     </div>
                   </div>
                   <div className="aop-ocard__topbar" />

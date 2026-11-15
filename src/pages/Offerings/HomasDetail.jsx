@@ -1,50 +1,275 @@
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../../components/navbar/Navbar.jsx';
 import { FooterSection } from '../Home/HomeSections.jsx';
+import BookGuruModal from '../../components/common/BookGuruModal.jsx';
+import RitualDetailModal from './RitualDetailModal.jsx';
+import { RITUAL_CATEGORIES, STATUS_META } from './ritualCatalogueData.js';
 import havanImg from '../../assets/detail-havan.jpeg';
 import gridImg from '../../assets/detail-grid.jpeg';
 import './OfferingDetail.css';
+import './RitualCatalogue.css';
 
 export default function HomasDetail() {
   const navigate = useNavigate();
+  const [activeCategory, setActiveCategory] = useState(RITUAL_CATEGORIES[0].id);
+  const [detail, setDetail] = useState(null);
+  const [booking, setBooking] = useState(null);
+
+  /* Keep the category tabs in step with the section being read. */
+  useEffect(() => {
+    const sections = RITUAL_CATEGORIES
+      .map((category) => document.getElementById(category.id))
+      .filter(Boolean);
+
+    if (!sections.length || typeof IntersectionObserver === 'undefined') return undefined;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+        if (visible) setActiveCategory(visible.target.id);
+      },
+      { rootMargin: '-170px 0px -55% 0px', threshold: [0, 0.08, 0.35] }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
+  }, []);
+
+  const scrollToCategory = (id) => {
+    const target = document.getElementById(id);
+    if (!target) return;
+
+    const navbar = document.querySelector('nav.navbar');
+    const tabs = document.querySelector('.rc-tabs');
+    const offset = (navbar?.offsetHeight || 72) + (tabs?.offsetHeight || 0) + 10;
+    const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+    window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+    setActiveCategory(id);
+  };
+
+  const openDetail = (ritual, category) => setDetail({ ritual, category });
+
+  const openBooking = (ritual, category, mode = 'booking') => {
+    setDetail(null);
+    setBooking({ ritual, category, mode });
+  };
 
   return (
-    <div className="od-page">
+    <div className="od-page od-page--homas">
       <Navbar />
 
-      <button className="od-back" onClick={() => navigate('/offerings')}>
-        <span className="od-back__arrow">←</span> Back to Offerings
+      <button
+        type="button"
+        className="od-back od-back--rituals"
+        onClick={() => navigate('/offerings')}
+        aria-label="Back to Offerings"
+      >
+        <span className="od-back__arrow" aria-hidden="true">←</span>
+        <span className="od-back__label">Back to Offerings</span>
       </button>
 
       {/* ═══ HERO ═══ */}
-      <section className="od-hero">
+      <section className="od-hero od-hero--catalogue">
         <div className="od-hero__content">
           <span className="od-hero__eyebrow">🔥 Sacred Fire Rituals</span>
-          <h1 className="od-hero__title">HAVAN vs HOMAM vs YAJÑA</h1>
+          <h1 className="od-hero__title">Homas, Havanas &amp; Yajñas</h1>
           <p className="od-hero__subtitle">
-            Difference, Importance, Benefits, Śāstra &amp; Purāṇic References
+            A traditional catalogue of Agni Kārya — ritual, purpose, offerings and guidance
           </p>
           <div className="od-hero__highlight">
             All three are forms of Agni Kārya, but their level, purpose and scale are different.
           </div>
+
+          <div className="rc-hero-stats" role="group" aria-label="Ritual categories">
+            {RITUAL_CATEGORIES.map((category) => (
+              <button
+                key={category.id}
+                type="button"
+                className="rc-hero-stat"
+                onClick={() => scrollToCategory(category.id)}
+              >
+                <span className="rc-hero-stat__icon" aria-hidden="true">{category.icon}</span>
+                <strong>{category.items.length}</strong>
+                <span>{category.label}</span>
+              </button>
+            ))}
+          </div>
+
           <div className="od-hero__image-wrap">
             <img src={havanImg} alt="Sacred Havan ritual" className="od-hero__image" />
           </div>
         </div>
       </section>
 
+      {/* ═══ CATEGORY NAVIGATION ═══ */}
+      <nav className="rc-tabs" aria-label="Ritual categories">
+        <div className="rc-tabs__inner">
+          {RITUAL_CATEGORIES.map((category) => (
+            <button
+              key={category.id}
+              type="button"
+              className={`rc-tab${activeCategory === category.id ? ' rc-tab--active' : ''}`}
+              onClick={() => scrollToCategory(category.id)}
+              aria-current={activeCategory === category.id ? 'true' : undefined}
+            >
+              <span className="rc-tab__icon" aria-hidden="true">{category.icon}</span>
+              <span className="rc-tab__label">{category.label}</span>
+              <span className="rc-tab__count">{category.items.length}</span>
+            </button>
+          ))}
+        </div>
+      </nav>
+
+      <p className="rc-intro-note">
+        Homa, Havan and Yajña are related terms. Their usage, scale and procedure vary
+        by region and sampradāya; this catalogue does not claim a single fixed definition.
+        Historical, rare and disputed rites are clearly marked and are not presented as
+        ordinary bookable services.
+      </p>
+
+      {/* ═══ CATEGORY CATALOGUES ═══ */}
+      {RITUAL_CATEGORIES.map((category, categoryIndex) => (
+        <section
+          key={category.id}
+          id={category.id}
+          className={`rc-category rc-category--${categoryIndex % 2 === 0 ? 'cream' : 'parchment'}`}
+          aria-labelledby={`${category.id}-title`}
+        >
+          <div className="rc-category__banner">
+            <div className="rc-category__image-wrap">
+              <img
+                src={category.image}
+                alt={category.imageAlt}
+                className="rc-category__image"
+                loading="lazy"
+              />
+              <span className="rc-category__image-frame" aria-hidden="true" />
+              <span className="rc-category__image-icon" aria-hidden="true">{category.icon}</span>
+            </div>
+
+            <div className="rc-category__content">
+              <span className="rc-category__eyebrow">{category.sanskrit}</span>
+              <h2 className="rc-category__title" id={`${category.id}-title`}>
+                {category.label}
+              </h2>
+              <p className="rc-category__intro">{category.intro}</p>
+
+              <div className="rc-category__meta">
+                <span className="rc-category__count">
+                  <strong>{category.items.length}</strong>
+                  <span>{category.items.length === 1 ? 'ritual' : 'rituals'}</span>
+                </span>
+                <span className="rc-category__meta-divider" aria-hidden="true">✦</span>
+                <span className="rc-category__meta-text">
+                  Bookable, enquiry and reference entries are labelled individually below
+                </span>
+              </div>
+
+              {category.note ? (
+                <p className="rc-category__note">
+                  <span aria-hidden="true">◆</span> {category.note}
+                </p>
+              ) : null}
+            </div>
+          </div>
+
+          <div className="rc-list">
+            <div className="rc-list__head" aria-hidden="true">
+              <span>Ritual &amp; deity</span>
+              <span>Main purpose</span>
+              <span>Suitable occasions</span>
+              <span>Traditional offerings</span>
+              <span>Actions</span>
+            </div>
+
+            {category.items.map((ritual, index) => {
+              const status = STATUS_META[ritual.status] || STATUS_META.practised;
+              return (
+                <article
+                  key={ritual.id}
+                  className={`rc-row rc-row--${index % 2 === 0 ? 'maroon' : 'cream'}`}
+                >
+                  <div className="rc-row__cell rc-row__ritual" data-label="Ritual">
+                    <span className="rc-row__index" aria-hidden="true">
+                      {String(index + 1).padStart(2, '0')}
+                    </span>
+                    <div className="rc-row__ritual-body">
+                      <h3 className="rc-row__name">{ritual.name}</h3>
+                      <p className="rc-row__deity">{ritual.deity}</p>
+                      <span className={`rc-status rc-status--${status.tone}`}>
+                        {status.label}
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className="rc-row__cell" data-label="Main purpose">
+                    {ritual.purpose}
+                  </div>
+
+                  <div className="rc-row__cell" data-label="Suitable occasions">
+                    {ritual.occasions}
+                  </div>
+
+                  <div className="rc-row__cell" data-label="Traditional offerings">
+                    {ritual.offerings}
+                  </div>
+
+                  <div className="rc-row__cell rc-row__actions" data-label="Actions">
+                    <button
+                      type="button"
+                      className="rc-btn rc-btn--know"
+                      onClick={() => openDetail(ritual, category)}
+                    >
+                      Know More
+                      <span aria-hidden="true">→</span>
+                    </button>
+
+                    {ritual.bookable ? (
+                      <button
+                        type="button"
+                        className="rc-btn rc-btn--book"
+                        onClick={() => openBooking(ritual, category, 'booking')}
+                      >
+                        Book Guru
+                      </button>
+                    ) : ritual.enquiry ? (
+                      <button
+                        type="button"
+                        className="rc-btn rc-btn--enquire"
+                        onClick={() => openBooking(ritual, category, 'enquiry')}
+                      >
+                        Enquire
+                      </button>
+                    ) : (
+                      <span className="rc-btn rc-btn--disabled" aria-disabled="true">
+                        Not bookable
+                      </span>
+                    )}
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+        </section>
+      ))}
+
       {/* ═══ UNDERSTANDING THE DIFFERENCE — Cream ═══ */}
       <section className="od-section od-section--cream">
         <div className="od-section__inner">
           <span className="od-section__eyebrow">Knowledge</span>
           <h2 className="od-section__heading">Understanding the Difference</h2>
+          <h3 className="rc-comparison-title">HAVAN vs HOMAM vs YAJÑA</h3>
           <p className="od-section__desc">
+            Difference, Importance, Benefits, Śāstra &amp; Purāṇic References.
             Although Havan, Homam and Yajña share the common thread of sacred fire offering,
             each tradition operates at a distinct scale and serves a different purpose within
             the broader framework of Sanātana Dharma.
           </p>
 
-          <div className="od-table-wrap">
+          <div className="od-table-wrap" tabIndex={0}>
             <table className="od-table od-table--cream">
               <thead>
                 <tr>
@@ -153,7 +378,7 @@ export default function HomasDetail() {
                 the central medium through which mantras, devotion and sacred substances are offered.
               </p>
               <p className="od-section__desc">
-                The Brāhmaṇa texts describe Agni as <em>heatogenerated first</em> among the gods,
+                The Brāhmaṇa texts describe Agni as the foremost among the gods,
                 the mouth of the gods and the carrier of oblations. Every fire ritual, regardless
                 of scale, draws upon this ancient understanding.
               </p>
@@ -340,7 +565,7 @@ export default function HomasDetail() {
             connects the practitioner to the divine through distinct modes of offering.
           </p>
 
-          <div className="od-table-wrap">
+          <div className="od-table-wrap" tabIndex={0}>
             <table className="od-table od-table--maroon">
               <thead>
                 <tr>
@@ -393,7 +618,7 @@ export default function HomasDetail() {
             to create the complete offering.
           </p>
 
-          <div className="od-table-wrap">
+          <div className="od-table-wrap" tabIndex={0}>
             <table className="od-table od-table--cream">
               <thead>
                 <tr>
@@ -443,7 +668,7 @@ export default function HomasDetail() {
             of practice and traditional context.
           </p>
 
-          <div className="od-table-wrap">
+          <div className="od-table-wrap" tabIndex={0}>
             <table className="od-table od-table--maroon">
               <thead>
                 <tr>
@@ -511,6 +736,21 @@ export default function HomasDetail() {
           </div>
         </div>
       </section>
+
+      <RitualDetailModal
+        ritual={detail?.ritual}
+        category={detail?.category}
+        onClose={() => setDetail(null)}
+        onBook={(ritual, mode) => openBooking(ritual, detail?.category, mode)}
+      />
+
+      <BookGuruModal
+        open={Boolean(booking)}
+        onClose={() => setBooking(null)}
+        ritualName={booking?.ritual?.name || ''}
+        category={booking?.category?.label || ''}
+        mode={booking?.mode || 'booking'}
+      />
 
       <FooterSection />
     </div>

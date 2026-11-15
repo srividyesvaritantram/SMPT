@@ -13,6 +13,8 @@ import { CONTENT_VISIBILITY } from './config/contentVisibility.js';
 const CoursesPage = lazy(() => import('./pages/Courses/CoursesPage.jsx'));
 const CourseDetailPage = lazy(() => import('./pages/Courses/CourseDetailPage.jsx'));
 const GanapatyamPage = lazy(() => import('./pages/Courses/GanapatyamPage.jsx'));
+const GanapatyamSadhanaKramam = lazy(() => import('./pages/Courses/GanapatyamSadhanaKramam.jsx'));
+const KshipraGanapatiWorkshop = lazy(() => import('./pages/Workshops/KshipraGanapatiWorkshop.jsx'));
 const ShaktamPage = lazy(() => import('./pages/Courses/ShaktamPage.jsx'));
 const SkandamPage = lazy(() => import('./pages/Courses/SkandamPage.jsx'));
 const SouramPage = lazy(() => import('./pages/Courses/SouramPage.jsx'));
@@ -161,11 +163,14 @@ function RouteScrollManager() {
         // still visible after layout shifts.
         timers.push(window.setTimeout(() => { if (!cancelled) scrollToTarget(); }, 400));
         timers.push(window.setTimeout(() => { if (!cancelled) scrollToTarget(); }, 1200));
+        timers.push(window.setTimeout(() => { if (!cancelled) scrollToTarget(); }, 2200));
         return;
       }
 
-      // The lazy page may not have rendered its section yet.
-      if (attempts < 90) {
+      // The lazy page may not have rendered its section yet. Keep trying for
+      // roughly five seconds so the first visit on a slow connection still
+      // lands on the deep-linked section.
+      if (attempts < 300) {
         attempts += 1;
         frame = requestAnimationFrame(attempt);
       }
@@ -299,6 +304,17 @@ export default function App() {
               <GanapatyamPage />
             </VisibilityGate>
           } />
+          <Route path="/courses/ganapatyam/sadhana-kramam" element={
+            <VisibilityGate
+              visible={CONTENT_VISIBILITY.courses.ganapatyam}
+              title="Sadhana Kramam Temporarily Unavailable"
+              message="The Ganapatyam Sadhana Kramam is not available at the moment. The course card remains available on the Courses page."
+              backTo="/courses"
+              backLabel="Back to Courses"
+            >
+              <GanapatyamSadhanaKramam />
+            </VisibilityGate>
+          } />
           <Route path="/courses/shaktam" element={
             <VisibilityGate
               visible={CONTENT_VISIBILITY.courses.shaktam}
@@ -328,7 +344,19 @@ export default function App() {
           <Route path="/workshops/offline" element={<WorkshopsPage />} />
           <Route path="/workshops/ashta-lakshmi-vidya" element={<WorkshopsPage />} />
           <Route path="/workshops/dasa-maha-vidyas" element={<WorkshopsPage />} />
-          <Route path="/workshops/kshipra-ganapati" element={<WorkshopsPage />} />
+          <Route path="/workshops/kshipra-ganapati" element={<KshipraGanapatiWorkshop />} />
+          <Route path="/workshops/ganapatyam" element={<GanapatyamPage />} />
+          <Route path="/workshops/ganapatyam/sadhana-kramam" element={
+            <VisibilityGate
+              visible={CONTENT_VISIBILITY.courses.ganapatyam}
+              title="Sadhana Kramam Temporarily Unavailable"
+              message="The Ganapatyam Sadhana Kramam is not available at the moment."
+              backTo="/workshops"
+              backLabel="Back to Workshops"
+            >
+              <GanapatyamSadhanaKramam context="workshops" />
+            </VisibilityGate>
+          } />
           <Route path="/workshops/fundamentals-of-tantra" element={<WorkshopsPage />} />
           <Route path="/workshops/complete-chakra-course" element={<WorkshopsPage />} />
           <Route path="/workshops/ayyappa-vidya" element={<WorkshopsPage />} />

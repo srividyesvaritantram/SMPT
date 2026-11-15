@@ -1,0 +1,388 @@
+/* ═══════════════════════════════════════════════════════════════════════
+   BOOK GURU MODAL — traditional maroon / cream / gold
+   Shared by the Homas catalogue and the Offerings page card.
+═══════════════════════════════════════════════════════════════════════ */
+
+.bgm-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(28, 5, 12, 0.74);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  animation: bgm-fade 0.22s ease both;
+}
+
+@keyframes bgm-fade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes bgm-rise {
+  from { opacity: 0; transform: translateY(14px) scale(0.985); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.bgm-panel {
+  position: relative;
+  width: min(580px, 100%);
+  max-height: min(92vh, 900px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  background: #FFF4DF;
+  color: #352321;
+  border: 1px solid #C5A15B;
+  border-radius: 18px;
+  box-shadow:
+    0 30px 90px rgba(0, 0, 0, 0.42),
+    inset 0 0 0 5px rgba(197, 161, 91, 0.10);
+  animation: bgm-rise 0.28s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.bgm-panel::before {
+  content: '';
+  position: absolute;
+  inset: 7px;
+  border: 1px solid rgba(197, 161, 91, 0.28);
+  border-radius: 12px;
+  pointer-events: none;
+}
+
+.bgm-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 3;
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: #FFF4DF;
+  background: rgba(255, 244, 223, 0.10);
+  border: 1px solid rgba(197, 161, 91, 0.55);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.bgm-close:hover {
+  background: rgba(197, 161, 91, 0.26);
+  transform: rotate(90deg);
+}
+
+/* The confirmation panel is cream, so the close control needs dark ink. */
+.bgm-panel--done .bgm-close {
+  color: #641B2E;
+  background: rgba(100, 27, 46, 0.06);
+}
+
+.bgm-panel--done .bgm-close:hover {
+  background: rgba(100, 27, 46, 0.12);
+}
+
+.bgm-close:focus-visible,
+.bgm-btn:focus-visible {
+  outline: 2px solid #C5A15B;
+  outline-offset: 3px;
+}
+
+/* ── Header ─────────────────────────────────────────────────────────── */
+.bgm-head {
+  padding: 30px 34px 26px;
+  background:
+    radial-gradient(circle at 82% 12%, rgba(197, 161, 91, 0.16), transparent 42%),
+    linear-gradient(150deg, #42101F 0%, #641B2E 58%, #52142A 100%);
+  color: #FFF4DF;
+  border-radius: 17px 17px 0 0;
+  border-bottom: 1px solid rgba(197, 161, 91, 0.55);
+}
+
+.bgm-head__eyebrow {
+  display: inline-block;
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: #D9BC7E;
+  margin-bottom: 10px;
+}
+
+.bgm-head__title {
+  margin: 0 0 8px;
+  font-family: 'Cinzel', serif;
+  font-size: clamp(21px, 3vw, 27px);
+  line-height: 1.2;
+  font-weight: 700;
+  color: #FFF4DF;
+  letter-spacing: 0.02em;
+}
+
+.bgm-head__ritual {
+  margin: 0;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 19px;
+  font-weight: 600;
+  color: #E7D3A9;
+  line-height: 1.4;
+}
+
+.bgm-head__category {
+  margin: 4px 0 0;
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 244, 223, 0.62);
+}
+
+/* ── Form ───────────────────────────────────────────────────────────── */
+.bgm-form {
+  padding: 26px 34px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.bgm-form__intro {
+  margin: 0 0 2px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px;
+  line-height: 1.55;
+  color: #5E4A43;
+}
+
+.bgm-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.bgm-field label {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: #641B2E;
+}
+
+.bgm-field label span[aria-hidden='true'] {
+  color: #A3452F;
+}
+
+.bgm-optional {
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  color: #8A6E63;
+}
+
+.bgm-field input,
+.bgm-field textarea {
+  width: 100%;
+  padding: 11px 13px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: #352321;
+  background: #FFFBF2;
+  border: 1px solid rgba(197, 161, 91, 0.55);
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.bgm-field textarea {
+  resize: vertical;
+  min-height: 78px;
+  line-height: 1.55;
+}
+
+.bgm-field input::placeholder,
+.bgm-field textarea::placeholder {
+  color: #A08A7F;
+}
+
+.bgm-field input:focus,
+.bgm-field textarea:focus {
+  border-color: #641B2E;
+  box-shadow: 0 0 0 3px rgba(197, 161, 91, 0.20);
+}
+
+.bgm-field input[aria-invalid='true'],
+.bgm-field textarea[aria-invalid='true'] {
+  border-color: #A3452F;
+}
+
+.bgm-field input[type='date'] {
+  color-scheme: light;
+}
+
+.bgm-field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.bgm-error {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  font-size: 11.5px;
+  line-height: 1.4;
+  color: #A3452F;
+}
+
+.bgm-privacy {
+  margin: 2px 0 0;
+  font-family: 'Inter', sans-serif;
+  font-size: 10.5px;
+  line-height: 1.55;
+  color: #7A655C;
+}
+
+/* ── Actions ────────────────────────────────────────────────────────── */
+.bgm-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.bgm-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 20px;
+  border-radius: 999px;
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.bgm-btn:hover {
+  transform: translateY(-2px);
+}
+
+.bgm-btn--primary {
+  color: #FFF4DF;
+  background: linear-gradient(135deg, #42101F 0%, #641B2E 60%, #52142A 100%);
+  border: 1px solid #C5A15B;
+  box-shadow: 0 8px 24px rgba(66, 16, 31, 0.30);
+  flex: 1 1 200px;
+}
+
+.bgm-btn--primary:hover {
+  box-shadow: 0 12px 30px rgba(66, 16, 31, 0.40), 0 0 0 3px rgba(197, 161, 91, 0.18);
+}
+
+.bgm-btn--ghost {
+  color: #641B2E;
+  background: transparent;
+  border: 1px solid rgba(100, 27, 46, 0.35);
+}
+
+.bgm-btn--ghost:hover {
+  background: rgba(100, 27, 46, 0.06);
+}
+
+/* ── Prepared / confirmation state ──────────────────────────────────── */
+.bgm-done {
+  padding: 52px 34px 34px;
+  text-align: center;
+}
+
+.bgm-done__icon {
+  display: inline-grid;
+  place-items: center;
+  width: 68px;
+  height: 68px;
+  margin-bottom: 18px;
+  border-radius: 50%;
+  color: #641B2E;
+  background: rgba(197, 161, 91, 0.16);
+  border: 1px solid #C5A15B;
+}
+
+.bgm-done .bgm-head__title {
+  color: #42101F;
+}
+
+.bgm-done__text {
+  margin: 0 auto 12px;
+  max-width: 430px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  line-height: 1.55;
+  color: #352321;
+}
+
+.bgm-done__notice {
+  margin: 0 auto 22px;
+  max-width: 450px;
+  padding: 13px 16px;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  line-height: 1.6;
+  color: #641B2E;
+  background: rgba(197, 161, 91, 0.12);
+  border: 1px solid rgba(197, 161, 91, 0.40);
+  border-radius: 8px;
+}
+
+.bgm-done .bgm-actions {
+  justify-content: center;
+}
+
+/* ── Responsive ─────────────────────────────────────────────────────── */
+@media (max-width: 620px) {
+  .bgm-backdrop {
+    padding: 12px;
+    align-items: flex-end;
+  }
+
+  .bgm-panel {
+    width: 100%;
+    max-height: 94vh;
+    border-radius: 16px 16px 12px 12px;
+  }
+
+  .bgm-head {
+    padding: 24px 22px 20px;
+  }
+
+  .bgm-form {
+    padding: 20px 22px 24px;
+  }
+
+  .bgm-field-row {
+    grid-template-columns: 1fr;
+  }
+
+  .bgm-done {
+    padding: 42px 22px 28px;
+  }
+
+  .bgm-btn {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bgm-backdrop,
+  .bgm-panel,
+  .bgm-close,
+  .bgm-btn {
+    animation: none;
+    transition: none;
+  }
+}

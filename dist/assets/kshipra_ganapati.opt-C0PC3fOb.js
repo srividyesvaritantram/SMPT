@@ -1,0 +1,1 @@
+var e=`/assets/kshipra_ganapati.opt-BJYgNBww.jpg`;export{e as t};

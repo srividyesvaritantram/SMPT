@@ -593,6 +593,33 @@
   overflow: hidden;
 }
 
+/* Card actions — Ganapatyam carries a second entry point */
+.cp-card__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.cp-card__actions--dual > .pb {
+  flex: 1 1 0;
+  min-width: 0;
+  padding: 12px 11px;
+  min-height: 46px;
+  font-size: 9px;
+  letter-spacing: 0.9px;
+  gap: 6px;
+}
+
+.cp-card__actions--dual .pb__label {
+  white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+  .cp-card__actions--dual > .pb {
+    flex: 1 1 100%;
+  }
+}
+
 /* ═══════════════════════════════════════════════════════════════════
    RESPONSIVE
 ═══════════════════════════════════════════════════════════════════ */

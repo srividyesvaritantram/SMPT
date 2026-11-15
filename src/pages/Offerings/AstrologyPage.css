@@ -709,6 +709,30 @@
   padding-top: 8px;
 }
 
+.aop-ocard__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.aop-ocard__actions > * {
+  flex: 0 1 auto;
+}
+
+/* Tighten the small buttons just enough for Know More and Book Guru to sit
+   side by side inside the Homas card without shrinking their tap targets. */
+.aop-ocard__actions--dual .pb {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+@media (max-width: 420px) {
+  .aop-ocard__actions > * {
+    flex: 1 1 100%;
+  }
+}
+
 /* ═══════════════════════════════════════════════════════════════════
    SECTION 5 — NEED GUIDANCE? (CTA) (DEEP MAROON)
 ═══════════════════════════════════════════════════════════════════ */

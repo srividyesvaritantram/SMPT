@@ -1,0 +1,1 @@
+var e=`/assets/ganapati-on-mouse-DOFSEPHH.jpeg`;export{e as t};
