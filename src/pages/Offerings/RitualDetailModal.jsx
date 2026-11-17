@@ -144,7 +144,7 @@ export default function RitualDetailModal({ ritual, category, onClose, onBook })
         <footer className="rdm-footer">
           {canBook ? (
             <button type="button" className="rdm-btn rdm-btn--primary" onClick={handleBook}>
-              Book Guru
+              Book Now
               <FiArrowRight size={15} />
             </button>
           ) : canEnquire ? (

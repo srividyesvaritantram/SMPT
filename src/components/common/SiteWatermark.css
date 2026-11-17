@@ -70,6 +70,39 @@
   }
 }
 
+/* Subtle name watermark */
+.site-watermark__text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-12deg);
+  font-family: 'Cinzel', serif;
+  font-size: clamp(48px, 11vw, 150px);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(212, 175, 55, 0.035);
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .site-watermark__text {
+    font-size: clamp(40px, 12vw, 110px);
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .site-watermark__text {
+    font-size: clamp(32px, 14vw, 72px);
+    opacity: 0.9;
+  }
+}
+
 /* Never print the decorative layer */
 @media print {
   .site-watermark {

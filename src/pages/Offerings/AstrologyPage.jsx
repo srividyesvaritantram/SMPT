@@ -340,7 +340,7 @@ export default function AstrologyPage() {
                         />
                         {card.id === 'homas' ? (
                           <GoldenButton
-                            label="Book Guru"
+                            label="Book Now"
                             size="sm"
                             noOrnaments
                             noArrow

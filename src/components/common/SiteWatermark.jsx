@@ -23,6 +23,7 @@ export default function SiteWatermark() {
         className="site-watermark__emblem"
         style={{ backgroundImage: `url(${logoWatermark})` }}
       />
+      <div className="site-watermark__text" aria-hidden="true">Sri Mahavidyeswari</div>
     </div>
   );
 }

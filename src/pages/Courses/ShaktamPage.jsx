@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import Navbar from '../../components/navbar/Navbar.jsx';
 import GoldenButton from '../../components/common/GoldenButton.jsx';
 import ScrollReveal from '../../components/common/ScrollReveal.jsx';
+import LockedSadhanaContent from '../../components/common/LockedSadhanaContent.jsx';
 import { FooterSection } from '../Home/HomeSections.jsx';
 import heroImg from '../../assets/bhuvaneswari.jpeg';
 import shaktam1Img from '../../assets/shaktham1.jpeg';
@@ -399,6 +400,7 @@ export default function ShaktamPage() {
       </section>
 
       {/* ══════════════ SCRIPTURAL FOUNDATIONS (MAROON) ══════════════ */}
+      <LockedSadhanaContent>
       <section id="scriptures" className="sp-section sp-section--maroon">
         <div className="sp-container">
           <ScrollReveal className="sp-section__head">
@@ -587,7 +589,6 @@ export default function ShaktamPage() {
             {MAHAVIDYAS.map((m, i) => (
               <ScrollReveal key={m.name} delay={(i % 5) * 0.04}>
                 <motion.div className="sp-mahavidya" whileHover={{ y: -4 }} transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}>
-                  <span className="sp-mahavidya__bija font-cinzel">{m.bija}</span>
                   <h5 className="sp-mahavidya__name font-cinzel">{m.name}</h5>
                   <p className="sp-mahavidya__assoc font-serif">{m.assoc}</p>
                 </motion.div>
@@ -810,6 +811,7 @@ export default function ShaktamPage() {
           </ScrollReveal>
         </div>
       </section>
+      </LockedSadhanaContent>
 
       {/* ══════════════ CLOSING SPIRITUAL CALL (MAROON) ══════════════ */}
       <section className="sp-cta">

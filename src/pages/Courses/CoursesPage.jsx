@@ -290,11 +290,20 @@ export default function CoursesPage() {
                   </p>
                 </div>
 
-                <div className="cp-feat-cta">
+                <div className="cp-feat-cta" style={{ display: 'flex', flexWrap: 'wrap', gap: '12px' }}>
                   <GoldenButton
-                    label="Know More"
+                    label="Explore Sri Vidya"
                     size="lg"
                     onClick={() => navigate('/courses/sri-vidya')}
+                    style={{ background: 'linear-gradient(135deg, #7B1E3A, #4A0F22)', color: '#F3E7D3', border: '1.5px solid rgba(212,175,55,0.65)' }}
+                  />
+                  <GoldenButton
+                    label="Sadhana Kramam"
+                    size="lg"
+                    outlined
+                    noArrow
+                    onClick={() => navigate('/courses/sri-vidya/sadhana-kramam')}
+                    style={{ background: '#FFF8EE', color: '#4A0F22', border: '1.5px solid rgba(212,175,55,0.65)' }}
                   />
                 </div>
 
@@ -362,7 +371,6 @@ export default function CoursesPage() {
                           label="Sadhana Kramam"
                           size="md"
                           noArrow
-                          noOrnaments
                           onClick={() => navigate('/courses/ganapatyam/sadhana-kramam')}
                         />
                       )}

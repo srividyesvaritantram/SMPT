@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import Navbar from '../../components/navbar/Navbar.jsx';
 import GoldenButton from '../../components/common/GoldenButton.jsx';
 import ScrollReveal from '../../components/common/ScrollReveal.jsx';
+import LockedSadhanaContent from '../../components/common/LockedSadhanaContent.jsx';
 import { FooterSection } from '../Home/HomeSections.jsx';
 import heroImg from '../../assets/ganapathy2.jpeg';
 import ganapathyaImg from '../../assets/ganapathya.jpeg';
@@ -416,6 +417,7 @@ export default function GanapatyamPage() {
       {/* ════════════════════════════════════════════════════
           PART 2 — SEVEN SCRIPTURAL PRAMANAS  (MAROON)
       ════════════════════════════════════════════════════ */}
+      <LockedSadhanaContent>
       <section id="seven-pramanas" className="gp-section gp-section--maroon">
         <div className="gp-container">
           <ScrollReveal className="gp-section__head gp-section__head--light">
@@ -935,6 +937,7 @@ export default function GanapatyamPage() {
           </ScrollReveal>
         </div>
       </section>
+      </LockedSadhanaContent>
 
       {/* ════════════════════════════════════════════════════
           FOOTER CTA  (MAROON)

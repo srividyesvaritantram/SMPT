@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import Navbar from '../../components/navbar/Navbar.jsx';
 import GoldenButton from '../../components/common/GoldenButton.jsx';
 import ScrollReveal from '../../components/common/ScrollReveal.jsx';
+import LockedSadhanaContent from '../../components/common/LockedSadhanaContent.jsx';
 import { FooterSection } from '../Home/HomeSections.jsx';
 import logoImg from '../../assets/logo.opt.webp';
 import './VaishnavamPage.css';
@@ -38,7 +39,7 @@ const VEDA_TABLE = [
 ];
 
 const PURANA_TABLE = [
-  { purana: 'Vishnu Purana', says: 'Bible of Vaishnavism. Says Vishnu is Parabrahman, Brahma and Shiva are his forms. Creation starts from Vishnu.' },
+  { purana: 'Vishnu Purana', says: 'Says Vishnu is Parabrahman, Brahma and Shiva are his forms. Creation starts from Vishnu.' },
   { purana: 'Bhagavata Purana', says: 'Most important. 12 Skandhas, 18,000 verses — Full story of Krishna. Says Krishnas Tu Bhagavan Swayam — Krishna is Supreme himself.' },
   { purana: 'Garuda Purana', says: 'Death, After death, Vaikuntha route.' },
   { purana: 'Matsya, Kurma, Varaha Purana', says: 'Vishnu Avatars.' },
@@ -352,6 +353,7 @@ export default function VaishnavamPage() {
       </section>
 
       {/* ══════════════ 2 — IMPORTANCE IN SCRIPTURES — 6 PRAMANAS ══════════════ */}
+      <LockedSadhanaContent>
       <section id="pramanas" className="vn-section vn-section--maroon">
         <div className="vn-container">
           <ScrollReveal className="vn-section__head">
@@ -822,6 +824,7 @@ export default function VaishnavamPage() {
           </ScrollReveal>
         </div>
       </section>
+      </LockedSadhanaContent>
 
       {/* ══════════════ CTA ══════════════ */}
       <section className="vn-cta">

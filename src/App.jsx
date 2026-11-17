@@ -1,6 +1,7 @@
 import { lazy, Suspense, useEffect } from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import WhatsAppFAB from './components/WhatsAppFAB.jsx';
+import BackToCoursesFAB from './components/common/BackToCoursesFAB.jsx';
 import SiteWatermark from './components/common/SiteWatermark.jsx';
 import { Toaster } from 'react-hot-toast';
 import HomePage from './pages/Home/index.jsx';
@@ -21,6 +22,8 @@ const SouramPage = lazy(() => import('./pages/Courses/SouramPage.jsx'));
 const ShaivamPage = lazy(() => import('./pages/Courses/ShaivamPage.jsx'));
 const VaishnavamPage = lazy(() => import('./pages/Courses/VaishnavamPage.jsx'));
 const ChandiVidyaPage = lazy(() => import('./pages/Courses/ChandiVidyaPage.jsx'));
+const SriVidyaPage = lazy(() => import('./pages/Courses/SriVidyaPage.jsx'));
+const SriVidyaSadhanaKramam = lazy(() => import('./pages/Courses/SriVidyaSadhanaKramam.jsx'));
 const AboutPage = lazy(() => import('./pages/AboutPage.jsx'));
 const ContactPage = lazy(() => import('./pages/ContactPage.jsx'));
 const DashboardPage = lazy(() => import('./pages/Dashboard/DashboardPage.jsx'));
@@ -195,6 +198,7 @@ export default function App() {
       <SiteWatermark />
       <RouteScrollManager />
       <WhatsAppFAB />
+      <BackToCoursesFAB />
       <Suspense fallback={<PageFallback />}>
         <Routes>
           <Route path="/" element={<HomePage />} />
@@ -213,7 +217,18 @@ export default function App() {
               backTo="/courses"
               backLabel="Back to Courses"
             >
-              <CourseDetailPage />
+              <SriVidyaPage />
+            </VisibilityGate>
+          } />
+          <Route path="/courses/sri-vidya/sadhana-kramam" element={
+            <VisibilityGate
+              visible={CONTENT_VISIBILITY.courses.sriVidya}
+              title="Sadhana Kramam Temporarily Unavailable"
+              message="The Sri Vidya Sadhana Kramam is not available at the moment."
+              backTo="/courses"
+              backLabel="Back to Courses"
+            >
+              <SriVidyaSadhanaKramam />
             </VisibilityGate>
           } />
           <Route path="/courses/chandi-vidya" element={

@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import Navbar from '../../components/navbar/Navbar.jsx';
 import GoldenButton from '../../components/common/GoldenButton.jsx';
 import ScrollReveal from '../../components/common/ScrollReveal.jsx';
+import LockedSadhanaContent from '../../components/common/LockedSadhanaContent.jsx';
 import { FooterSection } from '../Home/HomeSections.jsx';
 import logoImg from '../../assets/logo.opt.webp';
 import './ChandiVidyaPage.css';
@@ -27,7 +28,7 @@ const WHAT_IS = [
   { point: 'Definition', answer: 'Chandi Vidya = Vidya of Chandi - How to awaken fierce mother inside to destroy adharma. Chandi = Chad = To tear - She tears demons. Chandi is not different from Durga, but Durga in war mode - Like mother becomes tigress if child attacked.' },
   { point: 'Real Name', answer: 'Devi Mahatmyam / Durga Saptashati / Chandi Path / Chandi Saptashati - 700 shlokas - Inside Markandeya Purana Chapters 81 to 93 - 13 Chapters.' },
   { point: 'Who told?', answer: 'Rishi Markandeya told to King Suratha + Merchant Samadhi - Both lost kingdom + money, went to forest, met Rishi Medha, Medha told Chandi story - Both got kingdom back by chanting.' },
-  { point: 'Beeja Mantra', answer: 'Navarna Mantra - 9 letters - Heart of Chandi Vidya: <mantra>Om Aim Hreem Kleem Chamundayai Vichche</mantra>. Aim = Saraswati. Hreem = Mahalakshmi. Kleem = Mahakali. Chamunda = Chandi. Vichche = Cut ego.' },
+
   { point: 'Goal', answer: 'Moksha + Bhukti both - Gives money, fame, enemy destruction, plus Moksha - Devi Mahatmyam says Ya Devi... who chants gets both world + liberation.' },
   { point: 'Main Shloka — Devi Mahatmyam 1.1', answer: 'Savarni Surya Tanayo... Suratha King lost kingdom, Samadhi merchant lost wealth - Both got everything by Chandi.' },
   { point: 'Why 700?', answer: '700 = 7 chakras x 100. Each verse cleans 1% of one chakra.' },
@@ -44,8 +45,6 @@ const CHARITA_TABLE = [
 const MAHAKALI_TABLE = [
   { point: 'Look', detail: 'Black, 10 faces, 10 arms, 10 legs, Holds sword, Holds head of demon, Tongue out, Eyes red, Standing on Shiva? No - This Mahakali stands alone - Different from Dakshina Kali.' },
   { point: 'Born From', detail: 'Yoga Nidra of Vishnu - When Vishnu sleeping, Madhu-Kaitabha came to kill Brahma, Brahma prayed Yoga Nidra, Yoga Nidra left Vishnu, Vishnu woke, but couldn\u2019t kill demons for 5000 years, then Mahakali killed.' },
-  { point: 'Mantra', detail: '<mantra>Om Kreem Kalikayai Namah</mantra> + <mantra>Om Aim Hreem Kleem Kalikaye</mantra>' },
-  { point: 'Beeja', detail: 'Kreem - Kalika Beeja.' },
   { point: 'Tantra meaning', detail: 'Madhu = Honey - Sweet ignorance - Kaitabha = Insect - Small doubts - Both in ear (hearing) - Means you hear sweet lies and believe - Mahakali cuts ear wax - Removes false hearing - That is why she is in Chapter 1 - First you must clean ears to hear truth.' },
   { point: 'Psychology', detail: 'Tamas = Depression, Laziness, Sleep, Procrastination, I can\u2019t do - Mahakali destroys Tamas - Gives energy - That is why Navratri Day 1-3 = Mahakali.' },
   { point: 'Upasana For', detail: 'If you feel lazy, depressed, sleepy, no motivation, black magic, Shani Dosha - Chant Chapter 1 daily.' },
@@ -56,8 +55,6 @@ const MAHALAKSHMI_TABLE = [
   { point: 'Look', detail: 'Red/Golden, 18 arms, Holds all weapons of all gods - Chakra, Shankha, Gada, Sword, Bow, etc - Sitting on lion - Most weapons - Because all gods gave weapons.' },
   { point: 'Born From', detail: 'Tejas of all gods combined - When Mahishasura won Devas, all gods angry, light came from Brahma, Vishnu, Shiva, Indra etc - Combined light became Mahalakshmi - So she has all gods\u2019 power.' },
   { point: 'Story', detail: 'Mahishasura - Buffalo - He can change form - Buffalo = Stubborn ego - Ego changes form - Sometimes as human, sometimes animal - Mahalakshmi killed after 9 days war - That is Navratri.' },
-  { point: 'Mantra', detail: '<mantra>Om Hreem Mahalakshmyai Namah</mantra> + <mantra>Om Aim Hreem Kleem Chamundayai Vichche</mantra>' },
-  { point: 'Beeja', detail: 'Hreem - Mahalakshmi Beeja - Most used.' },
   { point: 'Tantra meaning', detail: 'Mahisha = Buffalo = Ego that says \u201CI am strong like buffalo\u201D - 18 arms = 18 types of ego - Need 18 weapons to kill - Mahalakshmi is Rajas - She uses action to kill action.' },
   { point: 'Psychology', detail: 'Rajas = Ego, Pride, I am best, Greed, Over action, Can\u2019t sit quiet - Mahalakshmi kills ego - Gives humility + wealth that stays - Not ego wealth.' },
   { point: 'Upasana For', detail: 'If you have ego fights, No money (Lakshmi), No success, Enemy bigger than you, Court case - Chant Chapters 2-4 - Gives victory like Devas got.' },
@@ -155,7 +152,7 @@ const RULES_TABLE = [
 
 // ── PART 6: PRACTICAL CHANDI VIDYA ────────────────────────────────────
 const PRACTICAL_TABLE = [
-  { level: 'Level 1 - Beginner - 5 min', who: 'Householder - No time', chant: '<mantra>Om Aim Hreem Kleem Chamundayai Vichche</mantra> + <mantra>Om Dum Durgayei Namaha 108</mantra>', time: 'Morning + Evening' },
+  { level: 'Level 1 - Beginner - 5 min', who: 'Householder - No time', chant: '<mantra>Om Dum Durgayei Namaha 108</mantra>', time: 'Morning + Evening' },
   { level: 'Level 2 - Middle - 15 min', who: 'Want protection', chant: 'Kavacha + Argala + Keelaka + Chapter 1 + 4 + 11 (One from each Charita)', time: 'Daily morning' },
   { level: 'Level 3 - Full - 90 min', who: 'Want Moksha + Siddhi', chant: 'Full Saptashati 700 verses - 13 chapters - With Angas', time: 'Navratri 9 days - Or Every Tuesday/Friday' },
 ];
@@ -387,15 +384,6 @@ export default function ChandiVidyaPage() {
             </div>
           </ScrollReveal>
 
-          <ScrollReveal>
-            <div className="ch-mantra-box">
-              <span className="ch-mantra-box__label font-cinzel">Navarna Mantra — Heart of Chandi Vidya</span>
-              <p className="ch-mantra-box__sanskrit font-serif">Om Aim Hreem Kleem Chamundayai Vichche</p>
-              <p className="ch-mantra-box__meaning font-serif">
-                Aim = Saraswati · Hreem = Mahalakshmi · Kleem = Mahakali · Chamunda = Chandi · Vichche = Cut ego
-              </p>
-            </div>
-          </ScrollReveal>
 
           <ScrollReveal style={{ marginTop: '24px' }}>
             <div className="ch-callout">
@@ -409,6 +397,7 @@ export default function ChandiVidyaPage() {
       </section>
 
       {/* ══════════════ 2 — DURGA SAPTASHATI STRUCTURE ══════════════ */}
+      <LockedSadhanaContent>
       <section id="structure" className="ch-section ch-section--maroon">
         <div className="ch-container">
           <ScrollReveal className="ch-section__head">
@@ -491,8 +480,10 @@ export default function ChandiVidyaPage() {
           </ScrollReveal>
         </div>
       </section>
+      </LockedSadhanaContent>
 
       {/* ══════════════ 3 — THREE FORMS OF CHANDI ══════════════ */}
+      <LockedSadhanaContent>
       <section id="three-forms" className="ch-section ch-section--warm">
         <div className="ch-container">
           <ScrollReveal className="ch-section__head">
@@ -550,7 +541,6 @@ export default function ChandiVidyaPage() {
             <div className="ch-mantra-box">
               <span className="ch-mantra-box__label font-cinzel">Mantra</span>
               <p className="ch-mantra-box__sanskrit font-serif">Om Hreem Mahalakshmyai Namah</p>
-              <p className="ch-mantra-box__meaning font-serif">Om Aim Hreem Kleem Chamundayai Vichche</p>
             </div>
           </ScrollReveal>
 
@@ -606,8 +596,10 @@ export default function ChandiVidyaPage() {
           </ScrollReveal>
         </div>
       </section>
+      </LockedSadhanaContent>
 
       {/* ══════════════ 4 — NAVA SHAKTIS ══════════════ */}
+      <LockedSadhanaContent>
       <section id="nava-shaktis" className="ch-section ch-section--maroon">
         <div className="ch-container">
           <ScrollReveal className="ch-section__head">
@@ -754,8 +746,10 @@ export default function ChandiVidyaPage() {
           </ScrollReveal>
         </div>
       </section>
+      </LockedSadhanaContent>
 
       {/* ══════════════ 5 — PURANA + TANTRA + SHASTRA ══════════════ */}
+      <LockedSadhanaContent>
       <section id="pramana" className="ch-section ch-section--warm">
         <div className="ch-container">
           <ScrollReveal className="ch-section__head">
@@ -852,8 +846,10 @@ export default function ChandiVidyaPage() {
           </ScrollReveal>
         </div>
       </section>
+      </LockedSadhanaContent>
 
       {/* ══════════════ 6 — PRACTICAL CHANDI VIDYA ══════════════ */}
+      <LockedSadhanaContent>
       <section id="practical" className="ch-section ch-section--maroon">
         <div className="ch-container">
           <ScrollReveal className="ch-section__head">
@@ -901,14 +897,15 @@ export default function ChandiVidyaPage() {
           <ScrollReveal>
             <div className="ch-mantra-box" style={{ marginTop: '26px' }}>
               <span className="ch-mantra-box__label font-cinzel">Daily Seed</span>
-              <p className="ch-mantra-box__sanskrit font-serif">Om Aim Hreem Kleem Chamundayai Vichche</p>
               <p className="ch-mantra-box__meaning font-serif">108 times — Morning and Evening.</p>
             </div>
           </ScrollReveal>
         </div>
       </section>
+      </LockedSadhanaContent>
 
       {/* ══════════════ 7 — ESSENCE OF CHANDI VIDYA ══════════════ */}
+      <LockedSadhanaContent>
       <section id="essence" className="ch-section ch-section--warm">
         <div className="ch-container">
           <ScrollReveal className="ch-section__head">
@@ -973,13 +970,10 @@ export default function ChandiVidyaPage() {
               <span className="ch-closing__divider-star">✦</span>
               <span className="ch-closing__divider-line" />
             </div>
-            <p className="ch-closing__sanskrit font-serif" style={{ fontSize: 'clamp(26px, 3.4vw, 40px)', marginTop: '8px' }}>
-              ओँ ऐं ह्रीं क्लीं चामुण्डायै विच्चे
-            </p>
-            <p className="ch-closing__source font-cinzel" style={{ marginTop: '8px' }}>Om Aim Hreem Kleem Chamundayai Vichche</p>
           </ScrollReveal>
         </div>
       </section>
+      </LockedSadhanaContent>
 
       {/* ══════════════ CTA ══════════════ */}
       <section className="ch-cta">

@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import Navbar from '../../components/navbar/Navbar.jsx';
 import GoldenButton from '../../components/common/GoldenButton.jsx';
 import ScrollReveal from '../../components/common/ScrollReveal.jsx';
+import LockedSadhanaContent from '../../components/common/LockedSadhanaContent.jsx';
 import { FooterSection } from '../Home/HomeSections.jsx';
 import heroImg from '../../assets/shaivam4.jpeg';
 import shaivam5Img from '../../assets/shaivam5.jpeg';
@@ -38,7 +39,7 @@ const VEDA_TABLE = [
 ];
 
 const PURANA_TABLE = [
-  { purana: 'Shiva Purana', says: 'Bible of Shaivism. 24,000 verses. Says Shiva is Parabrahman, Vishnu and Brahma came from Shiva Linga. Shiva Linga is infinite pillar of light.' },
+  { purana: 'Shiva Purana', says: 'Contains approximately 24,000 verses in its traditional description and is one of the important Shaiva Puranas. Explains the supreme nature of Lord Shiva as Parabrahman, the manifestation of Brahma and Vishnu, and the infinite nature of the Shiva Linga as a pillar of divine light.' },
   { purana: 'Linga Purana', says: 'Linga = Formless form of Shiva. Why Linga worship? Science of Linga.' },
   { purana: 'Skanda Purana', says: 'Largest Purana — 81,000 verses — Mostly about Shiva\u2019s son Kartikeya + Shiva Kshetras.' },
   { purana: 'Matsya, Kurma, Vayu Purana', says: 'Shiva as destroyer + protector.' },
@@ -382,6 +383,7 @@ export default function ShaivamPage() {
       </section>
 
       {/* ══════════════ 2 — SCRIPTURAL FOUNDATIONS — 6 PRAMANAS ══════════════ */}
+      <LockedSadhanaContent>
       <section id="pramanas" className="sh-section sh-section--maroon">
         <div className="sh-container">
           <ScrollReveal className="sh-section__head">
@@ -419,6 +421,14 @@ export default function ShaivamPage() {
           {/* ── 2. Purana Pramana ── */}
           <ScrollReveal>
             <h3 className="sh-block__title font-cinzel">2. Purana Pramana — 6 Puranas are Shaiva Puranas</h3>
+            <ScrollReveal>
+              <div className="sh-callout" style={{ marginBottom: '24px' }}>
+                <span className="sh-callout__label font-cinzel">Shaiva Purana Pramana</span>
+                <p className="sh-callout__text font-serif">
+                  The Shiva Purana contains approximately 24,000 verses in its traditional description and is one of the important Shaiva Puranas. It explains the supreme nature of Lord Shiva as Parabrahman, the manifestation of Brahma and Vishnu, and the infinite nature of the Shiva Linga as a pillar of divine light.
+                </p>
+              </div>
+            </ScrollReveal>
             <div className="sh-callout" style={{ marginBottom: '24px' }}>
               <span className="sh-callout__label font-cinzel">Padma Purana Says</span>
               <p className="sh-callout__text font-serif">
@@ -528,8 +538,10 @@ export default function ShaivamPage() {
           </ScrollReveal>
         </div>
       </section>
+      </LockedSadhanaContent>
 
       {/* ══════════════ 3 — TYPES OF UPASANA — 4 CLASSIFICATIONS ══════════════ */}
+      <LockedSadhanaContent>
       <section id="upasana" className="sh-section sh-section--warm">
         <div className="sh-container">
           <ScrollReveal className="sh-section__head">
@@ -717,8 +729,10 @@ export default function ShaivamPage() {
           </ScrollReveal>
         </div>
       </section>
+      </LockedSadhanaContent>
 
       {/* ══════════════ 4 — TANTRA SHASTRA — SHAIVA AGAMA ══════════════ */}
+      <LockedSadhanaContent>
       <section id="tantra" className="sh-section sh-section--maroon">
         <div className="sh-container">
           <ScrollReveal className="sh-section__head">
@@ -841,8 +855,10 @@ export default function ShaivamPage() {
           </ScrollReveal>
         </div>
       </section>
+      </LockedSadhanaContent>
 
       {/* ══════════════ 5 — IMPORTANCE ══════════════ */}
+      <LockedSadhanaContent>
       <section id="importance" className="sh-section sh-section--warm">
         <div className="sh-container">
           <ScrollReveal className="sh-section__head">
@@ -889,8 +905,10 @@ export default function ShaivamPage() {
           </ScrollReveal>
         </div>
       </section>
+      </LockedSadhanaContent>
 
       {/* ══════════════ 6 — RELATION ══════════════ */}
+      <LockedSadhanaContent>
       <section id="relations" className="sh-section sh-section--maroon">
         <div className="sh-container">
           <ScrollReveal className="sh-section__head">
@@ -937,8 +955,10 @@ export default function ShaivamPage() {
           </ScrollReveal>
         </div>
       </section>
+      </LockedSadhanaContent>
 
       {/* ══════════════ 7 — ESSENCE & PRACTICE ══════════════ */}
+      <LockedSadhanaContent>
       <section id="essence" className="sh-section sh-section--warm">
         <div className="sh-container">
           <ScrollReveal className="sh-section__head">
@@ -1019,6 +1039,7 @@ export default function ShaivamPage() {
           </ScrollReveal>
         </div>
       </section>
+      </LockedSadhanaContent>
 
       {/* ══════════════ CTA ══════════════ */}
       <section className="sh-cta">

@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import Navbar from '../../components/navbar/Navbar.jsx';
 import GoldenButton from '../../components/common/GoldenButton.jsx';
 import ScrollReveal from '../../components/common/ScrollReveal.jsx';
+import LockedSadhanaContent from '../../components/common/LockedSadhanaContent.jsx';
 import { FooterSection } from '../Home/HomeSections.jsx';
 import heroImg from '../../assets/surya.jpeg';
 import surya2Img from '../../assets/surya2.jpeg';
@@ -325,7 +326,6 @@ export default function SouramPage() {
                 <tbody>
                   <tr><td><strong>Definition</strong></td><td>Sauram = Path where Surya / Sun is Parabrahman — Supreme God. Surya is not a planet or a fire — He is the visible Brahman, the Self of all that moves and stands still.</td></tr>
                   <tr><td><strong>Root Word</strong></td><td>Saura = Of Surya. Surya = Sun. Shouram is the spoken form; the shastra name is Sauram.</td></tr>
-                  <tr><td><strong>Main Mantra</strong></td><td><em>Om Suryaya Namah</em> · <em>Om Surya Devaya Namah</em> · <em>Gayatri Mantra</em> · <em>Om Hram Hrim Hraum Sah Suryaya Namah</em></td></tr>
                   <tr><td><strong>Main Goal</strong></td><td>Moksha = Surya Loka Prapti, and beyond that the realisation of the inner Sun — the Atman. The Sun seen without is the gate; the Sun felt within is the goal.</td></tr>
                   <tr><td><strong>How Old?</strong></td><td>Very old. The Rig Veda prays to the Sun in its very first hymns. The Gayatri — the mother of the Vedas — is addressed to Savitar, the Sun. Surya is the oldest continuously honoured visible deity of Sanatana Dharma.</td></tr>
                 </tbody>
@@ -353,6 +353,7 @@ export default function SouramPage() {
       </section>
 
       {/* ══════════════ 2 — SCRIPTURAL FOUNDATIONS — 6 PRAMANAS ══════════════ */}
+      <LockedSadhanaContent>
       <section id="pramanas" className="sr-section sr-section--maroon">
         <div className="sr-container">
           <ScrollReveal className="sr-section__head">
@@ -661,13 +662,6 @@ export default function SouramPage() {
             </div>
           </ScrollReveal>
 
-          <ScrollReveal>
-            <div className="sr-mantra-box">
-              <span className="sr-mantra-box__label font-cinzel">Surya Beeja Mantra</span>
-              <p className="sr-mantra-box__sanskrit font-serif">Om Hram Hrim Hraum Sah Suryaya Namah</p>
-              <p className="sr-mantra-box__meaning font-serif">Salutations to Surya, who carries the seed of the Sun — Hram. This is the shortest complete formula of the Surya Tantra.</p>
-            </div>
-          </ScrollReveal>
 
           <ScrollReveal>
             <h3 className="sr-block__title font-cinzel">The 12 Names of the Sun — Aditya Hridaya</h3>
@@ -866,6 +860,7 @@ export default function SouramPage() {
           </ScrollReveal>
         </div>
       </section>
+      </LockedSadhanaContent>
 
       {/* ══════════════ CTA ══════════════ */}
       <section className="sr-cta">

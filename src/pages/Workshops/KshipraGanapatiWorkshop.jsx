@@ -323,7 +323,7 @@ export default function KshipraGanapatiWorkshop() {
         {/* 06 · DATTA RULES */}
         <section id="datta-rules" className="gk-section gk-section--maroon">
           <div className="gk-container">
-            <SectionHead no="06" kicker="Discipline" title="Datta Purna Rules" subtitle="The five rules that frame the practice." tone="light" />
+            <SectionHead no="06" kicker="Discipline" title="Sri Parampara Rules" subtitle="The five rules that frame the practice." tone="light" />
             <div className="gk-paths">
               {DATTA_RULES.map((r) => (
                 <ScrollReveal key={r.no}>
@@ -359,7 +359,7 @@ export default function KshipraGanapatiWorkshop() {
         {/* 08 · CONCLUSION */}
         <section id="conclusion" className="gk-section gk-section--maroon gk-section--final">
           <div className="gk-container">
-            <SectionHead no="08" kicker="Shastra conclusion" title="The Significance of Kshipra Ganapati — The Bottom Line" tone="light" />
+            <SectionHead no="08" kicker="Shastra conclusion" title="Kṣipra Gaṇapati — Spiritual Significance" tone="light" />
             <ScrollReveal>
               <div className="gk-final-verse">
                 <p className="gk-final-verse__sanskrit font-serif" style={{ fontSize: '20px' }}>{BOTTOM_LINE}</p>

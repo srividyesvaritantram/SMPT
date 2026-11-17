@@ -233,7 +233,7 @@ export default function HomasDetail() {
                         className="rc-btn rc-btn--book"
                         onClick={() => openBooking(ritual, category, 'booking')}
                       >
-                        Book Guru
+                        Book Now
                       </button>
                     ) : ritual.enquiry ? (
                       <button

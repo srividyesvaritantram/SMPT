@@ -552,8 +552,6 @@ export function WorkshopsPage() {
           NĀRĀYAṆĪ VIDYĀ — Featured Workshop Section
       ══════════════════════════════════════════════════════ */}
       <section className="wp-narayani wp-narayani--light on-light">
-        {/* faint Sanskrit watermark */}
-        <div className="wp-narayani__watermark" aria-hidden="true" />
 
         <div className="wp-narayani__inner">
           <div className="wp-narayani__grid">
@@ -659,7 +657,6 @@ export function WorkshopsPage() {
           DHANVANTARI VIDYĀ — Featured Workshop Section
       ══════════════════════════════════════════════════════ */}
       <section className="wp-dhanvantari">
-        <div className="wp-narayani__watermark wp-dhanvantari__watermark" aria-hidden="true" />
 
         <div className="wp-narayani__inner">
           <div className="wp-narayani__grid">
@@ -809,14 +806,17 @@ export function WorkshopsPage() {
                     <div className="aop-ocard__footer" style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
                       <GoldenButton
                         label={card.comingSoon ? 'Coming Soon' : 'Know More'}
-                        outlined
+                        outlined={card.id !== 'kshipra-ganapati'}
                         onClick={(e) => { e.stopPropagation(); if (!card.comingSoon) navigate(card.path); }}
-                        style={card.comingSoon ? { opacity: 0.55, cursor: 'not-allowed', pointerEvents: 'none' } : {}}
+                        style={card.id === 'kshipra-ganapati'
+                          ? { background: 'linear-gradient(135deg, #7B1E3A, #4A0F22)', color: '#F3E7D3', border: '1px solid rgba(212,175,55,0.6)', boxShadow: '0 4px 14px rgba(74,15,34,0.35)' }
+                          : (card.comingSoon ? { opacity: 0.55, cursor: 'not-allowed', pointerEvents: 'none' } : {})}
                       />
                       {!card.comingSoon && card.id === 'kshipra-ganapati' && (
                         <GoldenButton
                           label="Register Now"
                           onClick={(e) => { e.stopPropagation(); window.open(WA_KSHIPRA, '_blank', 'noopener,noreferrer'); }}
+                          style={{ background: 'linear-gradient(135deg, #7B1E3A, #4A0F22)', color: '#F3E7D3', border: '1px solid rgba(212,175,55,0.6)', boxShadow: '0 4px 14px rgba(74,15,34,0.35)' }}
                         />
                       )}
                       {!card.comingSoon && card.id === 'ganapatyam' && (
@@ -1492,7 +1492,6 @@ export function VideoPlayerPage() {
           <video controls className="video-page__video" src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4">
             <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4" />
           </video>
-          <div className="video-page__watermark">Sri Mahavidyesvari</div>
         </div>
         <div className="video-page__info">
           <h2 className="video-page__title">Introduction to Vedic Meditation — Lesson 1</h2>

@@ -1379,16 +1379,6 @@ export default function GanapatyamSadhanaKramam({ context = 'courses' }) {
 
       <FooterSection />
 
-      {/* ── FLOATING BACK ─────────────────────────────────────────── */}
-      <button
-        type="button"
-        className="gk-floating-back"
-        onClick={() => navigate(backTarget)}
-        aria-label={backLabel}
-      >
-        <FiArrowLeft size={16} aria-hidden="true" />
-        <span>{backLabel}</span>
-      </button>
 
       {/* ── MOBILE REGISTER BAR ───────────────────────────────────── */}
       <div className="gk-mobile-cta">

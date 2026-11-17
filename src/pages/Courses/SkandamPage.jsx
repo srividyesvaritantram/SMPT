@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import Navbar from '../../components/navbar/Navbar.jsx';
 import GoldenButton from '../../components/common/GoldenButton.jsx';
 import ScrollReveal from '../../components/common/ScrollReveal.jsx';
+import LockedSadhanaContent from '../../components/common/LockedSadhanaContent.jsx';
 import { FooterSection } from '../Home/HomeSections.jsx';
 import heroImg from '../../assets/skandam1.jpeg';
 import skandam2Img from '../../assets/skandam2.jpeg';
@@ -329,6 +330,7 @@ export default function SkandamPage() {
       </section>
 
       {/* ══════════════ 2 — SCRIPTURAL FOUNDATIONS ══════════════ */}
+      <LockedSadhanaContent>
       <section id="scriptural" className="sk-section">
         <div className="sk-container">
           <ScrollReveal className="sk-section__head">
@@ -910,6 +912,7 @@ export default function SkandamPage() {
           </ScrollReveal>
         </div>
       </section>
+      </LockedSadhanaContent>
 
       {/* ══════════════ CTA ══════════════ */}
       <section className="sk-cta">
