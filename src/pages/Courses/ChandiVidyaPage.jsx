@@ -397,7 +397,6 @@ export default function ChandiVidyaPage() {
       </section>
 
       {/* ══════════════ 2 — DURGA SAPTASHATI STRUCTURE ══════════════ */}
-      <LockedSadhanaContent>
       <section id="structure" className="ch-section ch-section--maroon">
         <div className="ch-container">
           <ScrollReveal className="ch-section__head">
@@ -406,6 +405,8 @@ export default function ChandiVidyaPage() {
             <p className="ch-section__subtitle font-serif">3 Charitas — Structure of 700 Verses</p>
             <Ornament />
           </ScrollReveal>
+
+          <LockedSadhanaContent showCta={false}>
 
           <ScrollReveal>
             <p className="ch-lead font-serif">
@@ -471,6 +472,8 @@ export default function ChandiVidyaPage() {
             </div>
           </ScrollReveal>
 
+          </LockedSadhanaContent>
+
           <ScrollReveal style={{ marginTop: '48px' }}>
             <FramedFigure
               src={IMG_STRUCTURE}
@@ -480,10 +483,8 @@ export default function ChandiVidyaPage() {
           </ScrollReveal>
         </div>
       </section>
-      </LockedSadhanaContent>
 
       {/* ══════════════ 3 — THREE FORMS OF CHANDI ══════════════ */}
-      <LockedSadhanaContent>
       <section id="three-forms" className="ch-section ch-section--warm">
         <div className="ch-container">
           <ScrollReveal className="ch-section__head">
@@ -492,6 +493,8 @@ export default function ChandiVidyaPage() {
             <p className="ch-section__subtitle font-serif">Mahakali, Mahalakshmi, Mahasaraswati</p>
             <Ornament />
           </ScrollReveal>
+
+          <LockedSadhanaContent showCta={false}>
 
           {/* ── FORM 1 — MAHAKALI ── */}
           <ScrollReveal className="ch-subsection">
@@ -594,12 +597,11 @@ export default function ChandiVidyaPage() {
               </div>
             </ScrollReveal>
           </ScrollReveal>
+        </LockedSadhanaContent>
         </div>
       </section>
-      </LockedSadhanaContent>
 
       {/* ══════════════ 4 — NAVA SHAKTIS ══════════════ */}
-      <LockedSadhanaContent>
       <section id="nava-shaktis" className="ch-section ch-section--maroon">
         <div className="ch-container">
           <ScrollReveal className="ch-section__head">
@@ -608,6 +610,8 @@ export default function ChandiVidyaPage() {
             <p className="ch-section__subtitle font-serif">9 forms that come from 3 Mahadevis — 3 × 3 = 9</p>
             <Ornament />
           </ScrollReveal>
+
+          <LockedSadhanaContent showCta={false}>
 
           <ScrollReveal>
             <p className="ch-lead font-serif">
@@ -744,12 +748,11 @@ export default function ChandiVidyaPage() {
               caption="Before the Pramanas — the Nava Shaktis, nine ways the mother helps"
             />
           </ScrollReveal>
+        </LockedSadhanaContent>
         </div>
       </section>
-      </LockedSadhanaContent>
 
       {/* ══════════════ 5 — PURANA + TANTRA + SHASTRA ══════════════ */}
-      <LockedSadhanaContent>
       <section id="pramana" className="ch-section ch-section--warm">
         <div className="ch-container">
           <ScrollReveal className="ch-section__head">
@@ -758,6 +761,8 @@ export default function ChandiVidyaPage() {
             <p className="ch-section__subtitle font-serif">Pramana for Chandi</p>
             <Ornament />
           </ScrollReveal>
+
+          <LockedSadhanaContent showCta={false}>
 
           {/* ── 1. PURANA STANDARD ── */}
           <ScrollReveal>
@@ -844,12 +849,11 @@ export default function ChandiVidyaPage() {
               </table>
             </div>
           </ScrollReveal>
+        </LockedSadhanaContent>
         </div>
       </section>
-      </LockedSadhanaContent>
 
       {/* ══════════════ 6 — PRACTICAL CHANDI VIDYA ══════════════ */}
-      <LockedSadhanaContent>
       <section id="practical" className="ch-section ch-section--maroon">
         <div className="ch-container">
           <ScrollReveal className="ch-section__head">
@@ -858,6 +862,8 @@ export default function ChandiVidyaPage() {
             <p className="ch-section__subtitle font-serif">How to Do Chandi Vidya Daily — 3 Levels</p>
             <Ornament />
           </ScrollReveal>
+
+          <LockedSadhanaContent showCta={false}>
 
           <ScrollReveal>
             <div className="ch-table-wrap">
@@ -900,12 +906,11 @@ export default function ChandiVidyaPage() {
               <p className="ch-mantra-box__meaning font-serif">108 times — Morning and Evening.</p>
             </div>
           </ScrollReveal>
+        </LockedSadhanaContent>
         </div>
       </section>
-      </LockedSadhanaContent>
 
       {/* ══════════════ 7 — ESSENCE OF CHANDI VIDYA ══════════════ */}
-      <LockedSadhanaContent>
       <section id="essence" className="ch-section ch-section--warm">
         <div className="ch-container">
           <ScrollReveal className="ch-section__head">
@@ -914,6 +919,8 @@ export default function ChandiVidyaPage() {
             <p className="ch-section__subtitle font-serif">Devi Mahatmyam 11.3</p>
             <Ornament />
           </ScrollReveal>
+
+          <LockedSadhanaContent showCta={false}>
 
           {/* ── Devi Mahatmyam 11.3 ── */}
           <ScrollReveal>
@@ -971,9 +978,9 @@ export default function ChandiVidyaPage() {
               <span className="ch-closing__divider-line" />
             </div>
           </ScrollReveal>
+        </LockedSadhanaContent>
         </div>
       </section>
-      </LockedSadhanaContent>
 
       {/* ══════════════ CTA ══════════════ */}
       <section className="ch-cta">

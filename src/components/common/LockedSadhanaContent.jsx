@@ -14,7 +14,7 @@ function LockIcon() {
   );
 }
 
-export default function LockedSadhanaContent({ children }) {
+export default function LockedSadhanaContent({ children, showCta = true, hint = 'Deeper Sādhana Information' }) {
   return (
     <div className="lsc">
       <div className="lsc__locked">
@@ -24,22 +24,24 @@ export default function LockedSadhanaContent({ children }) {
             <LockIcon />
             <span className="lsc__badge-label">LOCKED</span>
           </div>
-          <p className="lsc__hint">Deeper Sādhana Information</p>
+          <p className="lsc__hint">{hint}</p>
         </div>
       </div>
 
-      <div className="lsc__cta">
-        <p className="lsc__cta-text">
-          If you want to learn more about the deeper Sādhana, traditional practices and Guru guidance,
-          join us through Guru Dīkṣā.
-        </p>
-        <GoldenButton
-          label="JOIN GURU DĪKṢĀ"
-          size="lg"
-          outlined
-          onClick={() => window.open(WA_URL, '_blank')}
-        />
-      </div>
+      {showCta && (
+        <div className="lsc__cta">
+          <p className="lsc__cta-text">
+            If you want to learn more about the deeper Sādhana, traditional practices and Guru guidance,
+            join us through Guru Dīkṣā.
+          </p>
+          <GoldenButton
+            label="JOIN GURU DĪKṢĀ"
+            size="lg"
+            outlined
+            onClick={() => window.open(WA_URL, '_blank')}
+          />
+        </div>
+      )}
     </div>
   );
 }

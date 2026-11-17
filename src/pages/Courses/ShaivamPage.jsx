@@ -383,7 +383,6 @@ export default function ShaivamPage() {
       </section>
 
       {/* ══════════════ 2 — SCRIPTURAL FOUNDATIONS — 6 PRAMANAS ══════════════ */}
-      <LockedSadhanaContent>
       <section id="pramanas" className="sh-section sh-section--maroon">
         <div className="sh-container">
           <ScrollReveal className="sh-section__head">
@@ -392,6 +391,8 @@ export default function ShaivamPage() {
             <p className="sh-section__subtitle font-serif">The six scriptural pillars on which Shaivam rests</p>
             <Ornament />
           </ScrollReveal>
+
+          <LockedSadhanaContent showCta={false}>
 
           {/* ── 1. Veda Pramana ── */}
           <ScrollReveal>
@@ -536,12 +537,11 @@ export default function ShaivamPage() {
               caption="After the six pramanas — the Lord of the Vedas, Puranas, Agamas and the Tamil Tirumurai"
             />
           </ScrollReveal>
+        </LockedSadhanaContent>
         </div>
       </section>
-      </LockedSadhanaContent>
 
       {/* ══════════════ 3 — TYPES OF UPASANA — 4 CLASSIFICATIONS ══════════════ */}
-      <LockedSadhanaContent>
       <section id="upasana" className="sh-section sh-section--warm">
         <div className="sh-container">
           <ScrollReveal className="sh-section__head">
@@ -550,6 +550,8 @@ export default function ShaivamPage() {
             <p className="sh-section__subtitle font-serif">Sampradayas, forms, linga worship, steps and impurities</p>
             <Ornament />
           </ScrollReveal>
+
+          <LockedSadhanaContent showCta={false}>
 
           {/* ── 1. Six Sampradayas ── */}
           <ScrollReveal>
@@ -727,12 +729,11 @@ export default function ShaivamPage() {
               </div>
             </ScrollReveal>
           </ScrollReveal>
+        </LockedSadhanaContent>
         </div>
       </section>
-      </LockedSadhanaContent>
 
       {/* ══════════════ 4 — TANTRA SHASTRA — SHAIVA AGAMA ══════════════ */}
-      <LockedSadhanaContent>
       <section id="tantra" className="sh-section sh-section--maroon">
         <div className="sh-container">
           <ScrollReveal className="sh-section__head">
@@ -741,6 +742,8 @@ export default function ShaivamPage() {
             <p className="sh-section__subtitle font-serif">What do the 28 Agamas say?</p>
             <Ornament />
           </ScrollReveal>
+
+          <LockedSadhanaContent showCta={false}>
 
           <ScrollReveal>
             <div className="sh-callout" style={{ marginBottom: '32px' }}>
@@ -853,12 +856,11 @@ export default function ShaivamPage() {
               caption="The Shaiva Agama — the practical Tantra Shastra of Shaivism"
             />
           </ScrollReveal>
+        </LockedSadhanaContent>
         </div>
       </section>
-      </LockedSadhanaContent>
 
       {/* ══════════════ 5 — IMPORTANCE ══════════════ */}
-      <LockedSadhanaContent>
       <section id="importance" className="sh-section sh-section--warm">
         <div className="sh-container">
           <ScrollReveal className="sh-section__head">
@@ -867,6 +869,8 @@ export default function ShaivamPage() {
             <p className="sh-section__subtitle font-serif">What the oldest path offers the world</p>
             <Ornament />
           </ScrollReveal>
+
+          <LockedSadhanaContent showCta={false}>
 
           <ScrollReveal>
             <div className="sh-table-wrap">
@@ -903,12 +907,11 @@ export default function ShaivamPage() {
               <p className="sh-mantra-box__meaning font-serif">Only Shiva can stop death — no other God has this mantra in the Veda.</p>
             </div>
           </ScrollReveal>
+        </LockedSadhanaContent>
         </div>
       </section>
-      </LockedSadhanaContent>
 
       {/* ══════════════ 6 — RELATION ══════════════ */}
-      <LockedSadhanaContent>
       <section id="relations" className="sh-section sh-section--maroon">
         <div className="sh-container">
           <ScrollReveal className="sh-section__head">
@@ -917,6 +920,8 @@ export default function ShaivamPage() {
             <p className="sh-section__subtitle font-serif">How Shiva relates to the other devas of Sanatana Dharma</p>
             <Ornament />
           </ScrollReveal>
+
+          <LockedSadhanaContent showCta={false}>
 
           <ScrollReveal>
             <div className="sh-table-wrap">
@@ -953,12 +958,11 @@ export default function ShaivamPage() {
               <p className="sh-mantra-box__meaning font-serif">Vishnu is the heart of Shiva; Shiva is the heart of Vishnu. No fight — the same Reality.</p>
             </div>
           </ScrollReveal>
+        </LockedSadhanaContent>
         </div>
       </section>
-      </LockedSadhanaContent>
 
       {/* ══════════════ 7 — ESSENCE & PRACTICE ══════════════ */}
-      <LockedSadhanaContent>
       <section id="essence" className="sh-section sh-section--warm">
         <div className="sh-container">
           <ScrollReveal className="sh-section__head">
@@ -967,6 +971,8 @@ export default function ShaivamPage() {
             <p className="sh-section__subtitle font-serif">The final teaching, the three pillars and the practical path</p>
             <Ornament />
           </ScrollReveal>
+
+          <LockedSadhanaContent showCta={false}>
 
           {/* ── Upanishad Quote ── */}
           <ScrollReveal>
@@ -1037,9 +1043,9 @@ export default function ShaivamPage() {
             </p>
             <p className="sh-closing__source font-cinzel" style={{ marginTop: '8px' }}>Om Namah Shivaya</p>
           </ScrollReveal>
+        </LockedSadhanaContent>
         </div>
       </section>
-      </LockedSadhanaContent>
 
       {/* ══════════════ CTA ══════════════ */}
       <section className="sh-cta">
